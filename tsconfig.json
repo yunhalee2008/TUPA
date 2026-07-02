@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next.nosync/types/**/*.ts"],
-  "exclude": ["node_modules", "node_modules.nosync", ".next.nosync/cache", ".next.nosync/server", ".next.nosync/static"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

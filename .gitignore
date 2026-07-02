@@ -36,3 +36,6 @@ next-env.d.ts
 
 # WordPress export (source data, too large for the app bundle)
 *.WordPress.*.xml
+
+# macOS
+.DS_Store

@@ -16,13 +16,10 @@ KAIST 조천식모빌리티대학원 김인희 교수 연구실 **TUPA (Transpor
 - 배포: Vercel. 커밋 전 `npm run build` 통과 필수
 - 환경변수 추가 시 `.env.local.example`도 함께 갱신
 
-## ⚠️ 환경 주의: iCloud
+## ⚠️ 환경 주의: iCloud 금지
 
-이 repo는 iCloud 동기화 대상인 `~/Documents` 안에 있다. iCloud가 대량 파일을 동기화하는 동안 node 빌드가 CPU 0%로 무한 정지한다.
-- `node_modules` → `node_modules.nosync` + 심링크로 동기화에서 제외해 둠. **이 구조를 깨지 말 것** (`npm ci` 등으로 재생성하면 심링크가 사라지므로 다시 걸어야 함).
-- 빌드 출력은 `next.config.mjs`의 `distDir: ".next.nosync"`로 지정되어 있다 (심링크 아님 — iCloud가 심링크를 "이름 2" 복제본으로 망가뜨림).
-- `next/font/google`은 이 환경에서 빌드를 정지시킨 전력이 있어 사용 금지 — 폰트는 `public/fonts/` 셀프호스팅 + `globals.css`의 `@font-face` 사용.
-- 빌드가 다시 조용히 멈추면: `ps`로 CPU 0% 확인 → `brctl status`로 iCloud 동기화 상태 확인. `"이름 2"` 형태의 복제 디렉터리는 iCloud 충돌 산물이니 발견 즉시 삭제.
+이 repo는 iCloud 동기화 폴더(`~/Documents`)에 있을 때 node 빌드가 CPU 0%로 무한 정지하고 심링크가 `"이름 2"` 복제본으로 훼손되는 문제를 겪어 **2026-07-02에 `~/dev/TUPA`로 이전했다. 다시 iCloud 경로로 옮기지 말 것.** (당시 우회책은 git 히스토리 참조)
+- 폰트는 `next/font/google` 대신 `public/fonts/` 셀프호스팅 + `globals.css` `@font-face`를 유지한다 (빌드타임 네트워크 의존 제거 — iCloud와 무관하게 유지).
 
 ## 구조와 규칙
 

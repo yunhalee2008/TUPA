@@ -1,4 +1,4 @@
-# KIM Lab Website (KAIST)
+# TUPA Lab Website (KAIST)
 - Next.js 14 App Router, TypeScript, Tailwind, Framer Motion
 - 콘텐츠는 전부 Notion API에서 가져옴 (하드코딩 금지)
 - 디자인 원칙: 정보 전달 우선, 절제된 인터랙션, 

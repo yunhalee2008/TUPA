@@ -18,8 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" data-lang="ko">
       <head>
+        <script
+          // Apply the saved language before first paint to avoid a flash.
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var l=localStorage.getItem('tupa-lang');if(l==='en'){document.documentElement.dataset.lang='en';document.documentElement.lang='en';}}catch(e){}",
+          }}
+        />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"

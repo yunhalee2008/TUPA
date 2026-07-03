@@ -2,12 +2,28 @@ import type { Publication } from "@/lib/content";
 
 const LAB_HEAD = "Inhi Kim";
 
+/** Direct link when we have one; otherwise a Google Scholar title search. */
+function paperUrl(pub: Publication): string {
+  if (pub.url) return pub.url;
+  if (pub.doi) return `https://doi.org/${pub.doi}`;
+  return `https://scholar.google.com/scholar?q=${encodeURIComponent(`"${pub.title}"`)}`;
+}
+
 export default function PublicationItem({ pub }: { pub: Publication }) {
   return (
-    <li className="grid gap-2 border-b border-mapline py-5 sm:grid-cols-[64px_1fr] sm:gap-6">
-      <span className="font-mono text-sm text-body/60">{pub.year}</span>
+    <li className="border-b border-mapline py-5">
       <div>
-        <p className="font-medium leading-snug text-cobalt-900">{pub.title}</p>
+        <a
+          href={paperUrl(pub)}
+          target="_blank"
+          rel="noreferrer"
+          className="font-medium leading-snug text-cobalt-900 underline-offset-2 hover:text-cobalt-600 hover:underline"
+        >
+          {pub.title}
+          <span aria-hidden className="ml-1 text-xs text-body/50">
+            ↗
+          </span>
+        </a>
         <p className="mt-1.5 text-sm">
           {pub.authors.map((author, i) => (
             <span key={author}>

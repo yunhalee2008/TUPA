@@ -13,7 +13,7 @@ export default function ProjectRow({ project }: { project: Project }) {
       </div>
       <div>
         <p className="font-medium leading-snug text-cobalt-900">{project.titleEn}</p>
-        <p className="mt-1 text-sm text-body/80">{project.titleKo}</p>
+        <p className="ko-only mt-1 text-sm text-body/80">{project.titleKo}</p>
         <p className="mt-1.5 text-sm text-body/60">
           {project.sponsor} · {project.role}
         </p>

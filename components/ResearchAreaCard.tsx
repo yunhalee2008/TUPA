@@ -6,8 +6,13 @@ export default function ResearchAreaCard({ area }: { area: ResearchArea }) {
       <h3 className="font-display text-lg font-bold text-cobalt-900">
         {area.nameEn}
       </h3>
-      <p className="mt-0.5 text-sm font-medium text-cobalt-600">{area.nameKo}</p>
-      <p className="mt-3 flex-1 text-sm leading-relaxed">{area.descriptionKo}</p>
+      <p className="ko-only mt-0.5 text-sm font-medium text-cobalt-600">
+        {area.nameKo}
+      </p>
+      <p className="mt-3 flex-1 text-sm leading-relaxed">
+        <span className="ko-only">{area.descriptionKo}</span>
+        <span className="en-only">{area.descriptionEn}</span>
+      </p>
       <div className="mt-4 flex flex-wrap gap-1.5">
         {area.keywords.map((keyword) => (
           <span

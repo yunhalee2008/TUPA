@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { getSiteSettings } from "@/lib/content";
 
-export default function SiteFooter() {
+export default async function SiteFooter() {
+  const settings = await getSiteSettings();
   return (
     <footer className="mt-24 bg-cobalt-900 text-white">
       <div className="site-container grid gap-10 py-14 md:grid-cols-3">
@@ -9,7 +11,10 @@ export default function SiteFooter() {
           <p className="mt-2 text-sm text-white/70">
             Transport and Urban Planning Arena
             <br />
-            교통·모빌리티 AI와 스마트시티 연구실
+            <span className="ko-only">교통·모빌리티 AI와 스마트시티 연구실</span>
+            <span className="en-only">
+              Transport &amp; mobility AI and smart city research lab
+            </span>
           </p>
         </div>
         <div className="text-sm text-white/70">
@@ -26,8 +31,28 @@ export default function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link className="hover:text-white" href="/people">
+                People
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-white" href="/news">
+                News
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-white" href="/gallery">
+                Gallery
+              </Link>
+            </li>
+            <li>
               <Link className="hover:text-white" href="/prospective-students">
                 Prospective Students
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-white" href="/contact">
+                Contact
               </Link>
             </li>
             <li>
@@ -45,15 +70,15 @@ export default function SiteFooter() {
         <div className="text-sm text-white/70">
           <p className="mono-label mb-3 !text-white/50">Contact</p>
           <p>
-            291 Daehak-ro, Yuseong-gu, Daejeon 34141, Republic of Korea
+            {settings["주소(영문)"]}
             <br />
-            대전광역시 유성구 대학로 291, KAIST
+            {settings["주소(한글)"]}
           </p>
           <a
             className="mt-2 inline-block hover:text-white"
-            href="mailto:kaist.mobility@gmail.com"
+            href={`mailto:${settings["대표 이메일"]}`}
           >
-            kaist.mobility@gmail.com
+            {settings["대표 이메일"]}
           </a>
         </div>
       </div>

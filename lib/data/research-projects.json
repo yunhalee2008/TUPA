@@ -1,0 +1,114 @@
+[
+  {
+    "id": "metaverse-based-emerging-technology",
+    "title": "Metaverse based Emerging Technology",
+    "date": "2023-07-04",
+    "imageUrl": "/projects/metaverse-based-emerging-technology.jpg",
+    "summary": "Unity-Vissim Cosimulation environment development for Human-in-the-loop test"
+  },
+  {
+    "id": "human-factor-safety",
+    "title": "Human factor safety",
+    "date": "2023-07-03",
+    "imageUrl": "/projects/human-factor-safety.jpg",
+    "summary": "Interactive driving behavior in overtaking situation"
+  },
+  {
+    "id": "data-driven-approach-for-the-practical-transportat",
+    "title": "Data-driven approach for the practical transportation operation",
+    "date": "2023-07-03",
+    "imageUrl": "/projects/data-driven-approach-for-the-practical-transportat.jpg",
+    "summary": "Traffic volume imputation based on multi-source data collection system"
+  },
+  {
+    "id": "reinforcement-learning-based-signal-optimization",
+    "title": "Reinforcement Learning based signal optimization",
+    "date": "2023-07-02",
+    "imageUrl": "/projects/reinforcement-learning-based-signal-optimization.jpg",
+    "summary": "Develop an optimized traffic signal plan using the Neighbor Dueling Deep Q-Network (NDDQN) algorithm, which considers neighboring intersections. The algorithm controls four neighboring intersections simultaneously by determining signal actions with the goal of reducing emissions as a reward."
+  },
+  {
+    "id": "vr-driving-simulator-platform",
+    "title": "VR Driving Simulator Platform",
+    "date": "2020-01-28",
+    "imageUrl": "/projects/vr-driving-simulator-platform.jpg",
+    "summary": "This research is to integrate communication, traffic and driver behaviours, vehicle dynamics, and environment conditions in a unison framework to increase safety, reliability, and performance of connected and automated vehicles within a mix traffic condition. To achieve this goal, TUPA has been developing an architecture that leverages existing tools like VISSIM, Driving simulator, Virtual Reality and Python to analyze and simulate multiple aspects of traffic including vehicles and pedestrians. This tool will enable to develop and validate techniques to improve traffic congestion, safety, and network performance."
+  },
+  {
+    "id": "slam-with-autonomous-vehicle-using-ai",
+    "title": "SLAM with Autonomous vehicle using AI",
+    "date": "2019-03-28",
+    "imageUrl": null,
+    "summary": "We utilized TurtleBot3 which adopts ROBOTIS smart actuator Dynamixel for driving."
+  },
+  {
+    "id": "big-data-analytic-and-visualization",
+    "title": "Big data Analytic and Visualization",
+    "date": "2019-03-28",
+    "imageUrl": "/projects/big-data-analytic-and-visualization.jpg",
+    "summary": "The dashboard below was developed through Elastic open source software using the Seoul metro passenger flow data in 2014."
+  },
+  {
+    "id": "imputation-of-missing-data",
+    "title": "Imputation of Missing data",
+    "date": "2019-03-06",
+    "imageUrl": "/projects/imputation-of-missing-data.jpg",
+    "summary": "INTRODUCTION Transportation data is of great importance for intelligent transportation system. Missing data problems are inevitable during data collection."
+  },
+  {
+    "id": "gwr-in-sharing-bikes",
+    "title": "GWR in Sharing bikes",
+    "date": "2019-03-06",
+    "imageUrl": "/projects/gwr-in-sharing-bikes.jpg",
+    "summary": "Research Aim To provide empirical evidence on the relationship between built environment and public sharing bike flow in Suzhou, China. Research Objectives To examine the global impacts of built environment on public sharing bike flow. To understand the effects of spatial variation of those built environment on public sharing bike flow Study Area The study area of this research focuses on Suzhou located in the southeast Jiangsu Province of East China and east about 100 km to Shanghai (Figure 1(A))."
+  },
+  {
+    "id": "3d-convolutional-networks-for-traffic-forecasting",
+    "title": "3D Convolutional Networks for Traffic Forecasting",
+    "date": "2018-05-19",
+    "imageUrl": "/projects/3d-convolutional-networks-for-traffic-forecasting.jpg",
+    "summary": "Intro It’s not easy to pick up this background image for the post. It shows the Manhattan Peninsula, New York, and the sky reflects the buildings on the ground. This fantasy scene reminds me the complex relationship between space and time, which closely related to the topic of this article: Spatiotemporal forecasting of traffic by using 3d convolutional neural networks."
+  },
+  {
+    "id": "lane-change-execution-model-development",
+    "title": "Lane Change Execution Model Development",
+    "date": "2017-12-16",
+    "imageUrl": "/projects/lane-change-execution-model-development.jpg",
+    "summary": "The lane change behaviour is not only impacted by the blockage but also the surrounding traffic. The combination of these two impacts determines the subject vehicle lane change execution behaviour: i.e. to either Continue lane change execution or Not Continue lane change execution."
+  },
+  {
+    "id": "shared-public-bike-usage",
+    "title": "Shared Public Bike Usage",
+    "date": "2017-12-14",
+    "imageUrl": "/projects/shared-public-bike-usage.jpg",
+    "summary": ".uppercase{text-transform: uppercase;} .notes{font-size: 0.9em;}"
+  },
+  {
+    "id": "short-term-prediction-for-bike-sharing-service-usi",
+    "title": "SHORT-TERM PREDICTION FOR BIKE-SHARING SERVICE USING MACHINE LEARNING",
+    "date": "2017-10-03",
+    "imageUrl": "/projects/short-term-prediction-for-bike-sharing-service-usi.jpg",
+    "summary": "The bike-sharing service has brought many conveniences to citizens and served as an effective supplement to mass transit system. For docked bike-sharing service, each docking station has the fixed spots to store bikes and stations could be empty or saturated at some time. Bike-sharing operators would redistribute bikes between stations by trucks according to their experiences. It is ineffective for the operation and inconvenient for users to access this service smoothly. There are many studies on short-term forecasting in transportation, such as traffic flow, traffic congestion, traffic speed, passenger flow and more. However, their applications in the field of bike-sharing still remain blan"
+  },
+  {
+    "id": "green-transportation",
+    "title": "Green Transportation",
+    "date": "2017-06-25",
+    "imageUrl": null,
+    "summary": "Monash university, Institute of Advanced Vehicle technology and JITRI secured research funding of 4 million RMB( AU$ 760,000). The project title is Green Travel Models in Smart Cities: Coordination studies and Integration Platform Project."
+  },
+  {
+    "id": "opening-gated-community",
+    "title": "Opening Gated Community",
+    "date": "2017-04-13",
+    "imageUrl": "/projects/opening-gated-community.jpg",
+    "summary": "Chinese leadership under Xi Jinping is keen to improve traffic congestion in a variety of ways. Among pledges to create greener cities with more public transport, the ruling contained the apparently throwaway line that no more enclosed residential compounds will be built in principle and existing residential and corporate compounds will gradually open up so the interior roads can be put into public use. This would save land and help reallocate transport networks."
+  },
+  {
+    "id": "illegal-parking-reinforcement-app-with-wechat",
+    "title": "Illegal parking reinforcement app with Wechat",
+    "date": "2016-08-05",
+    "imageUrl": "/projects/illegal-parking-reinforcement-app-with-wechat.jpg",
+    "summary": "We developed a Wechat embedded application for helping police officers in China reduce their work load in issuing illegal parking tickets on site."
+  }
+]

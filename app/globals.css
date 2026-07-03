@@ -66,3 +66,11 @@
     @apply font-mono text-xs uppercase tracking-[0.14em] text-cobalt-600;
   }
 }
+
+/* --- KO/EN language toggle (html[data-lang] set by LangToggle) ------------ */
+html[data-lang="en"] .ko-only {
+  display: none !important;
+}
+html:not([data-lang="en"]) .en-only {
+  display: none !important;
+}

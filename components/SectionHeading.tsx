@@ -16,7 +16,10 @@ export default function SectionHeading({ index, titleEn, titleKo }: SectionHeadi
         {index} — {titleEn}
       </p>
       {titleKo ? (
-        <h2 className="mt-2 text-2xl font-bold text-cobalt-900">{titleKo}</h2>
+        <h2 className="mt-2 text-2xl font-bold text-cobalt-900">
+          <span className="ko-only">{titleKo}</span>
+          <span className="en-only">{titleEn}</span>
+        </h2>
       ) : null}
     </div>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PublicationItem from "@/components/PublicationItem";
+import PublicationExplorer from "@/components/PublicationExplorer";
 import { getPublications } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -7,11 +7,10 @@ export const metadata: Metadata = {
   description: "Journal and conference publications from TUPA, KAIST.",
 };
 
+export const revalidate = 3600;
+
 export default async function PublicationsPage() {
   const publications = await getPublications();
-  const years = Array.from(new Set(publications.map((p) => p.year))).sort(
-    (a, b) => b - a,
-  );
 
   return (
     <main className="site-container py-14 lg:py-20">
@@ -19,22 +18,36 @@ export default async function PublicationsPage() {
         Publications
       </h1>
       <p className="mt-3 max-w-2xl">
-        저널·국제학회 논문 목록입니다. 랩 구성원의 전체 목록은 Google Scholar에서
-        확인할 수 있습니다.
+        <span className="ko-only">국제학회 논문과 북챕터 목록입니다. 저널 논문 전체는</span>
+        <span className="en-only">
+          Peer-reviewed international conference papers and book chapters. For
+          the full list of journal papers, see
+        </span>{" "}
+        <a
+          href="https://scholar.google.com/citations?user=Cz_9jloAAAAJ&hl=en"
+          target="_blank"
+          rel="noreferrer"
+          className="text-cobalt-600 underline-offset-2 hover:underline"
+        >
+          Google Scholar
+        </a>
+        <span className="ko-only">와</span>
+        <span className="en-only"> and</span>{" "}
+        <a
+          href="https://www.scopus.com/authid/detail.uri?authorId=55454217700"
+          target="_blank"
+          rel="noreferrer"
+          className="text-cobalt-600 underline-offset-2 hover:underline"
+        >
+          Scopus
+        </a>
+        <span className="ko-only">에서 확인할 수 있습니다.</span>
+        <span className="en-only">.</span>
       </p>
 
-      {years.map((year) => (
-        <section key={year} className="mt-12 gap-10 lg:grid lg:grid-cols-12">
-          <p className="mono-label lg:col-span-3">{year}</p>
-          <ul className="mt-4 max-w-[72ch] lg:col-span-9 lg:mt-0">
-            {publications
-              .filter((p) => p.year === year)
-              .map((pub) => (
-                <PublicationItem key={pub.id} pub={pub} />
-              ))}
-          </ul>
-        </section>
-      ))}
+      <div className="mt-10">
+        <PublicationExplorer publications={publications} />
+      </div>
     </main>
   );
 }

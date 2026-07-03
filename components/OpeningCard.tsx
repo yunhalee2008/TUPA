@@ -14,15 +14,21 @@ export default function OpeningCard({ opening }: { opening: Opening }) {
         <span className="mono-label">{POSITION_LABEL[opening.position]}</span>
         {opening.active ? (
           <span className="rounded-full bg-safety px-2.5 py-0.5 text-xs font-semibold text-white">
-            모집중
+            <span className="ko-only">모집중</span>
+            <span className="en-only">Open</span>
           </span>
         ) : null}
       </div>
       <h3 className="mt-3 font-display text-lg font-bold text-cobalt-900">
         {opening.titleEn}
       </h3>
-      <p className="mt-1 text-sm font-medium text-body/80">{opening.titleKo}</p>
-      <p className="mt-3 text-sm leading-relaxed">{opening.descriptionKo}</p>
+      <p className="ko-only mt-1 text-sm font-medium text-body/80">
+        {opening.titleKo}
+      </p>
+      <p className="mt-3 text-sm leading-relaxed">
+        <span className="ko-only">{opening.descriptionKo}</span>
+        <span className="en-only">{opening.descriptionEn}</span>
+      </p>
       <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-body/80">
         {opening.requirements.map((req) => (
           <li key={req}>{req}</li>
@@ -34,7 +40,11 @@ export default function OpeningCard({ opening }: { opening: Opening }) {
             Deadline <span className="font-mono">{opening.deadline}</span> ·{" "}
           </>
         ) : (
-          "상시 모집 · "
+          <>
+            <span className="ko-only">상시 모집</span>
+            <span className="en-only">Rolling admissions</span>
+            {" · "}
+          </>
         )}
         <a
           className="text-cobalt-600 underline-offset-2 hover:underline"

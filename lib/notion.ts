@@ -63,7 +63,8 @@ async function notionFetch(path: string, body?: unknown): Promise<any | null> {
         "Content-Type": "application/json",
       },
       body: body ? JSON.stringify(body) : undefined,
-      next: { revalidate: REVALIDATE_SECONDS },
+      // Tagged so /api/refresh can purge everything at once via revalidateTag.
+      next: { revalidate: REVALIDATE_SECONDS, tags: ["notion"] },
     });
     if (!res.ok) return null;
     return await res.json();

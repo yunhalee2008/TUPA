@@ -4,10 +4,10 @@ import { useMemo, useState } from "react";
 import PublicationItem from "@/components/PublicationItem";
 import type { Publication, PublicationType } from "@/lib/content";
 
-const TYPES: { value: PublicationType | "all"; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "conference", label: "Conference" },
-  { value: "book", label: "Book" },
+const TYPES: { value: PublicationType | "all"; ko: string; en: string }[] = [
+  { value: "all", ko: "전체", en: "All" },
+  { value: "conference", ko: "학회", en: "Conference" },
+  { value: "book", ko: "북챕터", en: "Book" },
 ];
 
 export default function PublicationExplorer({
@@ -65,7 +65,8 @@ export default function PublicationExplorer({
                   : "border border-mapline bg-white text-body/70 hover:border-cobalt-600 hover:text-cobalt-600"
               }`}
             >
-              {t.label}
+              <span className="ko-only">{t.ko}</span>
+              <span className="en-only">{t.en}</span>
             </button>
           ))}
         </div>
@@ -80,7 +81,10 @@ export default function PublicationExplorer({
         </select>
       </div>
 
-      <p className="mt-4 text-sm text-body/60">{filtered.length} publications</p>
+      <p className="mt-4 text-sm text-body/60">
+        <span className="ko-only">논문 {filtered.length}편</span>
+        <span className="en-only">{filtered.length} publications</span>
+      </p>
 
       {years.map((year) => (
         <section key={year} className="mt-10 gap-10 lg:grid lg:grid-cols-12">

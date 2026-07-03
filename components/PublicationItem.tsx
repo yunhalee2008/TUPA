@@ -42,7 +42,10 @@ export default function PublicationItem({ pub }: { pub: Publication }) {
                 : "rounded-full border border-mapline px-2 py-0.5 text-xs text-body/70"
             }
           >
-            {pub.type}
+            <span className="ko-only">
+              {pub.type === "journal" ? "저널" : pub.type === "book" ? "북챕터" : "학회"}
+            </span>
+            <span className="en-only">{pub.type}</span>
           </span>
           {pub.venue}
         </p>

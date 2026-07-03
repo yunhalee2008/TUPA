@@ -51,8 +51,11 @@ export default function MemberCard({ member }: { member: Member }) {
       ) : null}
       {member.placement ? (
         <p className="mt-3 text-sm text-body/70">
-          <span className="font-medium text-cobalt-900">Now</span> ·{" "}
-          {member.placement}
+          <span className="font-medium text-cobalt-900">
+            <span className="ko-only">현재</span>
+            <span className="en-only">Now</span>
+          </span>{" "}
+          · {member.placement}
         </p>
       ) : null}
       {member.links && member.links.length > 0 ? (

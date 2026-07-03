@@ -37,7 +37,9 @@ export default function OpeningCard({ opening }: { opening: Opening }) {
       <p className="mt-4 border-t border-mapline pt-4 text-sm text-body/70">
         {opening.deadline ? (
           <>
-            Deadline <span className="font-mono">{opening.deadline}</span> ·{" "}
+            <span className="ko-only">마감</span>
+            <span className="en-only">Deadline</span>{" "}
+            <span className="font-mono">{opening.deadline}</span> ·{" "}
           </>
         ) : (
           <>

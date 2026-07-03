@@ -48,7 +48,8 @@ export default async function GalleryPage() {
                 {album.titleEn}
               </h2>
               <p className="mt-1 text-xs text-body/60">
-                {album.images.length} photos
+                <span className="ko-only">사진 {album.images.length}장</span>
+                <span className="en-only">{album.images.length} photos</span>
               </p>
             </div>
           </Link>

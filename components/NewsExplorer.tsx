@@ -4,13 +4,13 @@ import { useMemo, useState } from "react";
 import NewsCard from "@/components/NewsCard";
 import type { NewsCategory, NewsItem } from "@/lib/content";
 
-const CATEGORIES: { value: NewsCategory | "all"; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "award", label: "Awards" },
-  { value: "grant", label: "Grants" },
-  { value: "people", label: "People" },
-  { value: "publication", label: "Publications" },
-  { value: "general", label: "General" },
+const CATEGORIES: { value: NewsCategory | "all"; ko: string; en: string }[] = [
+  { value: "all", ko: "전체", en: "All" },
+  { value: "award", ko: "수상", en: "Awards" },
+  { value: "grant", ko: "과제선정", en: "Grants" },
+  { value: "people", ko: "사람들", en: "People" },
+  { value: "publication", ko: "논문", en: "Publications" },
+  { value: "general", ko: "일반", en: "General" },
 ];
 
 export default function NewsExplorer({ items }: { items: NewsItem[] }) {
@@ -63,7 +63,8 @@ export default function NewsExplorer({ items }: { items: NewsItem[] }) {
                   : "border border-mapline bg-white text-body/70 hover:border-cobalt-600 hover:text-cobalt-600"
               }`}
             >
-              {c.label}
+              <span className="ko-only">{c.ko}</span>
+              <span className="en-only">{c.en}</span>
             </button>
           ))}
         </div>
@@ -78,7 +79,10 @@ export default function NewsExplorer({ items }: { items: NewsItem[] }) {
         </select>
       </div>
 
-      <p className="mt-4 text-sm text-body/60">{filtered.length} items</p>
+      <p className="mt-4 text-sm text-body/60">
+        <span className="ko-only">{filtered.length}건</span>
+        <span className="en-only">{filtered.length} items</span>
+      </p>
 
       {filtered.length > 0 ? (
         <div className="mt-4 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">

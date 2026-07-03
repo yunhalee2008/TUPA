@@ -10,6 +10,14 @@ const CATEGORY_STYLE: Record<NewsCategory, string> = {
   general: "border border-mapline text-body/70",
 };
 
+export const CATEGORY_LABEL: Record<NewsCategory, { ko: string; en: string }> = {
+  award: { ko: "수상", en: "award" },
+  grant: { ko: "과제선정", en: "grant" },
+  people: { ko: "사람들", en: "people" },
+  publication: { ko: "논문", en: "publication" },
+  general: { ko: "일반", en: "general" },
+};
+
 export default function NewsCard({ item }: { item: NewsItem }) {
   return (
     <article className="overflow-hidden rounded-xl border border-mapline bg-white transition-shadow hover:shadow-md">
@@ -29,7 +37,8 @@ export default function NewsCard({ item }: { item: NewsItem }) {
             <span
               className={`rounded-full px-2 py-0.5 text-xs font-medium ${CATEGORY_STYLE[item.category]}`}
             >
-              {item.category}
+              <span className="ko-only">{CATEGORY_LABEL[item.category].ko}</span>
+              <span className="en-only">{CATEGORY_LABEL[item.category].en}</span>
             </span>
           </div>
           <h3 className="mt-3 font-semibold leading-snug text-cobalt-900">

@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CATEGORY_LABEL } from "@/components/NewsCard";
 import { getNews, getNewsItem } from "@/lib/content";
+
+/** Rough language detection for single-language article bodies. */
+function bodyLanguage(body: string[]): "ko" | "en" {
+  const text = body.join(" ");
+  const hangul = (text.match(/[가-힣]/g) ?? []).length;
+  return hangul > text.length * 0.05 ? "ko" : "en";
+}
 
 interface Props {
   params: { id: string };
@@ -42,7 +50,8 @@ export default async function NewsDetailPage({ params }: Props) {
         <div className="mt-6 flex items-center gap-3">
           <span className="font-mono text-sm text-body/60">{item.date}</span>
           <span className="rounded-full border border-mapline px-2 py-0.5 text-xs text-body/70">
-            {item.category}
+            <span className="ko-only">{CATEGORY_LABEL[item.category].ko}</span>
+            <span className="en-only">{CATEGORY_LABEL[item.category].en}</span>
           </span>
         </div>
         <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-cobalt-900 sm:text-4xl">
@@ -73,11 +82,22 @@ export default async function NewsDetailPage({ params }: Props) {
         </p>
 
         {item.body && item.body.length > 0 ? (
-          <div className="mt-6 space-y-4 leading-relaxed text-body/90">
-            {item.body.map((paragraph) => (
-              <p key={paragraph.slice(0, 60)}>{paragraph}</p>
-            ))}
-          </div>
+          <>
+            {bodyLanguage(item.body) === "en" ? (
+              <p className="ko-only mt-6 text-sm text-body/50">
+                아래 본문은 영문 원문으로 제공됩니다.
+              </p>
+            ) : (
+              <p className="en-only mt-6 text-sm text-body/50">
+                The article below is provided in its original Korean.
+              </p>
+            )}
+            <div className="mt-4 space-y-4 leading-relaxed text-body/90">
+              {item.body.map((paragraph) => (
+                <p key={paragraph.slice(0, 60)}>{paragraph}</p>
+              ))}
+            </div>
+          </>
         ) : null}
 
         {rest.length > 0 ? (

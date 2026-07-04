@@ -513,5 +513,944 @@
       "/news/2026-06-korail-award-1.jpg",
       "/news/2026-06-korail-award-2.jpg"
     ]
+  },
+  "2016-05-wuxi-proposal": {
+    "body": [],
+    "images": []
+  },
+  "2016-05-hod-visit": {
+    "body": [
+      "A h ead of civil engineering department from Monash University will visit Suzhou and Nangjing to attend the SEU-Monash Annual meeting.",
+      "On 25th May, Professor Jeff Walker will meet Suzhou Joint Master students."
+    ],
+    "images": [
+      "/news/2016-05-hod-visit-1.jpg"
+    ]
+  },
+  "2016-06-jeff-barry-visit": {
+    "body": [
+      "Professor Jeff Walker and Barry Yu visited the Suzhou campus and had productive time with 2015 cohort students."
+    ],
+    "images": [
+      "/news/2016-06-jeff-barry-visit-1.jpg",
+      "/news/2016-06-jeff-barry-visit-2.jpg",
+      "/news/2016-06-jeff-barry-visit-3.jpg"
+    ]
+  },
+  "2016-06-masters-by-research": {
+    "body": [
+      "Master students at Joint Graduate School are eligible to enroll in the Masters by Research at Monash University right after completion of Monash teaching units.",
+      "The students who enroll in this program are required to submit thesis written in English. The thesis will be also recognized by South East University.",
+      "Although the students cannot meet the requirement set by Monash University at the end, they will get degrees from Monash and SEU if they submit the thesis to SEU in Chinese."
+    ],
+    "images": []
+  },
+  "2016-06-jiangsu-award": {
+    "body": [
+      "The transport department in the SEU-Monash Joint Graduate School is awarded the Best Award of Jiangsu province of 2014 cohort students. This award recognizes our transport class in Suzhou is the best in Jiangsu province in 2016.",
+      "Well done for our students and Terry and Graham!!!"
+    ],
+    "images": []
+  },
+  "2016-06-currie-speech": {
+    "body": [
+      "I invite Professor Graham Currie to deliver the speech to the Suzhou local governments and companies in relation to the public transport systems in metropolises and some case studies on metro, tram, and BRT systems on June 28, 2016 at CCDI.",
+      "As Graham is one of leading experts in public transportation, approximately 200 audience attended the event to gain some insights on recent issues of public transportation.",
+      "Thank Graham to make a great presentation and another thank CCDI for supporting financially this event."
+    ],
+    "images": [
+      "/news/2016-06-currie-speech-1.jpg",
+      "/news/2016-06-currie-speech-2.jpg",
+      "/news/2016-06-currie-speech-3.jpg",
+      "/news/2016-06-currie-speech-4.jpg"
+    ]
+  },
+  "2016-07-xinyuan-confirmation": {
+    "body": [
+      "A big congratulation for Xinyuan's PhD confirmation!",
+      "Xinyuan's PhD's confirmation seminar was held in the Suzhou campus on 4th July 2016. Prof. Graham Currie as a chair and Prof. Hangqian Wu/Dr. Kun An as panel members played an important role in helping the Xinyuan's phd journey. I also express thanks to our Masters' students who are interested in doing research with our group."
+    ],
+    "images": [
+      "/news/2016-07-xinyuan-confirmation-1.jpg",
+      "/news/2016-07-xinyuan-confirmation-2.jpg",
+      "/news/2016-07-xinyuan-confirmation-3.jpg"
+    ]
+  },
+  "2016-07-suzhou-flood": {
+    "body": [
+      "Suzhou was hit by flood on 2nd July 2016. It was not extremely heavy rail but still many areas in Suzhou were affected by rain. Understanding how the flood affect traffic on the Suzhou network is very important to find the best possible routes to detour traffic. In addition, public transit routes can be dynamically changed to accommodate the needs."
+    ],
+    "images": [
+      "/news/2016-07-suzhou-flood-1.jpg",
+      "/news/2016-07-suzhou-flood-2.jpg",
+      "/news/2016-07-suzhou-flood-3.jpg",
+      "/news/2016-07-suzhou-flood-4.jpg"
+    ]
+  },
+  "2016-07-ists-jeju": {
+    "body": [
+      "The the International Symposia of Transport Simulation (ISTS) and the International Workshop on Traffic Data Collection and its Standardisation (IWTDCS) 2016 was held at Jeju National University in Korea from 7th to 8th of July.",
+      "Dr. Inhi Kim and Prof. Zhiyuan Liu from South East university chaired sessions Data collection and Control 1 and 2 respectively. Dr. Kun An, Xinyuan Chen and Wentao Jing delivered the presentations.",
+      "Prof. Jaume Barcelo ( a founder of Aimsun) and Dongshen Hua have a deep conversation about car sharing future.",
+      "A new model for rail-based park and ride with feeder bus services by Xinyuan Chen",
+      "Adaptive Robust Signal Optimization under Coordinated Control by Dr. Kun An",
+      "We also had a wonderful time with the students supervised by Prof. Seonha Lee from Kongju National University.",
+      "Jeju is the best destination in Korea to visit. We enjoyed such a wonderful nature of this unique island."
+    ],
+    "images": [
+      "/news/2016-07-ists-jeju-1.jpg",
+      "/news/2016-07-ists-jeju-2.jpg",
+      "/news/2016-07-ists-jeju-3.jpg",
+      "/news/2016-07-ists-jeju-4.jpg"
+    ]
+  },
+  "2016-07-seu-monash-workshop": {
+    "body": [
+      "18/07/2016 Our Suzhou transport joint program has been successfully conducted for four years now and for both SEU and Monash we feel that it's a good time and opportunity for us to sit together and enhance the program to a higher new level. So, we have organized a workshop in our Suzhou Joint School. We have invited the leaders/lecturers from two sides and also the industrial partners for our internship program to participate and present.",
+      "It was a successful workshop where two universities and local industry and governments come together having a strong professional network and share current transport issues and potential solutions."
+    ],
+    "images": [
+      "/news/2016-07-seu-monash-workshop-1.jpg",
+      "/news/2016-07-seu-monash-workshop-2.jpg",
+      "/news/2016-07-seu-monash-workshop-3.jpg",
+      "/news/2016-07-seu-monash-workshop-4.jpg"
+    ]
+  },
+  "2016-07-guest-speakers": {
+    "body": [
+      "15/07/2016 Our transport group invites Prof. Seonha Lee from Kongju National University and Yuanqiu Bao, a director of transport department at CCDI. Prof. Lee delivered a presentation with practical projects his research team has conducted. Ms. Bao also introduced various projects that CCDI has worked in China context. We really appreciate valuable knowledge and experience in transport engineering field."
+    ],
+    "images": [
+      "/news/2016-07-guest-speakers-1.jpg",
+      "/news/2016-07-guest-speakers-2.jpg",
+      "/news/2016-07-guest-speakers-3.jpg",
+      "/news/2016-07-guest-speakers-4.jpg"
+    ]
+  },
+  "2016-07-gusu-advisor": {
+    "body": [
+      "20/07/2016 Dr. Inhi Kim was appointed to be a distinguished expert by Suzhou Gusu public security bureau traffic force. The ceremony was held on 20th July at the Gusu public security conference room. Our Suzhou research team will help the Gusu public security team solve traffic related problems in Suzhou by providing innovative technology and ideas."
+    ],
+    "images": [
+      "/news/2016-07-gusu-advisor-1.jpg",
+      "/news/2016-07-gusu-advisor-2.jpg",
+      "/news/2016-07-gusu-advisor-3.jpg"
+    ]
+  },
+  "2016-08-shelley-presub": {
+    "body": [
+      "5/Aug/2016. Congratulations Shelley Cao on the successful completion of your Pre - Submission Seminar (PSS), which included an oral presentation and thesis/exegesis summary. This is the final stage of the phd journey. Shelley Cao will complete her thesis within 6 months to be reviewed by 2 external reviewers. Please good luck for her last track!!"
+    ],
+    "images": [
+      "/news/2016-08-shelley-presub-1.jpg",
+      "/news/2016-08-shelley-presub-2.jpg"
+    ]
+  },
+  "2016-09-wentao-mid": {
+    "body": [
+      "23/Aug/2016. Congratulations Wentao Jing on the successful completion of Mid-candidature, which included an oral presentation and thesis/exegesis summary. This is the second milestone of his phd journey. Wentao Jing will keep working on optimal network for electric vehicles with optimal battery swapping station locations."
+    ],
+    "images": [
+      "/news/2016-09-wentao-mid-1.jpg"
+    ]
+  },
+  "2016-10-its-china-visit": {
+    "body": [
+      "12 Oct 2016. ITS China visits Monash university to seek a mutual collaboration. The Chinese delegates attended the ITS World Congress in Melbourne from 10th to 14th, Oct, 2016. Prof. Graham Currie, Hai Vu and Geoff Ross made presentations on ITS and Monash transport group.",
+      "Currie-ITS-China-Visit-12-10-2016.pdf (0 downloads)",
+      "Intelligent-Transport-at-Monash_Vu_Oct-2016.pdf (0 downloads)"
+    ],
+    "images": [
+      "/news/2016-10-its-china-visit-1.jpg",
+      "/news/2016-10-its-china-visit-2.jpg"
+    ]
+  },
+  "2017-02-cictp-accept": {
+    "body": [
+      "I am pleased to announce that many research papers authored by our Master students are accepted by \"The 17th COTA conference International Conference of Transportation Professionals (CICTP2017) \" which will be held during July 7-9, 2017, in Shanghai, China.",
+      "Understanding road rage Insights from a synthesis of research by Xiaohui Xu, Hanyu Lin, Zihao Liu (All 2015) Social media application for illegal parking problem by Bo Wang(2015) Modelling asymmetric and non-additive P&R schemes by Xiyuan Chen(2013, Phd) Analysis of Public Bicycle Sharing Network based on Complex Network Theory by Chunliang Wu (2015) and Yang Shao (2015) Perspectives of opening a gated community and its effect by Chaoqun Song(2014), Tian-Qi Gu(PhD) Analysis of Vehicle Stop-And-Go Driving Behaviors At Signalized Intersections by Sicong Zhu from Beijing Jiatong Univerity",
+      "I expect more papers are on the way to be accepted and will update more shortly. Well done all"
+    ],
+    "images": []
+  },
+  "2017-03-tao-liu-lecture": {
+    "body": [
+      "23/03/2017. Mr Liu as a head of Urban design and planning from CCDI came to give a special lecture to the students of 2016 cohort. Mr Liu shares his professional career in China with our students who had a lot of questions about what they need to prepare before joining to industry. Thank you very much for your time and insights in particularly urban design and planning."
+    ],
+    "images": [
+      "/news/2017-03-tao-liu-lecture-1.jpg",
+      "/news/2017-03-tao-liu-lecture-2.jpg",
+      "/news/2017-03-tao-liu-lecture-3.jpg",
+      "/news/2017-03-tao-liu-lecture-4.jpg"
+    ]
+  },
+  "2017-03-sip-visit": {
+    "body": [
+      "27/03/2017. As part of CIV 5318, Sustainable transport systems, a cohort of 2016 visits Suzhou Industrial Park Exhibition Centre to figure out how Suzhou was renovated by a collaboration with Singapore."
+    ],
+    "images": [
+      "/news/2017-03-sip-visit-1.jpg"
+    ]
+  },
+  "2017-04-sc-wong-ajou": {
+    "body": [
+      "Prof. S.C. Wong from University of HongKong and Dr. Inhi Kim are invited by Prof. Keechoo Choi from Ajoo University in Korea. Prof. Wong gave a great insight of Big Data. The title was Golden Era of Big Data for Transportation Research\" where he used HongKong taxi data of several years to analyse traffic speed and travel time in a urban context.",
+      "Prof. Wong and Choi are Editors in Chief at International Journal of Sustainable Transportation (Ranked 3 in Transportation). Also Prof. Choi play a critical role as a president of Korean Society of Transportation."
+    ],
+    "images": [
+      "/news/2017-04-sc-wong-ajou-1.jpg",
+      "/news/2017-04-sc-wong-ajou-2.jpg"
+    ]
+  },
+  "2017-04-partners-meeting": {
+    "body": [
+      "Prof. Terry Liu and his research team from SEU and Dr. Inhi Kim and his research team visited 2 transport and urban planning companies and one department of Suzhou urban planning. We seek a mutual collaboration in transport network development, big data, public transportation planning, and lots more. We thank them for having time with us sharing their ideas on transport problems."
+    ],
+    "images": [
+      "/news/2017-04-partners-meeting-1.jpg",
+      "/news/2017-04-partners-meeting-2.jpg",
+      "/news/2017-04-partners-meeting-3.jpg",
+      "/news/2017-04-partners-meeting-4.jpg"
+    ]
+  },
+  "2017-04-wuxi-complete": {
+    "body": [
+      "Our research project on road rage funded by an external source, \"Wuxi traffic management research institute of the ministry of public security\" has been successfully completed with the final presentation. This is the first ever project we granted in JGS and many brilliant students are involved in this to deliver a good outcome. I deeply thank Catherine, Kevin, Philip and Kai for leading this project and making it a successful completion. Since Monash ITS made a mutual relationship with this institute recently, I hope we collaborate on many interesting research topics in near future."
+    ],
+    "images": [
+      "/news/2017-04-wuxi-complete-1.jpg",
+      "/news/2017-04-wuxi-complete-2.jpg",
+      "/news/2017-04-wuxi-complete-3.jpg",
+      "/news/2017-04-wuxi-complete-4.jpg"
+    ]
+  },
+  "2016-11-jitri-grant": {
+    "body": [
+      "Monash university, Institute of Advanced Vehicle technology and JITRI secured research funding of 4 million RMB( AU$ 760,000). The project title is Green Travel Models in Smart Cities: Coordination studies and Integration Platform Project.",
+      "The research is led by Dr. Inhi Kim, Prof. Terry Liu from SEU and Prof. Yifan Dai from THU.",
+      "This 3 year project, Monash is planning to recruit 4 phd candidates doing research on a variety of sub topics. I look forward to working on this project and making a great impact on traffic problems.",
+      "Subtopics are as follows; Behavior analysis and demand forecasting based on multi-modal green travel System optimization and resource allocation based on multi-modal green travel Traffic control and demand management based on multi-modal green travel induced travel based on traffic big data Key technologies of cooperative vehicle-infrastructure systems."
+    ],
+    "images": [
+      "/news/2016-11-jitri-grant-1.jpg",
+      "/news/2016-11-jitri-grant-2.jpg"
+    ]
+  },
+  "2017-04-rose-vu-visit": {
+    "body": [
+      "I am very happy to host our ITS director Prof. Geoff Rose and Prof. Hai Vu to our Joint Graduate School in Suzhou. I also thank my students for hospitalizing them with warm welcome.",
+      "Through a meeting with students, we all get to know more each other and we collect some suggestions from the students to improve our China program."
+    ],
+    "images": [
+      "/news/2017-04-rose-vu-visit-1.jpg",
+      "/news/2017-04-rose-vu-visit-2.jpg",
+      "/news/2017-04-rose-vu-visit-3.jpg",
+      "/news/2017-04-rose-vu-visit-4.jpg"
+    ]
+  },
+  "2017-04-monash-speech": {
+    "body": [
+      "I am very thrilled to arrange that our two professors make great research presentations to public in Suzhou. The venue is organized by the Suzhou highway association and the event is cohosted by CCDI.",
+      "This year, more than 100 people from industry, government and universities participated in this event and shared their knowledge and ideas to solve many traffic problems locally and internationally.",
+      "This is 2 nd Monash public speech organized following Graham's speech last year. This event promotes our Monash Suzhou program’s reputation in China.",
+      "I as a director of the China program thank again two professors, hosts and guests today for making this even successful. In addition, Monash ITS is happy to appoint our research partners to Monash associates. Three members are as following from left.",
+      "Mr. Hanzhong Pan, Deputy Director from Traffic Management Research Institute of Public Security Ministry of China. Ms. Yuanqiu Bao, Vice president from CCDI(SuZhou) Exploration & Design Consultant CO.,Ltd. Mr. Zuoming Yin , Deputy Director from Gusu Suzhou Public Security Bureau Prof. Geoff Rose, Director form Monash ITS",
+      "Monash academic staff, staff from Gusu police department and from Suzhou highway association and CCDI.",
+      "I am also so pleased that students from school of urban rail transportation, Soochow University and our students get along with each other.",
+      "I also presented what my research team has done last 3 years including safety anaysis, illegal parking app, and shared bike programs."
+    ],
+    "images": [
+      "/news/2017-04-monash-speech-1.jpg",
+      "/news/2017-04-monash-speech-2.jpg",
+      "/news/2017-04-monash-speech-3.jpg",
+      "/news/2017-04-monash-speech-4.jpg"
+    ]
+  },
+  "2017-06-suzhou-bike": {
+    "body": [
+      "Our research group is invited by Suzhou Urban Planning Ministry to the Shared Bike Program in Suzhou. Dr. Kim made an opening speech on the Suzhou Shared Bike project that will be conducted with Suzhou Urban Planning Ministry, CCDI and Yongan.",
+      "Mr. Gu helps Dr. Kim interpret the opening speech.",
+      "The CEO of Youngan which operates the Suzhou shared bikes docked with more than 2000 stations across Suzhou. He introduced a new designed bike to public. This bike has been rolled out recently in Suzhou.",
+      "Yongan also introduces new Apps for uses to use in a more convenient way. A new bike path was also released to public so that tourists and citizen can enjoy a beautiful Suzhou scenery using the shared bike.",
+      "The one in purple is the most frequent bike users in Suzhou in 2016. This is one of the ways Suzhou gov. encourages people to use more active transportation.",
+      "Recently released shared bikes in Suzhou.",
+      "A research team who will make the Suzhou shared bike program better."
+    ],
+    "images": [
+      "/news/2017-06-suzhou-bike-1.jpg",
+      "/news/2017-06-suzhou-bike-2.jpg",
+      "/news/2017-06-suzhou-bike-3.jpg",
+      "/news/2017-06-suzhou-bike-4.jpg"
+    ]
+  },
+  "2017-06-ccdi-lecture": {
+    "body": [
+      "I thank to Michelle Bao, a Vice-president of CCDI for having a wonderful time with my students, a cohort of 2016. Michelle is one of our Monash associates who supports in many various ways. Giving a lecture is one of annual events. This year, Michelle discussed with the students what industry expects from students. The students have a lot of questions in particularly hiring process in CCDI."
+    ],
+    "images": [
+      "/news/2017-06-ccdi-lecture-1.jpg",
+      "/news/2017-06-ccdi-lecture-2.jpg",
+      "/news/2017-06-ccdi-lecture-3.jpg"
+    ]
+  },
+  "2017-06-graduation-2014": {
+    "body": [
+      "A bid congrats. Such a big achievement for your lives. You guys now have just opened a new chapter in your lives. I hope you all have wonderful future. See you soon again."
+    ],
+    "images": [
+      "/news/2017-06-graduation-2014-1.jpg",
+      "/news/2017-06-graduation-2014-2.jpg",
+      "/news/2017-06-graduation-2014-3.jpg",
+      "/news/2017-06-graduation-2014-4.jpg"
+    ]
+  },
+  "2017-07-cictp": {
+    "body": [
+      "The 17th COTA conference International Conference of Transportation Professionals (CICTP2017) will be held during July 7-9, 2017, in Shanghai, China, jointly organized by Tongji University and Chinese Overseas Transportation Association (COTA). Thank you, my students for attending the conference to make wonderful presentations. I hope to see some of you in Beijing next year again!!! From left Tian-Qi(PhD), Inhi, Bo, Catherine, Lilian, Xinyuan, Ray and Kai",
+      "An interesting layout to discuss among participants.",
+      "Perspectives of opening a gated community and its effect by Tian-Qi Gu(PhD)",
+      "Analysis of Public Bicycle Sharing Network based on Complex Network Theory by Chunliang Wu (2015)",
+      "Social media application for illegal parking problem by Bo Wang(2015)",
+      "Understanding road rage Insights from a synthesis of research by Xiaohui Xu (2015) Modelling asymmetric and non-additive P&R schemes by Xiyuan Chen(2013, Phd) also made good contributions Our good friend, Terry also makes a presentation regarding big data and its applications",
+      "Prof. Keechoo Chio from Ajoo University, South Korea delivers a presentation regarding cutting edge technique in transportation on behalf of Korea Transport Society"
+    ],
+    "images": [
+      "/news/2017-07-cictp-1.jpg",
+      "/news/2017-07-cictp-2.jpg",
+      "/news/2017-07-cictp-3.jpg",
+      "/news/2017-07-cictp-4.jpg"
+    ]
+  },
+  "2017-10-trb-2018": {
+    "body": [
+      "Papers submitted to TRB 2018 are accepted. The list is following: Optimal Sitting and Sizing of the Remote Park-and-Ride Scheme in the Multimodal Transport Network\" by TRB's Standing Committee on Transportation Network Modeling (ADB30). - Xinyuan Chen (PhD student) More are coming"
+    ],
+    "images": []
+  },
+  "2017-09-shelley-phd": {
+    "body": [
+      "I am delighted to announce that Shelley finally is conferred DOCTOR!!! A big congratulation on her great achievement. Sincere thanks to Xiaoying(Shelley) achieving this wonderful result."
+    ],
+    "images": [
+      "/news/2017-09-shelley-phd-1.jpg",
+      "/news/2017-09-shelley-phd-2.jpg"
+    ]
+  },
+  "2017-10-welcome-wenhua": {
+    "body": [
+      "Please join me in welcoming our new phd student, Wenhua Jiang.",
+      "Her research topic is short-term rail passenger flow prediction sponsored by RMCRC, Australia."
+    ],
+    "images": [
+      "/news/2017-10-welcome-wenhua-1.jpg",
+      "/news/2017-10-welcome-wenhua-2.jpg"
+    ]
+  },
+  "2017-11-kai-confirmation": {
+    "body": [
+      "Kai joined the research team last November 2017 and today successfully completed his phd confirmation. From now on, he can be called a Monash PhD student!!!",
+      "Kai has made a good progress on his research on free-floating car sharing. Good luck with his rest of research journey!!"
+    ],
+    "images": [
+      "/news/2017-11-kai-confirmation-1.jpg",
+      "/news/2017-11-kai-confirmation-2.jpg"
+    ]
+  },
+  "2017-11-new-phd-program": {
+    "body": [
+      "On behalf of Emanuele, Chai, Poh and myself, I am very happy to announce that in 2018 we will launch a co-supervised PhD program between the Clayton and Sunway sites of Monash Engineering. The objectives of this co-supervised PhD program are twofold: a) to provide an opportunity for PhD students to have a genuine international PhD experience by spending time on both sites (in the spirit of the Monash-IITB Academy program), and b) to foster greater research links between researchers on the two Engineering campuses The PhD students will be enrolled in Sunway and will nominally spend 2yrs at Sunway and 1yr at Clayton. The preference is for the 2nd yr of candidature to be spent at Clayton (after"
+    ],
+    "images": []
+  },
+  "2017-12-tianqi-confirmation": {
+    "body": [
+      "Mr. Tianqi Gu has successfully passed his confirmation.",
+      "Title : A multi-function framework for bike-share system’s plan, operation and application.",
+      "Summary: Bike-share system (BSs) has existed for 50 years and experienced rapid development in recent years. However, researches of interchange between BSs and public transit is fragmentary, while the methodology were mainly survey-based. Inner analysis of trip and user patterns have seldom been investigated based on massive trip data. In this study, a multi-function framework is meant to build up for BSs plan, operation and application. Three key tasks are included: a) A before- and after- change study of new transits impact on existing BSs using massive data analysis wihle trip pattern new index is presented. b) Correlation study to understand the impact of natural factors, land use as wel",
+      "Bio: Tianqi Gu received his Master’s degree in Transportation planning and management from Southeast University, China in 2010 and his Bachelor’s degree in Transportation Engineering from SEU too in 2007. He commenced his PhD at Monash University in Dec. 2016 under the supervision of Dr. Inhi Kim and Prof. Currie Graham."
+    ],
+    "images": [
+      "/news/2017-12-tianqi-confirmation-1.jpg"
+    ]
+  },
+  "2018-03-transport-innovation": {
+    "body": [
+      "I am pleased to invite Miss Zhe He from Transport Innovation to give a special lecture to my students of 2017 cohort. Transport Innovation focuses on big data analysis and simulation in Suzhou. TUPA and Transport Innovation agreed to collaborate in research and development mutually."
+    ],
+    "images": [
+      "/news/2018-03-transport-innovation-1.jpg",
+      "/news/2018-03-transport-innovation-2.jpg",
+      "/news/2018-03-transport-innovation-3.jpg"
+    ]
+  },
+  "2018-08-ists": {
+    "body": [
+      "ISTS and IWTDCS 2018 aim to discuss about the analysis and the technologies on transportation field, especially on traffic simulations and data collections. The world’s transportation and traffic researchers and practitioners, as well as people who are interested in contributing to or gaining a deeper understanding of the transportation analysis are expected to join this conference.",
+      "Two papers are presented from our team: The uncapacitated battery swapping facility location problem with localized charging system serving electric buses fleet Wentao Jing, Inhi Kim and Kun An Short-term prediction for bike-sharing service using machine learning Bo Wang and Inhi Kim"
+    ],
+    "images": [
+      "/news/2018-08-ists-1.jpg",
+      "/news/2018-08-ists-2.jpg",
+      "/news/2018-08-ists-3.jpg",
+      "/news/2018-08-ists-4.jpg"
+    ]
+  },
+  "2018-07-monash-lecture": {
+    "body": [
+      "Dr. Susi Susilawati from Malaysia campus and Dr. Marilyn Johnson from Clayton campus gave presentations on their research to the Masters students of the 2017 cohort."
+    ],
+    "images": [
+      "/news/2018-07-monash-lecture-1.jpg",
+      "/news/2018-07-monash-lecture-2.jpg",
+      "/news/2018-07-monash-lecture-3.jpg"
+    ]
+  },
+  "2018-06-graduation": {
+    "body": [
+      "A big congrats for all my students who graduated SEU-Monash Joint Masters Program. The graduation ceremony takes place in the Intercontinental hotel, Suzhou, China. I hope you all have a big success in your near future!!!"
+    ],
+    "images": [
+      "/news/2018-06-graduation-1.jpg",
+      "/news/2018-06-graduation-2.jpg",
+      "/news/2018-06-graduation-3.jpg",
+      "/news/2018-06-graduation-4.jpg"
+    ]
+  },
+  "2018-09-ck-seminar": {
+    "body": [
+      "The 5th China-Korea Joint Seminar on Sustainable Transportation Systems, Sep 14 - Sep 16, 2018, KAIST, Daejeon, South Korea. http://ckjssts.org/program.html",
+      "The 5th China-Korea Joint Seminar on Sustainable Transportation Systems (CKJSSTS) is the gathering of leading researchers in the field of transportation from China and South Korea. The purpose of this seminar is to share the innovative ideas and cutting-edge knowledge for transportation research; and to establish a foundation for collaborative research between two countries.",
+      "This China-Korea Joint Seminar on Sustainable Transportation Systems was successfully held four times in Korea and China. The 1st and 3rd seminars were held in Seoul and Jeju, Korea, respectively and the 2nd and 4th seminars were held in Beijing and Shanghai, China. Especially, papers presented in the 2nd seminar have been published as a special issue in the International Journal of Transportation."
+    ],
+    "images": [
+      "/news/2018-09-ck-seminar-1.jpg",
+      "/news/2018-09-ck-seminar-2.jpg"
+    ]
+  },
+  "2018-09-yancheng-parking": {
+    "body": [
+      "Professor Seonha Lee and I were invited by China Traffic Force to the 2018 2nd smart parking forum in Yancheng. Thank you for inviting us this wonderful opportunity, specially thanks to ITS China and Shanghai consulate-general Park."
+    ],
+    "images": [
+      "/news/2018-09-yancheng-parking-1.jpg",
+      "/news/2018-09-yancheng-parking-2.jpg",
+      "/news/2018-09-yancheng-parking-3.jpg",
+      "/news/2018-09-yancheng-parking-4.jpg"
+    ]
+  },
+  "2018-10-trb-2019": {
+    "body": [
+      "Well done TUPA on TRB 2019. 5 papers accepted this round. The Transportation Research Board (TRB) 98th Annual Meeting will be held January 13–17, 2019, at the Walter E. Washington Convention Center, in Washington, D.C. The information-packed program is expected to attract more than 13,000 transportation professionals from around the world. Chunliang Wu, Exploring the relationship between built environment and public sharing bike flow in Suzhou, China using geographically weighted regression model Wenhua Jiang, Imputation of missing transfer passenger flow with self-measuring multi-task gaussian process Meina Zheng, An analysis of short-term available parking space forecasting method based on"
+    ],
+    "images": []
+  },
+  "2018-10-xinyuan-final": {
+    "body": [
+      "A big congrats for Xinyuan on passing the final review. Prof. Graham Currie as a chair, Dr. Nan Zheng and Dr. Qianbing Zhang as panel members are served for this milestone. Good luck for your PhD thesis and job hunting!!"
+    ],
+    "images": [
+      "/news/2018-10-xinyuan-final-1.jpg",
+      "/news/2018-10-xinyuan-final-2.jpg"
+    ]
+  },
+  "2018-10-wenhua-confirmation": {
+    "body": [
+      "I am very glad that Wenhua has been confirmed PhD. Her research topic is \"Short-term passenger demand prediction and crowd management for special events\" supervised by Dr. Nan Zheng , Dr. Paul Reichl , and me. The chair ( Prof. Hai Vu ) and the pannels ( Dr. Kun An and Dr. Ha Bui ) were served for this event. Congratulation Wenhua and keep it up!!"
+    ],
+    "images": [
+      "/news/2018-10-wenhua-confirmation-1.jpg"
+    ]
+  },
+  "2018-11-ogden-lecture": {
+    "body": [
+      "Monash ITS welcomes Prof. Bart van Arem from Delft University of Technology, The Netherlands giving a speech to transport lovers at State Library in Melbourne. Lecture Topic Driverless vehicles and the future of urban transport: Beyond the Hype Abstract Melbourne faces a considerable challenge to maintain its much celebrated livability in the face of population growth. Transport is critical and smart solutions are needed. Autonomous or driverless vehicles are regularly promoted as the ‘solution’ to a wide range of urban transport challenges. Will we sleep walk into an urban mobility future defined for us by the driverless vehicle industry or make conscious choices about the role that advance"
+    ],
+    "images": [
+      "/news/2018-11-ogden-lecture-1.jpg",
+      "/news/2018-11-ogden-lecture-2.jpg"
+    ]
+  },
+  "2018-11-tianqi-mid": {
+    "body": [
+      "I am very glad that Tianqi Gu has been passed the mid-review. His research topic is “ Inter Relationship between Shared Bike System and Mass Transit considering Traffic Condition ” supervised by Prof. Graham Currie , and me. The chair ( Prof. G eoff Rose) and the pannels ( Dr. Nan Zheng and Dr. Y e Lu) were served for this event. Congratulation Tianqi and keep it up!!"
+    ],
+    "images": [
+      "/news/2018-11-tianqi-mid-1.jpg",
+      "/news/2018-11-tianqi-mid-2.jpg"
+    ]
+  },
+  "2018-12-monash-ranked-1": {
+    "body": [
+      "The latest subject rankings released through the the Centre of World University Rankings (for 2017) puts Monash in first place in the transportation field: https://cwur.org/2017/subjects.php#Transportation"
+    ],
+    "images": [
+      "/news/2018-12-monash-ranked-1-1.jpg"
+    ]
+  },
+  "2019-01-trb-98": {
+    "body": [
+      "The Transportation Research Board (TRB) 98th Annual Meeting will be held January 13–17, 2019, at the Walter E. Washington Convention Center, in Washington, D.C.",
+      "Two PhD students(Wenhua Jiang and Chunliang Wu) and Three Masters students(Yan Xia, Huamei Zhu and Ning Xu) presented their research outcomes at TRB. Very well done, especially those from Joint Masters Program."
+    ],
+    "images": [
+      "/news/2019-01-trb-98-1.jpg",
+      "/news/2019-01-trb-98-2.jpg",
+      "/news/2019-01-trb-98-3.jpg",
+      "/news/2019-01-trb-98-4.jpg"
+    ]
+  },
+  "2018-12-hksts-24": {
+    "body": [],
+    "images": [
+      "/news/2018-12-hksts-24-1.jpg",
+      "/news/2018-12-hksts-24-2.jpg",
+      "/news/2018-12-hksts-24-3.jpg",
+      "/news/2018-12-hksts-24-4.jpg"
+    ]
+  },
+  "2019-03-wenhua-travel-award": {
+    "body": [
+      "Big congrats for Wenhua's Faculty of Engineering Graduate Research International Travel Award!! Wenhua will visit Prof. Haris Koutsopoulos's group at Northwest university, the US for 6 months."
+    ],
+    "images": [
+      "/news/2019-03-wenhua-travel-award-1.jpg"
+    ]
+  },
+  "2019-04-sustainable-construction": {
+    "body": [
+      "Local universities including, Liverpool University, Southeast university, Nanjing university, Tonji university and Monash university invites to the 1st workshop for sustainable construction in civil engineering on 6th June 2019."
+    ],
+    "images": [
+      "/news/2019-04-sustainable-construction-1.jpg"
+    ]
+  },
+  "2019-06-liverpool-workshop": {
+    "body": [
+      "I am pleased to inform you that my phd student, Tianqi Gu won the best phd research award from the 1st Joint Workshop held in Xian-Liverpool University, Suzhou. Also our phd candidates (Taeho and Dong) made a wonderful presentation today.",
+      "Dr. Mike Ma gave an invited talk to the audience about smart operation of public transportation."
+    ],
+    "images": [
+      "/news/2019-06-liverpool-workshop-1.jpg",
+      "/news/2019-06-liverpool-workshop-2.jpg",
+      "/news/2019-06-liverpool-workshop-3.jpg",
+      "/news/2019-06-liverpool-workshop-4.jpg"
+    ]
+  },
+  "2019-09-bo-confirmation": {
+    "body": [
+      "Congratulation on Bo's confirmation. All the panels and the chair impressed Bo's research progress. The presentation was also very comprehensive. If anyone needs the seminar in a video file please contact me. Well done Bo!!",
+      "Title: Short-term traffic state estimation and prediction based on spatiotemporal neural networks",
+      "Research Theme : Monitoring, Prediction and Protection",
+      "Summary : Spatiotemporal neural networks (NN) models have recently achieved competitive results for short-term traffic prediction and achieved outstanding outcomes. However, two problems still require further study in terms of model performance and inner mechanism understanding: (1). The forecasting model affected by many aspects like model inputs, model structure, external factors, and optimisation function. How to design an appropriate framework for short-term traffic state prediction? (2). The existing related studies mainly use the knowledge and advantage from the neural network field, but how to incorporate transport domain knowledge with the above framework? Therefore, th e aims of thi",
+      "Bio : Bo Wang received the double M.S degree in transportation engineering from Monash University and Southeast University in 2018. He commenced his PhD at Monash University in 2018 under the supervision of Dr. Inhi Kim, Prof. Hai Vu and Dr. Chen Cai. His research interests include intelligent transport systems, deep neural networks and big data mining in transportation."
+    ],
+    "images": [
+      "/news/2019-09-bo-confirmation-1.jpg"
+    ]
+  },
+  "2019-10-trb-99": {
+    "body": [
+      "I am pleased that TUPA has made good outcomes at the 99th TRB conference. Inferring The Optimal Number Of Dockless Shared Bike In A New Area By Applying The Gradient Boosting Decision Tree Model by Dong Xiao, Tianqi Gu, Yuanqiu Bao, and Inhi Kim The Use of Emerging Virtual Reality Technology in Road Safety Analysis: The Hook-Turn Case by Taeho Oh, Yanping Xu, Zhibin Li, and Inhi Kim Short-Term Traffic Prediction Using A Spatial-Temporal CNN Model With Transfer Learning by Wang Bo, Hai, Vu, and Inhi Kim"
+    ],
+    "images": []
+  },
+  "2020-06-lilian-progress": {
+    "body": [
+      "Big congrats. Lilian has successfully passed the progress review with outstanding marks."
+    ],
+    "images": []
+  },
+  "2020-07-dong-confirmation": {
+    "body": [
+      "Although many strategies and policies have been advocated, either from the demand or supply aspect, to mitigate the traffic congestion, still, the problem remains to exist. A new perspective to visit the causes and to tackle this problem is urged. Extensive studies have revealed that the built environment can highly be associated with determining human spatial activities, especially automobile travel behaviors. Through travel behaviors, lead to the generation of traffic, which has an impact on traffic operation and control action. However, how the built environment directly influences the traffic performance (congestions and delays) have been rarely studied and lack of evidence.",
+      "In this context, this research aims to establish an in-depth understanding of the impacts of the built environment on traffic congestion at different spatial scales. Trying to answer the questions as 1) What built environment features are most relevant to the change of traffic congestion? 2) To what extent the change of the built environment features (by considering geographical scale) causes a difference in the traffic congestion level. 3) How can urban mobility and accessibility be optimized and enhanced via manipulating the design of the built environment? To address the above issues, the objectives of this research are 1) To synthesize the critical built environment indicators that hold ",
+      "By knowing this relationship, the outcome of this research can help guide the design of the urban/transportation planning policy for urban sprawl controls and mobility enhancement from the beginning design of the land use and the infrastructure implementation plaN."
+    ],
+    "images": []
+  },
+  "2020-07-taeho-confirmation": {
+    "body": [
+      "Traffic incident is one of the factors causing traffic congestion on the roads. The traffic management centres start accumulating incident data to manage the congestion. However, the incidents are not properly managed because many minor accidents happen to be unreported. Therefore, systematic ways for detecting and accumulating events data are necessary. This research aim is to introduce a novel way of obtaining incident-related data and to develop a robust detection algorithm to recognize incidents and its type simultaneously by machine learning.",
+      "I received the M.S degree in transportation engineer ing from Kongju National University, South Korea in 2017. I commenced Joint Ph.D. degree with Southeast University, China in 2018 under the supervision of Dr. Inhi Kim, Prof. Graham Currie and Prof. Zhibin Li. Research interests include intelligent transport systems, traffic simulation, virtual reality, driving simulator and deep learning analysis."
+    ],
+    "images": []
+  },
+  "2020-08-bo-mid": {
+    "body": [
+      "Congrats Bo! The mid review has been successfully completed.",
+      "Short-term traffic state estimation and prediction based on spatiotemporal neural networks",
+      "Spatiotemporal neural networks (NN) models have recently achieved competitive results for short-term traffic prediction and achieved outstanding outcomes. However, two problems still require further study in terms of model performance and inner mechanism understanding: (1). The forecasting model affected by many aspects like model inputs, model structure, external factors, and optimisation function. How to design an appropriate framework for short-term traffic state prediction? (2). The existing related studies mainly use the knowledge and advantage from the neural network field, but how to incorporate transport domain kn owledge with the above framework? Therefore, th e aims of this study a"
+    ],
+    "images": [
+      "/news/2020-08-bo-mid-1.jpg"
+    ]
+  },
+  "2020-09-monash-adjunct": {
+    "body": [
+      "Inhi Keeps closely working with Monash University as an adjunct senior lecturer until 2023. Kongju National University and Monash University will collaborate in teaching and research continuously."
+    ],
+    "images": [
+      "/news/2020-09-monash-adjunct-1.jpg"
+    ]
+  },
+  "2020-10-trb-2021": {
+    "body": [
+      "This year, only one paper had been submitted from TUPA and it was accepted.",
+      "The topic is \"Explore the Applicability of Shared Streets with Virtual Reality Technology\" by Xiaojian(Vannesa) Hu, Taeho Oh, Inhi Kim and Xiaojian Hu(from SEU).",
+      "This manuscript was prepared by my Master student, Vannesa. She proves we can always make it no matter which position you are now.",
+      "TUPA will keep encourage master and even bachelor students to try such a prestigious conference like TRB in the future."
+    ],
+    "images": []
+  },
+  "2020-09-goodbye-monash": {
+    "body": [
+      "I had great time at Monash with my fantastic colleagues for 6 years. I cannot forgot what you have done to me. I have been formed by your great help. I am going to miss you all. Thanks and take care till we meet again."
+    ],
+    "images": [
+      "/news/2020-09-goodbye-monash-1.jpg"
+    ]
+  },
+  "2020-10-new-tupa-korea": {
+    "body": [
+      "New TUPA has just started with 6 members today in KNU. Our team is small and not yet strong as we just started but will be getting stronger in research and team sprite. Thank you for trusting me in paving the ways we go together. Let's bring it on and make something big happen together guys!!!"
+    ],
+    "images": [
+      "/news/2020-10-new-tupa-korea-1.jpg",
+      "/news/2020-10-new-tupa-korea-2.jpg"
+    ]
+  },
+  "2020-10-special-issue": {
+    "body": [
+      "Active Transportation describes all human-powered forms of travel. Walking and cycling are among the most popular and can be combined with other modes, such as public transit. It is a key way for more people to be consistently active in their daily lives, improving the quality of life. Active transportation is one of the most cost-effective ways for an individual to become more physically active and remain healthy in the long-term.",
+      "Investments in active transportation infrastructure yield positive outcomes, for example, efficient transportation operation, improved air quality, reduced contributions to climate change, improved vibrancy and livability, vehicle operational cost saving, reduced congestion, and more.",
+      "Reasons that people give for not walking or cycling usually involve poor weather, safety concerns, a lack of sidewalks and cycling facilities, time pressures, and a lack of secure bicycle parking. Local governments have a crucial role and expertise with design and land use strategies to overcome these challenges.",
+      "In many recent years, various data sources detecting the movement of active transportation users and their activities have been implemented to understand travel behaviour. In a big data era, it became much feasible to estimate and predict travel behaviour to make a better transport plan. This special issue tries to compile high-quality research papers to contribute to the active transport area.",
+      "The objective of this Special Issue is to bring together state-of-the-art research contributions that address challenges in contemporary data pre and post processing, data management, data fusion, data driven AI applications, extensibility of data application in the active transport field.",
+      "The special issue encourages the authors to contribute submissions from a broad range of research fields related to the recent active transport data to many practitioners and academics as followings",
+      "Transportation planning and design Community land use and design Safety concerns for walking and biking First and last mile accessibility Active transport lifelong experience Active transport with health implications Shared mobility(dockless bike, stationary bikes, electric scooter) implementation Special treatments for active transport A relationship between public transport and active transportation Pedestrian travel behavior and walking pattern Elderly mobility"
+    ],
+    "images": [
+      "/news/2020-10-special-issue-1.jpg"
+    ]
+  },
+  "2020-11-kst-jaeeun": {
+    "body": [
+      "TUPA 3학년 정재은 \"GPS TRAJECTORY DATA기반 통행비용함수 보정방안\" 주제로 2020 교통학회 논문 발표하여 우수 논문상 수상"
+    ],
+    "images": [
+      "/news/2020-11-kst-jaeeun-1.jpg",
+      "/news/2020-11-kst-jaeeun-2.jpg",
+      "/news/2020-11-kst-jaeeun-3.jpg"
+    ]
+  },
+  "2020-11-signal-patent": {
+    "body": [],
+    "images": [
+      "/news/2020-11-signal-patent-1.jpg"
+    ]
+  },
+  "2020-11-its-fall": {
+    "body": [
+      "○ 일정: 2020년 11월 19일(목) ~ 20일(금) ○ 장소: 제주한라대학교 한라컨벤션센터",
+      "Deep Learning 기반 RSE 검지기 교통량 데이터 보정연구 by 권동현, 박솔은, 이창희, 김인희 자율주행차량 인프라 규모에 대한 거시적 교통흐름 분석 by 강지우, 유예지, 정재은, 김인희"
+    ],
+    "images": [
+      "/news/2020-11-its-fall-1.jpg",
+      "/news/2020-11-its-fall-2.jpg",
+      "/news/2020-11-its-fall-3.jpg",
+      "/news/2020-11-its-fall-4.jpg"
+    ]
+  },
+  "2021-01-its-2020-best": {
+    "body": [
+      "권동현, 박솔은 학생이 2020 한국 ITS학회 추계 학술대회에서 우수논문상을 수상하였습니다!!"
+    ],
+    "images": [
+      "/news/2021-01-its-2020-best-1.jpg"
+    ]
+  },
+  "2021-02-young-researcher-grant": {
+    "body": [
+      "김인희 교수가 과학기술정보통신부가 주관하고 한국연구재단이 지원하는 2021년도 기초연구사업 신진연구자 지원 사업에 선정됐다.",
+      "한국연구재단 기초연구사업의 신진연구자 지원 사업은 연구자의 창의적 연구의욕 고취 및 연구역량 극대화를 통해 우수 인력을 양성하고 국가 경쟁력을 제고하기 위한 사업으로, 김인희 교수는 5년간 약 7억원의 연구비를 지원 받게 된다.",
+      "과제명: Covid-19 시대의 공유 모빌리티와 대중교통을 연계한 교통운영 방안"
+    ],
+    "images": [
+      "/news/2021-02-young-researcher-grant-1.jpg"
+    ]
+  },
+  "2021-04-taeho-progress": {
+    "body": [
+      "Title: Personalized autonomous driving maneuver based on reinforcement learning",
+      "It is evident that road users will be changed from human-driven cars to automated-driven cars in the future by progressive research trends. However, the adoption of autonomous vehicles in our daily life is controversial in many different aspects since people have not ready to accept autonomous vehicles yet. Significant concerns are safety and reliability. According to Reuters , 67 percent of respondents considered that the safety standard of autonomous vehicle driving should be higher than conventional vehicle driving. Plus, on 2020 March, almost half of the Americans responded that they would never take autonomously driven cars, and 60% of respondents said they would have more trust in the ",
+      "Optimizing autonomous driving maneuver at Unsignalized intersection research is insufficient compared to research at the signalized intersection. Most of them do not consider human behavior and only focus on the efficiency of movement, but this study will consider people3's characteristics. Training based on the personalized driving data is expected to shorten the time to reach the optimized value for reinforcement learning. It is possible to compare how realistic the trained model is by comparing the data of human driving in a virtual environment."
+    ],
+    "images": [
+      "/news/2021-04-taeho-progress-1.jpg"
+    ]
+  },
+  "2021-04-its-spring": {
+    "body": [
+      "2021 춘계 ITS 학회가 2021년 4월 22~23일 강릉에서 개최되었습니다.",
+      "Zahra Nourmohammadi, 신대섭, 유예지, 김인희; 해양 사고 예측을 위한 머신러닝 기법 적용방안 연구 Fatemeh Nourmohammadi, 노유나, 정재은, 김인희;국내 항적 데이터 시각화 및 밀도 연구 박솔은, 강지우, 김인희; 세종시 Super BRT 우선신호 효과 분석 권동현, 박현철, 이창희, 김인희; CNN-LSTM 모델 기반 RSE검지기 교통량 데이터 보정연구 프로그램 다운로드 https://www.dropbox.com/s/3f18kda53uw1vfz/2021%20%EC%B6%98%EA%B3%84%ED%95%99%EC%88%A0%EB%8C%80%ED%9A%8C%20%EC%84%B8%EC%85%98%EB%B3%84%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8.pdf?dl=0"
+    ],
+    "images": [
+      "/news/2021-04-its-spring-1.jpg",
+      "/news/2021-04-its-spring-2.jpg",
+      "/news/2021-04-its-spring-3.jpg",
+      "/news/2021-04-its-spring-4.jpg"
+    ]
+  },
+  "2021-05-its-spring-best": {
+    "body": [
+      "우리 연구실 Zahra Nourmohammadi, 유예지 학생이 2021 춘계 ITS학술대회에서 \"해양사고 예측을 위한 머신러닝 기법 적용방안 연구\" 라는 주제로 우수논문상을 수상하였습니다."
+    ],
+    "images": [
+      "/news/2021-05-its-spring-best-1.jpg"
+    ]
+  },
+  "2021-05-wenhua-presub": {
+    "body": [
+      "Wenhua has just passed the pre-submission today. She has made a fantastic progress since she joined Monash back in 2017.",
+      "I hope your next journey waits for another superb moments with your partner!!!. Well done Wenhua."
+    ],
+    "images": [
+      "/news/2021-05-wenhua-presub-1.jpg"
+    ]
+  },
+  "2021-05-basic-research-lab": {
+    "body": [
+      "김인희 교수는 사회시스템공학과 추연욱교수(PI) , 김두기교수 와 컴퓨터공학과 김정은교수 와 함께 과학기술정보통신부가 주관하고 한국연구재단이 지원하는 2021년도 기초연구실 지원사업에 선정되었습니다.",
+      "이번 연구단은 2021년 6월부터 2024년 2월까지 33개월동안 13억 7천5천만원의 연구비를 지원받아 아래의 과제에 대해 연구를 진행하게 되었습니다.",
+      "과제명: 대심도 대공간 도시지하구조물의 데이터 융합 기반 지진재난 대응기술"
+    ],
+    "images": [
+      "/news/2021-05-basic-research-lab-1.jpg",
+      "/news/2021-05-basic-research-lab-2.jpg"
+    ]
+  },
+  "2021-07-first-innovation-lab": {
+    "body": [
+      "김인희 교수가 2021년도 우수신진연구 최초 혁신 실험실에 최종선정되었습니다. 연구재단으로 약 1억원이 지원될 예정이고 이로써 초기 연구실험실을 조기에 구축할수 있게 되었습니다.",
+      "CPU 2CPU / 인텔 제온 플래티넘 8260 2.4GHz, 3.9GHz Turbo, 24C, 10.4GT/s 3UPI, 35.75MB,HT (165W) DDR4-2933 RAM 1TB 8x128GB DDR4 2933MHz LRDIMM ECC 메모리 HDD #1 2EA x M.2 2TB PCIe NVMe Class 40 SSD HDD #2 2EA x 3.5인치 8TB 7200rpm SATA 엔터프라이즈 하드 드라이브 RAID Controller 인텔 통합형 컨트롤러 (RST-e) (1-2 Front FlexBay NVMe 드라이브 포함) GPU 3EA x NVIDIA Quadro GV100, 32GB, 4 DP (Precision 7920 Tower) NVLink NIC 온 보드 듀얼-포트 1GbE LOM Wireless 인텔 듀얼 밴드 무선 AC 8265 (802.11ac) 2x2 + 블루투스 모듈 Power Precision 7920 타워 섀시 (BC_PCIe) CL / 1400W ODD 8x DVD-/+RW 슬림형 K/B+MOUSE Dell 무선 키보드및 마우스-KM717 (한국어) O/S Windows 10 Pro (Workstations 용) (4 코어 Plus) 한글 Warranty 3년 ProSupport:(7x24) 4-시간 이내 방문 서비스"
+    ],
+    "images": [
+      "/news/2021-07-first-innovation-lab-1.jpg"
+    ]
+  },
+  "2021-08-ocean-bigdata": {
+    "body": [
+      "TUPA의 막둥이들 정재은, 유예지, 강지우, 박현철 학생이 2021 해양 수산 빅데이터 분석 경진대회에서 각각 대상, 최우수상, 우수상, 우수상을 수상하였습니다.",
+      "이 대회는 2021 해양수산 빅데이터 분석 경진대회는 해양수산부가 주최하고 울산항만공사와 UNIST 기술경영전문대학원이 공동 주관하여 참가자들은 2021년 8월 18일(수)부터 20일(금)까지 사전 교육을 받고, 20일(금)부터 23일(월)까지 비대면 방식으로 대회에 참여하였습니다.",
+      "이번 대회는 ‘해상물류 빅데이터 활용 활성화와 대학생의 창의적인 아이디어를 통한 신규 비즈니스 모델의 발굴 및 신규 부가가치 창출’을 주제로 펼쳐졌고, 참가 학생들은 공공기관과 민간기업의 데이터를 기반으로, 프로젝트를 수행하였습니다.",
+      "수상자들은 추후 스마트 항만물류 지원센터의 창업지원 사업 지원 시 우대 특전도 받을 수 있게 되었습니다."
+    ],
+    "images": [
+      "/news/2021-08-ocean-bigdata-1.jpg",
+      "/news/2021-08-ocean-bigdata-2.jpg",
+      "/news/2021-08-ocean-bigdata-3.jpg"
+    ]
+  },
+  "2021-09-bo-final": {
+    "body": [
+      "Congratulation my 7th PhD student, Bo Wang for the successful PhD final defense.",
+      "The PhD title is \"Short-term traffic state estimation and prediction based on spatiotemporal neural networks\"",
+      "It has been a fantastic journey with you Bo. Good luck on your bright future step!!! I look forward to it!!!"
+    ],
+    "images": [
+      "/news/2021-09-bo-final-1.jpg"
+    ]
+  },
+  "2021-10-its-fall": {
+    "body": [
+      "TUPA가 2021년도 추계 ITS학회에 총 6개의 논문을 발표하였습니다.",
+      "■ 일시 : 2021년 10월 21일(목)-22일(금) ■ 장소 : 제주한라대학교 한라컨벤션센터",
+      "MaaS(Mobility as a Service)의 수요 관리 연구 by 유예지 공간지향능력 비교를 통한 VR 트레드밀 기반 보행자 시뮬레이터 사용의 유의성 검증 연구 by 박현철 Online 실시간 교통 분석 및 활용방안 : 교통 시뮬레이션과 동적 시각화 툴 연계 by 정재은 딥러닝(ResNet1D) 모델 기반 RSE 검지기 교통량 데이터 장기 예측 연구 by 권동현 해양 사고 예측을 위한 머신러닝 기법 적용방안 연구 by Zahra 긴급선박 경로 분석 및 최적화 모델 연구 by Fatemeh"
+    ],
+    "images": [
+      "/news/2021-10-its-fall-1.jpg",
+      "/news/2021-10-its-fall-2.jpg",
+      "/news/2021-10-its-fall-3.jpg",
+      "/news/2021-10-its-fall-4.jpg"
+    ]
+  },
+  "2021-10-ysc-visit": {
+    "body": [
+      "서울시립대 박신형교수, 경기대 김정화교수, 명지대 박호철교수, 아주대 소재현교수, 계명대 권오훈교수, 카이스트 장기태 교수가 TUPA를 방문하여 교통전반에 대한 세미나를 하였습니다."
+    ],
+    "images": [
+      "/news/2021-10-ysc-visit-1.jpg",
+      "/news/2021-10-ysc-visit-2.jpg",
+      "/news/2021-10-ysc-visit-3.jpg",
+      "/news/2021-10-ysc-visit-4.jpg"
+    ]
+  },
+  "2021-11-its-fall-hyunchul": {
+    "body": [
+      "제주도에서 2021년 10월 21일에서 22일까지 개최된 2021 추계 ITS 학회에서 우리학과 4학년 박현철 학생이 우수 논문상을 수상하였습니다.",
+      "ITS 학회는 학부세션이 따로 없어 전국 석박생들과 경쟁하여 이룬 쾌거이기에 더 축하드립니다.",
+      "\"공간지향능력 비교를 통한 VR 트레드밀 기반 보행자 시뮬레이터 사용의 유의성 검증 연구\" 라는 제목으로 김인희교수와 연구수행을 하였습니다."
+    ],
+    "images": []
+  },
+  "2021-11-kst85": {
+    "body": [
+      "Tupa 가 제주도에서 11월 10일부터 11일까지 열린 제 85회 추계 교통학술대회에서 편의 논문을 발표하였습니다.",
+      "오픈소스를 이용한 교통데이터 시각화 by 정재은 보행자 편의성 향상을 위한 메타버스 기술 활용방안 by 박현철 군집주행의 비율과 군집주행내 차량 대수가 교통류에 미치는 영향 분석 by 유예지 Ocean Accident Prediction based on Deep Learning Model in Blackspots found by Clustering Algorithms in Territorial Sea of South Korea by Zahra Vessel Trajectory Big data analysis using Apache Spark and prediction based on Machine Learning by Fatemeh 그래프 딥러닝 모델 기반 RSE검지기 교통량 데이터 예측연구 by 권동현 Mircosimulation 통합 VR Multi-Agent Driving Simulator Platform 개발연구 by 오태호"
+    ],
+    "images": [
+      "/news/2021-11-kst85-1.jpg",
+      "/news/2021-11-kst85-2.jpg",
+      "/news/2021-11-kst85-3.jpg",
+      "/news/2021-11-kst85-4.jpg"
+    ]
+  },
+  "2021-11-yeji-scholarship": {
+    "body": [
+      "축하드립니다. TUPA 유예지 4학년 학생이 서울대에서 선정한 박창호 장학금 교통부분 장학생으로 선정되어서 대한교통학회장(이선하교수님)으로 부터 증서와 장학금을 지급 받았습니다!!!"
+    ],
+    "images": [
+      "/news/2021-11-yeji-scholarship-1.jpg",
+      "/news/2021-11-yeji-scholarship-2.jpg"
+    ]
+  },
+  "2021-11-dong-mid": {
+    "body": [
+      "Dong has just passed the mid candidature milestone!! Well done. His research topic is \" Exploring the Effects of the Built Environment on the Traffic Dynamics\"."
+    ],
+    "images": [
+      "/news/2021-11-dong-mid-1.jpg"
+    ]
+  },
+  "2021-12-kst-awards": {
+    "body": [
+      "TUPA members receive 3 best paper awards from Korean Society of Transportation !!!",
+      "군집주행의 비율과 군집주행내 차량 대수가 교통류에 미치는 영향 분석 by 유예지, 김인희 그래프 딥러닝 모델 기반 RSE검지기 교통량 데이터 예측연구 by 권동현, 이창희, 김인희 Mircosimulation 통합 VR Multi-Agent Driving Simulator Platform 개발연구 by 오태호, 김인희"
+    ],
+    "images": [
+      "/news/2021-12-kst-awards-1.jpg",
+      "/news/2021-12-kst-awards-2.jpg",
+      "/news/2021-12-kst-awards-3.jpg",
+      "/news/2021-12-kst-awards-4.jpg"
+    ]
+  },
+  "2021-12-neurips": {
+    "body": [
+      "Bo makes a presentation of his current research in NeurIPS 2021!!",
+      "The title is \"Large-scale Traffic Prediction using 3DResNet and Sparse-UNet\"",
+      "Further information for the program please visit the website."
+    ],
+    "images": [
+      "/news/2021-12-neurips-1.jpg",
+      "/news/2021-12-neurips-2.jpg"
+    ]
+  },
+  "2022-02-data-flagship": {
+    "body": [
+      "축하합니다. TUPA가 참여한 \"긴급선박 운영지원 서비스개발\" 과제가 우수평가를 받았습니다. 한국해양교통안전공단 컨소시엄으로서 명지대학교 박호철 교수와 함께한 이번 프로젝트에 좋은 평가를 받았습니다. 책임인 신대섭 박사님, 수고 많이 하셨습니다.",
+      "수고많이 한 연구원들 특히, Fatemeh 와 권동현 학생 고생많이 했습니다."
+    ],
+    "images": [
+      "/news/2022-02-data-flagship-1.jpg"
+    ]
+  },
+  "2022-04-jkst-best-paper-2021": {
+    "body": [
+      "Jaeeun wins the best paper of the year 2021 from the Journal of Korean Society of Transportation. The paper title is \"VDF calibration based on GPS trajectory data\"."
+    ],
+    "images": [
+      "/news/2022-04-jkst-best-paper-2021-1.jpg"
+    ]
+  },
+  "2022-05-kst86-best-papers": {
+    "body": [
+      "Tupa 가 2022년 4월 21일~22일 경주화백컨밴션센터에서 개최된 대한교통학회 제 86회 학술발표회에서 우수논문으로 3편이 선정되었습니다. 우리 학생들 쵝오!!!",
+      "- 데이터 분석용 플랫폼을 이용한 보행자 교통사고 분석 by 백송미 - 자율주행을 고려한 교차로 용량 분석 by 유예지 - 시계열 데이터 증강을 통한 교통량 예측 성능 향상 연구 by 권동현"
+    ],
+    "images": [
+      "/news/2022-05-kst86-best-papers-1.jpg",
+      "/news/2022-05-kst86-best-papers-2.jpg",
+      "/news/2022-05-kst86-best-papers-3.jpg"
+    ]
+  },
+  "2022-06-its-undergrad-grand": {
+    "body": [
+      "Our 4th year students Jaehyeok Lim, Songmi Baek, and Dohyeon Kim won the grand prize in the special session for undergraduate students at the 2022 Korean ITS Society Spring Conference with the research topic \"Traffic Prediction of VDS Detector Through Machine Learning\"."
+    ],
+    "images": [
+      "/news/2022-06-its-undergrad-grand-1.jpg",
+      "/news/2022-06-its-undergrad-grand-2.jpg"
+    ]
+  },
+  "2022-07-sci-tech-paper-award": {
+    "body": [
+      "한국과학기술단체 총연합회가 제정한 '제 32회 과학기술우수논문상' 으로 정재은 석사과정 학생이 선정되었습니다.",
+      "논문제목은 \"GPS Trajectory data 기반 통행비용함수 보정방안\"으로 정재은, 오태호, 김인희가 저자로 참여하였습니다.",
+      "시상편수는 총 248편이다. ▲이학 34편 ▲공학 88편 ▲농수산학 41편 ▲보건 56편 ▲종합 29편입니다."
+    ],
+    "images": [
+      "/news/2022-07-sci-tech-paper-award-1.jpg",
+      "/news/2022-07-sci-tech-paper-award-2.jpg",
+      "/news/2022-07-sci-tech-paper-award-3.jpg"
+    ]
+  },
+  "2022-07-its-best-fatemeh": {
+    "body": [
+      "Fatemeh won the best paper presentation at the 2022 Korean ITS Society Spring Conference with the research topic “Deajeon traffic accident clustering based on machine learning and deep learning”."
+    ],
+    "images": [
+      "/news/2022-07-its-best-fatemeh-1.jpg"
+    ]
+  },
+  "2022-10-its-wc-la": {
+    "body": [
+      "Webpage Overtaking Maneuvers using Multi-Agent Systems on a Two-Lane Two-Way Road by Taeho Oh An impact of vehicles in the platooning on the road network by Yegi Yoo Validation of Spatial Orientation Skill using Virtual Reality Treadmill by Hyunchul Park Large Scale Multi-source Traffic Flow Forecasting Based on Attention Based Spatio-Temporal Graph Convolutional Networks – LSTM by Donghyung Kwon"
+    ],
+    "images": [
+      "/news/2022-10-its-wc-la-1.jpg",
+      "/news/2022-10-its-wc-la-2.jpg",
+      "/news/2022-10-its-wc-la-3.jpg",
+      "/news/2022-10-its-wc-la-4.jpg"
+    ]
+  },
+  "2022-10-kst40-iptf": {
+    "body": [
+      "40th Anniversary International Conference of the Korean Society of Transportation & 10th International Public Transportation Forum to commemorate the world-class \"K-Transport\""
+    ],
+    "images": [
+      "/news/2022-10-kst40-iptf-1.jpg",
+      "/news/2022-10-kst40-iptf-2.jpg",
+      "/news/2022-10-kst40-iptf-3.jpg",
+      "/news/2022-10-kst40-iptf-4.jpg"
+    ]
+  },
+  "2022-10-trb-2023": {
+    "body": [
+      "TUPA has 4 papers accepted by TRB 2023. This is a great achievement that our masters students finally make good research impacts. I hope TUPA doubles the research outcome next year!!!",
+      "TRBAM-23-02518, \"Effects of Driver’s Braking Response by the Real-Time Pedestrian Scale Warning System\" by Hyunchul Park, Taeho Oh, Inhi Kim TRBAM-23-03949, \"Robust Overtaking Behavior with Human Interaction in Multi-agent Driving Simulator Supported by Machine Learning\" by Taeho Oh, Zhibin Li, Inhi Kim TRBAM-23-00384, \"Designing patrol ship routes based on multi data sources for marine environment\" by Fatemeh Nourmohammadi, Zahra Nourmohammadi, Jinwoo Lee, Inhi Kim TRBAM-23-02308, \"Large-scale Network Imputation and Prediction of Traffic Volume based on Multi-source Data Collection System\" by Donghyun Kwon, Changhee Lee, Inhi Kim"
+    ],
+    "images": [
+      "/news/2022-10-trb-2023-1.jpg",
+      "/news/2022-10-trb-2023-2.jpg"
+    ]
+  },
+  "2022-09-kakao-first-place": {
+    "body": [
+      "Donghyun Kwon and Bo Wang(Swinburn University in Melbourne) won the 1st prize from Kakao mobility data competition held in the 40th Korean Transportation Conference in Seoul."
+    ],
+    "images": [
+      "/news/2022-09-kakao-first-place-1.jpg",
+      "/news/2022-09-kakao-first-place-2.jpg"
+    ]
+  },
+  "2022-11-drone-license": {
+    "body": [
+      "A big congrats on acquisition of drone licenses by TUPA members. Hyunsup and Jaehyuck become pilots of an ultra light vehicle!!"
+    ],
+    "images": [
+      "/news/2022-11-drone-license-1.jpg",
+      "/news/2022-11-drone-license-2.jpg",
+      "/news/2022-11-drone-license-3.jpg"
+    ]
   }
 }

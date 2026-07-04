@@ -33,9 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export const revalidate = 3600;
 
 export default async function NewsDetailPage({ params }: Props) {
-  const item = await getNewsItem(params.id);
+  const news = await getNews();
+  const index = news.findIndex((n) => n.id === params.id);
+  const item = index >= 0 ? news[index] : undefined;
   if (!item) notFound();
 
+  const newer = index > 0 ? news[index - 1] : undefined;
+  const older = index < news.length - 1 ? news[index + 1] : undefined;
   const [cover, ...rest] = item.images ?? [];
 
   return (
@@ -114,6 +118,44 @@ export default async function NewsDetailPage({ params }: Props) {
             ))}
           </div>
         ) : null}
+
+        <nav
+          aria-label="More news"
+          className="mt-12 grid gap-4 border-t border-mapline pt-6 sm:grid-cols-2"
+        >
+          {newer ? (
+            <Link
+              href={`/news/${newer.id}`}
+              className="group rounded-xl border border-mapline bg-white p-4 transition-colors hover:border-cobalt-600"
+            >
+              <p className="text-xs text-body/60">
+                <span className="ko-only">← 다음 소식</span>
+                <span className="en-only">← Newer</span>
+              </p>
+              <p className="mt-1 text-sm font-medium leading-snug text-cobalt-900 group-hover:text-cobalt-600">
+                <span className="ko-only">{newer.titleKo}</span>
+                <span className="en-only">{newer.titleEn}</span>
+              </p>
+            </Link>
+          ) : (
+            <span aria-hidden />
+          )}
+          {older ? (
+            <Link
+              href={`/news/${older.id}`}
+              className="group rounded-xl border border-mapline bg-white p-4 text-right transition-colors hover:border-cobalt-600"
+            >
+              <p className="text-xs text-body/60">
+                <span className="ko-only">이전 소식 →</span>
+                <span className="en-only">Older →</span>
+              </p>
+              <p className="mt-1 text-sm font-medium leading-snug text-cobalt-900 group-hover:text-cobalt-600">
+                <span className="ko-only">{older.titleKo}</span>
+                <span className="en-only">{older.titleEn}</span>
+              </p>
+            </Link>
+          ) : null}
+        </nav>
       </article>
     </main>
   );

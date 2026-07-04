@@ -13,10 +13,13 @@ const CATEGORIES: { value: NewsCategory | "all"; ko: string; en: string }[] = [
   { value: "general", ko: "일반", en: "General" },
 ];
 
+const PAGE_SIZE = 24;
+
 export default function NewsExplorer({ items }: { items: NewsItem[] }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<NewsCategory | "all">("all");
   const [order, setOrder] = useState<"newest" | "oldest">("newest");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -45,7 +48,10 @@ export default function NewsExplorer({ items }: { items: NewsItem[] }) {
         <input
           type="search"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setVisibleCount(PAGE_SIZE);
+          }}
           placeholder="검색 — 제목·내용 / Search"
           aria-label="Search news"
           className="w-full max-w-xs rounded-lg border border-mapline bg-white px-3.5 py-2 text-sm outline-none transition-colors focus:border-cobalt-600 sm:w-64"
@@ -55,7 +61,10 @@ export default function NewsExplorer({ items }: { items: NewsItem[] }) {
             <button
               key={c.value}
               type="button"
-              onClick={() => setCategory(c.value)}
+              onClick={() => {
+                setCategory(c.value);
+                setVisibleCount(PAGE_SIZE);
+              }}
               aria-pressed={category === c.value}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
                 category === c.value
@@ -85,11 +94,29 @@ export default function NewsExplorer({ items }: { items: NewsItem[] }) {
       </p>
 
       {filtered.length > 0 ? (
-        <div className="mt-4 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((item) => (
-            <NewsCard key={item.id} item={item} />
-          ))}
-        </div>
+        <>
+          <div className="mt-4 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {filtered.slice(0, visibleCount).map((item) => (
+              <NewsCard key={item.id} item={item} />
+            ))}
+          </div>
+          {filtered.length > visibleCount ? (
+            <div className="mt-8 text-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
+                className="btn-outline"
+              >
+                <span className="ko-only">
+                  더 보기 ({filtered.length - visibleCount}건 남음)
+                </span>
+                <span className="en-only">
+                  Load more ({filtered.length - visibleCount} remaining)
+                </span>
+              </button>
+            </div>
+          ) : null}
+        </>
       ) : (
         <p className="mt-10 text-body/60">
           <span className="ko-only">검색 결과가 없습니다.</span>

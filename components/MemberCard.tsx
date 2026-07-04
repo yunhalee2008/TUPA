@@ -49,6 +49,21 @@ export default function MemberCard({ member }: { member: Member }) {
           {member.researchInterests.join(" · ")}
         </p>
       ) : null}
+      {member.career && member.career.length > 0 ? (
+        <ul className="mt-4 space-y-1.5 border-t border-mapline pt-4 text-sm text-body/80">
+          {member.career.map((line) => {
+            const [, period, rest] = line.match(/^([\d–\-~. ]*\d[\d–\-~. ]*|Industry)\s*[—-]?\s*(.*)$/) ?? [null, "", line];
+            return (
+              <li key={line} className="flex gap-3">
+                <span className="w-24 shrink-0 font-mono text-xs leading-5 text-body/60">
+                  {period.trim()}
+                </span>
+                <span>{rest}</span>
+              </li>
+            );
+          })}
+        </ul>
+      ) : null}
       {member.placement ? (
         <p className="mt-3 text-sm text-body/70">
           <span className="font-medium text-cobalt-900">

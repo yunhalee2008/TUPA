@@ -8,6 +8,7 @@
  */
 
 import galleryData from "./data/gallery.json";
+import newsArchiveData from "./data/news-archive.json";
 import newsExtraData from "./data/news-extra.json";
 import researchProjectsData from "./data/research-projects.json";
 
@@ -39,6 +40,8 @@ export interface Member {
   links?: { label: string; url: string }[];
   /** For alumni: where they went after TUPA. */
   placement?: string;
+  /** Career timeline lines (mainly for the director), newest first. */
+  career?: string[];
   /** Manual sort order within a role (from the Notion CMS). */
   order?: number;
 }
@@ -166,6 +169,16 @@ const MEMBERS: Member[] = [
     titleEn: "Director, Associate Professor",
     email: "inhi.kim@kaist.ac.kr",
     photoUrl: "/people/inhi-kim.jpg",
+    career: [
+      "2023– Associate Professor, Cho Chun Shik Graduate School of Mobility, KAIST",
+      "2024– Adjunct Professor, New York University (C2SMARTER)",
+      "2020– Adjunct Senior Lecturer, Monash University",
+      "2020–2022 Associate Professor, Kongju National University",
+      "2019–2020 Senior Lecturer, Dept. of Civil Engineering, Monash University",
+      "2015–2018 Lecturer, Dept. of Civil Engineering, Monash University",
+      "2014 Ph.D. in Civil Engineering, The University of Queensland",
+      "Industry — Transport Engineer & Planner, PTV Group (Australia · Germany · UAE · Korea)",
+    ],
     researchInterests: [
       "Transport modelling & simulation",
       "Mobility AI",
@@ -2322,14 +2335,18 @@ export async function getMembers(role?: MemberRole): Promise<Member[]> {
   if (notionEnabled) {
     const remote = await fetchMembers();
     if (remote && remote.length > 0) {
-      // Notion rows without a photo inherit the repo photo of the same person.
-      const staticPhoto = new Map(
-        MEMBERS.map((m) => [`${m.nameEn}|${m.role}`, m.photoUrl]),
+      // Notion rows missing a photo/career inherit the built-in values.
+      const staticByKey = new Map(
+        MEMBERS.map((m) => [`${m.nameEn}|${m.role}`, m]),
       );
-      members = remote.map((m) => ({
-        ...m,
-        photoUrl: m.photoUrl ?? staticPhoto.get(`${m.nameEn}|${m.role}`),
-      }));
+      members = remote.map((m) => {
+        const fallback = staticByKey.get(`${m.nameEn}|${m.role}`);
+        return {
+          ...m,
+          photoUrl: m.photoUrl ?? fallback?.photoUrl,
+          career: m.career ?? fallback?.career,
+        };
+      });
     }
   }
   return role ? members.filter((m) => m.role === role) : members;
@@ -2362,9 +2379,19 @@ const NEWS_EXTRA = newsExtraData as Record<
   { body: string[]; images: string[] }
 >;
 
+/** Pre-KAIST archive (2016–2022, imported from the legacy site). */
+const NEWS_ARCHIVE = (
+  newsArchiveData as Array<
+    Omit<NewsItem, "category"> & { category: string; pid: number }
+  >
+).map(({ pid: _pid, ...item }) => ({
+  ...item,
+  category: item.category as NewsCategory,
+}));
+
 /** Built-in archive (imported from the legacy site) with bodies/images. */
 function staticNews(): NewsItem[] {
-  return NEWS.map((item) => {
+  return [...NEWS, ...NEWS_ARCHIVE].map((item) => {
     const extra = NEWS_EXTRA[item.id];
     if (!extra) return item;
     return {

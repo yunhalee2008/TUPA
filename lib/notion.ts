@@ -176,6 +176,9 @@ export async function fetchMembers(): Promise<Member[] | null> {
       researchInterests: multiSelect(p["연구 관심사"]),
       links: links.length ? links : undefined,
       placement: text(p["진로"]) || undefined,
+      career: text(p["약력"])
+        ? text(p["약력"]).split("\n").map((l) => l.trim()).filter(Boolean)
+        : undefined,
       order: number(p["순서"]),
     });
   }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import GalleryLightbox from "@/components/GalleryLightbox";
 import { getGalleryAlbum, getGalleryAlbums } from "@/lib/content";
 
 interface Props {
@@ -38,18 +38,7 @@ export default async function GalleryAlbumPage({ params }: Props) {
         {album.titleEn}
       </h1>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {album.images.map((src) => (
-          <Image
-            key={src}
-            src={src}
-            alt={album.titleEn}
-            width={640}
-            height={480}
-            className="w-full rounded-xl border border-mapline object-cover"
-          />
-        ))}
-      </div>
+      <GalleryLightbox images={album.images} title={album.titleEn} />
     </main>
   );
 }

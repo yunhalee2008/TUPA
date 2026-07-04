@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import NewsCard from "@/components/NewsCard";
 import OpeningCard from "@/components/OpeningCard";
-import { getOpenings } from "@/lib/content";
+import { getFaqs, getNews, getOpenings, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Prospective Students",
@@ -10,8 +13,65 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600;
 
+/** Real student journeys — from undergraduate researcher to graduate school. */
+const JOURNEYS = [
+  {
+    name: "Jaeeun Jung",
+    nameKo: "정재은",
+    photo: "/people/jaeeun-jung.jpg",
+    stepsKo: [
+      "학부 3학년 — 교통학회 우수논문상",
+      "석사과정 — TRB 1저자 논문 · 과학기술우수논문상 · NRF 연구장려금",
+      "현재 — 한국철도기술연구원",
+    ],
+    stepsEn: [
+      "3rd-year undergrad — KST best paper award",
+      "M.S. — first-author TRB papers, national paper award, NRF fund",
+      "Now — Korea Railroad Research Institute",
+    ],
+  },
+  {
+    name: "Hyunchul Park",
+    nameKo: "박현철",
+    photo: "/people/hyunchul-park.jpg",
+    stepsKo: [
+      "학부 4학년 — 추계 ITS학회 우수논문상 (전국 석박사와 경쟁)",
+      "석사과정 — TRB 논문 · 글로벌리더 장학금 · 우수조교상",
+      "현재 — 박사과정",
+    ],
+    stepsEn: [
+      "4th-year undergrad — best paper at the Korea ITS conference",
+      "M.S. — TRB papers, leadership scholarship, outstanding TA award",
+      "Now — Ph.D. student",
+    ],
+  },
+  {
+    name: "Yeji Yoo",
+    nameKo: "유예지",
+    photo: "/people/yeji-yoo.jpg",
+    stepsKo: [
+      "학부 — 박창호 장학금 · 학회 우수논문상 다수",
+      "학부연구생 — ITS 세계총회 등 국내외 발표",
+      "현재 — 석사과정",
+    ],
+    stepsEn: [
+      "Undergrad — Park Chang-ho scholarship, multiple best paper awards",
+      "Undergraduate researcher — presented at ITS World Congress and more",
+      "Now — M.S. student",
+    ],
+  },
+];
+
 export default async function ProspectiveStudentsPage() {
-  const openings = await getOpenings();
+  const [openings, faqs, news, settings] = await Promise.all([
+    getOpenings(),
+    getFaqs(),
+    getNews(),
+    getSiteSettings(),
+  ]);
+  const studentAwards = news
+    .filter((item) => item.category === "award")
+    .slice(0, 6);
 
   return (
     <main className="site-container py-14 lg:py-20">
@@ -57,23 +117,12 @@ export default async function ProspectiveStudentsPage() {
           </li>
           <li>
             <span className="ko-only">
-              제목에 지원 트랙(예: &quot;GKS PhD application&quot;)을 명시해{" "}
+              공고 카드의 &quot;지원 메일 보내기&quot; 버튼을 누르면 양식이 채워진
+              메일이 열립니다. 교수에게 직접 연락하지 않습니다.
             </span>
             <span className="en-only">
-              State your track in the subject line (e.g. &quot;GKS PhD
-              application&quot;) and email{" "}
-            </span>
-            <a
-              className="font-medium text-cobalt-600 underline-offset-2 hover:underline"
-              href="mailto:kaist.mobility@gmail.com"
-            >
-              kaist.mobility@gmail.com
-            </a>
-            <span className="ko-only">
-              으로 보냅니다. 교수에게 직접 연락하지 않습니다.
-            </span>
-            <span className="en-only">
-              . Please do not contact the professor directly.
+              Click &quot;Apply by email&quot; on an opening card to open a
+              pre-filled email. Please do not contact the professor directly.
             </span>
           </li>
           <li>
@@ -86,6 +135,174 @@ export default async function ProspectiveStudentsPage() {
             </span>
           </li>
         </ol>
+        <p className="mt-5 flex flex-wrap gap-4 border-t border-cobalt-900/10 pt-4 text-sm">
+          <a
+            href="https://www.studyinkorea.go.kr"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-cobalt-600 underline-offset-2 hover:underline"
+          >
+            <span className="ko-only">GKS 장학 공식 안내 ↗</span>
+            <span className="en-only">Official GKS scholarship guide ↗</span>
+          </a>
+          <a
+            href="https://mo.kaist.ac.kr"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-cobalt-600 underline-offset-2 hover:underline"
+          >
+            <span className="ko-only">조천식모빌리티대학원 입학 안내 ↗</span>
+            <span className="en-only">Graduate school admissions ↗</span>
+          </a>
+        </p>
+      </section>
+
+      {faqs.length > 0 ? (
+        <section className="mt-16">
+          <h2 className="font-display text-2xl font-bold text-cobalt-900">
+            <span className="ko-only">자주 묻는 질문</span>
+            <span className="en-only">Frequently asked questions</span>
+          </h2>
+          <div className="mt-6 divide-y divide-mapline rounded-xl border border-mapline bg-white">
+            {faqs.map((faq) => (
+              <details key={faq.id} className="group px-6 py-4">
+                <summary className="cursor-pointer list-none font-medium text-cobalt-900 marker:content-none">
+                  <span className="mr-2 inline-block text-cobalt-600 transition-transform group-open:rotate-90">
+                    ›
+                  </span>
+                  <span className="ko-only">{faq.questionKo}</span>
+                  <span className="en-only">{faq.questionEn}</span>
+                </summary>
+                <p className="mt-3 pl-5 text-sm leading-relaxed text-body/80">
+                  <span className="ko-only">{faq.answerKo}</span>
+                  <span className="en-only">{faq.answerEn}</span>
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {studentAwards.length > 0 ? (
+        <section className="mt-16">
+          <h2 className="font-display text-2xl font-bold text-cobalt-900">
+            <span className="ko-only">학생들이 이룬 것</span>
+            <span className="en-only">What our students have achieved</span>
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm text-body/80">
+            <span className="ko-only">
+              학부 인턴부터 박사과정까지 — 최근 수상 소식들입니다.
+            </span>
+            <span className="en-only">
+              From undergraduate interns to Ph.D. students — recent awards.
+            </span>
+          </p>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {studentAwards.map((item) => (
+              <NewsCard key={item.id} item={item} />
+            ))}
+          </div>
+          <Link
+            href="/news"
+            className="mt-6 inline-block text-sm font-medium text-cobalt-600 underline-offset-2 hover:underline"
+          >
+            <span className="ko-only">수상 소식 전체 보기 →</span>
+            <span className="en-only">All award news →</span>
+          </Link>
+        </section>
+      ) : null}
+
+      <section className="mt-16">
+        <h2 className="font-display text-2xl font-bold text-cobalt-900">
+          <span className="ko-only">인턴에서 대학원까지</span>
+          <span className="en-only">From intern to graduate school</span>
+        </h2>
+        <p className="mt-2 max-w-2xl text-sm text-body/80">
+          <span className="ko-only">
+            TUPA에서 학부 연구를 시작해 성장한 실제 선배들의 경로입니다.
+          </span>
+          <span className="en-only">
+            Real paths of students who started as undergraduates at TUPA.
+          </span>
+        </p>
+        <div className="mt-6 grid gap-5 md:grid-cols-3">
+          {JOURNEYS.map((journey) => (
+            <article
+              key={journey.name}
+              className="rounded-xl border border-mapline bg-white p-6"
+            >
+              <div className="flex items-center gap-3">
+                <Image
+                  src={journey.photo}
+                  alt={journey.name}
+                  width={56}
+                  height={56}
+                  className="h-14 w-14 shrink-0 rounded-full object-cover"
+                />
+                <h3 className="font-semibold text-cobalt-900">
+                  {journey.name}{" "}
+                  <span className="ko-only font-normal text-body/60">
+                    {journey.nameKo}
+                  </span>
+                </h3>
+              </div>
+              <ol className="mt-4 space-y-2 text-sm text-body/80">
+                {journey.stepsKo.map((stepKo, i) => (
+                  <li key={stepKo} className="flex gap-2">
+                    <span aria-hidden className="mt-0.5 text-cobalt-600">
+                      {i === journey.stepsKo.length - 1 ? "★" : "↳"}
+                    </span>
+                    <span>
+                      <span className="ko-only">{stepKo}</span>
+                      <span className="en-only">{journey.stepsEn[i]}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16 grid gap-5 md:grid-cols-2">
+        <a
+          href={settings["3D 투어 링크"]}
+          target="_blank"
+          rel="noreferrer"
+          className="group relative overflow-hidden rounded-2xl border border-mapline"
+        >
+          <Image
+            src="/lab/simulation-lab.jpg"
+            alt="TUPA simulation lab 3D tour"
+            width={1200}
+            height={516}
+            className="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none"
+          />
+          <div className="absolute inset-0 flex items-end bg-gradient-to-t from-cobalt-900/80 to-transparent p-5">
+            <p className="font-display text-lg font-bold text-white">
+              <span className="ko-only">연구실을 3D로 미리 둘러보기 ↗</span>
+              <span className="en-only">Tour our lab in 3D ↗</span>
+            </p>
+          </div>
+        </a>
+        <Link
+          href="/gallery"
+          className="group relative overflow-hidden rounded-2xl border border-mapline"
+        >
+          <Image
+            src="/about/tupa-group-1.jpg"
+            alt="Life at TUPA"
+            width={1600}
+            height={914}
+            className="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none"
+          />
+          <div className="absolute inset-0 flex items-end bg-gradient-to-t from-cobalt-900/80 to-transparent p-5">
+            <p className="font-display text-lg font-bold text-white">
+              <span className="ko-only">Life at TUPA — 갤러리 보기 →</span>
+              <span className="en-only">Life at TUPA — gallery →</span>
+            </p>
+          </div>
+        </Link>
       </section>
     </main>
   );

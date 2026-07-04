@@ -202,3 +202,16 @@
 - [ ] Notion에 **"TUPA CMS" 부모 페이지** 생성 → ⋯ → Connections 에서 integration 연결
 - [ ] API 키를 `.env.local`의 `NOTION_API_KEY`로 전달 (프론트 fetch용 — DB 생성 자체는
       이미 연결된 Notion MCP로 Claude가 직접 수행 가능)
+
+## 추가 (2026-07-04): 자주 묻는 질문(FAQ)
+
+| 프로퍼티 | 타입 | 필수 | 설명 · 폴백 |
+|---|---|---|---|
+| 질문(한글) | Title | ✅ | |
+| 질문(영문) | Rich text | | 비면 한글 질문 표시 |
+| 답변(한글) | Rich text | | 비면 영문 답변 · 둘 다 비면 항목 숨김 |
+| 답변(영문) | Rich text | | 비면 한글 답변 |
+| 공개 | Checkbox | ✅ | 초안 검토 후 켜기 |
+| 순서 | Number | | |
+
+Prospective Students 페이지에 아코디언으로 표시. FAQ가 하나도 없으면 섹션 자체가 숨겨짐.

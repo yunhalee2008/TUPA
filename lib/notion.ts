@@ -11,6 +11,7 @@
  */
 
 import type {
+  Faq,
   GalleryAlbum,
   Member,
   MemberRole,
@@ -42,6 +43,7 @@ const DB = {
   openings: process.env.NOTION_DB_OPENINGS ?? "e98c6f76086b4792a449acb6a570e006",
   gallery: process.env.NOTION_DB_GALLERY ?? "4ba8a240a18a403b84e024621b22beb4",
   settings: process.env.NOTION_DB_SETTINGS ?? "3d0ceee3eddb48af932d09a4181bf363",
+  faqs: process.env.NOTION_DB_FAQS ?? "c602f68cf1bd4e4899fb1eedf5a239b8",
 };
 
 export const notionEnabled = Boolean(API_KEY);
@@ -374,6 +376,30 @@ export async function fetchGalleryAlbums(): Promise<GalleryAlbum[] | null> {
     }),
   );
   return albums.filter((a): a is GalleryAlbum => a !== null);
+}
+
+export async function fetchFaqs(): Promise<Faq[] | null> {
+  const pages = await queryDb(DB.faqs, "공개");
+  if (!pages) return null;
+  const faqs: Faq[] = [];
+  for (const page of pages) {
+    const p = page.properties;
+    const questionKo = text(p["질문(한글)"]);
+    if (!questionKo) continue;
+    const answerKo = text(p["답변(한글)"]);
+    const answerEn = text(p["답변(영문)"]);
+    faqs.push({
+      id: page.id,
+      questionKo,
+      questionEn: text(p["질문(영문)"]) || questionKo,
+      answerKo: answerKo || answerEn,
+      answerEn: answerEn || answerKo,
+      order: number(p["순서"]),
+    });
+  }
+  return faqs
+    .filter((f) => f.answerKo)
+    .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 }
 
 export async function fetchSiteSettings(): Promise<Record<string, string> | null> {

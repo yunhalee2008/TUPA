@@ -5,16 +5,34 @@ import HeroVideo from "@/components/HeroVideo";
 import NewsCard from "@/components/NewsCard";
 import ResearchAreaCard from "@/components/ResearchAreaCard";
 import SectionHeading from "@/components/SectionHeading";
-import { getRecentNews, getResearchAreas, getSiteSettings } from "@/lib/content";
+import {
+  getMembers,
+  getNews,
+  getPublications,
+  getRecentNews,
+  getResearchAreas,
+  getSiteSettings,
+} from "@/lib/content";
 
 export const revalidate = 3600;
 
 export default async function HomePage() {
-  const [areas, news, settings] = await Promise.all([
-    getResearchAreas(),
-    getRecentNews(3),
-    getSiteSettings(),
-  ]);
+  const [areas, news, settings, publications, members, allNews] =
+    await Promise.all([
+      getResearchAreas(),
+      getRecentNews(3),
+      getSiteSettings(),
+      getPublications(),
+      getMembers(),
+      getNews(),
+    ]);
+  const stats = {
+    papers: publications.length,
+    alumniFaculty: members.filter(
+      (m) => m.role === "alumni" && /professor|lecturer/i.test(m.placement ?? ""),
+    ).length,
+    awards: allNews.filter((n) => n.category === "award").length,
+  };
 
   return (
     <main>
@@ -178,6 +196,35 @@ export default async function HomePage() {
                 positions are open. We welcome students from Korea and abroad.
               </span>
             </p>
+            <dl className="mt-8 grid max-w-2xl grid-cols-3 gap-4 border-t border-white/15 pt-6">
+              <div>
+                <dt className="text-xs uppercase tracking-wide text-white/60">
+                  <span className="ko-only">국제학회 논문</span>
+                  <span className="en-only">Conference papers</span>
+                </dt>
+                <dd className="mt-1 font-display text-3xl font-extrabold">
+                  {stats.papers}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-wide text-white/60">
+                  <span className="ko-only">교수 임용 졸업생</span>
+                  <span className="en-only">Alumni in faculty roles</span>
+                </dt>
+                <dd className="mt-1 font-display text-3xl font-extrabold">
+                  {stats.alumniFaculty}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-wide text-white/60">
+                  <span className="ko-only">수상 소식</span>
+                  <span className="en-only">Awards</span>
+                </dt>
+                <dd className="mt-1 font-display text-3xl font-extrabold">
+                  {stats.awards}+
+                </dd>
+              </div>
+            </dl>
             <Link
               href="/prospective-students"
               className="mt-7 inline-flex items-center rounded-lg bg-safety px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"

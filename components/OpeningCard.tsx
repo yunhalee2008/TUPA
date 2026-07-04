@@ -7,6 +7,23 @@ const POSITION_LABEL: Record<Opening["position"], string> = {
   intern: "Intern",
 };
 
+/** Pre-filled application email so applicants know exactly what to send. */
+function applyMailto(opening: Opening): string {
+  const subject = `[${POSITION_LABEL[opening.position]} Application] ${opening.titleEn} — (Your name)`;
+  const body = [
+    "Dear TUPA,",
+    "",
+    "Name / 이름:",
+    "Affiliation & year / 소속·학년:",
+    "Research interests / 관심 연구 분야:",
+    "Programming experience / 프로그래밍 경험:",
+    "Available period / 가능한 기간:",
+    "",
+    "Attachments: CV, transcript (and English score if applicable)",
+  ].join("\n");
+  return `mailto:${opening.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export default function OpeningCard({ opening }: { opening: Opening }) {
   return (
     <article className="rounded-xl border border-mapline bg-white p-7">
@@ -55,6 +72,12 @@ export default function OpeningCard({ opening }: { opening: Opening }) {
           {opening.contactEmail}
         </a>
       </p>
+      {opening.active ? (
+        <a href={applyMailto(opening)} className="btn-primary mt-4">
+          <span className="ko-only">지원 메일 보내기</span>
+          <span className="en-only">Apply by email</span>
+        </a>
+      ) : null}
     </article>
   );
 }

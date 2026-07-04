@@ -134,6 +134,16 @@ export interface Project {
   summaryEn?: string;
 }
 
+export interface Faq {
+  id: string;
+  questionKo: string;
+  questionEn: string;
+  answerKo: string;
+  answerEn: string;
+  /** Manual sort order (from the Notion CMS). */
+  order?: number;
+}
+
 export type OpeningPosition = "phd" | "ms" | "postdoc" | "intern";
 
 export interface Opening {
@@ -2317,6 +2327,7 @@ const OPENINGS: Opening[] = [
 // ---------------------------------------------------------------------------
 
 import {
+  fetchFaqs,
   fetchGalleryAlbums,
   fetchMembers,
   fetchNews,
@@ -2506,6 +2517,15 @@ export async function getOpenings(activeOnly = true): Promise<Opening[]> {
     if (remote && remote.length > 0) openings = remote;
   }
   return activeOnly ? openings.filter((o) => o.active) : openings;
+}
+
+/** FAQ lives only in Notion — an empty list simply hides the section. */
+export async function getFaqs(): Promise<Faq[]> {
+  if (notionEnabled) {
+    const remote = await fetchFaqs();
+    if (remote) return remote;
+  }
+  return [];
 }
 
 /** Site-wide strings (emails, addresses, hero copy) with code defaults. */

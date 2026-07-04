@@ -51,10 +51,11 @@ export default function RootLayout({
     <html lang="ko" data-lang="ko">
       <head>
         <script
-          // Apply the saved language before first paint to avoid a flash.
+          // Apply the saved language before first paint; first-time visitors
+          // with a non-Korean browser default to English.
           dangerouslySetInnerHTML={{
             __html:
-              "try{var l=localStorage.getItem('tupa-lang');if(l==='en'){document.documentElement.dataset.lang='en';document.documentElement.lang='en';}}catch(e){}",
+              "try{var l=localStorage.getItem('tupa-lang');if(!l){l=(navigator.language||'ko').toLowerCase().indexOf('ko')===0?'ko':'en';}if(l==='en'){document.documentElement.dataset.lang='en';document.documentElement.lang='en';}}catch(e){}",
           }}
         />
         <link

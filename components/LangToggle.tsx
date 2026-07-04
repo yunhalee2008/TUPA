@@ -13,11 +13,9 @@ export default function LangToggle() {
   const [lang, setLang] = useState<Lang>("ko");
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("tupa-lang");
-    if (saved === "en" || saved === "ko") {
-      setLang(saved);
-      apply(saved);
-    }
+    // The layout inline script already applied saved/auto-detected language;
+    // sync the button state with whatever it decided.
+    setLang(document.documentElement.dataset.lang === "en" ? "en" : "ko");
   }, []);
 
   const toggle = () => {

@@ -27,7 +27,8 @@ export type MemberRole =
 
 export interface Member {
   id: string;
-  nameKo: string;
+  /** @deprecated Korean names are no longer displayed or stored in Notion. */
+  nameKo?: string;
   nameEn: string;
   role: MemberRole;
   /** e.g. "Director, Associate Professor" / "박사과정" */

@@ -64,8 +64,15 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-screen flex-col">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-lg focus:bg-cobalt-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          <span className="ko-only">본문으로 건너뛰기</span>
+          <span className="en-only">Skip to content</span>
+        </a>
         <SiteNav />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1" id="main">{children}</div>
         <SiteFooter />
         <Analytics />
       </body>

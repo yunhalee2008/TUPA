@@ -17,7 +17,6 @@ export const revalidate = 3600;
 const JOURNEYS = [
   {
     name: "Jaeeun Jung",
-    nameKo: "정재은",
     photo: "/people/jaeeun-jung.jpg",
     stepsKo: [
       "학부 3학년 — 교통학회 우수논문상",
@@ -32,7 +31,6 @@ const JOURNEYS = [
   },
   {
     name: "Hyunchul Park",
-    nameKo: "박현철",
     photo: "/people/hyunchul-park.jpg",
     stepsKo: [
       "학부 4학년 — 추계 ITS학회 우수논문상 (전국 석박사와 경쟁)",
@@ -47,7 +45,6 @@ const JOURNEYS = [
   },
   {
     name: "Yeji Yoo",
-    nameKo: "유예지",
     photo: "/people/yeji-yoo.jpg",
     stepsKo: [
       "학부 — 박창호 장학금 · 학회 우수논문상 다수",
@@ -239,12 +236,7 @@ export default async function ProspectiveStudentsPage() {
                   height={56}
                   className="h-14 w-14 shrink-0 rounded-full object-cover"
                 />
-                <h3 className="font-semibold text-cobalt-900">
-                  {journey.name}{" "}
-                  <span className="ko-only font-normal text-body/60">
-                    {journey.nameKo}
-                  </span>
-                </h3>
+                <h3 className="font-semibold text-cobalt-900">{journey.name}</h3>
               </div>
               <ol className="mt-4 space-y-2 text-sm text-body/80">
                 {journey.stepsKo.map((stepKo, i) => (

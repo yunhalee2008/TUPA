@@ -29,15 +29,7 @@ export default function MemberCard({ member }: { member: Member }) {
           </div>
         )}
         <div>
-          <h3 className="font-semibold text-cobalt-900">
-            {member.nameEn}
-            {member.nameKo ? (
-              <>
-                {" "}
-                <span className="font-normal text-body/60">{member.nameKo}</span>
-              </>
-            ) : null}
-          </h3>
+          <h3 className="font-semibold text-cobalt-900">{member.nameEn}</h3>
           <p className="text-sm text-body/70">
             <span className="ko-only">{member.titleKo}</span>
             <span className="en-only">{member.titleEn}</span>

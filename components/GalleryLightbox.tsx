@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 /** Album photo grid with a click-to-enlarge lightbox (arrows, Esc, counter). */
 export default function GalleryLightbox({
@@ -12,6 +12,8 @@ export default function GalleryLightbox({
   title: string;
 }) {
   const [index, setIndex] = useState<number | null>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const restoreFocusRef = useRef<HTMLElement | null>(null);
 
   const close = useCallback(() => setIndex(null), []);
   const step = useCallback(
@@ -22,20 +24,43 @@ export default function GalleryLightbox({
     [images.length],
   );
 
+  // Keyboard controls + focus trap: focus moves into the dialog on open,
+  // Tab cycles within it, and focus returns to the trigger on close.
   useEffect(() => {
     if (index === null) return;
+    restoreFocusRef.current = document.activeElement as HTMLElement | null;
+    dialogRef.current
+      ?.querySelector<HTMLButtonElement>('button[aria-label="Close"]')
+      ?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "ArrowLeft") step(-1);
       if (e.key === "ArrowRight") step(1);
+      if (e.key === "Tab" && dialogRef.current) {
+        const focusables = Array.from(
+          dialogRef.current.querySelectorAll<HTMLElement>("button"),
+        );
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        const active = document.activeElement;
+        if (e.shiftKey && (active === first || !dialogRef.current.contains(active))) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && (active === last || !dialogRef.current.contains(active))) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
     window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      restoreFocusRef.current?.focus();
     };
-  }, [index, close, step]);
+  }, [index === null, close, step]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
@@ -61,6 +86,7 @@ export default function GalleryLightbox({
 
       {index !== null ? (
         <div
+          ref={dialogRef}
           role="dialog"
           aria-modal="true"
           aria-label={`${title} — photo ${index + 1} of ${images.length}`}

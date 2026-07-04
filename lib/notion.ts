@@ -160,7 +160,8 @@ export async function fetchMembers(): Promise<Member[] | null> {
   const members: Member[] = [];
   for (const page of pages) {
     const p = page.properties;
-    const nameEn = text(p["이름(영문)"]);
+    // Property renamed 이름(영문) → 이름 when the Korean name column was dropped.
+    const nameEn = text(p["이름"]) || text(p["이름(영문)"]);
     const role = ROLE_FROM_KO[select(p["구분"])];
     if (!nameEn || !role) continue;
     const links: { label: string; url: string }[] = [];
@@ -169,7 +170,6 @@ export async function fetchMembers(): Promise<Member[] | null> {
     members.push({
       id: page.id,
       nameEn,
-      nameKo: text(p["이름(한글)"]),
       role,
       titleKo: text(p["직함(한글)"]),
       titleEn: text(p["직함(영문)"]),

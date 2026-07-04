@@ -114,12 +114,14 @@ export default async function ProspectiveStudentsPage() {
           </li>
           <li>
             <span className="ko-only">
-              공고 카드의 &quot;지원 메일 보내기&quot; 버튼을 누르면 양식이 채워진
-              메일이 열립니다. 교수에게 직접 연락하지 않습니다.
+              공고 카드의 &quot;지원 양식 복사하기&quot; 버튼으로 이메일 양식을
+              복사한 뒤, 내용을 채워 보내주세요. 교수에게 직접 연락하지
+              않습니다.
             </span>
             <span className="en-only">
-              Click &quot;Apply by email&quot; on an opening card to open a
-              pre-filled email. Please do not contact the professor directly.
+              Click &quot;Copy application template&quot; on an opening card,
+              fill it in, and send it by email. Please do not contact the
+              professor directly.
             </span>
           </li>
           <li>

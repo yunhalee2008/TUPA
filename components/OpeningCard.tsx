@@ -1,3 +1,4 @@
+import CopyTemplateButton from "@/components/CopyTemplateButton";
 import type { Opening } from "@/lib/content";
 
 const POSITION_LABEL: Record<Opening["position"], string> = {
@@ -7,10 +8,12 @@ const POSITION_LABEL: Record<Opening["position"], string> = {
   intern: "Intern",
 };
 
-/** Pre-filled application email so applicants know exactly what to send. */
-function applyMailto(opening: Opening): string {
-  const subject = `[${POSITION_LABEL[opening.position]} Application] ${opening.titleEn} — (Your name)`;
-  const body = [
+/** Application email template applicants can paste into any mail client. */
+function applyTemplate(opening: Opening): string {
+  return [
+    `To: ${opening.contactEmail}`,
+    `Subject: [${POSITION_LABEL[opening.position]} Application] ${opening.titleEn} — (Your name)`,
+    "",
     "Dear TUPA,",
     "",
     "Name / 이름:",
@@ -21,7 +24,6 @@ function applyMailto(opening: Opening): string {
     "",
     "Attachments: CV, transcript (and English score if applicable)",
   ].join("\n");
-  return `mailto:${opening.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 export default function OpeningCard({ opening }: { opening: Opening }) {
@@ -73,10 +75,7 @@ export default function OpeningCard({ opening }: { opening: Opening }) {
         </a>
       </p>
       {opening.active ? (
-        <a href={applyMailto(opening)} className="btn-primary mt-4">
-          <span className="ko-only">지원 메일 보내기</span>
-          <span className="en-only">Apply by email</span>
-        </a>
+        <CopyTemplateButton text={applyTemplate(opening)} />
       ) : null}
     </article>
   );

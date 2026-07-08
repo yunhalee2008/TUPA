@@ -206,6 +206,7 @@ export async function fetchPublications(): Promise<Publication[] | null> {
     pubs.push({
       id: page.id,
       title,
+      titleKo: text(p["제목(한글)"]) || undefined,
       authors: text(p["저자"]).split(",").map((a) => a.trim()).filter(Boolean),
       venue: text(p["발표처"]),
       year,

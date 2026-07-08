@@ -3,7 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PublicationItem from "@/components/PublicationItem";
-import { getMembers, getPublications } from "@/lib/content";
+import {
+  getMemberPublicationRecord,
+  getMembers,
+  getPublications,
+  type Publication,
+} from "@/lib/content";
 
 interface Props {
   params: { id: string };
@@ -26,6 +31,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export const revalidate = 3600;
 
+/** Title key for deduping the same paper across sources. */
+function titleKey(title: string): string {
+  return title.toLowerCase().replace(/[^a-z0-9가-힣]/g, "");
+}
+
 export default async function MemberDetailPage({ params }: Props) {
   const [members, publications] = await Promise.all([
     getMembers(),
@@ -34,10 +44,31 @@ export default async function MemberDetailPage({ params }: Props) {
   const member = members.find((m) => m.id === params.id);
   if (!member) notFound();
 
-  // Publication record: every entry listing this member as an author.
-  const record = publications.filter((pub) =>
+  // Publication record = lab publications listing this member as an author,
+  // plus the personal SCI-journal record carried over from the legacy
+  // inhi.kim/team modal (covers papers without lab co-authorship and entries
+  // whose author strings use initials). Deduped by title; the lab entry wins
+  // because it has full author names and a link.
+  const matched = publications.filter((pub) =>
     pub.authors.includes(member.nameEn),
   );
+  const legacy = await getMemberPublicationRecord(member.nameEn);
+  const matchedKeys = new Set(matched.map((p) => titleKey(p.title)));
+  const legacyOnly: Publication[] = legacy
+    .filter((entry) => !matchedKeys.has(titleKey(entry.title)))
+    .map((entry, i) => ({
+      id: `${member.id}-legacy-${i}`,
+      title: entry.title,
+      authors: entry.authors
+        .split(entry.authors.includes(";") ? ";" : ",")
+        .map((a) => a.trim())
+        .filter(Boolean),
+      venue: entry.venue,
+      year: entry.year,
+      type: "journal" as const,
+      tags: [],
+    }));
+  const record = [...matched, ...legacyOnly];
   const years = Array.from(new Set(record.map((p) => p.year))).sort(
     (a, b) => b - a,
   );

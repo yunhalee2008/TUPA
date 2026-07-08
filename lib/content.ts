@@ -8,6 +8,7 @@
  */
 
 import galleryData from "./data/gallery.json";
+import memberPublicationsData from "./data/member-publications.json";
 import newsArchiveData from "./data/news-archive.json";
 import newsExtraData from "./data/news-extra.json";
 import researchProjectsData from "./data/research-projects.json";
@@ -52,6 +53,8 @@ export type PublicationType = "journal" | "conference" | "book" | "patent";
 export interface Publication {
   id: string;
   title: string;
+  /** Korean title, shown when the site language is KO (mainly for patents). */
+  titleKo?: string;
   /** Ordered author list as displayed, e.g. "Kaihan Zhang". */
   authors: string[];
   venue: string;
@@ -62,6 +65,20 @@ export interface Publication {
   url?: string;
   /** Highlighted on the home page / top of the list. */
   featured?: boolean;
+}
+
+/**
+ * One line of a member's personal publication record, imported verbatim from
+ * the legacy inhi.kim/team member modals (SCI Journal lists). Author strings
+ * are kept as displayed there (initials etc.), so they are not used for
+ * author-name matching — only for display on the member page.
+ */
+export interface MemberPublicationEntry {
+  year: number;
+  /** Author list as a single display string, e.g. "R Tamakloe, I Kim". */
+  authors: string;
+  title: string;
+  venue: string;
 }
 
 export type NewsCategory = "award" | "grant" | "people" | "publication" | "general";
@@ -764,6 +781,416 @@ const MEMBERS: Member[] = [
  * Scholar / Scopus, matching the old site's structure.
  */
 const PUBLICATIONS: Publication[] = [
+  // ── Journal papers — imported from dochak.com/disclosure (2026-07) ──
+  {
+    id: "zhang-2026-waits-longer",
+    title:
+      "Who waits longer to pick you up? behavioral and spatial inequities in ride-hailing pickup time based on real-world platform data",
+    authors: ["Jiaqi Zhang", "Junfeng Jiao", "Xin Wang", "Inhi Kim", "Tianqi Gu"],
+    venue: "Travel Behaviour and Society 43, 101224",
+    year: 2026,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "zhang-2026-social-psychological",
+    title:
+      "Social-psychological determinants and nonlinear thresholds: behavioral insights into urban air mobility adoption as an airport shuttle",
+    authors: ["Kaihan Zhang", "Xiaoyu Liu", "Qihao Cui", "Xueting Gao", "Mengqiu Cao", "Inhi Kim"],
+    venue: "Transportation Research Part A: Policy and Practice 205, 104856",
+    year: 2026,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "tamakloe-2026-determinants-battery",
+    title:
+      "Determinants of battery electric vehicle adoption concerns: insights from commercial fleet owners",
+    authors: ["Reuben Tamakloe", "Linus Dinam Caesar", "Inhi Kim"],
+    venue: "Transportation Research Part A: Policy and Practice 205, 104874",
+    year: 2026,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "zhang-2026-streetscape-built",
+    title:
+      "Does the streetscape built environment matter in explaining crash injury severity among older adults?",
+    authors: ["Kaihan Zhang", "Bo Chen", "Reuben Tamakloe", "Yang Bai", "Inhi Kim"],
+    venue: "Journal of Transport Geography 131, 104540",
+    year: 2026,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "zhuang-2026-platform-induced",
+    title:
+      "Platform-induced time-space trade-offs in ride-hailing: Multi-homing as a response to operational constraints",
+    authors: ["Chutian Zhuang", "Tianqi Gu", "Inhi Kim", "Hyungchul Chung", "Kaihan Zhang"],
+    venue: "Journal of Transport Geography 131, 104533",
+    year: 2026,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "gu-2026-managing-coexistence",
+    title:
+      "Managing coexistence between taxis and ride-hailing services: A longitudinal case study of operational strategies and policy implications",
+    authors: ["Tianqi Gu", "Inhi Kim", "Lei Cheng"],
+    venue: "Case Studies on Transport Policy, 101718",
+    year: 2026,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "liu-2025-sequential-decomposition",
+    title:
+      "Sequential Decomposition and Attribution for Trajectory Forecasting",
+    authors: ["Yuting Liu", "Inhi Kim"],
+    venue: "Knowledge-Based Systems, 115204",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "liu-2025-enhanced-trajectory",
+    title:
+      "Enhanced trajectory reconstruction from sparse and noisy GPS data: A progressive chunked transformer approach",
+    authors: ["Yuting Liu", "Qingyuan Li", "Inhi Kim"],
+    venue: "Communications in Transportation Research 5, 100200",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "kim-2025-identifying-critical",
+    title:
+      "Identifying critical urban traffic risks for autonomous vehicle crash severity",
+    authors: ["Changjae Kim", "Juneyoung Kim", "Inhi Kim"],
+    venue: "Journal of Transportation Safety & Security, 1-21",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "ye-2025-drivers-react",
+    title:
+      "How do the drivers react to different C-V2X-based communication conditions in dilemma zones? A driving simulator study",
+    authors: ["Shengdi Ye", "Tiantian Chen", "Oscar Oviedo-Trespalacios", "Yusak Ali", "Taeho Oh", "Inhi Kim"],
+    venue: "Accident Analysis & Prevention 221, 108208",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "zhang-2025-synergistic-role",
+    title:
+      "Synergistic role of audio-visual perceptions in promoting bikeshare for active travel",
+    authors: ["Kaihan Zhang", "Qunshan Song", "Hui Ma", "Waishan Qiu", "Mei Li", "Inhi Kim"],
+    venue: "Transportation Research Part D: Transport and Environment 145, 104806",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "tamakloe-2025-pattern-recognition",
+    title:
+      "Pattern recognition in crash clusters involving vehicles with advanced driving technologies",
+    authors: ["Reuben Tamakloe", "Mahdi Khorasani", "Subasish Das", "Inhi Kim"],
+    venue: "Accident Analysis & Prevention 218, 108072",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "jiang-2025-carbon-savings",
+    title:
+      "Carbon savings in ride-pooling: A data-driven, route-based analysis from East Asia",
+    authors: ["Zhonghui Jiang", "Tianqi Gu", "Jiaqi Zhang", "Hyungchul Chung", "Inhi Kim"],
+    venue: "Transportation Research Part D: Transport and Environment 144, 104764",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "tamakloe-2025-differences-injury",
+    title:
+      "Differences in injury severities between elderly and non-elderly taxi driver at-fault crashes: Temporal instability and out-of-sample prediction",
+    authors: ["Reuben Tamakloe", "Mahdi Khorasani", "Inhi Kim"],
+    venue: "Accident Analysis & Prevention 211, 107865",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "lim-2025-impact-information",
+    title:
+      "The impact of information delivery systems in tunnels depending on lighting intensity and speed limit",
+    authors: ["Jaehyuck Lim", "Hyunchul Park", "Taeho Oh", "Inhi Kim"],
+    venue: "Tunnelling and Underground Space Technology 157, 106365",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "gu-2025-free-interchange",
+    title:
+      "Free interchange for better transit? Assessing the multi-dimensional impacts on metro to bus interchange behavior − insights from an explainable machine learning method",
+    authors: ["Tianqi Gu", "Kaihan Zhang", "Weiping Xu", "Chutian Zhuang", "Zhonghui Jiang", "Inhi Kim", "Hyungchul Chung"],
+    venue: "Travel Behaviour and Society 38, 100923",
+    year: 2025,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "zhang-2024-exploring-fatal",
+    title:
+      "Exploring fatal/severe pedestrian injury crash frequency at school zone crash hotspots: using interpretable machine learning to assess the micro-level street environment",
+    authors: ["Kaihan Zhang", "Reuben Tamakloe", "Mengqiu Cao", "Inhi Kim"],
+    venue: "Journal of Transport Geography 121, 104034",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "gu-2024-understanding-shared",
+    title:
+      "Understanding shared bike usages toward metros with fewer physical road separations",
+    authors: ["Tianqi Gu", "Inhi Kim", "Graham Currie", "Weiping Xu"],
+    venue: "Case Studies on Transport Policy 18, 101281",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "nguyen-phuoc-2024-questioning-penalties",
+    title:
+      "Questioning penalties and road safety Policies: Are they enough to deter risky motorcyclist Behavior?",
+    authors: ["Duy Quy Nguyen-Phuoc", "Nhat Xuan Mai", "Inhi Kim", "Oscar Oviedo-Trespalacios"],
+    venue: "Accident Analysis & Prevention 207, 107756",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "oh-2024-enhancing-mutual",
+    title:
+      "Enhancing mutual understanding of e-scooter user's perspective in overtaking maneuver through replaying own driving trajectory",
+    authors: ["Taeho Oh", "Jaehyuck Lim", "Reuben Tamakloe", "Zhibin Li", "Inhi Kim"],
+    venue: "Accident Analysis & Prevention 207, 107750",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "park-2024-effects-driver",
+    title:
+      "Effects of driver's braking behavior by the real-time pedestrian scale warning system",
+    authors: ["Hyunchul Park", "Taeho Oh", "Inhi Kim"],
+    venue: "Accident Analysis & Prevention 205, 107685",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "tamakloe-2024-temporal-instability",
+    title:
+      "Temporal instability of the determinants of fatal/severe elderly pedestrian injury outcomes in intersections and non-intersections before, during, and after the COVID-19 pandemic",
+    authors: ["Reuben Tamakloe", "Kaihan Zhang", "Inhi Kim"],
+    venue: "Accident Analysis & Prevention 205, 107676",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "nourmohammadi-2024-impact-covid",
+    title:
+      "Impact of COVID-19 pandemic on characteristic of bike-sharing systems near metro and bus stations",
+    authors: ["Fatemeh Nourmohammadi", "Zahra Nourmohammadi", "Inhi Kim", "Heechan Kang"],
+    venue: "International Journal of Urban Sciences 29 (3), 563-581",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "gu-2024-taxi-competition",
+    title:
+      "Taxi in competition with online car-hailing drivers: policy implication to operating strategies",
+    authors: ["Tianqi Gu", "Weiping Xu", "Peiran Shi", "Rongrong Wang", "Inhi Kim"],
+    venue: "Multimodal Transportation 3 (2), 100129",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "tamakloe-2024-critical-risk",
+    title:
+      "Critical risk factors associated with fatal/severe crash outcomes in personal mobility device rider at-fault crashes: A two-step inter-cluster rule mining technique",
+    authors: ["Reuben Tamakloe", "Kaihan Zhang", "Ahmed Hossain", "Inhi Kim", "Shin Hyoung Park"],
+    venue: "Accident Analysis & Prevention 199, 107527",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "tu-2024-advancements-prospects",
+    title:
+      "Advancements and prospects in multisensor fusion for autonomous driving",
+    authors: ["Chengzhong Tu", "Lei Wang", "Jaehyuck Lim", "Inhi Kim"],
+    venue: "Journal of Intelligent and Connected Vehicles 7 (4), 245-247",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "xiao-2024-built-environment",
+    title:
+      "Does built environment have impact on traffic congestion?—A bootstrap mediation analysis on a case study of Melbourne",
+    authors: ["Dongyang Xiao", "Inhi Kim", "Nan Zheng"],
+    venue: "Transportation Research Part A: Policy and Practice 190, 104297",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "phi-2024-machine-learning",
+    title:
+      "Machine learning application to seismic site classification prediction model using Horizontal-to-Vertical Spectral Ratio (HVSR) of strong-ground motions",
+    authors: ["Francis G Phi", "Bumsu Cho", "Jungeun Kim", "Hyungik Cho", "Yun Wook Choo", "Dookie Kim", "Inhi Kim"],
+    venue: "Geomechanics & Engineering 37 (6), 539-554",
+    year: 2024,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "jiang-2023-missing-data",
+    title:
+      "Missing data imputation for transfer passenger flow identified from in-station WiFi systems",
+    authors: ["Wenhua Jiang", "Nan Zheng", "Inhi Kim"],
+    venue: "Transportmetrica B: Transport Dynamics 11 (1), 325-342",
+    year: 2023,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "wang-2023-distributional-prediction",
+    title:
+      "Distributional prediction of short-term traffic using neural networks",
+    authors: ["Bo Wang", "Hai L Vu", "Inhi Kim", "Chen Cai"],
+    venue: "Engineering Applications of Artificial Intelligence 126, 107061",
+    year: 2023,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "zhu-2023-uwb-ins",
+    title:
+      "A UWB/INS Trajectory Tracking System Application in a Cycling Safety Study",
+    authors: ["Sicong Zhu", "Hao Yue", "Tatsuto Suzuki", "Inhi Kim", "Lei Yu", "Qing Lan"],
+    venue: "Sensors 23 (7), 3629",
+    year: 2023,
+    type: "journal",
+    tags: [],
+  },
+  {
+    id: "nourmohammadi-2023-deep-spatiotemporal",
+    title:
+      "A deep spatiotemporal approach in maritime accident prediction: A case study of the territorial sea of South Korea",
+    authors: ["Zahra Nourmohammadi", "Fatemeh Nourmohammadi", "Inhi Kim", "Shin Hyoung Park"],
+    venue: "Ocean Engineering 270, 113565",
+    year: 2023,
+    type: "journal",
+    tags: [],
+  },
+  // ── Patents — imported from dochak.com/disclosure (2026-07) ──
+  {
+    id: "patent-2020-signal-controller",
+    title:
+      "Traffic Signal Control Device",
+    titleKo: "교통신호기 제어장치",
+    authors: [],
+    venue: "대한민국 등록특허 10-2166283",
+    year: 2020,
+    type: "patent",
+    tags: [],
+  },
+  {
+    id: "patent-2024-pedestrian-collision",
+    title:
+      "Method and System for Evaluating Future Pedestrian Collisions at Unsignalized Intersections Based on Probabilistic Trajectory Prediction",
+    titleKo: "확률 궤적 예측을 기반으로 비신호 교차로에서 보행자의 미래 충돌을 평가하는 방법 및 시스템",
+    authors: [],
+    venue: "대한민국 특허 출원",
+    year: 2024,
+    type: "patent",
+    tags: [],
+  },
+  {
+    id: "patent-2024-rl-signal-control",
+    title:
+      "Reinforcement Learning-Based Signal Control Method and System Considering Environmental Impact",
+    titleKo: "환경영향을 고려한 강화학습 기반의 신호제어방법 및 시스템",
+    authors: [],
+    venue: "대한민국 특허 출원",
+    year: 2024,
+    type: "patent",
+    tags: [],
+  },
+  {
+    id: "patent-2024-mobility-route",
+    title:
+      "Method and System for Analyzing Route Selection of Electric Mobility Using Street View Images",
+    titleKo: "스트리트 뷰 이미지를 이용하여 전동 모빌리티의 경로선택을 분석하는 방법 및 시스템",
+    authors: [],
+    venue: "대한민국 특허 출원",
+    year: 2024,
+    type: "patent",
+    tags: [],
+  },
+  {
+    id: "patent-2024-driving-self-evaluation",
+    title:
+      "Method and System for Self-Evaluating Driving Behavior Using Visual Context Based on Route Replay",
+    titleKo: "경로 리플레이에 기반한 시각 전황을 활용하여 운전행태를 자기평가하는 방법 및 시스템",
+    authors: [],
+    venue: "대한민국 특허 출원",
+    year: 2024,
+    type: "patent",
+    tags: [],
+  },
+  {
+    id: "patent-2024-driver-warning",
+    title:
+      "Real-Time Driver Warning Method and System Based on Pedestrian Scale Information",
+    titleKo: "보행자 규모 정보에 기반한 실시간 운전자 경고 방법 및 시스템",
+    authors: [],
+    venue: "대한민국 특허 출원",
+    year: 2024,
+    type: "patent",
+    tags: [],
+  },
+  {
+    id: "patent-2024-signal-plan",
+    title:
+      "Traffic Signal Plan Generation Device and Method Using Traffic Volume Control Plan",
+    titleKo: "교통량 제어 계획을 이용한 교통신호 계획 생성 장치 및 방법",
+    authors: [],
+    venue: "대한민국 특허 출원",
+    year: 2024,
+    type: "patent",
+    tags: [],
+  },
+  {
+    id: "patent-2024-synthetic-population",
+    title:
+      "Method and System for Generating Customized Synthetic Population for Traffic Demand Analysis Based on Conditional Adversarial Generative Model",
+    titleKo: "조건부 적대적 생성 모델 기반 교통수요 분석의 맞춤형 합성인구 생성 방법 및 시스템",
+    authors: [],
+    venue: "대한민국 특허 출원",
+    year: 2024,
+    type: "patent",
+    tags: [],
+  },
   {
     id: "jung-2025-roundabout-rl",
     title:
@@ -872,9 +1299,9 @@ const PUBLICATIONS: Publication[] = [
     title:
       "Micro Mobility Safety Challenges: A Study on Drivers Overtaking Bicycles and E-Scooters in Relation to Road Conditions and Prior Riding Experience",
     authors: ["Hyunchul Park", "Taeho Oh", "Jaehyuck Lim", "Inhi Kim"],
-    venue: "ICTCT Conference",
-    year: 2024,
-    type: "conference",
+    venue: "Transportation Research Part F: Traffic Psychology and Behaviour 117, 103482",
+    year: 2026,
+    type: "journal",
     tags: [],
   },
   {
@@ -966,10 +1393,10 @@ const PUBLICATIONS: Publication[] = [
     id: "jung-2024-ecomrl",
     title:
       "EcoMRL: Deep Reinforcement Learning-Based Traffic Signal Control for Urban Air Quality",
-    authors: ["Jaeeun Jung", "Jinwon Yoon", "Inhi Kim"],
-    venue: "TRB 103rd Annual Meeting",
+    authors: ["Jaeeun Jung", "Inhi Kim", "Jinwon Yoon"],
+    venue: "International Journal of Sustainable Transportation 19 (8), 720-729",
     year: 2024,
-    type: "conference",
+    type: "journal",
     tags: [],
   },
   {
@@ -1026,10 +1453,10 @@ const PUBLICATIONS: Publication[] = [
     id: "kwon-2023-network-imputation",
     title:
       "Large-Scale Network Imputation and Prediction of Traffic Volume Based on Multi-Source Data Collection System",
-    authors: ["Donghyun Kwon", "Changhee Lee", "Inhi Kim"],
-    venue: "TRB 102nd Annual Meeting",
+    authors: ["Donghyun Kwon", "Changhee Lee", "Heechan Kang", "Inhi Kim"],
+    venue: "Transportation Research Record 2677 (9), 30-42",
     year: 2023,
-    type: "conference",
+    type: "journal",
     tags: [],
   },
   {
@@ -2385,6 +2812,24 @@ export async function getPublications(filter?: {
 
 export async function getFeaturedPublications(): Promise<Publication[]> {
   return (await allPublications()).filter((p) => p.featured);
+}
+
+const MEMBER_PUBLICATIONS = memberPublicationsData as Record<
+  string,
+  MemberPublicationEntry[]
+>;
+
+/**
+ * A member's personal publication record as listed on the legacy
+ * inhi.kim/team member modal (SCI Journal list). Frozen snapshot — new lab
+ * papers appear on member pages via author-name matching against the
+ * publications database instead. Keyed by English name (not member id)
+ * because Notion-sourced members use Notion page ids.
+ */
+export async function getMemberPublicationRecord(
+  memberNameEn: string,
+): Promise<MemberPublicationEntry[]> {
+  return MEMBER_PUBLICATIONS[memberNameEn] ?? [];
 }
 
 const NEWS_EXTRA = newsExtraData as Record<

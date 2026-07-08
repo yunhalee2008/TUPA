@@ -18,10 +18,12 @@ export default async function PublicationsPage() {
         Publications
       </h1>
       <p className="mt-3 max-w-2xl">
-        <span className="ko-only">국제학회 논문과 북챕터 목록입니다. 저널 논문 전체는</span>
+        <span className="ko-only">
+          저널 논문, 특허, 국제학회 논문, 북챕터 목록입니다. 인용 지표는
+        </span>
         <span className="en-only">
-          Peer-reviewed international conference papers and book chapters. For
-          the full list of journal papers, see
+          Peer-reviewed journal papers, patents, international conference
+          papers, and book chapters. For citation metrics, see
         </span>{" "}
         <a
           href="https://scholar.google.com/citations?user=Cz_9jloAAAAJ&hl=en"

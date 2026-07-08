@@ -199,8 +199,8 @@ export default async function HomePage() {
             <dl className="mt-8 grid max-w-2xl grid-cols-3 gap-4 border-t border-white/15 pt-6">
               <div>
                 <dt className="text-xs uppercase tracking-wide text-white/60">
-                  <span className="ko-only">국제학회 논문</span>
-                  <span className="en-only">Conference papers</span>
+                  <span className="ko-only">논문·특허</span>
+                  <span className="en-only">Publications</span>
                 </dt>
                 <dd className="mt-1 font-display text-3xl font-extrabold">
                   {stats.papers}

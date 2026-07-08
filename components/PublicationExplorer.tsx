@@ -12,6 +12,9 @@ const SECTIONS: { type: PublicationType; ko: string; en: string }[] = [
   { type: "book", ko: "북챕터", en: "Book Chapters" },
 ];
 
+/** Items shown per section before the reader expands it. */
+const PREVIEW_COUNT = 5;
+
 export default function PublicationExplorer({
   publications,
 }: {
@@ -19,6 +22,9 @@ export default function PublicationExplorer({
 }) {
   const [query, setQuery] = useState("");
   const [order, setOrder] = useState<"newest" | "oldest">("newest");
+  const [expanded, setExpanded] = useState<Partial<Record<PublicationType, boolean>>>({});
+  // While searching, every match should be visible, not hidden behind a fold.
+  const searching = query.trim().length > 0;
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -34,13 +40,17 @@ export default function PublicationExplorer({
   const sections = useMemo(
     () =>
       SECTIONS.map((section) => {
-        const items = filtered.filter((p) => p.type === section.type);
-        const years = Array.from(new Set(items.map((p) => p.year))).sort(
+        const items = filtered
+          .filter((p) => p.type === section.type)
+          .sort((a, b) => (order === "newest" ? b.year - a.year : a.year - b.year));
+        const isExpanded = searching || expanded[section.type] === true;
+        const visible = isExpanded ? items : items.slice(0, PREVIEW_COUNT);
+        const years = Array.from(new Set(visible.map((p) => p.year))).sort(
           (a, b) => (order === "newest" ? b - a : a - b),
         );
-        return { ...section, items, years };
+        return { ...section, items, visible, years, isExpanded };
       }).filter((section) => section.items.length > 0),
-    [filtered, order],
+    [filtered, order, expanded, searching],
   );
 
   return (
@@ -88,7 +98,7 @@ export default function PublicationExplorer({
             <div key={year} className="mt-8 gap-10 lg:grid lg:grid-cols-12">
               <p className="mono-label lg:col-span-3">{year}</p>
               <ul className="mt-4 max-w-[72ch] lg:col-span-9 lg:mt-0">
-                {section.items
+                {section.visible
                   .filter((p) => p.year === year)
                   .map((pub) => (
                     <PublicationItem key={pub.id} pub={pub} />
@@ -96,6 +106,37 @@ export default function PublicationExplorer({
               </ul>
             </div>
           ))}
+          {!searching && section.items.length > PREVIEW_COUNT ? (
+            <div className="mt-6 text-center">
+              <button
+                type="button"
+                aria-expanded={section.isExpanded}
+                onClick={() =>
+                  setExpanded((prev) => ({
+                    ...prev,
+                    [section.type]: !section.isExpanded,
+                  }))
+                }
+                className="btn-outline"
+              >
+                {section.isExpanded ? (
+                  <>
+                    <span className="ko-only">접기</span>
+                    <span className="en-only">Show less</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="ko-only">
+                      전체 {section.items.length}건 보기
+                    </span>
+                    <span className="en-only">
+                      Show all {section.items.length}
+                    </span>
+                  </>
+                )}
+              </button>
+            </div>
+          ) : null}
         </section>
       ))}
 

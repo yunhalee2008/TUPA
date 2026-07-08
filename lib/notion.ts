@@ -191,6 +191,7 @@ const PUB_TYPE_FROM_KO: Record<string, PublicationType> = {
   학회: "conference",
   저널: "journal",
   북챕터: "book",
+  특허: "patent",
 };
 
 export async function fetchPublications(): Promise<Publication[] | null> {

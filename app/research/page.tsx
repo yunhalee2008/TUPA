@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import ProjectRow from "@/components/ProjectRow";
 import ResearchAreaCard from "@/components/ResearchAreaCard";
 import SectionHeading from "@/components/SectionHeading";
-import {
-  getProjects,
-  getResearchAreas,
-  getResearchProjects,
-} from "@/lib/content";
+import { getResearchAreas, getResearchProjects } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Research",
@@ -17,10 +12,9 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function ResearchPage() {
-  const [areas, researchProjects, projects] = await Promise.all([
+  const [areas, researchProjects] = await Promise.all([
     getResearchAreas(),
     getResearchProjects(),
-    getProjects(),
   ]);
 
   return (
@@ -51,8 +45,8 @@ export default async function ResearchPage() {
       <section className="mt-20 gap-10 lg:grid lg:grid-cols-12">
         <SectionHeading
           index="02"
-          titleEn="Research Projects"
-          titleKo="연구 프로젝트"
+          titleEn="Research Topics"
+          titleKo="연구 주제"
         />
         <ul className="mt-8 lg:col-span-9 lg:mt-0">
           {researchProjects.map((project) => (
@@ -86,14 +80,6 @@ export default async function ResearchPage() {
         </ul>
       </section>
 
-      <section className="mt-20 gap-10 lg:grid lg:grid-cols-12">
-        <SectionHeading index="03" titleEn="Funded Projects" titleKo="연구 과제" />
-        <ul className="mt-8 lg:col-span-9 lg:mt-0">
-          {projects.map((project) => (
-            <ProjectRow key={project.id} project={project} />
-          ))}
-        </ul>
-      </section>
     </main>
   );
 }

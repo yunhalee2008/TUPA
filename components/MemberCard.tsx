@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Member } from "@/lib/content";
 
 export default function MemberCard({ member }: { member: Member }) {
@@ -11,14 +12,15 @@ export default function MemberCard({ member }: { member: Member }) {
 
   return (
     <article className="rounded-xl border border-mapline bg-white p-6">
-      <div className="flex items-center gap-4">
+      {/* Photo/name link to the member page with their publication record. */}
+      <Link href={`/people/${member.id}`} className="group flex items-center gap-4">
         {member.photoUrl ? (
           <Image
             src={member.photoUrl}
             alt={member.nameEn}
             width={80}
             height={80}
-            className="h-20 w-20 shrink-0 rounded-full object-cover"
+            className="h-20 w-20 shrink-0 rounded-full object-cover transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none"
           />
         ) : (
           <div
@@ -29,13 +31,15 @@ export default function MemberCard({ member }: { member: Member }) {
           </div>
         )}
         <div>
-          <h3 className="font-semibold text-cobalt-900">{member.nameEn}</h3>
+          <h3 className="font-semibold text-cobalt-900 underline-offset-2 group-hover:text-cobalt-600 group-hover:underline">
+            {member.nameEn}
+          </h3>
           <p className="text-sm text-body/70">
             <span className="ko-only">{member.titleKo}</span>
             <span className="en-only">{member.titleEn}</span>
           </p>
         </div>
-      </div>
+      </Link>
       {member.researchInterests.length > 0 ? (
         <p className="mt-4 text-sm text-body/80">
           {member.researchInterests.join(" · ")}

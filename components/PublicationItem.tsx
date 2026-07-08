@@ -43,7 +43,13 @@ export default function PublicationItem({ pub }: { pub: Publication }) {
             }
           >
             <span className="ko-only">
-              {pub.type === "journal" ? "저널" : pub.type === "book" ? "북챕터" : "학회"}
+              {pub.type === "journal"
+                ? "저널"
+                : pub.type === "book"
+                  ? "북챕터"
+                  : pub.type === "patent"
+                    ? "특허"
+                    : "학회"}
             </span>
             <span className="en-only">{pub.type}</span>
           </span>

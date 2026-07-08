@@ -1,15 +1,21 @@
 import type { MetadataRoute } from "next";
-import { getGalleryAlbums, getNews } from "@/lib/content";
+import { getGalleryAlbums, getMembers, getNews, getProjects } from "@/lib/content";
 
 const SITE_URL = "https://tupa-two.vercel.app";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [news, albums] = await Promise.all([getNews(), getGalleryAlbums()]);
+  const [news, albums, projects, members] = await Promise.all([
+    getNews(),
+    getGalleryAlbums(),
+    getProjects(),
+    getMembers(),
+  ]);
 
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
     "/research",
     "/publications",
+    "/projects",
     "/people",
     "/news",
     "/gallery",
@@ -34,6 +40,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: album.date,
       changeFrequency: "yearly" as const,
       priority: 0.3,
+    })),
+    ...projects.map((project) => ({
+      url: `${SITE_URL}/projects/${project.id}`,
+      changeFrequency: "yearly" as const,
+      priority: 0.4,
+    })),
+    ...members.map((member) => ({
+      url: `${SITE_URL}/people/${member.id}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.4,
     })),
   ];
 }

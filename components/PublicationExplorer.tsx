@@ -4,10 +4,12 @@ import { useMemo, useState } from "react";
 import PublicationItem from "@/components/PublicationItem";
 import type { Publication, PublicationType } from "@/lib/content";
 
-const TYPES: { value: PublicationType | "all"; ko: string; en: string }[] = [
-  { value: "all", ko: "전체", en: "All" },
-  { value: "conference", ko: "학회", en: "Conference" },
-  { value: "book", ko: "북챕터", en: "Book" },
+/** Section order and labels, dochak.com/disclosure-style. */
+const SECTIONS: { type: PublicationType; ko: string; en: string }[] = [
+  { type: "journal", ko: "저널 논문", en: "Journal Papers" },
+  { type: "patent", ko: "특허", en: "Patents" },
+  { type: "conference", ko: "국제학회 논문", en: "Conference Papers" },
+  { type: "book", ko: "북챕터", en: "Book Chapters" },
 ];
 
 export default function PublicationExplorer({
@@ -16,30 +18,30 @@ export default function PublicationExplorer({
   publications: Publication[];
 }) {
   const [query, setQuery] = useState("");
-  const [type, setType] = useState<PublicationType | "all">("all");
   const [order, setOrder] = useState<"newest" | "oldest">("newest");
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    let result = publications;
-    if (type !== "all") {
-      result = result.filter((p) => p.type === type);
-    }
-    if (q) {
-      result = result.filter((p) =>
-        [p.title, p.authors.join(" "), p.venue, String(p.year)]
-          .join(" ")
-          .toLowerCase()
-          .includes(q),
-      );
-    }
-    return result;
-  }, [publications, query, type]);
+    if (!q) return publications;
+    return publications.filter((p) =>
+      [p.title, p.authors.join(" "), p.venue, String(p.year)]
+        .join(" ")
+        .toLowerCase()
+        .includes(q),
+    );
+  }, [publications, query]);
 
-  const years = useMemo(() => {
-    const unique = Array.from(new Set(filtered.map((p) => p.year)));
-    return unique.sort((a, b) => (order === "newest" ? b - a : a - b));
-  }, [filtered, order]);
+  const sections = useMemo(
+    () =>
+      SECTIONS.map((section) => {
+        const items = filtered.filter((p) => p.type === section.type);
+        const years = Array.from(new Set(items.map((p) => p.year))).sort(
+          (a, b) => (order === "newest" ? b - a : a - b),
+        );
+        return { ...section, items, years };
+      }).filter((section) => section.items.length > 0),
+    [filtered, order],
+  );
 
   return (
     <div>
@@ -52,24 +54,6 @@ export default function PublicationExplorer({
           aria-label="Search publications"
           className="w-full max-w-xs rounded-lg border border-mapline bg-white px-3.5 py-2 text-sm outline-none transition-colors focus:border-cobalt-600 sm:w-72"
         />
-        <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter by type">
-          {TYPES.map((t) => (
-            <button
-              key={t.value}
-              type="button"
-              onClick={() => setType(t.value)}
-              aria-pressed={type === t.value}
-              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                type === t.value
-                  ? "bg-cobalt-900 text-white"
-                  : "border border-mapline bg-white text-body/70 hover:border-cobalt-600 hover:text-cobalt-600"
-              }`}
-            >
-              <span className="ko-only">{t.ko}</span>
-              <span className="en-only">{t.en}</span>
-            </button>
-          ))}
-        </div>
         <select
           value={order}
           onChange={(e) => setOrder(e.target.value as "newest" | "oldest")}
@@ -82,20 +66,36 @@ export default function PublicationExplorer({
       </div>
 
       <p className="mt-4 text-sm text-body/60">
-        <span className="ko-only">논문 {filtered.length}편</span>
-        <span className="en-only">{filtered.length} publications</span>
+        <span className="ko-only">총 {filtered.length}건</span>
+        <span className="en-only">{filtered.length} items</span>
       </p>
 
-      {years.map((year) => (
-        <section key={year} className="mt-10 gap-10 lg:grid lg:grid-cols-12">
-          <p className="mono-label lg:col-span-3">{year}</p>
-          <ul className="mt-4 max-w-[72ch] lg:col-span-9 lg:mt-0">
-            {filtered
-              .filter((p) => p.year === year)
-              .map((pub) => (
-                <PublicationItem key={pub.id} pub={pub} />
-              ))}
-          </ul>
+      {sections.map((section, sectionIndex) => (
+        <section key={section.type} className="mt-12">
+          <div className="border-b-2 border-cobalt-900 pb-3">
+            <p className="mono-label">
+              {String(sectionIndex + 1).padStart(2, "0")} — {section.en}
+            </p>
+            <h2 className="mt-1 font-display text-2xl font-bold text-cobalt-900">
+              <span className="ko-only">{section.ko}</span>
+              <span className="en-only">{section.en}</span>
+              <span className="ml-2 align-middle font-sans text-sm font-normal text-body/50">
+                {section.items.length}
+              </span>
+            </h2>
+          </div>
+          {section.years.map((year) => (
+            <div key={year} className="mt-8 gap-10 lg:grid lg:grid-cols-12">
+              <p className="mono-label lg:col-span-3">{year}</p>
+              <ul className="mt-4 max-w-[72ch] lg:col-span-9 lg:mt-0">
+                {section.items
+                  .filter((p) => p.year === year)
+                  .map((pub) => (
+                    <PublicationItem key={pub.id} pub={pub} />
+                  ))}
+              </ul>
+            </div>
+          ))}
         </section>
       ))}
 

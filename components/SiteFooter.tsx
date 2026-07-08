@@ -31,6 +31,11 @@ export default async function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link className="hover:text-white" href="/projects">
+                Projects
+              </Link>
+            </li>
+            <li>
               <Link className="hover:text-white" href="/people">
                 People
               </Link>

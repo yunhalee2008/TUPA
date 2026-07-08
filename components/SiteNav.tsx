@@ -9,6 +9,7 @@ import LangToggle from "@/components/LangToggle";
 const NAV_ITEMS = [
   { href: "/research", label: "Research" },
   { href: "/publications", label: "Publications" },
+  { href: "/projects", label: "Projects" },
   { href: "/people", label: "People" },
   { href: "/news", label: "News" },
   { href: "/gallery", label: "Gallery" },

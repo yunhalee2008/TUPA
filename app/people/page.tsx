@@ -23,37 +23,42 @@ export default async function PeoplePage() {
 
   return (
     <main className="site-container py-14 lg:py-20">
-      <h1 className="font-display text-4xl font-extrabold text-cobalt-900">People</h1>
-      <p className="mt-3 max-w-2xl">
-        <span className="ko-only">
-          교통공학·도시계획·컴퓨터과학 배경의 구성원들이 함께 연구합니다.
-        </span>
-        <span className="en-only">
-          Our members come from transportation engineering, urban planning, and
-          computer science backgrounds.
-        </span>
-      </p>
+      <div className="lg:flex lg:items-start lg:justify-between lg:gap-16">
+        <div>
+          <h1 className="font-display text-4xl font-extrabold text-cobalt-900">People</h1>
+          <p className="mt-3 max-w-2xl">
+            <span className="ko-only">
+              교통공학·도시계획·컴퓨터과학 배경의 구성원들이 함께 연구합니다.
+            </span>
+            <span className="en-only">
+              Our members come from transportation engineering, urban planning,
+              and computer science backgrounds.
+            </span>
+          </p>
+        </div>
 
-      {/* Headcount strip by career stage (professor's five categories). */}
-      <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4 border-y border-mapline py-5">
-        {[
-          { ko: "박사", en: "Post-docs", count: researchers.length },
-          { ko: "박사과정", en: "Ph.D.", count: phd.length },
-          { ko: "석사과정", en: "M.S.", count: ms.length },
-          { ko: "인턴", en: "Interns", count: interns.length },
-          { ko: "졸업생", en: "Alumni", count: alumni.length },
-        ].map((stat) => (
-          <div key={stat.en}>
-            <dt className="mono-label">
-              <span className="ko-only">{stat.ko}</span>
-              <span className="en-only">{stat.en}</span>
-            </dt>
-            <dd className="mt-1 font-display text-2xl font-extrabold text-cobalt-900">
-              {stat.count}
-            </dd>
-          </div>
-        ))}
-      </dl>
+        {/* Headcount strip by career stage (professor's five categories) —
+            sits to the right of the title on desktop, stacks below on mobile. */}
+        <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4 border-y border-mapline py-5 lg:mt-2 lg:shrink-0 lg:gap-x-8 lg:border-y-0 lg:py-0">
+          {[
+            { ko: "박사", en: "Post-docs", count: researchers.length },
+            { ko: "박사과정", en: "Ph.D.", count: phd.length },
+            { ko: "석사과정", en: "M.S.", count: ms.length },
+            { ko: "인턴", en: "Interns", count: interns.length },
+            { ko: "졸업생", en: "Alumni", count: alumni.length },
+          ].map((stat) => (
+            <div key={stat.en}>
+              <dt className="mono-label">
+                <span className="ko-only">{stat.ko}</span>
+                <span className="en-only">{stat.en}</span>
+              </dt>
+              <dd className="mt-1 font-display text-2xl font-extrabold text-cobalt-900">
+                {stat.count}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
 
       <section className="mt-14 gap-10 lg:grid lg:grid-cols-12">
         <SectionHeading index="01" titleEn="Director" titleKo="지도교수" />

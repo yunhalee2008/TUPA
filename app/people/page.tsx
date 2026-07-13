@@ -16,7 +16,7 @@ export default async function PeoplePage() {
   const researchers = members.filter((m) => m.role === "research-fellow");
   const phd = members.filter((m) => m.role === "phd");
   const ms = members.filter((m) => m.role === "ms");
-  const visitors = members.filter(
+  const interns = members.filter(
     (m) => m.role === "visiting" || m.role === "intern",
   );
   const alumni = members.filter((m) => m.role === "alumni");
@@ -34,6 +34,27 @@ export default async function PeoplePage() {
         </span>
       </p>
 
+      {/* Headcount strip by career stage (professor's five categories). */}
+      <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4 border-y border-mapline py-5">
+        {[
+          { ko: "박사", en: "Post-docs", count: researchers.length },
+          { ko: "박사과정", en: "Ph.D.", count: phd.length },
+          { ko: "석사과정", en: "M.S.", count: ms.length },
+          { ko: "인턴", en: "Interns", count: interns.length },
+          { ko: "졸업생", en: "Alumni", count: alumni.length },
+        ].map((stat) => (
+          <div key={stat.en}>
+            <dt className="mono-label">
+              <span className="ko-only">{stat.ko}</span>
+              <span className="en-only">{stat.en}</span>
+            </dt>
+            <dd className="mt-1 font-display text-2xl font-extrabold text-cobalt-900">
+              {stat.count}
+            </dd>
+          </div>
+        ))}
+      </dl>
+
       <section className="mt-14 gap-10 lg:grid lg:grid-cols-12">
         <SectionHeading index="01" titleEn="Director" titleKo="지도교수" />
         <div className="mt-8 grid gap-5 lg:col-span-9 lg:mt-0">
@@ -47,8 +68,8 @@ export default async function PeoplePage() {
         <section className="mt-16 gap-10 lg:grid lg:grid-cols-12">
           <SectionHeading
             index="02"
-            titleEn="Post-Docs & Researchers"
-            titleKo="연구원"
+            titleEn="Post-doctoral Researchers"
+            titleKo="박사"
           />
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:col-span-9 lg:mt-0">
             {researchers.map((member) => (
@@ -80,15 +101,11 @@ export default async function PeoplePage() {
         </section>
       ) : null}
 
-      {visitors.length > 0 ? (
+      {interns.length > 0 ? (
         <section className="mt-16 gap-10 lg:grid lg:grid-cols-12">
-          <SectionHeading
-            index="05"
-            titleEn="Visiting & Interns"
-            titleKo="방문 학생 · 인턴"
-          />
+          <SectionHeading index="05" titleEn="Interns" titleKo="인턴" />
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:col-span-9 lg:mt-0">
-            {visitors.map((member) => (
+            {interns.map((member) => (
               <MemberCard key={member.id} member={member} />
             ))}
           </div>

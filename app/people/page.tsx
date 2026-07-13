@@ -34,21 +34,22 @@ export default async function PeoplePage() {
         </span>
       </p>
 
-      {/* Headcount strip by career stage (professor's five categories). */}
-      <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4 border-y border-mapline py-5">
+      {/* Headcount band by career stage (professor's five categories),
+          styled after the home page's Join TUPA band. */}
+      <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 rounded-2xl bg-cobalt-900 px-8 py-8 text-white sm:grid-cols-3 lg:grid-cols-5 lg:px-12 lg:py-10">
         {[
           { ko: "박사", en: "Post-docs", count: researchers.length },
-          { ko: "박사과정", en: "Ph.D.", count: phd.length },
-          { ko: "석사과정", en: "M.S.", count: ms.length },
+          { ko: "박사과정", en: "Ph.D. Students", count: phd.length },
+          { ko: "석사과정", en: "M.S. Students", count: ms.length },
           { ko: "인턴", en: "Interns", count: interns.length },
           { ko: "졸업생", en: "Alumni", count: alumni.length },
         ].map((stat) => (
           <div key={stat.en}>
-            <dt className="mono-label">
+            <dt className="text-xs uppercase tracking-wide text-white/60">
               <span className="ko-only">{stat.ko}</span>
               <span className="en-only">{stat.en}</span>
             </dt>
-            <dd className="mt-1 font-display text-2xl font-extrabold text-cobalt-900">
+            <dd className="mt-1 font-display text-3xl font-extrabold">
               {stat.count}
             </dd>
           </div>

@@ -209,7 +209,7 @@ const MEMBERS: Member[] = [
       "2019–2020 Senior Lecturer, Dept. of Civil Engineering, Monash University",
       "2015–2018 Lecturer, Dept. of Civil Engineering, Monash University",
       "2014 Ph.D. in Civil Engineering, The University of Queensland",
-      "Industry — Transport Engineer & Planner, PTV Group (Australia · Germany · UAE · Korea)",
+      "2007-2012 — Transport Engineer & Planner, PTV Group (Australia · Germany · UAE · Korea)",
     ],
     researchInterests: [
       "Transport modelling & simulation",

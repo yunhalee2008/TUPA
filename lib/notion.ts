@@ -132,7 +132,7 @@ export async function fetchPageContent(
         if (t.trim()) body.push(t);
       } else if (block.type === "image") {
         const src = block.image?.file?.url ?? block.image?.external?.url;
-        if (src) images.push(src);
+        if (src) images.push(`/api/photo/${block.id}?kind=block`);
       }
     }
     cursor = data.has_more ? data.next_cursor : undefined;
@@ -174,7 +174,8 @@ export async function fetchMembers(): Promise<Member[] | null> {
       titleKo: text(p["직함(한글)"]),
       titleEn: text(p["직함(영문)"]),
       email: email(p["이메일"]) || undefined,
-      photoUrl: fileUrl(p["사진"]),
+      // Stable proxy path — raw Notion file URLs expire (see /api/photo).
+      photoUrl: fileUrl(p["사진"]) ? `/api/photo/${page.id}` : undefined,
       researchInterests: multiSelect(p["연구 관심사"]),
       links: links.length ? links : undefined,
       placement: text(p["진로"]) || undefined,
@@ -315,7 +316,7 @@ export async function fetchResearchProjects(): Promise<ResearchProject[] | null>
       id: page.id,
       title,
       date: page.created_time.slice(0, 10),
-      imageUrl: fileUrl(p["사진"]),
+      imageUrl: fileUrl(p["사진"]) ? `/api/photo/${page.id}` : undefined,
       summary: text(p["요약(영문)"]),
     });
   }

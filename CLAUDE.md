@@ -1,6 +1,6 @@
 # TUPA Website
 
-KAIST 조천식모빌리티대학원 김인희 교수 연구실 **TUPA (Transport and Urban Planning Arena)** 웹사이트.
+KAIST 조천식모빌리티대학원 김인희 교수 연구실 **TUPA (Transport and Urban Planning with AI)** 웹사이트.
 교통/모빌리티 AI, 스마트시티 분야. 기존 사이트: https://inhi.kim (WordPress export가 루트의 `tupa.WordPress.*.xml`).
 
 ## 프로젝트 목적

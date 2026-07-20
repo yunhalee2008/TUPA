@@ -1,6 +1,6 @@
 # TUPA Website
 
-KAIST 조천식모빌리티대학원 **TUPA (Transport and Urban Planning Arena)** 연구실
+KAIST 조천식모빌리티대학원 **TUPA (Transport and Urban Planning with AI)** 연구실
 웹사이트. Next.js 14 (App Router) + TypeScript + Tailwind CSS, 콘텐츠는 Notion
 CMS에서 관리하며 Vercel로 배포합니다.
 

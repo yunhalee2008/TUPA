@@ -5,7 +5,7 @@
 > - 히어로: 인터랙티브 캔버스 2안 대신 **연구 분야를 보여주는 비디오 히어로로 방향 확정** (Higgsfield로 생성) — §5.3 참조
 > - 타이포그래피: 미정 (T1 권장안으로 진행 예정, 이견 시 변경)
 >
-> 대상: KAIST 조천식모빌리티대학원 김인희 교수 연구실 TUPA (Transport and Urban Planning Arena)
+> 대상: KAIST 조천식모빌리티대학원 김인희 교수 연구실 TUPA (Transport and Urban Planning with AI)
 
 ## 0. 디자인 방향
 

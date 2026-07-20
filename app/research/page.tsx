@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Copy from "@/components/Copy";
 import ResearchTopicList from "@/components/ResearchTopicList";
-import SectionHeading from "@/components/SectionHeading";
 import {
   getPageCopy,
   getResearchAreas,
@@ -47,11 +46,13 @@ export default async function ResearchPage() {
                 : "mt-16 gap-10 border-t border-mapline pt-16 lg:grid lg:grid-cols-12 lg:pt-20"
             }
           >
-            <SectionHeading
-              index={String(i + 1).padStart(2, "0")}
-              titleEn={area.nameEn}
-              titleKo={area.nameKo}
-            />
+            <div className="lg:col-span-3">
+              <p className="mono-label">{String(i + 1).padStart(2, "0")}</p>
+              <h2 className="mt-2 text-2xl font-bold text-cobalt-900">
+                <span className="ko-only">{area.nameKo}</span>
+                <span className="en-only">{area.nameEn}</span>
+              </h2>
+            </div>
             <div className="lg:col-span-9">
               <p className="mt-8 max-w-[68ch] text-sm leading-relaxed lg:mt-0">
                 <span className="ko-only">{area.descriptionKo}</span>

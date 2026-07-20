@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Jaeeun Jung",
+    "photo": "/people/jaeeun-jung.jpg",
+    "stepsKo": [
+      "학부 3학년 — 교통학회 우수논문상",
+      "석사과정 — TRB 1저자 논문 · 과학기술우수논문상 · NRF 연구장려금",
+      "현재 — 한국철도기술연구원"
+    ],
+    "stepsEn": [
+      "3rd-year undergrad — KST best paper award",
+      "M.S. — first-author TRB papers, national paper award, NRF fund",
+      "Now — Korea Railroad Research Institute"
+    ]
+  },
+  {
+    "name": "Hyunchul Park",
+    "photo": "/people/hyunchul-park.jpg",
+    "stepsKo": [
+      "학부 4학년 — 추계 ITS학회 우수논문상 (전국 석박사와 경쟁)",
+      "석사과정 — TRB 논문 · 글로벌리더 장학금 · 우수조교상",
+      "현재 — 박사과정"
+    ],
+    "stepsEn": [
+      "4th-year undergrad — best paper at the Korea ITS conference",
+      "M.S. — TRB papers, leadership scholarship, outstanding TA award",
+      "Now — Ph.D. student"
+    ]
+  },
+  {
+    "name": "Yeji Yoo",
+    "photo": "/people/yeji-yoo.jpg",
+    "stepsKo": [
+      "학부 — 박창호 장학금 · 학회 우수논문상 다수",
+      "학부연구생 — ITS 세계총회 등 국내외 발표",
+      "현재 — 석사과정"
+    ],
+    "stepsEn": [
+      "Undergrad — Park Chang-ho scholarship, multiple best paper awards",
+      "Undergraduate researcher — presented at ITS World Congress and more",
+      "Now — M.S. student"
+    ]
+  }
+]

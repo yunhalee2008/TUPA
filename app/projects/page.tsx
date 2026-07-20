@@ -1,31 +1,28 @@
 import type { Metadata } from "next";
+import Copy from "@/components/Copy";
 import ProjectRow from "@/components/ProjectRow";
-import { getProjects } from "@/lib/content";
+import { getPageCopy, getProjects } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Projects",
-  description: "Funded research projects at TUPA, KAIST.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const copy = await getPageCopy();
+  return {
+    title: copy["연구과제 · 탭 제목(SEO)"].en,
+    description: copy["연구과제 · 검색 설명(SEO)"].en,
+  };
+}
 
 export const revalidate = 3600;
 
 export default async function ProjectsPage() {
-  const projects = await getProjects();
+  const [projects, copy] = await Promise.all([getProjects(), getPageCopy()]);
 
   return (
     <main className="site-container py-14 lg:py-20">
       <h1 className="font-display text-4xl font-extrabold text-cobalt-900">
-        Projects
+        {copy["연구과제 · 페이지 제목"].en}
       </h1>
       <p className="mt-3 max-w-2xl">
-        <span className="ko-only">
-          정부·산업체와 함께 수행한 연구 과제 목록입니다. 과제를 클릭하면 상세
-          설명을 볼 수 있습니다.
-        </span>
-        <span className="en-only">
-          Funded research projects with government and industry partners. Click
-          a project for details.
-        </span>
+        <Copy t={copy["연구과제 · 페이지 소개"]} />
       </p>
 
       <ul className="mt-10">

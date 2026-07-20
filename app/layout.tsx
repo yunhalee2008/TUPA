@@ -2,45 +2,46 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNav from "@/components/SiteNav";
+import { getPageCopy } from "@/lib/content";
 import "./globals.css";
 
 /** Swap to the custom domain when it is connected. */
 const SITE_URL = "https://tupa-two.vercel.app";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: "TUPA — Transport and Urban Planning Arena | KAIST",
-    template: "%s | TUPA @ KAIST",
-  },
-  description:
-    "TUPA (Transport and Urban Planning Arena) is Prof. Inhi Kim's research lab at the Cho Chun Shik Graduate School of Mobility, KAIST, working on transportation AI, mobility, and smart cities.",
-  openGraph: {
-    type: "website",
-    siteName: "TUPA — Transport and Urban Planning Arena",
-    title: "TUPA — Transport and Urban Planning Arena | KAIST",
-    description:
-      "Prof. Inhi Kim's transportation AI & smart city research lab at the Cho Chun Shik Graduate School of Mobility, KAIST.",
-    url: SITE_URL,
-    locale: "ko_KR",
-    alternateLocale: "en_US",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "TUPA — a miniature paper city where buildings form the letters TUPA",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TUPA — Transport and Urban Planning Arena | KAIST",
-    description:
-      "Prof. Inhi Kim's transportation AI & smart city research lab at KAIST.",
-    images: ["/og.jpg"],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const copy = await getPageCopy();
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: copy["SEO · 사이트 제목"].en,
+      template: copy["SEO · 제목 템플릿"].en,
+    },
+    description: copy["SEO · 사이트 설명"].en,
+    openGraph: {
+      type: "website",
+      siteName: copy["SEO · OG 사이트명"].en,
+      title: copy["SEO · 사이트 제목"].en,
+      description: copy["SEO · OG 설명"].en,
+      url: SITE_URL,
+      locale: "ko_KR",
+      alternateLocale: "en_US",
+      images: [
+        {
+          url: "/og.jpg",
+          width: 1200,
+          height: 630,
+          alt: copy["SEO · OG 이미지 설명"].en,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: copy["SEO · 사이트 제목"].en,
+      description: copy["SEO · 트위터 설명"].en,
+      images: ["/og.jpg"],
+    },
+  };
+}
 
 export default function RootLayout({
   children,

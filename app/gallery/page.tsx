@@ -1,31 +1,30 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getGalleryAlbums } from "@/lib/content";
+import Copy from "@/components/Copy";
+import { getGalleryAlbums, getPageCopy } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Gallery",
-  description: "Photo archive of lab life at TUPA — conferences, picnics, and milestones.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const copy = await getPageCopy();
+  return {
+    title: copy["갤러리 · 탭 제목(SEO)"].en,
+    description: copy["갤러리 · 검색 설명(SEO)"].en,
+  };
+}
 
 export const revalidate = 3600;
 
 export default async function GalleryPage() {
   const albums = await getGalleryAlbums();
+  const copy = await getPageCopy();
 
   return (
     <main className="site-container py-14 lg:py-20">
       <h1 className="font-display text-4xl font-extrabold text-cobalt-900">
-        Gallery
+        {copy["갤러리 · 페이지 제목"].en}
       </h1>
       <p className="mt-3 max-w-2xl">
-        <span className="ko-only">
-          학회, 소풍, 졸업, 그리고 소소한 축하까지 — TUPA의 순간들을 기록합니다.
-        </span>
-        <span className="en-only">
-          Conferences, picnics, graduations, and small celebrations — moments of
-          TUPA.
-        </span>
+        <Copy t={copy["갤러리 · 페이지 소개"]} />
       </p>
 
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

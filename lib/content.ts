@@ -8,9 +8,11 @@
  */
 
 import galleryData from "./data/gallery.json";
+import journeysData from "./data/journeys.json";
 import memberPublicationsData from "./data/member-publications.json";
 import newsArchiveData from "./data/news-archive.json";
 import newsExtraData from "./data/news-extra.json";
+import pageCopyData from "./data/page-copy.json";
 import researchProjectsData from "./data/research-projects.json";
 
 // ---------------------------------------------------------------------------
@@ -45,6 +47,16 @@ export interface Member {
   /** Career timeline lines (mainly for the director), newest first. */
   career?: string[];
   /** Manual sort order within a role (from the Notion CMS). */
+  order?: number;
+}
+
+/** Student journey card on /prospective-students (성장 스토리 DB). */
+export interface Journey {
+  name: string;
+  photo?: string;
+  /** Timeline lines, first to current. */
+  stepsKo: string[];
+  stepsEn: string[];
   order?: number;
 }
 
@@ -111,6 +123,28 @@ export interface GalleryAlbum {
   images: string[];
 }
 
+/** A titled block of detail content inside a research topic dialog. */
+export interface ResearchTopicSection {
+  heading: string;
+  body?: string;
+  bullets?: string[];
+}
+
+export interface ResearchTopicImage {
+  src: string;
+  caption?: string;
+}
+
+/** Rich content shown in the click-to-open detail dialog of a research topic. */
+export interface ResearchTopicDetail {
+  /** Lead paragraphs shown at the top of the dialog. */
+  paragraphs: string[];
+  sections?: ResearchTopicSection[];
+  images?: ResearchTopicImage[];
+  /** External references (source page, demo videos). */
+  links?: { label: string; url: string }[];
+}
+
 /** A research topic/project showcase (legacy "Research Projects" page). */
 export interface ResearchProject {
   id: string;
@@ -119,6 +153,7 @@ export interface ResearchProject {
   date: string;
   imageUrl?: string;
   summary: string;
+  detail?: ResearchTopicDetail;
 }
 
 export interface ResearchArea {
@@ -218,7 +253,7 @@ const MEMBERS: Member[] = [
       "Sustainable transport systems",
     ],
     links: [
-      { label: "Official homepage", url: "https://inhi.kim" },
+      // "Official homepage" (inhi.kim) removed — that domain now serves this site.
       {
         label: "Google Scholar",
         url: "https://scholar.google.com/citations?user=Cz_9jloAAAAJ&hl=en",
@@ -3198,10 +3233,12 @@ const OPENINGS: Opening[] = [
 import {
   fetchFaqs,
   fetchGalleryAlbums,
+  fetchJourneys,
   fetchMembers,
   fetchNews,
   fetchOpenings,
   fetchPageContent,
+  fetchPageCopy,
   fetchProjects,
   fetchPublications,
   fetchResearchAreas,
@@ -3225,6 +3262,7 @@ export async function getMembers(role?: MemberRole): Promise<Member[]> {
           ...m,
           photoUrl: m.photoUrl ?? fallback?.photoUrl,
           career: m.career ?? fallback?.career,
+          links: m.links ?? fallback?.links,
         };
       });
     }
@@ -3434,8 +3472,7 @@ const SITE_SETTINGS_DEFAULTS: Record<string, string> = {
   "대표 이메일": "kaist.mobility@gmail.com",
   "주소(한글)": "대전광역시 유성구 문지로 193, KAIST 문지캠퍼스 F동 433호",
   "주소(영문)": "433, Building F, 193 Munji-ro, Yuseong-gu, Daejeon, Republic of Korea",
-  "히어로 문구(한글)": "교통·모빌리티 AI와 스마트시티 연구로 도시의 이동 문제를 해결합니다.",
-  "히어로 문구(영문)": "We solve urban mobility problems through transport AI and smart city research.",
+  // 히어로 문구 → 페이지 문구 DB "홈 · 히어로 문구"로 이동 (2026-07-16)
   "3D 투어 링크": "https://my.matterport.com/show/?m=PKXeypMWexL",
   "Google Scholar": "https://scholar.google.com/citations?user=Cz_9jloAAAAJ&hl=en",
   Scopus: "https://www.scopus.com/authid/detail.uri?authorId=55454217700",
@@ -3447,4 +3484,55 @@ export async function getSiteSettings(): Promise<Record<string, string>> {
     if (remote) return { ...SITE_SETTINGS_DEFAULTS, ...remote };
   }
   return SITE_SETTINGS_DEFAULTS;
+}
+
+/** Student journey cards — Notion 성장 스토리 DB with the built-in fallback. */
+const JOURNEYS_FALLBACK = journeysData as Journey[];
+
+export async function getJourneys(): Promise<Journey[]> {
+  if (notionEnabled) {
+    const remote = await fetchJourneys();
+    if (remote && remote.length > 0) {
+      // Rows without an uploaded photo inherit the repo photo by name.
+      const staticByName = new Map(JOURNEYS_FALLBACK.map((j) => [j.name, j]));
+      return remote.map((j) => ({
+        ...j,
+        photo: j.photo ?? staticByName.get(j.name)?.photo,
+      }));
+    }
+  }
+  return JOURNEYS_FALLBACK;
+}
+
+/** One bilingual copy string. Rendered via <Copy t={...}> (links supported). */
+export interface CopyPair {
+  ko: string;
+  en: string;
+}
+
+/**
+ * Fixed page copy (headings, intro paragraphs, buttons, SEO strings), keyed
+ * by the 키 column of the Notion 페이지 문구 DB. lib/data/page-copy.json holds
+ * the shipped defaults; a Notion row overrides per language, and an empty
+ * language field falls back to the default so a half-filled row never blanks
+ * the site.
+ */
+const PAGE_COPY_DEFAULTS = pageCopyData as Record<string, CopyPair>;
+
+export async function getPageCopy(): Promise<Record<string, CopyPair>> {
+  if (notionEnabled) {
+    const remote = await fetchPageCopy();
+    if (remote) {
+      const merged: Record<string, CopyPair> = { ...PAGE_COPY_DEFAULTS };
+      for (const [key, pair] of Object.entries(remote)) {
+        const d = PAGE_COPY_DEFAULTS[key];
+        merged[key] = {
+          ko: pair.ko.trim() ? pair.ko : (d?.ko ?? pair.en),
+          en: pair.en.trim() ? pair.en : (d?.en ?? pair.ko),
+        };
+      }
+      return merged;
+    }
+  }
+  return PAGE_COPY_DEFAULTS;
 }

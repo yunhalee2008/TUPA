@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProject, getProjects } from "@/lib/content";
+import Copy from "@/components/Copy";
+import { getPageCopy, getProject, getProjects } from "@/lib/content";
 
 interface Props {
   params: { id: string };
@@ -22,7 +23,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export const revalidate = 3600;
 
 export default async function ProjectDetailPage({ params }: Props) {
-  const project = await getProject(params.id);
+  const [project, copy] = await Promise.all([
+    getProject(params.id),
+    getPageCopy(),
+  ]);
   if (!project) notFound();
 
   return (
@@ -32,7 +36,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           href="/projects"
           className="text-sm text-cobalt-600 underline-offset-2 hover:underline"
         >
-          ← Projects
+          {copy["연구과제 상세 · 뒤로가기 링크"].en}
         </Link>
 
         <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -47,8 +51,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           </span>
           {project.ongoing ? (
             <span className="rounded-full bg-safety/10 px-2.5 py-0.5 text-xs font-medium text-safety">
-              <span className="ko-only">진행중</span>
-              <span className="en-only">Ongoing</span>
+              <Copy t={copy["연구과제 상세 · 진행중 배지"]} />
             </span>
           ) : null}
         </div>
@@ -68,14 +71,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
         ) : (
           <p className="mt-8 rounded-xl border border-mapline bg-white p-6 text-sm text-body/70">
-            <span className="ko-only">
-              이 과제의 상세 자료는 준비 중입니다. 문의는 Contact 페이지를
-              이용해 주세요.
-            </span>
-            <span className="en-only">
-              Detailed materials for this project are being prepared. Please use
-              the Contact page for inquiries.
-            </span>
+            <Copy t={copy["연구과제 상세 · 자료 준비중 안내"]} />
           </p>
         )}
 

@@ -13,6 +13,7 @@
 import type {
   Faq,
   GalleryAlbum,
+  Journey,
   Member,
   MemberRole,
   NewsCategory,
@@ -44,6 +45,8 @@ const DB = {
   gallery: process.env.NOTION_DB_GALLERY ?? "4ba8a240a18a403b84e024621b22beb4",
   settings: process.env.NOTION_DB_SETTINGS ?? "3d0ceee3eddb48af932d09a4181bf363",
   faqs: process.env.NOTION_DB_FAQS ?? "c602f68cf1bd4e4899fb1eedf5a239b8",
+  pageCopy: process.env.NOTION_DB_PAGE_COPY ?? "99dfb9e8a6b149d0a83df8b56243798a",
+  journeys: process.env.NOTION_DB_JOURNEYS ?? "897ed0304c6b44f4b20cc776e9213e11",
 };
 
 export const notionEnabled = Boolean(API_KEY);
@@ -167,6 +170,7 @@ export async function fetchMembers(): Promise<Member[] | null> {
     const links: { label: string; url: string }[] = [];
     if (url(p["홈페이지"])) links.push({ label: "Official homepage", url: url(p["홈페이지"]) });
     if (url(p["Google Scholar"])) links.push({ label: "Google Scholar", url: url(p["Google Scholar"]) });
+    if (url(p["Scopus"])) links.push({ label: "Scopus", url: url(p["Scopus"]) });
     members.push({
       id: page.id,
       nameEn,
@@ -403,6 +407,50 @@ export async function fetchFaqs(): Promise<Faq[] | null> {
   return faqs
     .filter((f) => f.answerKo)
     .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+}
+
+/** 성장 스토리 DB → student journey cards on /prospective-students. */
+export async function fetchJourneys(): Promise<Journey[] | null> {
+  const pages = await queryDb(DB.journeys, "공개");
+  if (!pages) return null;
+  const journeys: Journey[] = [];
+  for (const page of pages) {
+    const p = page.properties;
+    const name = text(p["이름"]).trim();
+    const split = (s: string) =>
+      s.split("\n").map((l) => l.trim()).filter(Boolean);
+    const stepsKo = split(text(p["단계(한글)"]));
+    const stepsEn = split(text(p["단계(영문)"]));
+    if (!name || (stepsKo.length === 0 && stepsEn.length === 0)) continue;
+    journeys.push({
+      name,
+      photo: fileUrl(p["사진"]),
+      stepsKo: stepsKo.length ? stepsKo : stepsEn,
+      stepsEn: stepsEn.length ? stepsEn : stepsKo,
+      order: number(p["순서"]),
+    });
+  }
+  return journeys.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+}
+
+/**
+ * 페이지 문구 DB → key ▸ {ko, en}. Rows with an empty 키 are skipped; a row
+ * with both 문구 fields empty is treated as absent so the code default wins.
+ */
+export async function fetchPageCopy(): Promise<Record<
+  string,
+  { ko: string; en: string }
+> | null> {
+  const pages = await queryDb(DB.pageCopy);
+  if (!pages) return null;
+  const copy: Record<string, { ko: string; en: string }> = {};
+  for (const page of pages) {
+    const key = text(page.properties["키"]).trim();
+    const ko = text(page.properties["문구(한글)"]);
+    const en = text(page.properties["문구(영문)"]);
+    if (key && (ko.trim() || en.trim())) copy[key] = { ko, en };
+  }
+  return copy;
 }
 
 export async function fetchSiteSettings(): Promise<Record<string, string> | null> {

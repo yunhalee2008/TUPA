@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Copy from "@/components/Copy";
 import PublicationItem from "@/components/PublicationItem";
 import {
   getMemberPublicationRecord,
   getMembers,
+  getPageCopy,
   getPublications,
   type Publication,
 } from "@/lib/content";
@@ -20,12 +22,12 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const members = await getMembers();
+  const [members, copy] = await Promise.all([getMembers(), getPageCopy()]);
   const member = members.find((m) => m.id === params.id);
   if (!member) return {};
   return {
     title: member.nameEn,
-    description: `${member.titleEn} at TUPA, KAIST — publication record.`,
+    description: `${member.titleEn} ${copy["구성원 · 상세 검색 설명(SEO)"].en}`,
   };
 }
 
@@ -37,9 +39,10 @@ function titleKey(title: string): string {
 }
 
 export default async function MemberDetailPage({ params }: Props) {
-  const [members, publications] = await Promise.all([
+  const [members, publications, copy] = await Promise.all([
     getMembers(),
     getPublications(),
+    getPageCopy(),
   ]);
   const member = members.find((m) => m.id === params.id);
   if (!member) notFound();
@@ -80,7 +83,7 @@ export default async function MemberDetailPage({ params }: Props) {
           href="/people"
           className="text-sm text-cobalt-600 underline-offset-2 hover:underline"
         >
-          ← People
+          {copy["구성원 · 상세 뒤로가기 링크"].en}
         </Link>
 
         <div className="mt-8 flex items-center gap-5">
@@ -117,8 +120,7 @@ export default async function MemberDetailPage({ params }: Props) {
             {member.placement ? (
               <p className="mt-1 text-sm text-body/70">
                 <span className="font-medium text-cobalt-900">
-                  <span className="ko-only">현재</span>
-                  <span className="en-only">Now</span>
+                  <Copy t={copy["구성원 · 현재 소속 라벨"]} />
                 </span>{" "}
                 · {member.placement}
               </p>
@@ -168,8 +170,7 @@ export default async function MemberDetailPage({ params }: Props) {
 
         <section className="mt-12">
           <h2 className="font-display text-2xl font-bold text-cobalt-900">
-            <span className="ko-only">논문 실적</span>
-            <span className="en-only">Publication record</span>
+            <Copy t={copy["구성원 · 논문 실적 섹션 제목"]} />
             <span className="ml-2 align-middle font-sans text-sm font-normal text-body/50">
               {record.length}
             </span>
@@ -189,12 +190,7 @@ export default async function MemberDetailPage({ params }: Props) {
             ))
           ) : (
             <p className="mt-4 text-sm text-body/70">
-              <span className="ko-only">
-                이 목록에는 연구실 공식 발표 실적만 표시됩니다.
-              </span>
-              <span className="en-only">
-                Only publications listed on the lab&apos;s record appear here.
-              </span>
+              <Copy t={copy["구성원 · 논문 실적 없음 안내"]} />
             </p>
           )}
         </section>

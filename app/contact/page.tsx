@@ -1,27 +1,32 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getSiteSettings } from "@/lib/content";
+import Copy from "@/components/Copy";
+import { getPageCopy, getSiteSettings } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "How to reach TUPA at KAIST Cho Chun Shik Graduate School of Mobility.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const copy = await getPageCopy();
+  return {
+    title: copy["연락처 · 탭 제목(SEO)"].en,
+    description: copy["연락처 · 검색 설명(SEO)"].en,
+  };
+}
 
 export const revalidate = 3600;
 
 export default async function ContactPage() {
   const settings = await getSiteSettings();
+  const copy = await getPageCopy();
   return (
     <main className="site-container py-14 lg:py-20">
-      <h1 className="font-display text-4xl font-extrabold text-cobalt-900">Contact</h1>
+      <h1 className="font-display text-4xl font-extrabold text-cobalt-900">
+        {copy["연락처 · 페이지 제목"].en}
+      </h1>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
         <section className="rounded-xl border border-mapline bg-white p-7">
-          <p className="mono-label">Address</p>
+          <p className="mono-label">{copy["연락처 · 주소 라벨"].en}</p>
           <p className="mt-3 leading-relaxed">
-            TUPA — Transport and Urban Planning Arena
-            <br />
-            Cho Chun Shik Graduate School of Mobility, KAIST
+            <Copy t={copy["연락처 · 연구실 이름 블록"]} />
           </p>
           <p className="mt-3 text-sm text-body/80">
             {settings["주소(영문)"]}
@@ -31,15 +36,9 @@ export default async function ContactPage() {
         </section>
 
         <section className="rounded-xl border border-mapline bg-white p-7">
-          <p className="mono-label">Email</p>
+          <p className="mono-label">{copy["연락처 · 이메일 라벨"].en}</p>
           <p className="mt-3 text-sm text-body/80">
-            <span className="ko-only">
-              입학·인턴 문의 (지원 트랙을 제목에 명시해 주세요)
-            </span>
-            <span className="en-only">
-              Admissions &amp; internship inquiries (state your track in the
-              subject line)
-            </span>
+            <Copy t={copy["연락처 · 이메일 안내"]} />
           </p>
           <a
             className="mt-2 inline-block font-medium text-cobalt-600 underline-offset-2 hover:underline"
@@ -47,34 +46,16 @@ export default async function ContactPage() {
           >
             {settings["대표 이메일"]}
           </a>
-          <p className="mt-4 text-sm text-body/80">
-            <span className="ko-only">기존 웹사이트</span>
-            <span className="en-only">Legacy website</span>
-          </p>
-          <a
-            className="mt-1 inline-block font-medium text-cobalt-600 underline-offset-2 hover:underline"
-            href="https://inhi.kim"
-            target="_blank"
-            rel="noreferrer"
-          >
-            inhi.kim
-          </a>
         </section>
       </div>
 
       <section className="mt-12">
-        <p className="mono-label">Simulation Lab</p>
+        <p className="mono-label">{copy["연락처 · 3D 투어 라벨"].en}</p>
         <h2 className="mt-2 font-display text-2xl font-extrabold text-cobalt-900">
-          <span className="ko-only">연구실을 3D로 둘러보세요</span>
-          <span className="en-only">See our lab in 3D</span>
+          <Copy t={copy["연락처 · 3D 투어 제목"]} />
         </h2>
         <p className="mt-2 text-sm text-body/80">
-          <span className="ko-only">
-            사진을 클릭하면 Matterport 3D 투어가 열립니다.
-          </span>
-          <span className="en-only">
-            Click the photo to open the Matterport 3D tour.
-          </span>
+          <Copy t={copy["연락처 · 3D 투어 안내"]} />
         </p>
         <a
           href={settings["3D 투어 링크"]}

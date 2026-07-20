@@ -1,5 +1,6 @@
+import Copy from "@/components/Copy";
 import CopyTemplateButton from "@/components/CopyTemplateButton";
-import type { Opening } from "@/lib/content";
+import { getPageCopy, type Opening } from "@/lib/content";
 
 const POSITION_LABEL: Record<Opening["position"], string> = {
   phd: "Ph.D.",
@@ -8,33 +9,27 @@ const POSITION_LABEL: Record<Opening["position"], string> = {
   intern: "Intern",
 };
 
-/** Application email template applicants can paste into any mail client. */
-function applyTemplate(opening: Opening): string {
-  return [
-    `To: ${opening.contactEmail}`,
-    `Subject: [${POSITION_LABEL[opening.position]} Application] ${opening.titleEn} — (Your name)`,
-    "",
-    "Dear TUPA,",
-    "",
-    "Name / 이름:",
-    "Affiliation & year / 소속·학년:",
-    "Research interests / 관심 연구 분야:",
-    "Programming experience / 프로그래밍 경험:",
-    "Available period / 가능한 기간:",
-    "",
-    "Attachments: CV, transcript (and English score if applicable)",
-  ].join("\n");
+/**
+ * Application email template applicants can paste into any mail client.
+ * The template text lives in the "입학안내 · 지원 이메일 템플릿" copy key;
+ * {이메일}, {포지션}, {공고제목} placeholders are substituted per opening.
+ */
+function applyTemplate(template: string, opening: Opening): string {
+  return template
+    .replaceAll("{이메일}", opening.contactEmail)
+    .replaceAll("{포지션}", POSITION_LABEL[opening.position])
+    .replaceAll("{공고제목}", opening.titleEn);
 }
 
-export default function OpeningCard({ opening }: { opening: Opening }) {
+export default async function OpeningCard({ opening }: { opening: Opening }) {
+  const copy = await getPageCopy();
   return (
     <article className="rounded-xl border border-mapline bg-white p-7">
       <div className="flex flex-wrap items-center gap-2">
         <span className="mono-label">{POSITION_LABEL[opening.position]}</span>
         {opening.active ? (
           <span className="rounded-full bg-safety px-2.5 py-0.5 text-xs font-semibold text-white">
-            <span className="ko-only">모집중</span>
-            <span className="en-only">Open</span>
+            <Copy t={copy["입학안내 · 공고 모집중 배지"]} />
           </span>
         ) : null}
       </div>
@@ -56,14 +51,12 @@ export default function OpeningCard({ opening }: { opening: Opening }) {
       <p className="mt-4 border-t border-mapline pt-4 text-sm text-body/70">
         {opening.deadline ? (
           <>
-            <span className="ko-only">마감</span>
-            <span className="en-only">Deadline</span>{" "}
+            <Copy t={copy["입학안내 · 공고 마감 라벨"]} />{" "}
             <span className="font-mono">{opening.deadline}</span> ·{" "}
           </>
         ) : (
           <>
-            <span className="ko-only">상시 모집</span>
-            <span className="en-only">Rolling admissions</span>
+            <Copy t={copy["입학안내 · 공고 상시 모집"]} />
             {" · "}
           </>
         )}
@@ -75,7 +68,9 @@ export default function OpeningCard({ opening }: { opening: Opening }) {
         </a>
       </p>
       {opening.active ? (
-        <CopyTemplateButton text={applyTemplate(opening)} />
+        <CopyTemplateButton
+          text={applyTemplate(copy["입학안내 · 지원 이메일 템플릿"].ko, opening)}
+        />
       ) : null}
     </article>
   );

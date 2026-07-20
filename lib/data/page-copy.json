@@ -1,0 +1,454 @@
+{
+  "홈 · 히어로 어깨문구": {
+    "ko": "KAIST · Cho Chun Shik Graduate School of Mobility",
+    "en": "KAIST · Cho Chun Shik Graduate School of Mobility"
+  },
+  "홈 · 히어로 연구실명": {
+    "ko": "Transport and Urban Planning Arena",
+    "en": "Transport and Urban Planning Arena"
+  },
+  "홈 · 히어로 문구": {
+    "ko": "교통·모빌리티 AI와 스마트시티 연구로 도시의 이동 문제를 해결합니다.",
+    "en": "We solve urban mobility problems through transport AI and smart city research."
+  },
+  "홈 · 히어로 버튼(지원 안내)": {
+    "ko": "지원 안내",
+    "en": "Join TUPA"
+  },
+  "홈 · 히어로 버튼(연구)": {
+    "ko": "Research",
+    "en": "Research"
+  },
+  "홈 · 섹션 제목(소개)": {
+    "ko": "소개",
+    "en": "About"
+  },
+  "홈 · 소개 1문단": {
+    "ko": "TUPA는 KAIST 조천식모빌리티대학원 소속 연구실로, 도시와 교통 문제에 대한 해법을 찾아 일상의 이동을 개선하는 것을 목표로 합니다. KAIST 스핀아웃 [dochak](https://dochak.com)과 함께 시뮬레이션·디지털 트윈·드라이빙 시뮬레이터·텔레드라이빙으로 이루어진 가상 세계를 탐구합니다.",
+    "en": "TUPA is a research lab at the Cho Chun Shik Graduate School of Mobility, KAIST, dedicated to improving daily life by solving urban and traffic problems. With the KAIST spinout [dochak](https://dochak.com), we explore a virtual world of cutting-edge simulation, digital twins, driving simulators, and teledriving."
+  },
+  "홈 · 소개 2문단": {
+    "ko": "KAIST-NYU 공동연구그룹의 Mobility AI 분과를 이끌며 NYU C2SMARTER와 전략적으로 협력하고, SEU-Monash 공동연구소, Monash 대학 교통연구소(ITS)와도 지속적으로 공동연구를 진행합니다 — KAIST, NYU(겸임교수), Monash, PTV Group을 거친 김인희 교수의 글로벌 네트워크 위에서 연구합니다.",
+    "en": "As chair of Mobility AI at the KAIST-NYU Joint Research Group, we work strategically with C2SMARTER at NYU, and continue to collaborate with the SEU-Monash Joint Research Institute and the Institute of Transport Studies at Monash University — a global network built on Prof. Kim's career across KAIST, NYU (Adjunct Professor), Monash, and the PTV Group."
+  },
+  "홈 · 섹션 제목(연구 분야)": {
+    "ko": "연구 분야",
+    "en": "Research"
+  },
+  "홈 · 섹션 제목(소식)": {
+    "ko": "소식",
+    "en": "News"
+  },
+  "홈 · 모든 소식 보기 링크": {
+    "ko": "모든 소식 보기 →",
+    "en": "All news →"
+  },
+  "홈 · 모집 어깨문구": {
+    "ko": "Join TUPA",
+    "en": "Join TUPA"
+  },
+  "홈 · 모집 제목": {
+    "ko": "도시의 이동을 함께 설계할 사람을 찾습니다",
+    "en": "We are looking for people to design urban mobility with us"
+  },
+  "홈 · 모집 문단": {
+    "ko": "박사(GKS 전액 장학)·석사·학부 인턴 포지션이 열려 있습니다. We welcome students from Korea and abroad.",
+    "en": "Fully funded Ph.D. (GKS), master's, and undergraduate intern positions are open. We welcome students from Korea and abroad."
+  },
+  "홈 · 모집 지표(논문·특허)": {
+    "ko": "논문·특허",
+    "en": "Publications"
+  },
+  "홈 · 모집 지표(교수 임용 졸업생)": {
+    "ko": "교수 임용 졸업생",
+    "en": "Alumni in faculty roles"
+  },
+  "홈 · 모집 지표(수상 소식)": {
+    "ko": "수상 소식",
+    "en": "Awards"
+  },
+  "홈 · 모집 버튼": {
+    "ko": "모집 공고 보기",
+    "en": "See open positions"
+  },
+  "연구 · 탭 제목(SEO)": {
+    "ko": "Research",
+    "en": "Research"
+  },
+  "연구 · 검색 설명(SEO)": {
+    "ko": "Research areas and funded projects at TUPA, KAIST.",
+    "en": "Research areas and funded projects at TUPA, KAIST."
+  },
+  "연구 · 페이지 제목": {
+    "ko": "Research",
+    "en": "Research"
+  },
+  "연구 · 페이지 소개": {
+    "ko": "교통 시스템과 도시를 데이터와 AI로 이해하고 설계합니다. 아래 다섯 축을 중심으로 연구합니다.",
+    "en": "We understand and design transport systems and cities with data and AI, organised around the five areas below."
+  },
+  "연구 · 연구 분야 섹션 제목": {
+    "ko": "연구 분야",
+    "en": "Areas"
+  },
+  "연구 · 연구 주제 섹션 제목": {
+    "ko": "연구 주제",
+    "en": "Research Topics"
+  },
+  "연구과제 · 탭 제목(SEO)": {
+    "ko": "Projects",
+    "en": "Projects"
+  },
+  "연구과제 · 검색 설명(SEO)": {
+    "ko": "Funded research projects at TUPA, KAIST.",
+    "en": "Funded research projects at TUPA, KAIST."
+  },
+  "연구과제 · 페이지 제목": {
+    "ko": "Projects",
+    "en": "Projects"
+  },
+  "연구과제 · 페이지 소개": {
+    "ko": "정부·산업체와 함께 수행한 연구 과제 목록입니다. 과제를 클릭하면 상세 설명을 볼 수 있습니다.",
+    "en": "Funded research projects with government and industry partners. Click a project for details."
+  },
+  "연구과제 상세 · 뒤로가기 링크": {
+    "ko": "← Projects",
+    "en": "← Projects"
+  },
+  "연구과제 상세 · 진행중 배지": {
+    "ko": "진행중",
+    "en": "Ongoing"
+  },
+  "연구과제 상세 · 자료 준비중 안내": {
+    "ko": "이 과제의 상세 자료는 준비 중입니다. 문의는 Contact 페이지를 이용해 주세요.",
+    "en": "Detailed materials for this project are being prepared. Please use the Contact page for inquiries."
+  },
+  "논문 · 페이지 제목": {
+    "ko": "Publications",
+    "en": "Publications"
+  },
+  "논문 · 페이지 소개(링크 앞)": {
+    "ko": "저널 논문, 특허, 국제학회 논문, 북챕터 목록입니다. 인용 지표는",
+    "en": "Peer-reviewed journal papers, patents, international conference papers, and book chapters. For citation metrics, see"
+  },
+  "논문 · 페이지 소개(링크 사이)": {
+    "ko": "와",
+    "en": " and"
+  },
+  "논문 · 페이지 소개(링크 뒤)": {
+    "ko": "에서 확인할 수 있습니다.",
+    "en": "."
+  },
+  "논문 · 탭 제목(SEO)": {
+    "ko": "Publications",
+    "en": "Publications"
+  },
+  "논문 · 검색 설명(SEO)": {
+    "ko": "Journal and conference publications from TUPA, KAIST.",
+    "en": "Journal and conference publications from TUPA, KAIST."
+  },
+  "구성원 · 페이지 제목": {
+    "ko": "People",
+    "en": "People"
+  },
+  "구성원 · 페이지 소개": {
+    "ko": "교통공학·도시계획·컴퓨터과학 배경의 구성원들이 함께 연구합니다.",
+    "en": "Our members come from transportation engineering, urban planning, and computer science backgrounds."
+  },
+  "구성원 · 인원 라벨(박사)": {
+    "ko": "박사",
+    "en": "Post-docs"
+  },
+  "구성원 · 인원 라벨(박사과정)": {
+    "ko": "박사과정",
+    "en": "Ph.D."
+  },
+  "구성원 · 인원 라벨(석사과정)": {
+    "ko": "석사과정",
+    "en": "M.S."
+  },
+  "구성원 · 인원 라벨(인턴)": {
+    "ko": "인턴",
+    "en": "Interns"
+  },
+  "구성원 · 인원 라벨(졸업생)": {
+    "ko": "졸업생",
+    "en": "Alumni"
+  },
+  "구성원 · 지도교수 섹션 제목": {
+    "ko": "지도교수",
+    "en": "Director"
+  },
+  "구성원 · 박사 섹션 제목": {
+    "ko": "박사",
+    "en": "Post-doctoral Researchers"
+  },
+  "구성원 · 박사과정 섹션 제목": {
+    "ko": "박사과정",
+    "en": "Ph.D. Students"
+  },
+  "구성원 · 석사과정 섹션 제목": {
+    "ko": "석사과정",
+    "en": "M.S. Students"
+  },
+  "구성원 · 인턴 섹션 제목": {
+    "ko": "인턴",
+    "en": "Interns"
+  },
+  "구성원 · 졸업생 섹션 제목": {
+    "ko": "졸업생",
+    "en": "Alumni"
+  },
+  "구성원 · 상세 뒤로가기 링크": {
+    "ko": "← People",
+    "en": "← People"
+  },
+  "구성원 · 현재 소속 라벨": {
+    "ko": "현재",
+    "en": "Now"
+  },
+  "구성원 · 논문 실적 섹션 제목": {
+    "ko": "논문 실적",
+    "en": "Publication record"
+  },
+  "구성원 · 논문 실적 없음 안내": {
+    "ko": "이 목록에는 연구실 공식 발표 실적만 표시됩니다.",
+    "en": "Only publications listed on the lab's record appear here."
+  },
+  "구성원 · 상세 검색 설명(SEO)": {
+    "ko": "at TUPA, KAIST — publication record.",
+    "en": "at TUPA, KAIST — publication record."
+  },
+  "구성원 · 탭 제목(SEO)": {
+    "ko": "People",
+    "en": "People"
+  },
+  "구성원 · 검색 설명(SEO)": {
+    "ko": "Members of TUPA — professor, researchers, and students.",
+    "en": "Members of TUPA — professor, researchers, and students."
+  },
+  "소식 · 페이지 제목": {
+    "ko": "News",
+    "en": "News"
+  },
+  "소식 · 페이지 소개": {
+    "ko": "수상·과제 선정·구성원 소식을 전합니다.",
+    "en": "Awards, grants, and people news from TUPA."
+  },
+  "소식 · 상세 뒤로가기": {
+    "ko": "← News",
+    "en": "← News"
+  },
+  "소식 · 본문 영어 원문 안내": {
+    "ko": "아래 본문은 영문 원문으로 제공됩니다.",
+    "en": "아래 본문은 영문 원문으로 제공됩니다."
+  },
+  "소식 · 본문 한국어 원문 안내": {
+    "ko": "The article below is provided in its original Korean.",
+    "en": "The article below is provided in its original Korean."
+  },
+  "소식 · 상세 다음 소식 라벨": {
+    "ko": "← 다음 소식",
+    "en": "← Newer"
+  },
+  "소식 · 상세 이전 소식 라벨": {
+    "ko": "이전 소식 →",
+    "en": "Older →"
+  },
+  "갤러리 · 페이지 제목": {
+    "ko": "Gallery",
+    "en": "Gallery"
+  },
+  "갤러리 · 페이지 소개": {
+    "ko": "학회, 소풍, 졸업, 그리고 소소한 축하까지 — TUPA의 순간들을 기록합니다.",
+    "en": "Conferences, picnics, graduations, and small celebrations — moments of TUPA."
+  },
+  "갤러리 · 상세 뒤로가기": {
+    "ko": "← Gallery",
+    "en": "← Gallery"
+  },
+  "소식 · 탭 제목(SEO)": {
+    "ko": "News",
+    "en": "News"
+  },
+  "소식 · 검색 설명(SEO)": {
+    "ko": "Latest news from TUPA — awards, grants, and people.",
+    "en": "Latest news from TUPA — awards, grants, and people."
+  },
+  "갤러리 · 탭 제목(SEO)": {
+    "ko": "Gallery",
+    "en": "Gallery"
+  },
+  "갤러리 · 검색 설명(SEO)": {
+    "ko": "Photo archive of lab life at TUPA — conferences, picnics, and milestones.",
+    "en": "Photo archive of lab life at TUPA — conferences, picnics, and milestones."
+  },
+  "입학안내 · 페이지 제목": {
+    "ko": "Prospective Students",
+    "en": "Prospective Students"
+  },
+  "입학안내 · 소개": {
+    "ko": "TUPA는 교통·모빌리티 AI에 관심 있는 대학원생과 인턴을 모집합니다. We welcome applications from students in Korea and abroad — 지원 전 아래 공고의 요건과 연락 방법을 확인해 주세요.",
+    "en": "TUPA recruits graduate students and interns interested in transport and mobility AI. We welcome applications from Korea and abroad — please check the requirements and contact instructions below before applying."
+  },
+  "입학안내 · 공고 모집중 배지": {
+    "ko": "모집중",
+    "en": "Open"
+  },
+  "입학안내 · 공고 마감 라벨": {
+    "ko": "마감",
+    "en": "Deadline"
+  },
+  "입학안내 · 공고 상시 모집": {
+    "ko": "상시 모집",
+    "en": "Rolling admissions"
+  },
+  "입학안내 · 지원 이메일 템플릿": {
+    "ko": "To: {이메일}\nSubject: [{포지션} Application] {공고제목} — (Your name)\n\nDear TUPA,\n\nName / 이름:\nAffiliation & year / 소속·학년:\nResearch interests / 관심 연구 분야:\nProgramming experience / 프로그래밍 경험:\nAvailable period / 가능한 기간:\n\nAttachments: CV, transcript (and English score if applicable)",
+    "en": "To: {이메일}\nSubject: [{포지션} Application] {공고제목} — (Your name)\n\nDear TUPA,\n\nName / 이름:\nAffiliation & year / 소속·학년:\nResearch interests / 관심 연구 분야:\nProgramming experience / 프로그래밍 경험:\nAvailable period / 가능한 기간:\n\nAttachments: CV, transcript (and English score if applicable)"
+  },
+  "입학안내 · 지원 절차 제목": {
+    "ko": "지원 절차 안내",
+    "en": "How to apply"
+  },
+  "입학안내 · 지원 절차 1단계": {
+    "ko": "관심 포지션의 공고를 확인하고, CV·성적표·영어성적·연구 관심사 요약을 준비합니다.",
+    "en": "Check the opening you are interested in, and prepare your CV, transcript, English proficiency score, and a short summary of research interests."
+  },
+  "입학안내 · 지원 절차 2단계": {
+    "ko": "공고 카드의 \"지원 양식 복사하기\" 버튼으로 이메일 양식을 복사한 뒤, 내용을 채워 보내주세요. 교수에게 직접 연락하지 않습니다.",
+    "en": "Click \"Copy application template\" on an opening card, fill it in, and send it by email. Please do not contact the professor directly."
+  },
+  "입학안내 · 지원 절차 3단계": {
+    "ko": "서류 검토 후 자격이 확인되면 면담 일정을 안내드립니다.",
+    "en": "After document review, qualified applicants will be invited to an interview."
+  },
+  "입학안내 · GKS 안내 링크": {
+    "ko": "GKS 장학 공식 안내 ↗",
+    "en": "Official GKS scholarship guide ↗"
+  },
+  "입학안내 · 대학원 입학 링크": {
+    "ko": "조천식모빌리티대학원 입학 안내 ↗",
+    "en": "Graduate school admissions ↗"
+  },
+  "입학안내 · FAQ 제목": {
+    "ko": "자주 묻는 질문",
+    "en": "Frequently asked questions"
+  },
+  "입학안내 · 수상 섹션 제목": {
+    "ko": "학생들이 이룬 것",
+    "en": "What our students have achieved"
+  },
+  "입학안내 · 수상 섹션 설명": {
+    "ko": "학부 인턴부터 박사과정까지 — 최근 수상 소식들입니다.",
+    "en": "From undergraduate interns to Ph.D. students — recent awards."
+  },
+  "입학안내 · 수상 전체 보기 링크": {
+    "ko": "수상 소식 전체 보기 →",
+    "en": "All award news →"
+  },
+  "입학안내 · 성장스토리 제목": {
+    "ko": "인턴에서 대학원까지",
+    "en": "From intern to graduate school"
+  },
+  "입학안내 · 성장스토리 설명": {
+    "ko": "TUPA에서 학부 연구를 시작해 성장한 실제 선배들의 경로입니다.",
+    "en": "Real paths of students who started as undergraduates at TUPA."
+  },
+  "입학안내 · 3D 투어 카드": {
+    "ko": "연구실을 3D로 미리 둘러보기 ↗",
+    "en": "Tour our lab in 3D ↗"
+  },
+  "입학안내 · 갤러리 카드": {
+    "ko": "Life at TUPA — 갤러리 보기 →",
+    "en": "Life at TUPA — gallery →"
+  },
+  "입학안내 · 탭 제목(SEO)": {
+    "ko": "Prospective Students",
+    "en": "Prospective Students"
+  },
+  "입학안내 · 검색 설명(SEO)": {
+    "ko": "Openings for Ph.D., master's, and intern positions at TUPA, KAIST — including fully funded GKS scholarships.",
+    "en": "Openings for Ph.D., master's, and intern positions at TUPA, KAIST — including fully funded GKS scholarships."
+  },
+  "연락처 · 페이지 제목": {
+    "ko": "Contact",
+    "en": "Contact"
+  },
+  "연락처 · 주소 라벨": {
+    "ko": "Address",
+    "en": "Address"
+  },
+  "연락처 · 연구실 이름 블록": {
+    "ko": "TUPA — Transport and Urban Planning Arena\nCho Chun Shik Graduate School of Mobility, KAIST",
+    "en": "TUPA — Transport and Urban Planning Arena\nCho Chun Shik Graduate School of Mobility, KAIST"
+  },
+  "연락처 · 이메일 라벨": {
+    "ko": "Email",
+    "en": "Email"
+  },
+  "연락처 · 이메일 안내": {
+    "ko": "입학·인턴 문의 (지원 트랙을 제목에 명시해 주세요)",
+    "en": "Admissions & internship inquiries (state your track in the subject line)"
+  },
+  "연락처 · 3D 투어 라벨": {
+    "ko": "Simulation Lab",
+    "en": "Simulation Lab"
+  },
+  "연락처 · 3D 투어 제목": {
+    "ko": "연구실을 3D로 둘러보세요",
+    "en": "See our lab in 3D"
+  },
+  "연락처 · 3D 투어 안내": {
+    "ko": "사진을 클릭하면 Matterport 3D 투어가 열립니다.",
+    "en": "Click the photo to open the Matterport 3D tour."
+  },
+  "연락처 · 탭 제목(SEO)": {
+    "ko": "Contact",
+    "en": "Contact"
+  },
+  "연락처 · 검색 설명(SEO)": {
+    "ko": "How to reach TUPA at KAIST Cho Chun Shik Graduate School of Mobility.",
+    "en": "How to reach TUPA at KAIST Cho Chun Shik Graduate School of Mobility."
+  },
+  "공통 · 푸터 랩 전체 이름": {
+    "ko": "Transport and Urban Planning Arena",
+    "en": "Transport and Urban Planning Arena"
+  },
+  "공통 · 푸터 한 줄 소개": {
+    "ko": "교통·모빌리티 AI와 스마트시티 연구실",
+    "en": "Transport & mobility AI and smart city research lab"
+  },
+  "공통 · 푸터 모빌리티대학원 링크": {
+    "ko": "Cho Chun Shik Graduate School of Mobility",
+    "en": "Cho Chun Shik Graduate School of Mobility"
+  },
+  "SEO · 사이트 제목": {
+    "ko": "TUPA — Transport and Urban Planning Arena | KAIST",
+    "en": "TUPA — Transport and Urban Planning Arena | KAIST"
+  },
+  "SEO · 제목 템플릿": {
+    "ko": "%s | TUPA @ KAIST",
+    "en": "%s | TUPA @ KAIST"
+  },
+  "SEO · 사이트 설명": {
+    "ko": "TUPA (Transport and Urban Planning Arena) is Prof. Inhi Kim's research lab at the Cho Chun Shik Graduate School of Mobility, KAIST, working on transportation AI, mobility, and smart cities.",
+    "en": "TUPA (Transport and Urban Planning Arena) is Prof. Inhi Kim's research lab at the Cho Chun Shik Graduate School of Mobility, KAIST, working on transportation AI, mobility, and smart cities."
+  },
+  "SEO · OG 사이트명": {
+    "ko": "TUPA — Transport and Urban Planning Arena",
+    "en": "TUPA — Transport and Urban Planning Arena"
+  },
+  "SEO · OG 설명": {
+    "ko": "Prof. Inhi Kim's transportation AI & smart city research lab at the Cho Chun Shik Graduate School of Mobility, KAIST.",
+    "en": "Prof. Inhi Kim's transportation AI & smart city research lab at the Cho Chun Shik Graduate School of Mobility, KAIST."
+  },
+  "SEO · OG 이미지 설명": {
+    "ko": "TUPA — a miniature paper city where buildings form the letters TUPA",
+    "en": "TUPA — a miniature paper city where buildings form the letters TUPA"
+  },
+  "SEO · 트위터 설명": {
+    "ko": "Prof. Inhi Kim's transportation AI & smart city research lab at KAIST.",
+    "en": "Prof. Inhi Kim's transportation AI & smart city research lab at KAIST."
+  }
+}

@@ -3,35 +3,211 @@
     "id": "traffic-demand-modeling-using-agent-model",
     "title": "Traffic demand modeling using agent model",
     "date": "2026-07-16",
-    "imageUrl": null,
-    "summary": "Building a digital twin of road traffic with agent-based simulation (2022~2025): macroscopic transport simulation is integrated with activity-based modeling to reproduce realistic traffic flows and predict traffic volumes at the micro-analysis-zone level."
+    "imageUrl": "/projects/traffic-demand-agent-simulation.png",
+    "summary": "Building a digital twin of road traffic with agent-based simulation (2022~2025): macroscopic transport simulation is integrated with activity-based modeling to reproduce realistic traffic flows and predict traffic volumes at the micro-analysis-zone level.",
+    "detail": {
+      "paragraphs": [
+        "Development of a digital twin for road traffic using autonomous driving Level 4/4+ big data (2022~2025). A multi-scale traffic simulation space identical to the real world enables the analysis and prediction of situations that are infeasible to test in reality, such as future mixed traffic environments.",
+        "The macroscopic stage generates realistic traffic flows by producing origin-destination data at the MAZ (Micro Analysis Zone) level and predicting traffic volumes for each route. The generated data feeds the microscopic stage, where an activity-based model (ABM) dynamically reproduces individual travel behavior at the coordinate level."
+      ],
+      "sections": [
+        {
+          "heading": "Integrated simulation platform",
+          "bullets": [
+            "Simulation manager data system and custom configuration schemes that generate result data tailored to the user's analytical purpose",
+            "Vehicle generation methodologies defining generation intervals, lane assignment priorities, and initial speeds to reproduce realistic traffic flows",
+            "OD matrix recalculation and simulation settings such as vehicle mix rates to support macroscopic policy analysis"
+          ]
+        },
+        {
+          "heading": "Validation against empirical data",
+          "bullets": [
+            "Predicted traffic demand from the activity-based model is verified against mobile-based metropolitan movement data",
+            "Predicted traffic volumes are validated against real traffic counts at VDS stations, achieving a GEH-based accuracy of 90.48%"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/traffic-demand-agent-simulation.png",
+          "caption": "Simulated network flows by time of day: AM peak, non-peak, and PM peak"
+        },
+        {
+          "src": "/projects/traffic-demand-agent-simulation-validation.png",
+          "caption": "OD validation against mobile data (ground truth) and GEH-based volume validation at VDS stations"
+        }
+      ],
+      "links": [
+        {
+          "label": "Project page",
+          "url": "https://sites.google.com/view/donghyunkwon95/projects"
+        }
+      ]
+    }
   },
   {
     "id": "real-time-prediction-based-conflict-measures",
     "title": "Real-time Prediction-based Conflict Measures for Evaluating Pedestrian Crossing Safety",
     "date": "2026-07-15",
-    "imageUrl": null,
-    "summary": "A unified prediction-driven pedestrian-vehicle safety evaluation approach for intelligent intersections, integrating deep learning-based behavior prediction with traffic conflict measures to evaluate pedestrian crossing risk in real time."
+    "imageUrl": "/projects/pedestrian-crossing-conflict-card.jpg",
+    "summary": "A unified prediction-driven pedestrian-vehicle safety evaluation approach for intelligent intersections, integrating deep learning-based behavior prediction with traffic conflict measures to evaluate pedestrian crossing risk in real time.",
+    "detail": {
+      "paragraphs": [
+        "The overall objective is a unified prediction-driven pedestrian-vehicle safety evaluation approach for intelligent intersections. Deep learning-based behavior prediction is integrated with traffic conflict measures to enable real-time evaluation of potential and future pedestrian crossing risks across different intersection scenarios, from individual interactions to crowd crossings."
+      ],
+      "sections": [
+        {
+          "heading": "Deterministic conflict evaluation at non-signalized intersections",
+          "body": "Pedestrian and vehicle time-to-arrival are predicted with deterministic deep learning motion models, formulating the Predicted Lane-based Time-to-Collision (PLTTC) and benchmarking it against TTC, MTTC, and PET. Published in Transportation Research Interdisciplinary Perspectives (2025)."
+        },
+        {
+          "heading": "Probabilistic conflict evaluation under behavioral uncertainty",
+          "body": "Probabilistic trajectories generated with mixture-Gaussian model outputs yield the Stochastic Predicted Time-to-Collision (SPTTC) for early-stage conflict identification with high-variability pedestrian behavior. In revision at IEEE Transactions on Intelligent Transportation Systems."
+        },
+        {
+          "heading": "Real-time crash risk at signalized intersections",
+          "body": "Deep learning-derived conflict information (Predicted Lane-based Gap Time) is integrated into Extreme Value Theory crash-risk estimation, comparing four EVT formulations against conventional conflict measures. In revision at Analytic Methods in Accident Research."
+        },
+        {
+          "heading": "Crowd crossing risk evaluation",
+          "body": "Collective pedestrian dynamics are learned with multi-agent trajectory prediction, and a Crowd Gap Time (C-GT) measure evaluates pedestrian-vehicle risk during crowd crossings against baselines such as the Social Force Model. Ongoing."
+        },
+        {
+          "heading": "Behavioral validation with VR and EEG",
+          "body": "Virtual reality experiments with electroencephalography responses test whether prediction-based conflict measures reflect human-perceived crossing risk and can guide threshold calibration. Ongoing."
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/pedestrian-crossing-conflict-cameras.jpg",
+          "caption": "Multi-camera trajectory data collection at a signalized intersection: camera positions, coverage, and views"
+        }
+      ],
+      "links": []
+    }
   },
   {
     "id": "human-centric-traffic-safety",
     "title": "Human-centric traffic safety",
     "date": "2026-07-14",
-    "imageUrl": null,
-    "summary": "Investigating how drivers, pedestrians, and evacuees make decisions in safety-critical mobility situations through immersive VR experiments, covering micromobility safety, pedestrian-ADAS interaction, and underground/rail environments."
+    "imageUrl": "/projects/human-centric-traffic-safety-vr.png",
+    "summary": "Investigating how drivers, pedestrians, and evacuees make decisions in safety-critical mobility situations through immersive VR experiments, covering micromobility safety, pedestrian-ADAS interaction, and underground/rail environments.",
+    "detail": {
+      "paragraphs": [
+        "A long-running line of work using immersive VR experiments to measure how drivers, pedestrians, and evacuees actually decide, attend, and move in safety-critical mobility situations. Controlled virtual environments reproduce realistic urban roadways, school zones, tunnels, and subway stations while capturing behavior that would be unsafe or impossible to observe in the field."
+      ],
+      "sections": [
+        {
+          "heading": "Micromobility safety and driver behavior",
+          "body": "How a driver's own riding experience shapes overtaking maneuvers, lateral distance, and risk-taking around bicycles and e-scooters in mixed traffic, studied with VR-based driving simulators (Transportation Research Part F, 2026)."
+        },
+        {
+          "heading": "Pedestrian safety and ADAS",
+          "body": "How the presentation of safety information — a real-time count of crossing pedestrians, or a UWB-based pedestrian tag — changes braking behavior, cognitive load, and the safety margins drivers leave under uncertainty (Accident Analysis & Prevention, 2024)."
+        },
+        {
+          "heading": "Underground and rail safety",
+          "body": "VR studies of pedestrian evacuation route choice during subway-station fires, in-tunnel information design under varying lighting and speed limits (Tunnelling and Underground Space Technology, 2025), and how age-related perceptual constraints reshape transport disadvantage in railway information systems."
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/human-centric-traffic-safety-vr.png",
+          "caption": "Immersive VR experiment platform: Cyberith Virtualizer Elite 2 omnidirectional treadmill with HTC Vive Pro 2 and Unity 3D"
+        }
+      ],
+      "links": [
+        {
+          "label": "Research page",
+          "url": "https://hyunchul176.github.io/research.html"
+        }
+      ]
+    }
   },
   {
     "id": "analysis-public-transport-accessibility",
     "title": "Analysis Public Transport Accessibility",
     "date": "2026-07-13",
-    "imageUrl": null,
-    "summary": "A comparative framework that measures the gap between planned transit schedules (GTFS) and actual smart-card usage with an extended G2SFCA accessibility model, diagnosing where public transport supply and real travel demand diverge."
+    "imageUrl": "/projects/public-transport-accessibility-gwr.jpg",
+    "summary": "A comparative framework that measures the gap between planned transit schedules (GTFS) and actual smart-card usage with an extended G2SFCA accessibility model, diagnosing where public transport supply and real travel demand diverge.",
+    "detail": {
+      "paragraphs": [
+        "Many cities face a spatial mismatch where public transport supply is rigidly misaligned with real-world travel demand, leading to service inefficiency and transportation inequality. This research develops a comparative framework that analyzes the gap between planned transit schedules (GTFS) and actual passenger usage (smart-card OD data) with an extended spatial accessibility model, providing quantitative evidence of where transit resources are wasted or lacking — particularly during off-peak hours."
+      ],
+      "sections": [
+        {
+          "heading": "Extended G2SFCA methodology",
+          "body": "Diverse services are integrated into a single supply metric using gross floor area, and door-to-door accessibility combines walking and in-vehicle travel times with a Gaussian decay function — moving beyond binary catchment measurements toward a more realistic accessibility index."
+        },
+        {
+          "heading": "Realization rate analysis",
+          "body": "GTFS supply and smart-card usage are matched at the stop level, and a regression-based realization rate quantifies how far the plan is implemented in reality: alignment is high during peak hours but efficiency drops significantly at midday."
+        },
+        {
+          "heading": "Spatio-temporal mismatch",
+          "body": "Geographically Weighted Regression reveals a structural midday discrepancy near northern industrial areas of Daejeon — routes rigidly centered on commuting fail to serve midday lifestyle travel such as shopping and medical care — while western and eastern residential clusters use transit efficiently."
+        },
+        {
+          "heading": "Policy implication",
+          "body": "Transit policy should align the destinations of supply and demand rather than simply increase supply volume, spatially reallocating surplus capacity from low-realization routes to active residential and commercial areas."
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/public-transport-accessibility-gwr.jpg",
+          "caption": "GWR local coefficients for planned supply vs. realized usage in Daejeon (AM / midday / PM)"
+        },
+        {
+          "src": "/projects/public-transport-accessibility-method.png",
+          "caption": "Analysis pipeline: data sources, preprocessing, accessibility calculation, and spatial analysis in ArcGIS Pro"
+        }
+      ],
+      "links": []
+    }
   },
   {
     "id": "goal-driven-pipeline-for-autonomous-driving-carla",
     "title": "Goal-Driven Experimental Pipeline for Multi-Vehicle Autonomous Driving in CARLA in ROS2",
     "date": "2026-07-12",
-    "imageUrl": null,
-    "summary": "A CARLA-ROS2 experimental pipeline for goal-driven autonomous driving on Lanelet2 maps, composing multi-vehicle scenarios that mix custom driving policies with rule-based autopilot vehicles to study interaction-aware driving behaviors."
+    "imageUrl": "/projects/carla-ros2-pipeline.jpg",
+    "summary": "A CARLA-ROS2 experimental pipeline for goal-driven autonomous driving on Lanelet2 maps, composing multi-vehicle scenarios that mix custom driving policies with rule-based autopilot vehicles to study interaction-aware driving behaviors.",
+    "detail": {
+      "paragraphs": [
+        "Autonomous driving research increasingly emphasizes interaction among multiple vehicles rather than isolated ego-centric driving, yet controlled experiments mixing heterogeneous vehicle behaviors remain difficult without a unified, goal-driven experimental pipeline.",
+        "This research constructs a CARLA-ROS2 pipeline that enables goal-driven autonomous driving using Lanelet2 lane-level maps. Vehicles can be controlled either by custom driving policies or by CARLA's built-in autopilot, supporting flexible composition of multi-vehicle scenarios with varying ratios of autonomous and autopilot-driven vehicles — a foundation for studying interaction-aware driving behaviors, priority decision policies, and future V2X-based coordination."
+      ],
+      "sections": [
+        {
+          "heading": "Core capabilities",
+          "bullets": [
+            "Lanelet2-based goal-driven driving experiments using lane-level map information",
+            "Multi-vehicle scenario composition with heterogeneous driving policies",
+            "Controlled evaluation of interaction-aware driving behavior under structured map and goal conditions",
+            "Modular ROS2 architecture enabling sim-to-real extension",
+            "Extensible toward V2X information sharing and priority-based decision policies, including learning-based policies (end-to-end, RL)"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/carla-ros2-pipeline.jpg",
+          "caption": "End-to-end autonomous driving demonstration using CARLA-ROS2 integration, visualized in RViz alongside CARLA"
+        }
+      ],
+      "links": [
+        {
+          "label": "Demo: End-to-end CARLA-ROS2 driving",
+          "url": "https://youtu.be/luoqjL8DCxg"
+        },
+        {
+          "label": "Demo: Camera-based lane keeping",
+          "url": "https://youtu.be/qotK23sSn9k"
+        },
+        {
+          "label": "Demo: Lane keeping through intersections",
+          "url": "https://youtu.be/ZtHfB9tMEFc"
+        }
+      ]
+    }
   }
 ]

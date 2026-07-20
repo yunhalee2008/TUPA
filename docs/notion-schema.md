@@ -143,18 +143,19 @@
 
 ## 8. 사이트 설정 (Site Settings)
 
-키-값 테이블. 정해진 행만 수정 (행 추가 아님).
+키-값 테이블. 정해진 행만 수정 (행 추가 아님). 링크·이메일·주소 같은 **단일 값**만 담는다
+— 사이트에 보이는 문장은 전부 "페이지 문구" DB(§12)로 이동했다 (2026-07-16).
 
 | 항목(Title) | 값(Rich text) 예시 | 비었을 때 |
 |---|---|---|
 | 대표 이메일 | kaist.mobility@gmail.com | 코드 기본값 |
 | 주소(한글) | 대전광역시 유성구 문지로 193, KAIST 문지캠퍼스 F동 433호 | 코드 기본값 |
 | 주소(영문) | 433, Building F, 193 Munji-ro, … | 코드 기본값 |
-| 히어로 문구(한글) | 교통·모빌리티 AI와 스마트시티 연구로 … | 코드 기본값 |
-| 히어로 문구(영문) | We solve urban mobility problems … | 코드 기본값 |
 | 3D 투어 링크 | https://my.matterport.com/show/?m=PKXeypMWexL | 코드 기본값 |
 | Google Scholar | https://scholar.google.com/citations?user=Cz_9jloAAAAJ | 코드 기본값 |
 | Scopus | https://www.scopus.com/authid/detail.uri?authorId=55454217700 | 코드 기본값 |
+
+> 히어로 문구(한글)/(영문) 행은 페이지 문구 DB의 "홈 · 히어로 문구"로 이동 (2026-07-16).
 
 ---
 
@@ -215,3 +216,42 @@
 | 순서 | Number | | |
 
 Prospective Students 페이지에 아코디언으로 표시. FAQ가 하나도 없으면 섹션 자체가 숨겨짐.
+
+## 추가 (2026-07-16): 페이지 문구 (Page Copy)
+
+**사이트의 모든 고정 문구**(페이지 제목·소개 문단·섹션 설명·버튼·SEO 문구)를 담는
+키-값 DB. DB id `99dfb9e8a6b149d0a83df8b56243798a`, env `NOTION_DB_PAGE_COPY`.
+
+| 프로퍼티 | 타입 | 설명 |
+|---|---|---|
+| 키 | Title | 코드와 연결된 식별자 (예: "홈 · 소개 1문단") — **수정 금지** |
+| 문구(한글) | Rich text | `[텍스트](주소)` 링크·줄바꿈 지원. 비면 코드 기본값 |
+| 문구(영문) | Rich text | 비면 코드 기본값 |
+| 위치 설명 | Rich text | 관리자용: 사이트 어디에 보이는 문구인지 |
+| 페이지 | Select | 홈/연구/논문/구성원/소식/입학안내/연락처/공통/SEO |
+| 순서 | Number | 페이지 내 표시 순서 (Notion 보기 정렬용) |
+
+- 코드 기본값은 `lib/data/page-copy.json` (배포 시점의 실문구 전체).
+- `getPageCopy()` → `Record<키, {ko, en}>`; 렌더링은 `components/Copy.tsx`
+  (`ko-only`/`en-only` 스팬 쌍 + 미니 마크다운 링크).
+- 언어 필드가 반쯤 비어도 그 언어만 기본값으로 폴백 — 사이트가 비는 일 없음.
+
+## 추가 (2026-07-16): 성장 스토리 (Student Journeys)
+
+입학안내 페이지의 학생 성장 스토리 카드. DB id `897ed0304c6b44f4b20cc776e9213e11`,
+env `NOTION_DB_JOURNEYS`.
+
+| 프로퍼티 | 타입 | 필수 | 설명 · 폴백 |
+|---|---|---|---|
+| 이름 | Title | ✅ | 비면 행 숨김 |
+| 단계(한글) | Rich text | ✅ | **한 줄에 한 단계** (첫 줄부터 순서대로, 마지막 줄이 현재) |
+| 단계(영문) | Rich text | | 비면 한글 단계 표시 |
+| 사진 | Files | | 비면 저장소 사진(`public/people/`)을 이름으로 매칭 |
+| 공개 | Checkbox | ✅ | |
+| 순서 | Number | | |
+
+## 추가 (2026-07-16): 멤버 DB 보강
+
+- `Scopus` (URL) 컬럼 추가 — 지도교수 프로필 링크용.
+- 교수 행의 홈페이지(inhi.kim) 링크 제거 — 이 도메인이 새 사이트 자신이 되어 자기참조였음.
+- `getMembers()` 병합이 사진·약력에 더해 **링크도** 코드 폴백에서 상속.

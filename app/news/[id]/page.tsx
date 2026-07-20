@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Copy from "@/components/Copy";
 import { CATEGORY_LABEL } from "@/components/NewsCard";
-import { getNews, getNewsItem } from "@/lib/content";
+import { getNews, getNewsItem, getPageCopy } from "@/lib/content";
 
 /** Rough language detection for single-language article bodies. */
 function bodyLanguage(body: string[]): "ko" | "en" {
@@ -34,6 +35,7 @@ export const revalidate = 3600;
 
 export default async function NewsDetailPage({ params }: Props) {
   const news = await getNews();
+  const copy = await getPageCopy();
   const index = news.findIndex((n) => n.id === params.id);
   const item = index >= 0 ? news[index] : undefined;
   if (!item) notFound();
@@ -49,7 +51,7 @@ export default async function NewsDetailPage({ params }: Props) {
           href="/news"
           className="text-sm text-cobalt-600 underline-offset-2 hover:underline"
         >
-          ← News
+          {copy["소식 · 상세 뒤로가기"].en}
         </Link>
         <div className="mt-6 flex items-center gap-3">
           <span className="font-mono text-sm text-body/60">{item.date}</span>
@@ -89,11 +91,11 @@ export default async function NewsDetailPage({ params }: Props) {
           <>
             {bodyLanguage(item.body) === "en" ? (
               <p className="ko-only mt-6 text-sm text-body/50">
-                아래 본문은 영문 원문으로 제공됩니다.
+                {copy["소식 · 본문 영어 원문 안내"].ko}
               </p>
             ) : (
               <p className="en-only mt-6 text-sm text-body/50">
-                The article below is provided in its original Korean.
+                {copy["소식 · 본문 한국어 원문 안내"].en}
               </p>
             )}
             <div className="mt-4 space-y-4 leading-relaxed text-body/90">
@@ -129,8 +131,7 @@ export default async function NewsDetailPage({ params }: Props) {
               className="group rounded-xl border border-mapline bg-white p-4 transition-colors hover:border-cobalt-600"
             >
               <p className="text-xs text-body/60">
-                <span className="ko-only">← 다음 소식</span>
-                <span className="en-only">← Newer</span>
+                <Copy t={copy["소식 · 상세 다음 소식 라벨"]} />
               </p>
               <p className="mt-1 text-sm font-medium leading-snug text-cobalt-900 group-hover:text-cobalt-600">
                 <span className="ko-only">{newer.titleKo}</span>
@@ -146,8 +147,7 @@ export default async function NewsDetailPage({ params }: Props) {
               className="group rounded-xl border border-mapline bg-white p-4 text-right transition-colors hover:border-cobalt-600"
             >
               <p className="text-xs text-body/60">
-                <span className="ko-only">이전 소식 →</span>
-                <span className="en-only">Older →</span>
+                <Copy t={copy["소식 · 상세 이전 소식 라벨"]} />
               </p>
               <p className="mt-1 text-sm font-medium leading-snug text-cobalt-900 group-hover:text-cobalt-600">
                 <span className="ko-only">{older.titleKo}</span>

@@ -23,7 +23,8 @@ KAIST 조천식모빌리티대학원 김인희 교수 연구실 **TUPA (Transpor
 
 ## 구조와 규칙
 
-- **`lib/content.ts`가 유일한 데이터 소스.** 페이지는 반드시 이 파일의 타입과 async getter만 import한다 (목데이터 상수 직접 import·하드코딩 금지). 추후 이 파일 내부만 Notion API로 교체할 예정이므로 getter 시그니처를 함부로 바꾸지 않는다.
+- **`lib/content.ts`가 유일한 데이터 소스.** 페이지는 반드시 이 파일의 타입과 async getter만 import한다 (목데이터 상수 직접 import·하드코딩 금지). getter 내부는 Notion CMS 우선 + 정적 폴백 구조이므로 getter 시그니처를 함부로 바꾸지 않는다.
+- **고정 문구도 하드코딩 금지 (2026-07-16~).** 사용자에게 보이는 모든 고정 문장(제목·소개문·버튼·SEO)은 Notion "페이지 문구" DB에서 수정 가능해야 한다: 기본값은 `lib/data/page-copy.json`, 페이지에서는 `getPageCopy()`의 `copy["키"]` + `<Copy t={...}>` 사용 (키 예: "홈 · 소개 1문단"). 새 문구를 추가하면 json 기본값과 Notion DB 행을 함께 추가할 것. 스키마 상세는 `docs/notion-schema.md`.
 - 라우트: `/`, `/research`, `/publications`, `/people`, `/news`, `/prospective-students`, `/contact`
 - **디자인 결정 현황 (2026-07-02)**: 컬러는 **B안 Daylight Atlas** 확정, 히어로 비디오 **제작 완료** — `public/hero/`에 hero.mp4/webm/poster (9초 심리스 루프, 페이퍼 미니어처 TUPA 도시, `docs/design-system.md` §5.3 참조). 영문 폰트 T1(Overpass + IBM Plex Mono) 확정. 참고: Higgsfield 작업 시 크레딧 드는 비디오 생성은 반드시 사용자 확인 후 실행, 시작 프레임은 이미지로 먼저 확정.
 - 한/영 병기 사이트: 콘텐츠 필드는 `titleKo`/`titleEn` 식으로 이중화되어 있다. 타겟 1순위는 대학원 지원 학생(한국인+유학생).

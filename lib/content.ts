@@ -3189,6 +3189,24 @@ const OPENINGS: Opening[] = [
     active: true,
   },
   {
+    id: "kr-graduate-rolling",
+    position: "ms",
+    titleKo: "한국인 대학원생 (석사·박사·석박통합) — 상시 문의",
+    titleEn:
+      "Korean Graduate Students (M.S. / Ph.D. / Integrated Ph.D.) — Inquiries Welcome",
+    descriptionKo:
+      "국내 정규 석사·박사·석박통합 과정에 관심 있는 **한국 학생**은 언제든지 문의해 주세요. 교통·모빌리티 AI, 도시·교통 계획, 데이터 과학 등 관련 분야에 관심이 있으면 연구 관심사와 학력을 간단히 적어 보내주시면 검토 후 연락드립니다.",
+    descriptionEn:
+      "Korean students interested in our regular M.S., Ph.D., or integrated Ph.D. programs are welcome to inquire **at any time**. Send a brief note on your background and research interests in transport, mobility AI, urban systems, or related fields — we will review and get back to you.",
+    requirements: [
+      "Korean nationality (domestic graduate admission track)",
+      "Background in engineering, urban planning, computer science, economics, mathematics, or related fields",
+      "CV and a short statement of research interests",
+    ],
+    contactEmail: "kaist.mobility@gmail.com",
+    active: true,
+  },
+  {
     id: "mobility-ax-ms-2027",
     position: "ms",
     titleKo: "Mobility AX 글로벌 전문가 프로그램 석사과정 모집",
@@ -3200,6 +3218,23 @@ const OPENINGS: Opening[] = [
     requirements: [
       "Bachelor's degree in engineering, urban planning, or a related field",
       "Interest in mobility AI and data-driven transport",
+    ],
+    contactEmail: "kaist.mobility@gmail.com",
+    active: true,
+  },
+  {
+    id: "postdoc-rolling",
+    position: "postdoc",
+    titleKo: "포스트닥 연구원 — 상시 문의",
+    titleEn: "Postdoctoral Researchers — Inquiries Welcome",
+    descriptionKo:
+      "포스트닥 포지션은 **언제든지** 문의를 받습니다. 한국연구재단(NRF) 등 공식 프로그램을 통한 합류도 가능합니다. [NRF 2026년 1차 포스트닥 지원공고](https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=018946&bsnsYyDetail=2026&sorgnBsnsCd=S051415&bsnsAncmSn=1&chngRcveDeFro=2026/02/25&chngRcveDeTo=2026/04/10)를 참고하거나, 연구 경력과 관심 분야를 적어 직접 문의해 주세요.",
+    descriptionEn:
+      "We welcome postdoctoral inquiries **at any time**. You may also join through official programs such as the Korea Research Foundation (NRF) — see the [NRF 2026 1st-round postdoc announcement](https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=018946&bsnsYyDetail=2026&sorgnBsnsCd=S051415&bsnsAncmSn=1&chngRcveDeFro=2026/02/25&chngRcveDeTo=2026/04/10). Alternatively, email us directly with your CV and research interests.",
+    requirements: [
+      "Ph.D. in transportation, civil engineering, computer science, urban planning, or a related field",
+      "Strong publication or research record",
+      "CV and a brief research statement",
     ],
     contactEmail: "kaist.mobility@gmail.com",
     active: true,

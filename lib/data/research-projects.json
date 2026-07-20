@@ -1,5 +1,65 @@
 [
   {
+    "id": "audio-visual-synergy-bikeshare-active-travel",
+    "title": "Audio-Visual Synergistic Role in Promoting Active Travel",
+    "date": "2026-07-20",
+    "imageUrl": "/projects/audio-visual-bikeshare-usage.jpg",
+    "areaSlug": "urban-science",
+    "summary": "A multi-scale, explainable machine-learning framework using 2.79 million Shenzhen bikeshare trips shows that street soundscapes — not just streetscapes — shape cycling demand, with audio-visual synergies revealing high-leverage, low-cost design levers for active travel.",
+    "detail": {
+      "paragraphs": [
+        "Cycling is central to sustainable, human-centric mobility, yet bikeshare usage stays low even where the macro-scale built environment is favorable. Drawing on 2.79 million dockless bikeshare trips in Shenzhen, China, this study asks whether the fine-grained things riders hear and see — soundscapes and streetscapes read from street-view imagery — also shape where people ride.",
+        "A multi-scale, explainable machine-learning framework (LightGBM with SHAP and Accumulated Local Effects) quantifies each dimension's contribution, its nonlinear thresholds, and the synergy between what a street sounds like and what it looks like."
+      ],
+      "sections": [
+        {
+          "heading": "Hearing the street, not just seeing it",
+          "body": "Earlier street-view studies quantified how a place looks — greenery, sky, perceived beauty — but ignored how it sounds. Eight soundscape indicators (intensity, quality, traffic/natural/mechanical sources, and pleasant-chaotic-eventful emotions) are derived alongside six streetscape indicators, then validated against on-site sound-level-meter readings at 72 points, reaching a moderately strong agreement (r = 0.60)."
+        },
+        {
+          "heading": "Sound outweighs sight",
+          "body": "Adding audio-visual perception lifts explained variance from R² = 0.40 (built environment only) to 0.60. The built environment still dominates (55.5%), but among the micro-scale cues the soundscape (24.7%) carries more weight than the visual streetscape (19.8%) — the first evidence that what riders hear can matter more than what they see. Natural sound, pleasantness, and sound quality are the strongest auditory drivers."
+        },
+        {
+          "heading": "Effects that bend, not rise forever",
+          "body": "The explainable model reveals thresholds rather than straight lines. Cycling responds to subway access only within about 1 km, and bus density turns supportive past roughly 42 stops/km². Pleasant sound, sound quality, and natural sound help only up to a moderate level (≈ 0.5–0.6) and then reverse — pristine quiet often marks remote, low-demand areas."
+        },
+        {
+          "heading": "When sound and sight work together",
+          "body": "The dimensions interact. High sound quality boosts cycling only where a street is not boring and also looks beautiful — quality alone is not enough. Natural sound and perceived safety reinforce each other strongly, creating calm, low-stress riding environments, though natural sound paired with visible affluence produces no such lift, since wealthier areas simply cycle less."
+        },
+        {
+          "heading": "Design for the ear, not only the eye",
+          "body": "Because these sensory qualities are cheap to adjust relative to heavy infrastructure, they offer high-leverage levers: noise barriers and absorptive or vegetative screens, pleasant sound-masking, and safer, livelier street furniture. Planners should target places where audio and visual quality are mismatched, and tune each perception within its effective range rather than maximizing it."
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/audio-visual-bikeshare-usage.jpg",
+          "caption": "Bike-share usage across central Shenzhen: spatial density concentrated in Nanshan–Futian–Luohu (a), a twin-peaked daily rhythm around the AM and PM commutes (b), and an example origin–destination flow network (c)"
+        },
+        {
+          "src": "/projects/audio-visual-bikeshare-validation.jpg",
+          "caption": "Field validation of the soundscape: predicted sound intensity vs. on-site sound-level-meter readings at 72 sample points (r = 0.60), with the mobile audit setup — phone video plus a UT353 meter — shown at right"
+        },
+        {
+          "src": "/projects/audio-visual-bikeshare-importance.jpg",
+          "caption": "Relative importance by group: distance to subway, population, and road-network centrality lead overall, while soundscape cues collectively outrank the visual streetscape"
+        },
+        {
+          "src": "/projects/audio-visual-bikeshare-mismatch.jpg",
+          "caption": "Bivariate map of generalized soundscape vs. streetscape quality across Shenzhen (Spearman's ρ = 0.44): dashed pockets in southern Nanshan and Luohu score high on both dimensions, while most districts show an audio-visual mismatch"
+        }
+      ],
+      "links": [
+        {
+          "label": "Read the paper (Transportation Research Part D)",
+          "url": "https://doi.org/10.1016/j.trd.2025.104806"
+        }
+      ]
+    }
+  },
+  {
     "id": "traffic-demand-modeling-using-agent-model",
     "title": "Traffic demand modeling using agent model",
     "date": "2026-07-16",

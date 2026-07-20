@@ -3207,17 +3207,19 @@ const OPENINGS: Opening[] = [
     active: true,
   },
   {
-    id: "mobility-ax-ms-2027",
+    id: "mobility-ax-gmax-ms",
     position: "ms",
-    titleKo: "Mobility AX 글로벌 전문가 프로그램 석사과정 모집",
-    titleEn: "Mobility AX Global Expert Program (Master's)",
+    titleKo: "G-MAX 모빌리티 AX 글로벌 전문가 프로그램 석사과정 모집 (논문 트랙)",
+    titleEn: "G-MAX — Mobility AX Global Expert Program (Master's, Thesis Track)",
     descriptionKo:
-      "모빌리티 AI 전환(AX)을 이끌 석사과정 학생을 모집합니다. KAIST 조천식모빌리티대학원 소속으로 산학 프로젝트에 참여합니다.",
+      "KAIST 조천식모빌리티대학원이 참여하는 G-MAX(모빌리티 AX 글로벌 전문가 프로그램) 석사과정(논문 트랙) 모집입니다. 선발 시 등록금과 생활비 전액 장학금이 지원됩니다. 방글라데시, 캄보디아, 이집트, 인도, 인도네시아, 몽골, 미얀마, 네팔, 파키스탄, 필리핀, 스리랑카, 우즈베키스탄, 베트남 등 13개국 국적자가 지원 가능하며, 매 학기 [KAIST 대학원 입학 포털](https://gradapply.kaist.ac.kr)을 통해 온라인으로 지원합니다 — 정확한 일정은 매 학기 별도 공지됩니다.",
     descriptionEn:
-      "We are recruiting master's students for the Mobility AX Global Expert Program at the Cho Chun Shik Graduate School of Mobility, with industry-linked projects.",
+      "A fully funded Master's program (Thesis Track) under G-MAX (Mobility AX Global Expert Program), hosted at the Cho Chun Shik Graduate School of Mobility, KAIST. Open to applicants from 13 eligible countries: Bangladesh, Cambodia, Egypt, India, Indonesia, Mongolia, Myanmar, Nepal, Pakistan, Philippines, Sri Lanka, Uzbekistan, and Viet Nam. Applications open each semester through [KAIST's graduate application portal](https://gradapply.kaist.ac.kr) — exact dates are announced closer to each intake.",
     requirements: [
+      "Citizenship in one of 13 eligible countries: Bangladesh, Cambodia, Egypt, India, Indonesia, Mongolia, Myanmar, Nepal, Pakistan, Philippines, Sri Lanka, Uzbekistan, Viet Nam",
       "Bachelor's degree in engineering, urban planning, or a related field",
       "Interest in mobility AI and data-driven transport",
+      "Online application via gradapply.kaist.ac.kr, with an online recommendation letter submitted about a week after the application deadline",
     ],
     contactEmail: "kaist.mobility@gmail.com",
     active: true,

@@ -18,17 +18,17 @@ import {
 export const revalidate = 3600;
 
 export default async function HomePage() {
-  const [areas, news, publications, members, allNews, copy] =
+  const [areas, news, journalPublications, members, allNews, copy] =
     await Promise.all([
       getResearchAreas(),
       getRecentNews(3),
-      getPublications(),
+      getPublications({ type: "journal" }),
       getMembers(),
       getNews(),
       getPageCopy(),
     ]);
   const stats = {
-    papers: publications.length,
+    papers: journalPublications.length,
     alumniFaculty: members.filter(
       (m) => m.role === "alumni" && /professor|lecturer/i.test(m.placement ?? ""),
     ).length,

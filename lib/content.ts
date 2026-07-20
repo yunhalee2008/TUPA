@@ -335,9 +335,9 @@ const MEMBERS: Member[] = [
     titleEn: "Ph.D. Student · since 2022",
     photoUrl: "/people/tengfeng-lin.jpg",
     researchInterests: [
-      "Surrogate safety measures",
+      "Crowd simulation",
       "Trajectory prediction",
-      "Cyclist safety",
+      "Traffic conflict measures",
     ],
   },
   {

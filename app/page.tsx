@@ -76,11 +76,20 @@ export default async function HomePage() {
           />
           <div className="lg:col-span-9">
             <div className="mt-8 max-w-[68ch] space-y-4 lg:mt-0">
+              <p className="font-display text-lg font-bold text-cobalt-900">
+                <Copy t={copy["홈 · 소개 환영 문구"]} />
+              </p>
               <p>
                 <Copy t={copy["홈 · 소개 1문단"]} />
               </p>
               <p>
                 <Copy t={copy["홈 · 소개 2문단"]} />
+              </p>
+              <p>
+                <Copy t={copy["홈 · 소개 3문단"]} />
+              </p>
+              <p>
+                <Copy t={copy["홈 · 소개 4문단"]} />
               </p>
             </div>
             <div className="mt-8">

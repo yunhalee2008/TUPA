@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Copy from "@/components/Copy";
-import ResearchAreaCard from "@/components/ResearchAreaCard";
 import ResearchTopicList from "@/components/ResearchTopicList";
 import SectionHeading from "@/components/SectionHeading";
 import {
@@ -35,28 +34,46 @@ export default async function ResearchPage() {
         <Copy t={copy["연구 · 페이지 소개"]} />
       </p>
 
-      <section className="mt-14 gap-10 lg:grid lg:grid-cols-12">
-        <SectionHeading
-          index="01"
-          titleEn={copy["연구 · 연구 분야 섹션 제목"].en}
-          titleKo={copy["연구 · 연구 분야 섹션 제목"].ko}
-        />
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:col-span-9 lg:mt-0">
-          {areas.map((area) => (
-            <ResearchAreaCard key={area.slug} area={area} />
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-20 gap-10 lg:grid lg:grid-cols-12">
-        <SectionHeading
-          index="02"
-          titleEn={copy["연구 · 연구 주제 섹션 제목"].en}
-          titleKo={copy["연구 · 연구 주제 섹션 제목"].ko}
-        />
-        <ResearchTopicList projects={researchProjects} />
-      </section>
-
+      {areas.map((area, i) => {
+        const topics = researchProjects.filter(
+          (p) => p.areaSlug === area.slug,
+        );
+        return (
+          <section
+            key={area.slug}
+            className={
+              i === 0
+                ? "mt-14 gap-10 lg:grid lg:grid-cols-12"
+                : "mt-16 gap-10 border-t border-mapline pt-16 lg:grid lg:grid-cols-12 lg:pt-20"
+            }
+          >
+            <SectionHeading
+              index={String(i + 1).padStart(2, "0")}
+              titleEn={area.nameEn}
+              titleKo={area.nameKo}
+            />
+            <div className="lg:col-span-9">
+              <p className="mt-8 max-w-[68ch] text-sm leading-relaxed lg:mt-0">
+                <span className="ko-only">{area.descriptionKo}</span>
+                <span className="en-only">{area.descriptionEn}</span>
+              </p>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {area.keywords.map((keyword) => (
+                  <span
+                    key={keyword}
+                    className="rounded-full bg-skytint px-2.5 py-0.5 text-xs text-cobalt-900"
+                  >
+                    {keyword}
+                  </span>
+                ))}
+              </div>
+              {topics.length > 0 ? (
+                <ResearchTopicList projects={topics} />
+              ) : null}
+            </div>
+          </section>
+        );
+      })}
     </main>
   );
 }

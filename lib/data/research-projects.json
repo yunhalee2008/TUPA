@@ -4,6 +4,7 @@
     "title": "Traffic demand modeling using agent model",
     "date": "2026-07-16",
     "imageUrl": "/projects/traffic-demand-agent-simulation.png",
+    "areaSlug": "digital-twin-simulation",
     "summary": "Building a digital twin of road traffic with agent-based simulation (2022~2025): macroscopic transport simulation is integrated with activity-based modeling to reproduce realistic traffic flows and predict traffic volumes at the micro-analysis-zone level.",
     "detail": {
       "paragraphs": [
@@ -50,6 +51,7 @@
     "title": "Real-time Prediction-based Conflict Measures for Evaluating Pedestrian Crossing Safety",
     "date": "2026-07-15",
     "imageUrl": "/projects/pedestrian-crossing-conflict-card.jpg",
+    "areaSlug": "crowd-dynamics",
     "summary": "A unified prediction-driven pedestrian-vehicle safety evaluation approach for intelligent intersections, integrating deep learning-based behavior prediction with traffic conflict measures to evaluate pedestrian crossing risk in real time.",
     "detail": {
       "paragraphs": [
@@ -91,6 +93,7 @@
     "title": "Human-centric traffic safety",
     "date": "2026-07-14",
     "imageUrl": "/projects/human-centric-traffic-safety-vr.png",
+    "areaSlug": "crowd-dynamics",
     "summary": "Investigating how drivers, pedestrians, and evacuees make decisions in safety-critical mobility situations through immersive VR experiments, covering micromobility safety, pedestrian-ADAS interaction, and underground/rail environments.",
     "detail": {
       "paragraphs": [
@@ -129,6 +132,7 @@
     "title": "Analysis Public Transport Accessibility",
     "date": "2026-07-13",
     "imageUrl": "/projects/public-transport-accessibility-gwr.jpg",
+    "areaSlug": "urban-science",
     "summary": "A comparative framework that measures the gap between planned transit schedules (GTFS) and actual smart-card usage with an extended G2SFCA accessibility model, diagnosing where public transport supply and real travel demand diverge.",
     "detail": {
       "paragraphs": [
@@ -170,6 +174,7 @@
     "title": "Goal-Driven Experimental Pipeline for Multi-Vehicle Autonomous Driving in CARLA in ROS2",
     "date": "2026-07-12",
     "imageUrl": "/projects/carla-ros2-pipeline.jpg",
+    "areaSlug": "physical-ai-av-control",
     "summary": "A CARLA-ROS2 experimental pipeline for goal-driven autonomous driving on Lanelet2 maps, composing multi-vehicle scenarios that mix custom driving policies with rule-based autopilot vehicles to study interaction-aware driving behaviors.",
     "detail": {
       "paragraphs": [

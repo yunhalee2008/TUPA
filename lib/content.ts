@@ -154,6 +154,8 @@ export interface ResearchProject {
   imageUrl?: string;
   summary: string;
   detail?: ResearchTopicDetail;
+  /** Parent ResearchArea.slug — each topic belongs to exactly one area. */
+  areaSlug?: string;
 }
 
 export interface ResearchArea {

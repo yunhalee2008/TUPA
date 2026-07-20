@@ -274,6 +274,25 @@ export async function fetchNews(): Promise<NewsItem[] | null> {
   return items;
 }
 
+/**
+ * Notion page ID → the stable kebab-case slug used by the static fallback
+ * (lib/content.ts RESEARCH_AREAS). Research topics reference an area by this
+ * same slug (see AREA_SLUG_BY_PAGE_ID usage in fetchResearchProjects), so
+ * the two data sources — Notion and the static archive — always agree on
+ * area identity regardless of which one is actually serving a given page.
+ * A newly added Notion area with no entry here just falls back to its raw
+ * page ID as slug, which still works, just isn't a pretty identifier.
+ */
+const AREA_SLUG_BY_PAGE_ID: Record<string, string> = {
+  "392a802d36b48149901dc4e0496396ed": "physical-ai-av-control",
+  "392a802d36b481ca992ecfb9a2cfb2bb": "crowd-dynamics",
+  "392a802d36b481ddb534c9b0b30d7f16": "llm-activity-based-model",
+  "392a802d36b481919f25c9c9ab5cb4f2": "digital-twin-simulation",
+  "392a802d36b4816287e3e3e22df5c38e": "urban-science",
+};
+const relationIds = (p: any): string[] =>
+  (p?.relation ?? []).map((r: any) => r?.id).filter(Boolean);
+
 export async function fetchResearchAreas(): Promise<ResearchArea[] | null> {
   const pages = await queryDb(DB.researchAreas, "공개");
   if (!pages) return null;
@@ -283,7 +302,7 @@ export async function fetchResearchAreas(): Promise<ResearchArea[] | null> {
     const descriptionKo = text(p["설명(한글)"]);
     const descriptionEn = text(p["설명(영문)"]);
     return {
-      slug: page.id,
+      slug: AREA_SLUG_BY_PAGE_ID[page.id] ?? page.id,
       nameEn,
       nameKo: text(p["분야명(한글)"]) || nameEn,
       descriptionKo: descriptionKo || descriptionEn,
@@ -332,12 +351,14 @@ export async function fetchResearchProjects(): Promise<ResearchProject[] | null>
     if (select(p["유형"]) !== "연구소개") continue;
     const title = text(p["과제명(영문)"]);
     if (!title) continue;
+    const [areaPageId] = relationIds(p["연구분야"]);
     items.push({
       id: page.id,
       title,
       date: page.created_time.slice(0, 10),
       imageUrl: fileUrl(p["사진"]) ? `/api/photo/${page.id}` : undefined,
       summary: text(p["요약(영문)"]),
+      areaSlug: areaPageId ? (AREA_SLUG_BY_PAGE_ID[areaPageId] ?? areaPageId) : undefined,
     });
   }
   return items;

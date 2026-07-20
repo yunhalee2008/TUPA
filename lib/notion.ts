@@ -277,11 +277,13 @@ export async function fetchNews(): Promise<NewsItem[] | null> {
 /**
  * Notion page ID → the stable kebab-case slug used by the static fallback
  * (lib/content.ts RESEARCH_AREAS). Research topics reference an area by this
- * same slug (see AREA_SLUG_BY_PAGE_ID usage in fetchResearchProjects), so
- * the two data sources — Notion and the static archive — always agree on
- * area identity regardless of which one is actually serving a given page.
- * A newly added Notion area with no entry here just falls back to its raw
+ * same slug (see areaSlugFor usage in fetchResearchProjects), so the two
+ * data sources — Notion and the static archive — always agree on area
+ * identity regardless of which one is actually serving a given page. A
+ * newly added Notion area with no entry here just falls back to its raw
  * page ID as slug, which still works, just isn't a pretty identifier.
+ * Keys are dash-stripped — the real Notion API returns IDs as dashed UUIDs,
+ * so lookups always go through areaSlugFor()'s normalization below.
  */
 const AREA_SLUG_BY_PAGE_ID: Record<string, string> = {
   "392a802d36b48149901dc4e0496396ed": "physical-ai-av-control",
@@ -290,6 +292,8 @@ const AREA_SLUG_BY_PAGE_ID: Record<string, string> = {
   "392a802d36b481919f25c9c9ab5cb4f2": "digital-twin-simulation",
   "392a802d36b4816287e3e3e22df5c38e": "urban-science",
 };
+const areaSlugFor = (pageId: string): string =>
+  AREA_SLUG_BY_PAGE_ID[pageId.replace(/-/g, "")] ?? pageId;
 const relationIds = (p: any): string[] =>
   (p?.relation ?? []).map((r: any) => r?.id).filter(Boolean);
 
@@ -302,7 +306,7 @@ export async function fetchResearchAreas(): Promise<ResearchArea[] | null> {
     const descriptionKo = text(p["설명(한글)"]);
     const descriptionEn = text(p["설명(영문)"]);
     return {
-      slug: AREA_SLUG_BY_PAGE_ID[page.id] ?? page.id,
+      slug: areaSlugFor(page.id),
       nameEn,
       nameKo: text(p["분야명(한글)"]) || nameEn,
       descriptionKo: descriptionKo || descriptionEn,
@@ -358,7 +362,7 @@ export async function fetchResearchProjects(): Promise<ResearchProject[] | null>
       date: page.created_time.slice(0, 10),
       imageUrl: fileUrl(p["사진"]) ? `/api/photo/${page.id}` : undefined,
       summary: text(p["요약(영문)"]),
-      areaSlug: areaPageId ? (AREA_SLUG_BY_PAGE_ID[areaPageId] ?? areaPageId) : undefined,
+      areaSlug: areaPageId ? areaSlugFor(areaPageId) : undefined,
     });
   }
   return items;

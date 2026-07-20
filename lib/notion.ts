@@ -105,6 +105,21 @@ const plain = (rich: any[]): string =>
   (rich ?? []).map((r) => r?.plain_text ?? "").join("");
 const text = (p: any): string =>
   p?.type === "title" ? plain(p.title) : plain(p?.rich_text);
+/**
+ * Like plain(), but reconstructs [text](url) markdown from any run that
+ * carries a real Notion hyperlink — typing "[text](url)" in a property cell
+ * gets auto-linkified by Notion's editor, so plain() alone would silently
+ * drop the link and leave bare text. Scoped to page-copy since that's the
+ * only rich-text source rendered through <Copy>'s markdown-link parser.
+ */
+const richText = (rich: any[]): string =>
+  (rich ?? [])
+    .map((r) => {
+      const t = r?.plain_text ?? "";
+      const href = r?.href;
+      return href ? `[${t}](${href})` : t;
+    })
+    .join("");
 const select = (p: any): string => p?.select?.name ?? "";
 const multiSelect = (p: any): string[] =>
   (p?.multi_select ?? []).map((o: any) => o.name);
@@ -446,8 +461,8 @@ export async function fetchPageCopy(): Promise<Record<
   const copy: Record<string, { ko: string; en: string }> = {};
   for (const page of pages) {
     const key = text(page.properties["키"]).trim();
-    const ko = text(page.properties["문구(한글)"]);
-    const en = text(page.properties["문구(영문)"]);
+    const ko = richText(page.properties["문구(한글)"]?.rich_text);
+    const en = richText(page.properties["문구(영문)"]?.rich_text);
     if (key && (ko.trim() || en.trim())) copy[key] = { ko, en };
   }
   return copy;

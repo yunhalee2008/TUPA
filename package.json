@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test:inline-markdown": "npx tsx scripts/test-inline-markdown.ts",
     "dev:preview": "NEXT_DIST_DIR=.next-preview next dev"
   },
   "dependencies": {

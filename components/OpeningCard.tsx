@@ -40,8 +40,7 @@ export default async function OpeningCard({ opening }: { opening: Opening }) {
         {opening.titleKo}
       </p>
       <p className="mt-3 text-sm leading-relaxed">
-        <span className="ko-only">{opening.descriptionKo}</span>
-        <span className="en-only">{opening.descriptionEn}</span>
+        <Copy t={{ ko: opening.descriptionKo, en: opening.descriptionEn }} />
       </p>
       <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-body/80">
         {opening.requirements.map((req) => (

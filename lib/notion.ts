@@ -109,9 +109,8 @@ const text = (p: any): string =>
  * Like plain(), but reconstructs [text](url) and **text** markdown from any
  * run that carries a real Notion hyperlink or bold annotation — typing that
  * markdown in a property cell gets auto-formatted by Notion's editor, so
- * plain() alone would silently drop it and leave unstyled text. Scoped to
- * page-copy since that's the only rich-text source rendered through
- * <Copy>'s markdown parser.
+ * plain() alone would silently drop it and leave unstyled text. Used for any
+ * rich-text property rendered through renderInlineMarkdown / <Copy>.
  */
 const richText = (rich: any[]): string =>
   (rich ?? [])
@@ -360,8 +359,8 @@ export async function fetchOpenings(): Promise<Opening[] | null> {
     const titleEn = text(p["제목(영문)"]);
     const position = POSITION_FROM_KO[select(p["포지션"])];
     if (!titleEn || !position) continue;
-    const descriptionKo = text(p["설명(한글)"]);
-    const descriptionEn = text(p["설명(영문)"]);
+    const descriptionKo = richText(p["설명(한글)"]?.rich_text);
+    const descriptionEn = richText(p["설명(영문)"]?.rich_text);
     openings.push({
       id: page.id,
       position,

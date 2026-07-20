@@ -106,18 +106,20 @@ const plain = (rich: any[]): string =>
 const text = (p: any): string =>
   p?.type === "title" ? plain(p.title) : plain(p?.rich_text);
 /**
- * Like plain(), but reconstructs [text](url) markdown from any run that
- * carries a real Notion hyperlink — typing "[text](url)" in a property cell
- * gets auto-linkified by Notion's editor, so plain() alone would silently
- * drop the link and leave bare text. Scoped to page-copy since that's the
- * only rich-text source rendered through <Copy>'s markdown-link parser.
+ * Like plain(), but reconstructs [text](url) and **text** markdown from any
+ * run that carries a real Notion hyperlink or bold annotation — typing that
+ * markdown in a property cell gets auto-formatted by Notion's editor, so
+ * plain() alone would silently drop it and leave unstyled text. Scoped to
+ * page-copy since that's the only rich-text source rendered through
+ * <Copy>'s markdown parser.
  */
 const richText = (rich: any[]): string =>
   (rich ?? [])
     .map((r) => {
       const t = r?.plain_text ?? "";
       const href = r?.href;
-      return href ? `[${t}](${href})` : t;
+      if (href) return `[${t}](${href})`;
+      return r?.annotations?.bold ? `**${t}**` : t;
     })
     .join("");
 const select = (p: any): string => p?.select?.name ?? "";

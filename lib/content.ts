@@ -594,7 +594,7 @@ const MEMBERS: Member[] = [
   {
     id: "yoonha-lee",
     nameKo: "",
-    nameEn: "Yoonha Lee",
+    nameEn: "Yunha Lee",
     role: "intern",
     titleKo: "인턴 · TCIS (2025)",
     titleEn: "Intern · TCIS (2025)",
@@ -655,28 +655,6 @@ const MEMBERS: Member[] = [
     placement: "Assistant Professor, Korea University",
   },
   {
-    id: "taeho-oh-alumni",
-    nameKo: "",
-    nameEn: "Taeho Oh",
-    role: "alumni",
-    titleKo: "박사 졸업 (2025)",
-    titleEn: "Ph.D. 2025",
-    photoUrl: "/people/taeho-oh.jpg",
-    researchInterests: [],
-    placement: "Postdoctoral Researcher, KAIST",
-  },
-  {
-    id: "hyunchul-park-alumni",
-    nameKo: "박현철",
-    nameEn: "Hyunchul Park",
-    role: "alumni",
-    titleKo: "석사 졸업 (2025)",
-    titleEn: "M.S. 2025",
-    photoUrl: "/people/hyunchul-park.jpg",
-    researchInterests: [],
-    placement: "Ph.D. Candidate, KAIST",
-  },
-  {
     id: "dong-xiao-alumni",
     nameKo: "",
     nameEn: "Dong Xiao",
@@ -697,17 +675,6 @@ const MEMBERS: Member[] = [
     photoUrl: "/people/chunliang-wu.jpg",
     researchInterests: [],
     placement: "Lecturer (Assistant Professor), University of Western Australia",
-  },
-  {
-    id: "donghyun-kwon-alumni",
-    nameKo: "권동현",
-    nameEn: "Donghyun Kwon",
-    role: "alumni",
-    titleKo: "석사 졸업 (2023)",
-    titleEn: "M.S. 2023",
-    photoUrl: "/people/donghyun-kwon.jpg",
-    researchInterests: [],
-    placement: "Ph.D. Candidate, KAIST",
   },
   {
     id: "fatemeh-nourmohammadi-alumni",
@@ -2472,9 +2439,9 @@ const NEWS: NewsItem[] = [
     titleKo: "국토교통부 장관상 대상 수상",
     titleEn: "Grand Prize — Minister's Award",
     summaryKo:
-      "TCIS 인턴 Yoonha가 '구급차 이송 자동화 AI 에이전트 시스템'으로 국토교통 서비스 아이디어 공모전 대상(장관상)을 수상했습니다.",
+      "TCIS 인턴 Yunha가 '구급차 이송 자동화 AI 에이전트 시스템'으로 국토교통 서비스 아이디어 공모전 대상(장관상)을 수상했습니다.",
     summaryEn:
-      "Intern Yoonha won the Grand Prize (Minister of Land, Infrastructure and Transport Award) for an ambulance transport automation AI agent system.",
+      "Intern Yunha won the Grand Prize (Minister of Land, Infrastructure and Transport Award) for an ambulance transport automation AI agent system.",
     category: "award",
   },
   {

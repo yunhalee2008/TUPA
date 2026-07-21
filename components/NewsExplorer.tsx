@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import NewsCard from "@/components/NewsCard";
 import type { NewsCategory, NewsItem } from "@/lib/content";
+import { useLang } from "@/lib/useLang";
 
 const CATEGORIES: { value: NewsCategory | "all"; ko: string; en: string }[] = [
   { value: "all", ko: "전체", en: "All" },
@@ -16,6 +17,7 @@ const CATEGORIES: { value: NewsCategory | "all"; ko: string; en: string }[] = [
 const PAGE_SIZE = 24;
 
 export default function NewsExplorer({ items }: { items: NewsItem[] }) {
+  const lang = useLang();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<NewsCategory | "all">("all");
   const [order, setOrder] = useState<"newest" | "oldest">("newest");
@@ -52,7 +54,7 @@ export default function NewsExplorer({ items }: { items: NewsItem[] }) {
             setQuery(e.target.value);
             setVisibleCount(PAGE_SIZE);
           }}
-          placeholder="검색 — 제목·내용 / Search"
+          placeholder={lang === "ko" ? "검색 — 제목·내용" : "Search — title, content"}
           aria-label="Search news"
           className="w-full max-w-xs rounded-lg border border-mapline bg-white px-3.5 py-2 text-sm outline-none transition-colors focus:border-cobalt-600 sm:w-64"
         />
@@ -83,8 +85,8 @@ export default function NewsExplorer({ items }: { items: NewsItem[] }) {
           aria-label="Sort order"
           className="ml-auto select-field"
         >
-          <option value="newest">최신순 · Newest</option>
-          <option value="oldest">오래된순 · Oldest</option>
+          <option value="newest">{lang === "ko" ? "최신순" : "Newest"}</option>
+          <option value="oldest">{lang === "ko" ? "오래된순" : "Oldest"}</option>
         </select>
       </div>
 

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import PublicationItem from "@/components/PublicationItem";
 import type { Publication, PublicationType } from "@/lib/content";
+import { useLang } from "@/lib/useLang";
 
 /** Section order and labels, dochak.com/disclosure-style. */
 const SECTIONS: { type: PublicationType; ko: string; en: string }[] = [
@@ -20,6 +21,7 @@ export default function PublicationExplorer({
 }: {
   publications: Publication[];
 }) {
+  const lang = useLang();
   const [query, setQuery] = useState("");
   const [order, setOrder] = useState<"newest" | "oldest">("newest");
   const [yearFilter, setYearFilter] = useState<number | "all">("all");
@@ -69,7 +71,9 @@ export default function PublicationExplorer({
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="검색 — 제목·저자·학회 / Search"
+          placeholder={
+            lang === "ko" ? "검색 — 제목·저자·학회" : "Search — title, author, journal"
+          }
           aria-label="Search publications"
           className="w-full max-w-xs rounded-lg border border-mapline bg-white px-3.5 py-2 text-sm outline-none transition-colors focus:border-cobalt-600 sm:w-72"
         />
@@ -81,7 +85,7 @@ export default function PublicationExplorer({
           aria-label="Filter by year"
           className="ml-auto select-field"
         >
-          <option value="all">전체 연도 · All years</option>
+          <option value="all">{lang === "ko" ? "전체 연도" : "All years"}</option>
           {yearOptions.map((y) => (
             <option key={y} value={y}>
               {y}
@@ -94,8 +98,8 @@ export default function PublicationExplorer({
           aria-label="Sort order"
           className="select-field"
         >
-          <option value="newest">최신순 · Newest</option>
-          <option value="oldest">오래된순 · Oldest</option>
+          <option value="newest">{lang === "ko" ? "최신순" : "Newest"}</option>
+          <option value="oldest">{lang === "ko" ? "오래된순" : "Oldest"}</option>
         </select>
       </div>
 

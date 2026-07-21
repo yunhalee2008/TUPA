@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import SiteFooter from "@/components/SiteFooter";
@@ -76,6 +77,9 @@ export default function RootLayout({
         <div className="flex-1" id="main">{children}</div>
         <SiteFooter />
         <Analytics />
+        <GoogleAnalytics
+          gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-RZSXW1BEJV"}
+        />
       </body>
     </html>
   );

@@ -255,3 +255,10 @@ env `NOTION_DB_JOURNEYS`.
 - `Scopus` (URL) 컬럼 추가 — 지도교수 프로필 링크용.
 - 교수 행의 홈페이지(inhi.kim) 링크 제거 — 이 도메인이 새 사이트 자신이 되어 자기참조였음.
 - `getMembers()` 병합이 사진·약력에 더해 **링크도** 코드 폴백에서 상속.
+
+## 워크스페이스 이전 (2026-07-21)
+
+CMS 전체를 Yunha Lee 워크스페이스(Member 2명, Free 플랜 블록 한도 도달)에서
+김인희 교수님 개인 워크스페이스(단독 Member)로 복제 이전. DB 11개 전부 새 ID로
+교체 (`lib/notion.ts` `DB`), 연구분야 5개 page ID를 `AREA_SLUG_BY_PAGE_ID`에 추가
+(구 ID는 롤백 대비 보존). `REVALIDATE_TOKEN`은 변경 없음.

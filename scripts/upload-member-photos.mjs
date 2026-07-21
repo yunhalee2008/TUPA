@@ -9,7 +9,7 @@
 import { readFileSync, existsSync } from "node:fs";
 
 const KEY = process.env.NOTION_API_KEY;
-const MEMBERS_DB = "7aa78084bb144fe394ea80c27cef7d79";
+const MEMBERS_DB = "6fb5f228be9082d5ab5a810c9aa1f4f4";
 const SITE_ORIGIN = "https://tupa-two.vercel.app";
 const HEADERS = {
   Authorization: `Bearer ${KEY}`,

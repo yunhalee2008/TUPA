@@ -3,12 +3,9 @@
   "configurations": [
     {
       "name": "tupa-dev",
-      "runtimeExecutable": "powershell.exe",
-      "runtimeArgs": [
-        "-NoProfile",
-        "-Command",
-        "$env:Path = 'C:\\Program Files\\nodejs;' + $env:Path; $env:NEXT_DIST_DIR='.next-preview'; npm.cmd run dev"
-      ],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "env": { "NEXT_DIST_DIR": ".next-preview" },
       "port": 3000,
       "autoPort": true
     }

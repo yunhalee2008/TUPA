@@ -34,19 +34,19 @@ const API_KEY = process.env.NOTION_API_KEY;
 
 /** Database IDs (fixed; overridable via env for a future workspace move). */
 const DB = {
-  members: process.env.NOTION_DB_MEMBERS ?? "7aa78084bb144fe394ea80c27cef7d79",
+  members: process.env.NOTION_DB_MEMBERS ?? "6fb5f228be9082d5ab5a810c9aa1f4f4",
   publications:
-    process.env.NOTION_DB_PUBLICATIONS ?? "2f424be849424013ab8dd84de56e92a8",
-  news: process.env.NOTION_DB_NEWS ?? "bf42bc1321bf401ba5f1d4b96685c091",
+    process.env.NOTION_DB_PUBLICATIONS ?? "d705f228be9083dba5cd81b084ec6ee2",
+  news: process.env.NOTION_DB_NEWS ?? "3695f228be9083fc9bef0184dbaf522c",
   researchAreas:
-    process.env.NOTION_DB_RESEARCH_AREAS ?? "6df65f389bdd45dd8d38550c6cf72766",
-  projects: process.env.NOTION_DB_PROJECTS ?? "4aa6450de72244ddb77e960f0e8972c9",
-  openings: process.env.NOTION_DB_OPENINGS ?? "e98c6f76086b4792a449acb6a570e006",
-  gallery: process.env.NOTION_DB_GALLERY ?? "4ba8a240a18a403b84e024621b22beb4",
-  settings: process.env.NOTION_DB_SETTINGS ?? "3d0ceee3eddb48af932d09a4181bf363",
-  faqs: process.env.NOTION_DB_FAQS ?? "c602f68cf1bd4e4899fb1eedf5a239b8",
-  pageCopy: process.env.NOTION_DB_PAGE_COPY ?? "99dfb9e8a6b149d0a83df8b56243798a",
-  journeys: process.env.NOTION_DB_JOURNEYS ?? "897ed0304c6b44f4b20cc776e9213e11",
+    process.env.NOTION_DB_RESEARCH_AREAS ?? "f425f228be9083dcb32b01ec402abe91",
+  projects: process.env.NOTION_DB_PROJECTS ?? "bcb5f228be9082dd883701d1089d531c",
+  openings: process.env.NOTION_DB_OPENINGS ?? "38a5f228be9083c9a1e981fcbba9dbe5",
+  gallery: process.env.NOTION_DB_GALLERY ?? "8205f228be9082dc958f81858126381e",
+  settings: process.env.NOTION_DB_SETTINGS ?? "e6b5f228be90833dbda401293b3bf369",
+  faqs: process.env.NOTION_DB_FAQS ?? "b965f228be9082e3861e01bbc7861d2a",
+  pageCopy: process.env.NOTION_DB_PAGE_COPY ?? "5145f228be90830d959201dd82fd6e88",
+  journeys: process.env.NOTION_DB_JOURNEYS ?? "a305f228be908270809f01c47f60e729",
 };
 
 export const notionEnabled = Boolean(API_KEY);
@@ -286,6 +286,13 @@ export async function fetchNews(): Promise<NewsItem[] | null> {
  * so lookups always go through areaSlugFor()'s normalization below.
  */
 const AREA_SLUG_BY_PAGE_ID: Record<string, string> = {
+  // Professor's workspace (current, migrated 2026-07-21)
+  "1565f228be908376810a01d2a8fcd1ae": "physical-ai-av-control",
+  "c2e5f228be90839582dd01d0273243f3": "crowd-dynamics",
+  "6c85f228be90820aa25581bb2bec5be2": "llm-activity-based-model",
+  "35d5f228be90836d8fc3017275cc466a": "digital-twin-simulation",
+  "d435f228be9083c4a89301d46faaf0ba": "urban-science",
+  // Old workspace (kept for rollback safety — harmless, ID lookup only)
   "392a802d36b48149901dc4e0496396ed": "physical-ai-av-control",
   "392a802d36b481ca992ecfb9a2cfb2bb": "crowd-dynamics",
   "392a802d36b481ddb534c9b0b30d7f16": "llm-activity-based-model",

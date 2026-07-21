@@ -81,7 +81,7 @@ export default function NewsExplorer({ items }: { items: NewsItem[] }) {
           value={order}
           onChange={(e) => setOrder(e.target.value as "newest" | "oldest")}
           aria-label="Sort order"
-          className="ml-auto rounded-lg border border-mapline bg-white px-3 py-2 text-sm outline-none focus:border-cobalt-600"
+          className="ml-auto select-field"
         >
           <option value="newest">최신순 · Newest</option>
           <option value="oldest">오래된순 · Oldest</option>

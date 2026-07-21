@@ -22,20 +22,29 @@ export default function PublicationExplorer({
 }) {
   const [query, setQuery] = useState("");
   const [order, setOrder] = useState<"newest" | "oldest">("newest");
+  const [yearFilter, setYearFilter] = useState<number | "all">("all");
   const [expanded, setExpanded] = useState<Partial<Record<PublicationType, boolean>>>({});
-  // While searching, every match should be visible, not hidden behind a fold.
+  // While searching or filtering to a single year, every match should be visible, not hidden behind a fold.
   const searching = query.trim().length > 0;
+  const unfolded = searching || yearFilter !== "all";
+
+  // Every distinct year in the data, newest first — drives the year filter dropdown.
+  const yearOptions = useMemo(
+    () => Array.from(new Set(publications.map((p) => p.year))).sort((a, b) => b - a),
+    [publications],
+  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return publications;
-    return publications.filter((p) =>
-      [p.title, p.authors.join(" "), p.venue, String(p.year)]
+    return publications.filter((p) => {
+      if (yearFilter !== "all" && p.year !== yearFilter) return false;
+      if (!q) return true;
+      return [p.title, p.authors.join(" "), p.venue, String(p.year)]
         .join(" ")
         .toLowerCase()
-        .includes(q),
-    );
-  }, [publications, query]);
+        .includes(q);
+    });
+  }, [publications, query, yearFilter]);
 
   const sections = useMemo(
     () =>
@@ -43,14 +52,14 @@ export default function PublicationExplorer({
         const items = filtered
           .filter((p) => p.type === section.type)
           .sort((a, b) => (order === "newest" ? b.year - a.year : a.year - b.year));
-        const isExpanded = searching || expanded[section.type] === true;
+        const isExpanded = unfolded || expanded[section.type] === true;
         const visible = isExpanded ? items : items.slice(0, PREVIEW_COUNT);
         const years = Array.from(new Set(visible.map((p) => p.year))).sort(
           (a, b) => (order === "newest" ? b - a : a - b),
         );
         return { ...section, items, visible, years, isExpanded };
       }).filter((section) => section.items.length > 0),
-    [filtered, order, expanded, searching],
+    [filtered, order, expanded, unfolded],
   );
 
   return (
@@ -65,10 +74,25 @@ export default function PublicationExplorer({
           className="w-full max-w-xs rounded-lg border border-mapline bg-white px-3.5 py-2 text-sm outline-none transition-colors focus:border-cobalt-600 sm:w-72"
         />
         <select
+          value={yearFilter}
+          onChange={(e) =>
+            setYearFilter(e.target.value === "all" ? "all" : Number(e.target.value))
+          }
+          aria-label="Filter by year"
+          className="ml-auto select-field"
+        >
+          <option value="all">전체 연도 · All years</option>
+          {yearOptions.map((y) => (
+            <option key={y} value={y}>
+              {y}
+            </option>
+          ))}
+        </select>
+        <select
           value={order}
           onChange={(e) => setOrder(e.target.value as "newest" | "oldest")}
           aria-label="Sort order"
-          className="ml-auto rounded-lg border border-mapline bg-white px-3 py-2 text-sm outline-none focus:border-cobalt-600"
+          className="select-field"
         >
           <option value="newest">최신순 · Newest</option>
           <option value="oldest">오래된순 · Oldest</option>
@@ -106,7 +130,7 @@ export default function PublicationExplorer({
               </ul>
             </div>
           ))}
-          {!searching && section.items.length > PREVIEW_COUNT ? (
+          {!unfolded && section.items.length > PREVIEW_COUNT ? (
             <div className="mt-6 text-center">
               <button
                 type="button"

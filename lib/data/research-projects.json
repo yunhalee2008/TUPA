@@ -274,5 +274,105 @@
         }
       ]
     }
+  },
+  {
+    "id": "vr-driving-simulator-platform",
+    "title": "VR Driving Simulator Platform",
+    "date": "2026-07-22",
+    "imageUrl": "/projects/vr-driving-simulator-platform.png",
+    "areaSlug": "digital-twin-simulation",
+    "summary": "An integrated platform combining VISSIM traffic microsimulation, a driving simulator, virtual reality, and Python to study connected and automated vehicles in mixed traffic — the shared hardware and software base behind TUPA's human-in-the-loop driving studies.",
+    "detail": {
+      "paragraphs": [
+        "TUPA develops an architecture that ties together VISSIM microsimulation, a physical driving simulator rig, virtual reality, and Python-based control and analysis code, so that vehicle dynamics, driver behavior, and surrounding traffic can all be represented within one framework.",
+        "The platform is the common foundation behind the lab's overtaking-behavior and metaverse co-simulation studies, and is intended to help develop and validate techniques for improving traffic congestion, safety, and network performance under connected and automated driving."
+      ],
+      "images": [
+        {
+          "src": "/projects/vr-driving-simulator-platform.png",
+          "caption": "PTV VISSIM traffic microsimulation linked to Unity, driven through a VR headset and a force-feedback wheel and pedal set"
+        }
+      ]
+    }
+  },
+  {
+    "id": "metaverse-unity-vissim-cosimulation",
+    "title": "Metaverse-Based Emerging Technology: Unity–VISSIM Co-simulation",
+    "date": "2026-07-22",
+    "imageUrl": "/projects/metaverse-unity-vissim-devices.png",
+    "areaSlug": "digital-twin-simulation",
+    "summary": "A co-simulation environment linking PTV VISSIM's traffic microsimulation with a Unity 3D virtual environment, enabling human-in-the-loop testing with a VR headset and a force-feedback driving wheel and pedals.",
+    "detail": {
+      "paragraphs": [
+        "TUPA builds a metaverse-based testbed that couples PTV VISSIM's traffic microsimulation engine with a Unity 3D virtual environment, so a human driver can be placed inside a live simulated traffic stream rather than only observing it from the outside.",
+        "The environment combines a VR headset with a force-feedback driving wheel and pedals so surrounding VISSIM-driven traffic can be experienced first-hand. A multi-agent version of this metaverse platform was exhibited at the 2023 Seoul Mobility Show, and it underpins a KAIST-funded testbed project on mixed traffic control strategies."
+      ],
+      "images": [
+        {
+          "src": "/projects/metaverse-unity-vissim-devices.png",
+          "caption": "VISSIM (large-scale traffic simulation) and Unity (3D virtual environment) co-simulation, paired with a VR headset (2880×1600, 90Hz, 110° FOV) and a force-feedback driving wheel and pedal set"
+        }
+      ]
+    }
+  },
+  {
+    "id": "human-factor-overtaking-behavior",
+    "title": "Human Factor Safety: Interactive Driving Behavior in Overtaking Situations",
+    "date": "2026-07-22",
+    "imageUrl": "/projects/multi-agent-overtaking-simulator.png",
+    "areaSlug": "digital-twin-simulation",
+    "summary": "Using the multi-agent driving simulator platform, this line of work studies how a human driver negotiates overtaking maneuvers around a slower vehicle while oncoming traffic is present.",
+    "detail": {
+      "paragraphs": [
+        "Overtaking is one of the highest-risk maneuvers in mixed traffic, requiring a driver to judge oncoming traffic, closing speed, and the slower vehicle's behavior at the same time. TUPA studies this interaction with its multi-agent driving simulator, which puts a human driver behind the wheel of the overtaking vehicle while other agents control the oncoming and low-speed vehicles.",
+        "This line of work spans several studies led by Taeho Oh — from early two-lane two-way road overtaking maneuvers (ITS World Congress 2022), to machine-learning-supported robust overtaking behavior (TRB 2023), to safe overtaking behavior thresholds under human interaction (TRB 2024)."
+      ],
+      "images": [
+        {
+          "src": "/projects/multi-agent-overtaking-simulator.png",
+          "caption": "Multi-agent driving simulator pipeline (human interaction, data collection, machine learning, communication interface, analysis) for the overtaking-vehicle / oncoming-vehicle scenario"
+        }
+      ]
+    }
+  },
+  {
+    "id": "multi-source-traffic-volume-imputation",
+    "title": "Data-Driven Traffic Volume Imputation from Multi-Source Data Collection",
+    "date": "2026-07-22",
+    "imageUrl": "/projects/rse-vds-traffic-data-collection.png",
+    "areaSlug": "physical-ai-av-control",
+    "summary": "Combining Roadside Equipment (RSE) probe data with Vehicle Detection System (VDS) loop-detector counts, this research imputes and predicts traffic volume across a road network using graph-based deep learning — a practical, data-driven approach to real-world transportation operation.",
+    "detail": {
+      "paragraphs": [
+        "Neither data source alone covers the full network: RSE units report real-time speed, travel time, and sample counts along road segments, while VDS loop detectors report volume, speed, and occupancy at fixed points. Representing the road network as a graph lets a deep learning model fuse both sources and impute traffic volume at links with sparse or missing sensor data, evaluated against historical monthly, weekly, and daily traffic patterns.",
+        "Led by Donghyun Kwon, published as \"Large-Scale Network Imputation and Prediction of Traffic Volume Based on Multi-Source Data Collection System\" (Transportation Research Record, 2023) and \"Large Scale Multi-Source Traffic Flow Forecasting Based on Attention-Based Spatio-Temporal Graph Convolutional Networks–LSTM\" (ITS World Congress 2022)."
+      ],
+      "images": [
+        {
+          "src": "/projects/rse-vds-traffic-data-collection.png",
+          "caption": "RSE and VDS data collection at road-segment/link level, represented as a graph and compared across monthly, weekly, and daily historical periods"
+        }
+      ]
+    }
+  },
+  {
+    "id": "rl-signal-optimization-nddqn",
+    "title": "Reinforcement Learning-Based Traffic Signal Optimization",
+    "date": "2026-07-22",
+    "imageUrl": "/projects/nddqn-signal-optimization-heatmap.png",
+    "areaSlug": "physical-ai-av-control",
+    "summary": "A Neighbor Dueling Deep Q-Network (NDDQN) jointly controls four neighboring intersections, choosing signal actions that reduce vehicle emissions rather than only minimizing delay.",
+    "detail": {
+      "paragraphs": [
+        "Conventional signal control optimizes each intersection in isolation and typically rewards shorter delay or queue length. This work instead controls four neighboring intersections simultaneously with a Neighbor Dueling Deep Q-Network, so each agent's signal decisions account for traffic conditions at adjacent intersections, using reduced emissions — not just travel time — as the reward signal.",
+        "Led by Jaeeun Jung, published as \"EcoMRL: Deep Reinforcement Learning-Based Traffic Signal Control for Urban Air Quality\" (International Journal of Sustainable Transportation, 2024) and filed as a Korean patent, \"Reinforcement Learning-Based Signal Control Method and System Considering Environmental Impact\" (2024)."
+      ],
+      "images": [
+        {
+          "src": "/projects/nddqn-signal-optimization-heatmap.png",
+          "caption": "Emission heatmaps across the four-intersection network before (left) and after (right) NDDQN-based signal optimization"
+        }
+      ]
+    }
   }
 ]

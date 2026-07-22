@@ -64,7 +64,7 @@
     "title": "Traffic demand modeling using agent model",
     "date": "2026-07-16",
     "imageUrl": "/projects/traffic-demand-agent-simulation.png",
-    "areaSlug": "digital-twin-simulation",
+    "areaSlug": "llm-activity-based-model",
     "summary": "Building a digital twin of road traffic with agent-based simulation (2022~2025): macroscopic transport simulation is integrated with activity-based modeling to reproduce realistic traffic flows and predict traffic volumes at the micro-analysis-zone level.",
     "detail": {
       "paragraphs": [

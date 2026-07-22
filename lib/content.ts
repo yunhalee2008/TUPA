@@ -3248,6 +3248,16 @@ import {
   notionEnabled,
 } from "./notion";
 
+/**
+ * Most recent 4-digit year mentioned in a member's title (e.g. "since 2023",
+ * "Ph.D. 2025", "Visiting Student · Monash University (2024–2025)"). Members
+ * without a year in their title (professor, research fellows) sort last.
+ */
+function memberYear(member: Member): number {
+  const matches = member.titleEn.match(/(19|20)\d{2}/g);
+  return matches ? Math.max(...matches.map(Number)) : -Infinity;
+}
+
 export async function getMembers(role?: MemberRole): Promise<Member[]> {
   let members = MEMBERS;
   if (notionEnabled) {
@@ -3268,6 +3278,11 @@ export async function getMembers(role?: MemberRole): Promise<Member[]> {
       });
     }
   }
+  // Most recent first; same-year members keep the manual Notion 순서 order.
+  members = [...members].sort((a, b) => {
+    const yearDiff = memberYear(b) - memberYear(a);
+    return yearDiff !== 0 ? yearDiff : (a.order ?? 999) - (b.order ?? 999);
+  });
   return role ? members.filter((m) => m.role === role) : members;
 }
 

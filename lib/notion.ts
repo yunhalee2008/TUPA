@@ -171,6 +171,7 @@ const ROLE_FROM_KO: Record<string, MemberRole> = {
   방문: "visiting",
   인턴: "intern",
   행정: "admin",
+  행정선생님: "admin",
   졸업생: "alumni",
 };
 

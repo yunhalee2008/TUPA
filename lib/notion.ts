@@ -170,6 +170,7 @@ const ROLE_FROM_KO: Record<string, MemberRole> = {
   석사과정: "ms",
   방문: "visiting",
   인턴: "intern",
+  행정: "admin",
   졸업생: "alumni",
 };
 

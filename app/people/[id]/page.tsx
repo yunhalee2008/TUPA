@@ -18,7 +18,9 @@ interface Props {
 
 export async function generateStaticParams() {
   const members = await getMembers();
-  return members.map((member) => ({ id: member.id }));
+  return members
+    .filter((member) => member.role !== "admin")
+    .map((member) => ({ id: member.id }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -45,7 +47,7 @@ export default async function MemberDetailPage({ params }: Props) {
     getPageCopy(),
   ]);
   const member = members.find((m) => m.id === params.id);
-  if (!member) notFound();
+  if (!member || member.role === "admin") notFound();
 
   // Publication record = lab publications listing this member as an author,
   // plus the personal SCI-journal record carried over from the legacy

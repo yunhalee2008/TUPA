@@ -23,7 +23,10 @@ export default async function PeoplePage() {
   const interns = members.filter(
     (m) => m.role === "visiting" || m.role === "intern",
   );
+  const admin = members.filter((m) => m.role === "admin");
   const alumni = members.filter((m) => m.role === "alumni");
+  const alumniPhd = alumni.filter((m) => m.titleEn.startsWith("Ph.D."));
+  const alumniMs = alumni.filter((m) => !m.titleEn.startsWith("Ph.D."));
 
   return (
     <main className="site-container py-14 lg:py-20">
@@ -132,17 +135,53 @@ export default async function PeoplePage() {
         </section>
       ) : null}
 
-      {alumni.length > 0 ? (
+      {admin.length > 0 ? (
         <section className="mt-16 gap-10 lg:grid lg:grid-cols-12">
           <SectionHeading
             index="06"
+            titleEn={copy["구성원 · 행정 섹션 제목"].en}
+            titleKo={copy["구성원 · 행정 섹션 제목"].ko}
+          />
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:col-span-9 lg:mt-0">
+            {admin.map((member) => (
+              <MemberCard key={member.id} member={member} />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {alumni.length > 0 ? (
+        <section className="mt-16 gap-10 lg:grid lg:grid-cols-12">
+          <SectionHeading
+            index="07"
             titleEn={copy["구성원 · 졸업생 섹션 제목"].en}
             titleKo={copy["구성원 · 졸업생 섹션 제목"].ko}
           />
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:col-span-9 lg:mt-0">
-            {alumni.map((member) => (
-              <MemberCard key={member.id} member={member} />
-            ))}
+          <div className="mt-8 space-y-10 lg:col-span-9 lg:mt-0">
+            {alumniPhd.length > 0 ? (
+              <div>
+                <p className="mono-label">
+                  <Copy t={copy["구성원 · 인원 라벨(박사과정)"]} />
+                </p>
+                <div className="mt-4 grid gap-5 sm:grid-cols-2">
+                  {alumniPhd.map((member) => (
+                    <MemberCard key={member.id} member={member} />
+                  ))}
+                </div>
+              </div>
+            ) : null}
+            {alumniMs.length > 0 ? (
+              <div>
+                <p className="mono-label">
+                  <Copy t={copy["구성원 · 인원 라벨(석사과정)"]} />
+                </p>
+                <div className="mt-4 grid gap-5 sm:grid-cols-2">
+                  {alumniMs.map((member) => (
+                    <MemberCard key={member.id} member={member} />
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </div>
         </section>
       ) : null}

@@ -26,6 +26,7 @@ export type MemberRole =
   | "ms"
   | "visiting"
   | "intern"
+  | "admin"
   | "alumni";
 
 export interface Member {
@@ -559,6 +560,17 @@ const MEMBERS: Member[] = [
     titleKo: "인턴 · KAIST 전산학부 (2026)",
     titleEn: "Intern · School of Computing (2026)",
     photoUrl: "/people/biniam.jpg",
+    researchInterests: [],
+  },
+  // --- Admin Staff ---------------------------------------------------------------
+  {
+    id: "youngmi-choi",
+    nameKo: "",
+    nameEn: "Youngmi Choi",
+    role: "admin",
+    titleKo: "행정팀",
+    titleEn: "Administrative Staff",
+    photoUrl: "/people/Youngmi.png",
     researchInterests: [],
   },
   // --- Alumni ------------------------------------------------------------------

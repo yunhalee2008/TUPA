@@ -13,6 +13,7 @@ import memberPublicationsData from "./data/member-publications.json";
 import newsArchiveData from "./data/news-archive.json";
 import newsExtraData from "./data/news-extra.json";
 import pageCopyData from "./data/page-copy.json";
+import projectDetailsData from "./data/project-details.json";
 import researchProjectsData from "./data/research-projects.json";
 
 // ---------------------------------------------------------------------------
@@ -134,6 +135,9 @@ export interface ResearchTopicSection {
 export interface ResearchTopicImage {
   src: string;
   caption?: string;
+  /** Intrinsic pixel size — set for images rendered through next/image. */
+  width?: number;
+  height?: number;
 }
 
 /** Rich content shown in the click-to-open detail dialog of a research topic. */
@@ -192,6 +196,12 @@ export interface Project {
   body?: string[];
   /** Detail-page images from the Notion page body. */
   images?: string[];
+  /**
+   * Curated detail content kept in `lib/data/project-details.json`. Used only
+   * when the Notion row's page body is still empty, so filling the Notion page
+   * in always wins over what is committed here.
+   */
+  detail?: ResearchTopicDetail;
 }
 
 export interface Faq {
@@ -3463,6 +3473,26 @@ export async function getProjects(): Promise<Project[]> {
   );
 }
 
+/**
+ * Curated project detail, keyed by a normalised English title so it survives
+ * the switch from the built-in ids to Notion page ids.
+ */
+const PROJECT_DETAILS = new Map<string, ResearchTopicDetail>(
+  (
+    projectDetailsData as {
+      titleEn: string;
+      detail: ResearchTopicDetail;
+    }[]
+  ).map((entry) => [projectTitleKey(entry.titleEn), entry.detail]),
+);
+
+function projectTitleKey(titleEn: string): string {
+  return titleEn
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
 /** Single funded project, with the Notion row's page body as its detail. */
 export async function getProject(id: string): Promise<Project | undefined> {
   const projects = await getProjects();
@@ -3474,7 +3504,8 @@ export async function getProject(id: string): Promise<Project | undefined> {
       return { ...project, body: content.body, images: content.images };
     }
   }
-  return project;
+  const detail = PROJECT_DETAILS.get(projectTitleKey(project.titleEn));
+  return detail ? { ...project, detail } : project;
 }
 
 export async function getOpenings(activeOnly = true): Promise<Opening[]> {

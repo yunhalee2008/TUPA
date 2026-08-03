@@ -69,11 +69,57 @@ export default async function ProjectDetailPage({ params }: Props) {
               <p key={paragraph.slice(0, 60)}>{paragraph}</p>
             ))}
           </div>
+        ) : project.detail ? (
+          <div className="mt-8 space-y-4 leading-relaxed text-body/90">
+            {project.detail.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 60)}>{paragraph}</p>
+            ))}
+          </div>
         ) : (
           <p className="mt-8 rounded-xl border border-mapline bg-white p-6 text-sm text-body/70">
             <Copy t={copy["연구과제 상세 · 자료 준비중 안내"]} />
           </p>
         )}
+
+        {project.detail?.sections?.map((section) => (
+          <section key={section.heading} className="mt-8">
+            <h2 className="font-display text-lg font-bold text-cobalt-900">
+              {section.heading}
+            </h2>
+            {section.body ? (
+              <p className="mt-2 leading-relaxed text-body/90">{section.body}</p>
+            ) : null}
+            {section.bullets ? (
+              <ul className="mt-2 list-disc space-y-1.5 pl-5 leading-relaxed text-body/90">
+                {section.bullets.map((bullet) => (
+                  <li key={bullet.slice(0, 40)}>{bullet}</li>
+                ))}
+              </ul>
+            ) : null}
+          </section>
+        ))}
+
+        {project.detail?.images?.length ? (
+          <div className="mt-10 space-y-8">
+            {project.detail.images.map((image) => (
+              <figure key={image.src}>
+                <Image
+                  src={image.src}
+                  alt={image.caption ?? project.titleEn}
+                  width={image.width ?? 1600}
+                  height={image.height ?? 1000}
+                  sizes="(min-width: 768px) 768px, 100vw"
+                  className="h-auto w-full rounded-xl border border-mapline bg-white"
+                />
+                {image.caption ? (
+                  <figcaption className="mt-2 text-sm leading-relaxed text-body/60">
+                    {image.caption}
+                  </figcaption>
+                ) : null}
+              </figure>
+            ))}
+          </div>
+        ) : null}
 
         {project.images && project.images.length > 0 ? (
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -86,6 +132,23 @@ export default async function ProjectDetailPage({ params }: Props) {
                 height={480}
                 className="w-full rounded-xl border border-mapline object-cover"
               />
+            ))}
+          </div>
+        ) : null}
+
+        {project.detail?.links?.length ? (
+          <div className="mt-10 flex flex-wrap gap-2 border-t border-mapline pt-6">
+            {project.detail.links.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-mapline px-3.5 py-1.5 text-sm font-medium text-cobalt-900 transition-colors hover:bg-skytint"
+              >
+                {link.label}
+                <span aria-hidden> ↗</span>
+              </a>
             ))}
           </div>
         ) : null}

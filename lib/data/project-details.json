@@ -1,0 +1,354 @@
+[
+  {
+    "id": "iitp-genai-2026",
+    "titleEn": "2026 Generative AI Leading Talent Cultivation Program",
+    "sourceNote": "Notion — \"2026 Generative AI Leading Talent Development Program\" project summary (internal, login required): https://www.notion.so/2026-Generative-AI-Leading-Talent-Development-Program-3a3cd26708a0802b9847f124bce483b2",
+    "detail": {
+      "paragraphs": [
+        "Formally titled Development of Industry-Specific Physical AI Foundation Models and Cultivation of Next-Generation Convergence Talent, this IITP programme runs from April 2026 to December 2029. Lotte Innovate leads the consortium, with KAIST, Yonsei University and Inha University as joint research organisations, and Lotte affiliates — Korea Seven, Lotte E&C, Lotte Global Logistics, Lotte World and others — serving as the field-demonstration and validation ground.",
+        "The core idea is to extend generative AI beyond the language and vision digital domain into the physical world — perception, reasoning, planning, action, operation. The goal is to build an industry-specialised Physical AI foundation model while simultaneously training convergence-type talent, then dispatching and hiring top students into the affiliates so that research and industry feed each other."
+      ],
+      "sections": [
+        {
+          "heading": "Three universities, three layers",
+          "bullets": [
+            "KAIST — core humanoid technology for next-generation logistics automation (generative AI + robotics)",
+            "Yonsei University — security- and policy-aware adaptive on-device–cloud optimisation for large-scale industrial edge computing (generative AI + infrastructure)",
+            "Inha University — MoE-robotics on-device vision-language navigation for facility management (generative AI + industrial AI)"
+          ]
+        },
+        {
+          "heading": "KAIST's task: a logistics humanoid",
+          "body": "Four professors of the Cho Chun Shik Graduate School of Mobility take part, with Prof. Inhi Kim as the KAIST task lead. Four technology modules are developed in parallel and then integrated into a humanoid deployable in a real logistics environment.",
+          "bullets": [
+            "Module A — VLN: logistics navigation, task-aware network modelling and route optimisation (Prof. Inkwon Jang)",
+            "Module B — VLM/Vision: worker action observation, intent inference and collision avoidance (Prof. Kitae Jang)",
+            "Module C — Sim-to-Real: simulation policy learning, VR-teleoperation and real-robot transfer (Prof. Inhi Kim)",
+            "Module D — Integrated control: terrain-adaptive whole-body locomotion–manipulation and VLA-based control (Prof. Kyunghwan Choi)"
+          ]
+        },
+        {
+          "heading": "Four-year roadmap",
+          "bullets": [
+            "Year 1 — foundation building: simulation platform, vision-language datasets and logistics network graphs, whole-body dynamics modelling, a Sim-to-Real prior study",
+            "Year 2 — core model development: domain-randomisation RL policy learning, VR-teleoperation, VLM intent inference, VLA-based terrain-adaptive locomotion",
+            "Year 3 — robot integration and verification: Sim-to-Real transfer experiments and gap analysis, teleoperation extended to real robots, integrated locomotion–manipulation control, worker–robot collision avoidance",
+            "Year 4 — integrated demonstration: hardware-constraint integration, field demonstration at Lotte logistics sites, generalisation on unseen terrain"
+          ]
+        },
+        {
+          "heading": "The talent track",
+          "body": "Alongside the technical work the programme runs an LSM (Lotte Student Member) three-tier certification, LSM Fellowship dispatches (six short-term and three long-term placements per year), generative-AI competitions, intensive courses and inter-university credit exchange."
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/iitp-genai-consortium.png",
+          "caption": "Consortium structure: three collaborating universities supply core technology and talent, Lotte Innovate leads, and the Lotte affiliates across food, distribution, chemical/construction/manufacturing and tourism/service/finance provide the field-validation ground",
+          "width": 1600,
+          "height": 938
+        },
+        {
+          "src": "/projects/iitp-genai-phase-roadmap.jpg",
+          "caption": "Phase 1 and Phase 2 of KAIST's task: foundation building and core model development, then real-robot integration and an integrated demonstration measured against task success, unseen-terrain adaptability, continuous operation and worker-collaboration safety",
+          "width": 1600,
+          "height": 984
+        }
+      ]
+    }
+  },
+  {
+    "id": "nrf-physical-ai-2026",
+    "titleEn": "Development of a Physical AI and Infrastructure-Centric AV Control Framework for Mixed-Autonomy Traffic Environments",
+    "sourceNote": "NRF proposal attachment \"대표적 연구실적 요약문 및 증빙자료\" (internal Dropbox): https://www.dropbox.com/scl/fi/qnxfrki9f6lkl3xgzfs0x/1-C-DH-1.hwp?rlkey=6j53o0fo9p7cmirwqno6f37a4&dl=0",
+    "detail": {
+      "paragraphs": [
+        "Roads will not switch to full autonomy overnight. For a long transitional period, automated vehicles of differing capability will share space with human drivers, cyclists and pedestrians — a heterogeneous mixed-autonomy environment in which no single vehicle has a complete picture. This project asks the infrastructure to supply what the vehicle cannot see, and builds a Physical AI control framework around that idea.",
+        "The work centres on a Phygital World: a high-fidelity digital twin in which physical and virtual agents interact in real time, so that high-risk scenarios can be generated, control strategies can be trained, and infrastructure-guided coordination can be validated before it reaches the street."
+      ],
+      "sections": [
+        {
+          "heading": "Research thrusts",
+          "bullets": [
+            "Phygital World — an infrastructure-centred digital twin coupling real vehicles with virtual pedestrians and vehicles for realistic, repeatable validation",
+            "Infrastructure-guided control — roadside intelligence that proposes optimal speeds and manoeuvres, reducing unnecessary stops and conflict risk at intersections",
+            "Heterogeneous mixed traffic — integrated control across automated and human-driven vehicles, including safe handover strategies",
+            "Vulnerable road users — context-aware prediction of pedestrian, cyclist and e-scooter behaviour from multimodal street sensing",
+            "Distributed edge networks — modular edge–cloud architecture for multi-infrastructure network optimisation"
+          ]
+        },
+        {
+          "heading": "Foundations",
+          "body": "Five recent studies from the lab supply the source technology the framework is built on.",
+          "bullets": [
+            "A scalable, interoperable C-V2X framework — a modular edge-intelligent mobility operating system (mOS) integrated with a mixed-reality testbed, demonstrating infrastructure-guided AV coordination under realistic latency (Communications in Transportation Research, 2025)",
+            "Information delivery in tunnels — a VR-HMD multi-agent driving simulator showing that advance information cuts driver reaction time by 51%, and that the effect of a head-up display depends on lighting intensity (Tunnelling and Underground Space Technology, 2025)",
+            "E-scooter overtaking perception — replaying a participant's own driving trajectory from the rider's seat, yielding safety thresholds for lateral distance in mixed traffic (Accident Analysis & Prevention, 2024)",
+            "Audio-visual perception and cycling — multimodal street sensing and explainable machine learning for nonlinear behaviour prediction (Transportation Research Part D, 2025)",
+            "School-zone pedestrian crash severity — semantic segmentation of street-view imagery to quantify how occlusion and micro-level street form drive injury risk (Journal of Transport Geography, 2024)"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Synergistic role of audio-visual perceptions in promoting bikeshare (Transportation Research Part D)",
+          "url": "https://doi.org/10.1016/j.trd.2025.104806"
+        }
+      ]
+    }
+  },
+  {
+    "id": "nrf-k-construction-erc-2025",
+    "titleEn": "AI Plus K-Construction Infrastructure Resilience-ERC",
+    "sourceNote": "AI Construction Resilience Center (AIKC), Sungkyunkwan University — 연구 개요: https://aikc.skku.edu/research/info/",
+    "detail": {
+      "paragraphs": [
+        "The AI Construction Resilience Center (AIKC), hosted at Sungkyunkwan University, ties construction infrastructure, nano-composite materials and AI mobility into a single hyper-connected stack, with the aim of an intelligent disaster-safety ecosystem that can respond to disasters no one has planned for.",
+        "The centre is organised into three research groups — smart construction (Group 1), nano-composites (Group 2) and advanced mobility (Group 3). TUPA works in Group 3. The groups are deliberately interlocked so that the whole response chain behaves as one system rather than three separate technologies."
+      ],
+      "sections": [
+        {
+          "heading": "Group 3 — advanced mobility",
+          "bullets": [
+            "Unmanned systems linking compact mobility and drones for accident diagnosis and facility-management decision support",
+            "Mobility systems for disaster monitoring, including a remote-driving (tele-operation) framework and its operating environment",
+            "Dynamic crowd simulation for evacuation strategy, built from unstructured data and experiment-based evacuation behaviour models",
+            "Ground transport operation and management systems for disaster response"
+          ]
+        },
+        {
+          "heading": "Where the groups meet",
+          "body": "Three cross-group syntheses define the centre's core competitiveness.",
+          "bullets": [
+            "Automated maintenance of megastructures — Group 1's deformation prediction and risk analysis combined with Group 2's 3D-printed reinforcement, giving unmanned damage detection, reinforcement optimisation and automated repair",
+            "Rapid recovery and evacuation — Group 3's accident-site scanning and damage assessment combined with Group 2's 3D printing, automating on-site reinforcement and clearing evacuation routes",
+            "Optimal evacuation under disaster — Group 1's structural monitoring combined with Group 3's advanced mobility, running structural risk analysis into real-time route optimisation and drone- and vehicle-guided evacuation"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/erc-aikc-mobility-sensor-fusion.png",
+          "caption": "Group 3 sensing stack: compact mobility, lidar and camera feed a sensor-processing and data-fusion layer that drives the autonomous driving system, with drones and V2X extending coverage across the incident site",
+          "width": 1095,
+          "height": 1136
+        },
+        {
+          "src": "/projects/erc-aikc-teleoperation-framework.jpg",
+          "caption": "Remote-driving framework — video uplink from the vehicle, control downlink from the operation centre — with the autonomous shuttle and the tele-operation seat used for the experiments",
+          "width": 1600,
+          "height": 301
+        },
+        {
+          "src": "/projects/erc-aikc-disaster-zone-management.jpg",
+          "caption": "Disaster-responsive traffic operation by zone: occurrence, affected, caution and safe areas each receive a different management strategy, from casualty transport and shelter guidance to rerouting, contraflow design and signal priority for response vehicles",
+          "width": 1600,
+          "height": 500
+        }
+      ],
+      "links": [
+        {
+          "label": "AI Construction Resilience Center — research overview",
+          "url": "https://aikc.skku.edu/research/info/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "molit-metaverse-av-2023",
+    "titleEn": "Development of Virtual Environment and Demonstration Technology for Automated Driving based on Metaverse",
+    "sourceNote": "MOLIT 자율주행기술개발 혁신사업 국-7 착수보고회 자료 (2023-05-17, internal Dropbox): https://www.dropbox.com/scl/fi/8xyrdfzq0vin73frsz2kj/1_-7-_-_230510_-_2.pptx?rlkey=pqz6buohis82d0cx9dqq0vl94&dl=0",
+    "detail": {
+      "paragraphs": [
+        "Part of MOLIT's autonomous-driving innovation programme, this project (April 2023 – December 2027) builds a multi-purpose, variably extensible virtual test environment for Lv.4/4+ automated driving that serves three uses at once: training AV AI, verifying AV performance, and evaluating and certifying AVs. KATRI, the Korea Automobile Testing & Research Institute, leads the consortium; KAIST joins as a co-research organisation alongside MORAI, Nota, NAVER LABS and other industry partners.",
+        "The problem it addresses is that simulation today is built for developers, not for the people who have to certify a vehicle: scenarios are limited, formats are proprietary, and living-lab demonstration cannot be rehearsed safely. The target is a standardised, modular, open platform running large-scale parallel tests on hybrid cloud, with Korean road content and living-lab data behind it."
+      ],
+      "sections": [
+        {
+          "heading": "Six research strategies",
+          "bullets": [
+            "A multi-purpose, variably extensible physical–virtual integrated test and demonstration platform for Lv.4/4+ simulation",
+            "Reproduction of the driving environment from living-lab demonstration data",
+            "Dynamic-object behaviour models for generating the virtual verification environment",
+            "AI-based learning and reconstruction of the driving environment, including datasets for AV training",
+            "A metaverse-based simulation environment on hybrid cloud and on-premise infrastructure",
+            "Operation, maintenance and performance evaluation of the integrated simulation platform"
+          ]
+        },
+        {
+          "heading": "KAIST's part",
+          "body": "KAIST leads two of the project's research goals — the dynamic-object behaviour models, and the on-premise metaverse environment used for certification and evaluation.",
+          "bullets": [
+            "AI- and parameter-based behaviour and decision models for dynamic objects (drivers and pedestrians): an initial simulation model, accuracy validation against collected data, driver-model refinement, and adversarial-condition dynamic models tuned on living-lab demonstration data",
+            "An on-premise server-based metaverse environment for AV certification: living-lab data linkage, real-time replay with generative-AI-based automatic 3D object generation, multiplayer support, and a virtual road environment built for data collection"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/metaverse-av-research-strategy.png",
+          "caption": "The project's six research strategies and their final deliverables, tied to the government target of commercialising Lv.4 automated driving by 2027",
+          "width": 1600,
+          "height": 968
+        },
+        {
+          "src": "/projects/metaverse-av-livinglab-to-metaverse.png",
+          "caption": "Living lab to metaverse: static objects (buildings, traffic facilities, obstacles) and dynamic objects (vehicles, pedestrians, bicycles) are mirrored between the real site and the virtual environment",
+          "width": 899,
+          "height": 574
+        },
+        {
+          "src": "/projects/metaverse-av-driver-model-pipeline.png",
+          "caption": "Human driver model pipeline — collect driving data, process it, then calibrate model parameters with AI — using K-City's communication, automated-parking and other test facilities",
+          "width": 701,
+          "height": 317
+        },
+        {
+          "src": "/projects/metaverse-av-human-ai-interaction.png",
+          "caption": "Validating the models against human data across AI–human interaction conditions (car-following in both directions, intersections, merging): a significant match refines the human model, a mismatch sends the AV algorithm and its parameters back for revision",
+          "width": 1094,
+          "height": 508
+        },
+        {
+          "src": "/projects/metaverse-av-metaverse-application.png",
+          "caption": "The metaverse application: a Unity client exchanging pedal and steering input against RPM and speed with the hardware simulator, with a public zone for real-time shared traffic and private zones for per-client scenario instances",
+          "width": 614,
+          "height": 376
+        }
+      ]
+    }
+  },
+  {
+    "id": "molit-road-digital-twin-2022",
+    "titleEn": "Road Traffic Digital Twin Development Using Autonomous Driving Lv.4/4+ Big Data",
+    "sourceNote": "Notion — \"국6 Project summary\" (internal, login required): https://app.notion.com/p/6-Project-summary-3adbe83989008085951ded75e1f865f4",
+    "detail": {
+      "paragraphs": [
+        "The project develops digital-twin-based traffic management services and decision-support technology for the mixed-autonomy period: extending the limited operational design domain of Lv.4 automated driving to more road types and situations, and simulating road traffic in mixed conditions using big data fused from vehicles and road infrastructure.",
+        "It runs in three stages — design and functional development of the road-traffic digital twin system, an analysis and prediction simulator for mixed autonomous-vehicle conditions, and development and verification of the system against a living-lab site."
+      ],
+      "sections": [
+        {
+          "heading": "Why it matters",
+          "bullets": [
+            "At what penetration rate do the efficiency and safety gains from automated vehicles actually appear? The question cannot be answered from today's roads",
+            "If a Lv.4 vehicle receives fused road-traffic information, how does its behaviour change, and can its operational design domain be extended?",
+            "Realistic behaviour models are needed for the Lv.4 vehicles currently under development, and for the traffic operation indicators that follow when they mix with conventional vehicles",
+            "A digital twin for road traffic needs both a framework — construction goal, architecture, entities, services — and a simulation layer, and must interoperate with digital twins built for other domains"
+          ]
+        },
+        {
+          "heading": "KAIST's role",
+          "body": "KAIST develops the macroscopic traffic analysis simulation module for mixed autonomous-vehicle conditions — the network-centred macroscopic module in the system architecture, sitting beside CAU's microscopic evaluation module and KOTI's Lv.4 behaviour module.",
+          "bullets": [
+            "From the framework side: services for data fusion and macroscopic analysis model management within the analysis module, on a digital twin platform built for full-lifecycle information linkage",
+            "From the simulator side: a deep-learning-based traffic condition analysis and prediction simulator, implemented as the network-centred macroscopic module",
+            "Data fusion of household travel survey, socioeconomic indicators and supplementary data, with a deep-learning algorithm that corrects travel volume in data-deficient regions",
+            "A multimodal travel assignment model that accounts for automated vehicles and new mobility modes, verified with GEH, RMSE and MSE against existing traffic analysis models"
+          ]
+        },
+        {
+          "heading": "Annual aims",
+          "bullets": [
+            "Stage 1 — simulator architecture for mixed conditions: requirements analysis, comparative analysis of macroscopic model algorithms, design of an AV-aware macroscopic model, then data fusion and construction of AV-aware traffic pattern data",
+            "Stage 2 — macroscopic simulator development: network construction, simulation, travel data input, visualisation and parameter-setting engines; calibration and validation against road traffic volume and travel speed; guidelines for macroscopic analysis under mixed traffic",
+            "Stage 2 — living-lab demonstration: analysis and verification of macroscopic traffic flow for the same period as the demonstration site, a policy support system architecture, and comparative performance evaluation against existing systems"
+          ]
+        },
+        {
+          "heading": "What changes",
+          "body": "Today an automated vehicle enters the market and the consequences — congestion, crashes — are discovered afterwards, with policy alternatives developed in response. With a digital twin, mixed-traffic conditions are predicted in advance, customised traffic management services are proposed for the predicted problems, and policy scenarios are evaluated in the virtual space before anything is applied on the street, cutting the cost and time of the verification process."
+        },
+        {
+          "heading": "Expected effects",
+          "bullets": [
+            "Source technology for a road-traffic digital twin framework: object modelling libraries for traffic management, a microservice architecture for fast processing of diverse data, and linkage with both microscopic and macroscopic simulators",
+            "Macroscopic analysis that links people's travel-related activities to socioeconomic indicators, improving both the accuracy of demand prediction and the explanation of travel patterns",
+            "Decision support for traffic policy — advance diagnosis of congestion and crash problems, and support for prioritising transport SOC investment in the mixed-autonomy period"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/road-digital-twin-strategy.jpg",
+          "caption": "From vision to deliverables: three strategy tracks — the digital twin framework, the mixed-traffic simulator and the decision-support tool — converge on a living-lab demonstration, with the macroscopic simulation module at the traffic-network level marked as KAIST's part",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/projects/road-digital-twin-system-architecture.jpg",
+          "caption": "System architecture of the deep-learning-based analysis and prediction simulator. KAIST's network-centred macroscopic module (highlighted) sits in the mixed-traffic prediction and analysis block alongside CAU's microscopic module and KOTI's Lv.4 behaviour module",
+          "width": 1600,
+          "height": 1007
+        },
+        {
+          "src": "/projects/road-digital-twin-as-is-to-be.jpg",
+          "caption": "As-is versus to-be: instead of discovering congestion and crashes after automated vehicles enter the market, the digital twin predicts mixed-traffic conditions, proposes management services, and evaluates policy scenarios before field deployment",
+          "width": 1600,
+          "height": 869
+        }
+      ]
+    }
+  },
+  {
+    "id": "nrf-shared-mobility-2021",
+    "titleEn": "Shared Mobility–Mass Transit Operational Plan for Preparing the Next Pandemic",
+    "sourceNote": "NRF 2021 우수신진연구 연구계획서 (internal Dropbox): https://www.dropbox.com/scl/fi/2cs2zle02rk3fw7pnlhmm/2021.-Inhi.hwp?rlkey=qwukq8egte5i6rejkizgwmpns&dl=0",
+    "detail": {
+      "paragraphs": [
+        "COVID-19 changed how people move in ways no earlier pandemic had, and most experts expect another one. This five-year project builds the decision-support tooling a transit operator would need next time: a package that predicts shifting micro-mobility demand, rebalances supply against it, and connects shared modes to mass transit so that demand can be spread rather than concentrated.",
+        "Shared bikes and scooters solve much of the first- and last-mile problem, yet their management is still largely driven by experience rather than data. The project treats the shared-mobility and mass-transit pair as one dynamic system and optimises it with deep learning and reinforcement learning."
+      ],
+      "sections": [
+        {
+          "heading": "Five years, five steps",
+          "bullets": [
+            "Year 1 — analyse how COVID-19 changed micro-mobility demand and usage behaviour, and how public transport use shifted with it",
+            "Year 2 — short-term forecasting of shared-mobility demand using a distributional loss function over neural networks, comparing Parallel CNN, LSTM, ResNet34 and CNN-LSTM architectures",
+            "Year 3 — deep reinforcement learning that rebalances shared mobility against public transport routes and timetables, with service level as the reward",
+            "Year 4 — accessibility between the two systems, redistributing demand through route adjustment and fare incentives",
+            "Year 5 — an integrated package delivered as a web-based service with real-time visualisation"
+          ]
+        },
+        {
+          "heading": "Why the two systems must be planned together",
+          "body": "The hypothesis rests on a triple bottom line.",
+          "bullets": [
+            "Social — public transport remains indispensable during a pandemic, so safety and public health require a holistic approach to supplying shared mobility and transit against elastic demand",
+            "Economic — shared-mobility use rises in proportion to transit use, and an elastic fare system that spreads demand across time periods also reduces transmission risk",
+            "Environmental — the climate crisis continued through COVID-19, and promoting public transport remains the most basic thing transport policy can do about emissions"
+          ]
+        },
+        {
+          "heading": "Method",
+          "bullets": [
+            "Hierarchical traffic data management fusing mobile GPS and transit card data, network geometry and external environmental factors",
+            "Distributional prediction rather than point prediction, to capture the physical properties behind demand and identify the parameters that drive it",
+            "A reinforcement learning formulation whose state is supply, demand and predicted arrival and departure times, whose action is user-side shared-mobility availability, and whose reward is total service level",
+            "Accessibility analysis along transit routes and stops, with fare-sensitive reassignment of travel demand"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/shared-mobility-research-framework.png",
+          "caption": "The five-year framework: hierarchical traffic data management and RL-based shared-mobility redistribution feed the annual steps, from post-COVID behaviour analysis through demand prediction and rebalancing to the integrated platform",
+          "width": 1165,
+          "height": 509
+        },
+        {
+          "src": "/projects/shared-mobility-distributional-prediction.png",
+          "caption": "Year 2 — point prediction, prediction intervals and distributional prediction compared, with the four network architectures evaluated for short-term demand forecasting",
+          "width": 590,
+          "height": 413
+        },
+        {
+          "src": "/projects/shared-mobility-rl-rebalancing.png",
+          "caption": "Year 3 — the multi-agent reinforcement learning loop for rebalancing: states carry supply, demand and travel times by region, actions are incentives, and the reward is the resulting service level",
+          "width": 637,
+          "height": 413
+        }
+      ]
+    }
+  }
+]

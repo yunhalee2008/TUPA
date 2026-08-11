@@ -1,5 +1,67 @@
 [
   {
+    "id": "wfm-e2e-autonomous-driving-2026",
+    "titleEn": "Development and Global Real-World Validation of World Foundation Model-Based End-to-End Autonomous Driving Technology",
+    "sourceNote": "Summarised from the project proposal deck, section Ⅱ. 기술개발 목표 및 내용 (연차별 연구개발기관 R&R · 시제품·산출물), shared with the lab in August 2026. Figures are cropped from that deck.",
+    "detail": {
+      "paragraphs": [
+        "This programme builds a Korean end-to-end (E2E) autonomous driving stack on top of world foundation models and takes it all the way from a first on-vehicle prototype to driving validation abroad. VUERON Technology is the lead research organisation and KAIST is the joint research organisation, with Prof. Inhi Kim as Co-PI. Over five years the work moves outward in stages: an in-vehicle system and validation environment, a small-scale demonstration, three Korean cities, an overseas pilot, and finally seven cities across three countries, at which point the results feed into robotaxi platform partnerships and OEM software licensing.",
+        "The technical premise is a shift away from the modular pipeline. Conventional autonomy splits perception, decision and control into separately built modules — easy to develop and verify one piece at a time, but errors accumulate across the module interfaces. An E2E model instead learns the whole path from multi-sensor input to vehicle control as a single network, which raises its own problem: a black box still has to be explained and verified before it can be driven on public roads. That verification problem — how an E2E model's understanding, reasoning and action are made inspectable, and how its safety is measured — is what the KAIST side of the consortium works on."
+      ],
+      "sections": [
+        {
+          "heading": "TUPA's role in the consortium",
+          "body": "KAIST does not build the vehicle stack; it builds the data structures that make an E2E model teachable and the evaluation framework that makes it verifiable. The work shifts from data design in the early years to safety and generalisation analysis once real driving data starts arriving.",
+          "bullets": [
+            "Multi-modal training data schema integrating LiDAR, camera, ego-motion and vehicle CAN, and its conversion into scene descriptions a vision-language model can read",
+            "A VLA data format that carries the chain from situation understanding to reasoning to action, plus methodology for automatic scene captioning and reasoning-label generation",
+            "A closed-loop simulation framework for evaluating E2E models, with validation scenarios generated rather than only recorded",
+            "Definition of edge cases and safety-critical scenarios, the evaluation variables that go with them, and the feedback loop from failure analysis back into model improvement",
+            "Generalisation and robustness analysis across countries — how the data distribution shifts between road environments, and where the model's limit conditions lie"
+          ]
+        },
+        {
+          "heading": "Five-year plan",
+          "bullets": [
+            "Year 1 — E2E system development and an on-vehicle validation environment: requirements and architecture, a multi-modal input pipeline with sensor synchronisation and metadata management, an E2E baseline model with an in-vehicle inference pipeline, and initial driving checks in a restricted environment",
+            "Year 2 — advancing the on-vehicle system and starting a small-scale demonstration: tuning for Korean road environments, a hybrid learning loop that combines real driving data with generated data, inference optimisation for latency and compute efficiency, and one demonstration vehicle under performance monitoring",
+            "Year 3 — domestic validation across three Korean cities: safe-operation, data-acquisition and performance-evaluation procedures established, quantitative analysis of the demonstration data, failure-case analysis by road environment, and preparation for overseas driving",
+            "Year 4 — overseas pilot and localisation: driving validation in a foreign road environment, localisation tuning of the WFM/E2E model, and analysis of how road structure, traffic rules and driving culture change the operating conditions",
+            "Year 5 — global validation across three countries and seven cities, then the transition to commercialisation: per-country vehicle operation, generalisation and safety-critical failure analysis, and technical review for robotaxi platform and OEM software licensing"
+          ]
+        },
+        {
+          "heading": "Global validation footprint",
+          "body": "The final-year validation covers seven cities in three countries: five in the United States (San Francisco, Los Angeles, Las Vegas, Phoenix, Austin), Munich in Germany, and Melbourne in Australia. Four things are measured in each: driving performance, generalisation, operational safety, and local applicability.",
+          "bullets": [
+            "Prototype vehicles are added as the scope widens — one demonstration vehicle in year 2, a domestic service vehicle plus a US validation vehicle in year 3, a German validation vehicle in year 4",
+            "Two patents and one journal paper are targeted in each of years 3, 4 and 5, alongside the demonstration datasets, per-country performance reports and a global operation guide"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/wfm-e2e-modular-vs-e2e.jpg",
+          "caption": "The technical shift the project is built on. A conventional modular stack (left) chains perception, decision and control as separate blocks — clear structure, but error accumulates between modules. An E2E model (right) learns camera, LiDAR, radar and GPS input straight through to trajectory, steering and acceleration in one network, which is why an explanation and verification regime has to be built alongside it.",
+          "width": 1600,
+          "height": 587
+        },
+        {
+          "src": "/projects/wfm-e2e-annual-roadmap.jpg",
+          "caption": "Annual targets. Year 1 builds the E2E baseline, the on-vehicle inference path and the multi-modal data system; year 2 adds hybrid learning and driving stability and starts a small demonstration; year 3 validates across three Korean cities; year 4 moves to overseas roads with localisation tuning; year 5 validates in seven cities across three countries and transitions to robotaxi and OEM licensing.",
+          "width": 1600,
+          "height": 705
+        },
+        {
+          "src": "/projects/wfm-e2e-global-to-commercialization.jpg",
+          "caption": "The final-year path from global validation to commercialisation: per-country vehicle operation, WFM/E2E localisation tuning, global performance validation against real-vehicle applicability and limit conditions, platform and robotaxi partnerships, and OEM software licensing.",
+          "width": 1600,
+          "height": 514
+        }
+      ]
+    }
+  },
+  {
     "id": "iitp-genai-2026",
     "titleEn": "2026 Generative AI Leading Talent Cultivation Program",
     "sourceNote": "Notion — \"2026 Generative AI Leading Talent Development Program\" project summary (internal, login required): https://www.notion.so/2026-Generative-AI-Leading-Talent-Development-Program-3a3cd26708a0802b9847f124bce483b2",

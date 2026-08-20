@@ -350,6 +350,7 @@ export async function fetchProjects(): Promise<Project[] | null> {
       startYear,
       endYear: endYear ?? currentYear,
       ongoing: endYear === undefined || endYear >= currentYear,
+      order: number(p["순서"]),
     });
   }
   return projects;

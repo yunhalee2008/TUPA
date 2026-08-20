@@ -190,6 +190,8 @@ export interface Project {
   endYear: number;
   /** Ongoing projects are shown first. */
   ongoing: boolean;
+  /** Manual tiebreaker for same-year projects (ascending; unset sorts last). */
+  order?: number;
   summaryKo?: string;
   summaryEn?: string;
   /** Detail-page paragraphs — the Notion 연구과제 row's page body. */
@@ -3039,17 +3041,6 @@ const PROJECTS: Project[] = [
     ongoing: false,
   },
   {
-    id: "samsung-intrafab-2023",
-    titleKo: "반도체 제조라인 Intra-Fab 물류 운영 전략 연구",
-    titleEn:
-      "Study on the Operation Strategies of Intra-Fab Transportation Systems in Semiconductor Manufacturing Lines",
-    sponsor: "Samsung",
-    role: "Co-PI",
-    startYear: 2023,
-    endYear: 2026,
-    ongoing: true,
-  },
-  {
     id: "molit-metaverse-av-2023",
     titleKo: "메타버스 기반 자율주행 가상환경 및 실증 기술 개발",
     titleEn:
@@ -3059,6 +3050,19 @@ const PROJECTS: Project[] = [
     startYear: 2023,
     endYear: 2028,
     ongoing: true,
+    order: 1,
+  },
+  {
+    id: "samsung-intrafab-2023",
+    titleKo: "반도체 제조라인 Intra-Fab 물류 운영 전략 연구",
+    titleEn:
+      "Study on the Operation Strategies of Intra-Fab Transportation Systems in Semiconductor Manufacturing Lines",
+    sponsor: "Samsung",
+    role: "Co-PI",
+    startYear: 2023,
+    endYear: 2026,
+    ongoing: true,
+    order: 2,
   },
   {
     id: "molit-road-digital-twin-2022",
@@ -3469,7 +3473,10 @@ export async function getProjects(): Promise<Project[]> {
     if (remote && remote.length > 0) projects = remote;
   }
   return [...projects].sort(
-    (a, b) => Number(b.ongoing) - Number(a.ongoing) || b.startYear - a.startYear,
+    (a, b) =>
+      Number(b.ongoing) - Number(a.ongoing) ||
+      b.startYear - a.startYear ||
+      (a.order ?? Infinity) - (b.order ?? Infinity),
   );
 }
 

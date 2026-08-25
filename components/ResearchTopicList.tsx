@@ -336,7 +336,10 @@ export default function ResearchTopicList({
                     alt=""
                     width={320}
                     height={214}
-                    className="aspect-[3/2] w-full rounded-lg border border-mapline object-cover sm:w-40"
+                    // bg-skytint shows through while the lazy-loaded thumbnail
+                    // is still in flight, so a slow row reads as loading rather
+                    // than as a broken image.
+                    className="aspect-[3/2] w-full rounded-lg border border-mapline bg-skytint object-cover sm:w-40"
                   />
                 ) : (
                   <div className="aspect-[3/2] w-full rounded-lg border border-mapline bg-skytint sm:w-40" />

@@ -93,6 +93,78 @@
     }
   },
   {
+    "id": "infra-assisted-crosswalk-navigation-isaac-sim",
+    "title": "Infrastructure-Assisted Safe Crosswalk Navigation for Autonomous Mobile Robots Using Isaac Sim and ROS2",
+    "date": "2026-08-25",
+    "imageUrl": "/projects/crosswalk-navigation-isaac-sim.jpg",
+    "areaSlug": "physical-ai-av-control",
+    "summary": "A delivery robot at a crosswalk cannot see what a fixed roadside camera can. This Isaac Sim–ROS2 pipeline lets a vision-language model read the intersection from infrastructure, combines that scene context with signal timing and Nav2's nominal velocity command, and has a hybrid safety layer decide whether to stop, wait, slow down or commit to crossing.",
+    "detail": {
+      "paragraphs": [
+        "A robot waiting to cross a road is working with the worst possible viewpoint: low to the ground, easily occluded by a parked car or a waiting pedestrian, and with no way to know how much signal time is left. A camera mounted on the infrastructure above the intersection sees all of it. This project builds the pipeline that gets that view to the robot and turns it into a crossing decision.",
+        "A fixed infrastructure camera in Isaac Sim observes the intersection, and a vision-language model turns each frame into structured scene context — pedestrian behaviour, approaching vehicles, crosswalk occupancy, occlusion and blind spots, conflict risk, overall scene safety. That context is combined with signal phase and timing (SPaT) information and with the nominal velocity command Nav2 has already produced. A hybrid decision and safety node sits above Nav2 as a supervisory layer, validating or overriding the command before it reaches the robot.",
+        "The work is ongoing. Isaac Sim gives repeatable versions of the scenarios that are hardest to stage safely on a real street — night and backlight, an occluding vehicle, an occupied crosswalk, a turning vehicle, too little signal time left, and SPaT messages that arrive late or not at all."
+      ],
+      "sections": [
+        {
+          "heading": "Reading the intersection from infrastructure",
+          "body": "A fixed roadside camera covers pedestrians, vehicles, crosswalk occupancy and the regions the robot's own sensors cannot see. A vision-language model converts each observation into a structured scene description rather than a bare list of boxes, so the decision layer receives context it can reason about:",
+          "bullets": [
+            "Pedestrian presence and crossing behaviour",
+            "Approaching vehicle movement",
+            "Crosswalk occupancy",
+            "Occlusion and blind spots",
+            "Conflict risk and overall scene safety"
+          ]
+        },
+        {
+          "heading": "Is there time to finish crossing?",
+          "body": "Knowing the light is green is not enough — the robot has to finish before it changes. Crossing feasibility is evaluated from the signal side rather than assumed:",
+          "bullets": [
+            "Current pedestrian signal phase",
+            "Remaining signal time and whether the signal data is still valid",
+            "Estimated robot crossing time",
+            "A safety buffer on top of that estimate"
+          ]
+        },
+        {
+          "heading": "A safety layer above Nav2",
+          "body": "Scene context, signal context and Nav2's nominal /cmd_vel meet in a hybrid decision and safety module, which validates and modifies the command before it reaches the actuators. It resolves to one of six behaviours — stop, wait, slow down, proceed, commit to crossing, or emergency stop — so that a marginal or contradictory situation resolves conservatively instead of being left to the navigation stack."
+        },
+        {
+          "heading": "Signal phase from the robot's own camera",
+          "body": "Alongside the simulation work, on-robot experiments test whether the pedestrian signal phase can be read directly from the robot's ZED2i camera at night, as a complement to SPaT messages. A stock YOLO11n detector using the COCO traffic-light class locks onto the vehicle signal head and reports RED — the wrong signal for a crossing robot. A model retrained on RED / GREEN / OFF pedestrian-signal classes picks out the pedestrian signal at the same crossing and returns pedestrian_green with about 0.9 confidence, at roughly 8 ms per frame on GPU. Both runs are in the Watch clips above."
+        },
+        {
+          "heading": "Repeatable scenarios, measurable outcomes",
+          "body": "The pipeline is built as modular ROS2 (Humble) nodes so the same architecture can move to a real robot and real infrastructure cameras later. Five configurations are compared — vision-only, SPaT-only, infrastructure-VLM-only, infrastructure-VLM with SPaT, and the full hybrid with Nav2 — against crossing success rate, red-light violation rate, collision rate, unsafe entry rate, waiting and crossing time, decision stability, scene context accuracy and inference latency."
+        }
+      ],
+      "media": {
+        "videos": [
+          {
+            "src": "/research-media/crosswalk-navigation/signal-detection-tuned.mp4",
+            "poster": "/research-media/crosswalk-navigation/signal-detection-tuned-poster.jpg",
+            "label": "Tuned pedestrian-signal model",
+            "durationLabel": "1:35"
+          },
+          {
+            "src": "/research-media/crosswalk-navigation/signal-detection-baseline.mp4",
+            "poster": "/research-media/crosswalk-navigation/signal-detection-baseline-poster.jpg",
+            "label": "Baseline YOLO (COCO)",
+            "durationLabel": "2:19"
+          },
+          {
+            "src": "/research-media/crosswalk-navigation/isaac-sim-slam.mp4",
+            "poster": "/research-media/crosswalk-navigation/isaac-sim-slam-poster.jpg",
+            "label": "Isaac Sim + LiDAR SLAM",
+            "durationLabel": "1:37"
+          }
+        ]
+      }
+    }
+  },
+  {
     "id": "audio-visual-synergy-bikeshare-active-travel",
     "title": "Audio-Visual Synergistic Role in Promoting Active Travel",
     "date": "2026-07-20",
@@ -332,7 +404,8 @@
     "detail": {
       "paragraphs": [
         "Fully autonomous driving still struggles with unexpected situations and complex road environments. Tele-driving offers a complementary alternative for the current transition period: a remote operator controls the vehicle in real time while retaining the ability to communicate with onboard passengers, enabling safer responses in unforeseen situations.",
-        "In 2025, TUPA and its collaborators demonstrated this at scale — remotely operating a driverless shuttle located on Jeju Island from the KAIST campus in Daejeon, a physical distance of 415 km. The work was carried out with Toronto EMG and KAIST, combining wired and wireless network communication technologies for both external (vehicle-to-remote) and internal vehicle communication."
+        "In 2025, TUPA and its collaborators demonstrated this at scale — remotely operating a driverless shuttle located on Jeju Island from the KAIST campus in Daejeon, a physical distance of 415 km. The work was carried out with Trento Systems, EMG and KAIST, combining wired and wireless network communication technologies based on KREONET for both external (vehicle-to-remote) and internal vehicle communication.",
+        "In 2026, the demonstration was repeated over a second route: a vehicle at the KAIST Mobility AX Research Institute in Naepo was operated remotely from the KAIST Munji campus in Daejeon."
       ],
       "sections": [
         {
@@ -349,6 +422,10 @@
         }
       ],
       "images": [
+        {
+          "src": "/projects/tele-driving-system-architecture.png",
+          "caption": "System architecture: the simulator control module mapping steering, gear and door commands onto the remote cockpit; the video streaming module relaying the vehicle's camera feeds to the remote driver's view; and the KREONET wide-area link carrying both across the country"
+        },
         {
           "src": "/projects/remote-autonomous-driving-daejeon-jeju.webp",
           "caption": "Preparing the driverless shuttle on Jeju Island ahead of the remote tele-driving demonstration from KAIST's Daejeon campus"

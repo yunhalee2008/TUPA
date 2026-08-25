@@ -1,5 +1,88 @@
 [
   {
+    "id": "scalable-interoperable-c-v2x-mos",
+    "title": "Scalable and interoperable C-V2X framework for real-time intelligent decision support in autonomous mobility",
+    "date": "2026-08-24",
+    "imageUrl": "/projects/mos-c-v2x-mixed-reality.jpg",
+    "areaSlug": "physical-ai-av-control",
+    "summary": "A modular, edge-intelligent mobility operating system (mOS) puts the intersection itself into the control loop: extensible JSON/Protobuf message sets replace rigid SAE J2735 binaries, and a mixed-reality testbed on the KAIST Munji campus lets a real autonomous vehicle negotiate with virtual cars and pedestrians in real time.",
+    "detail": {
+      "paragraphs": [
+        "Cooperative-ITS research has mostly stopped at simulation or narrow testbeds, and the standardized binary message sets it relies on — SAE J2735, ETSI ITS-G5 — cannot be extended without breaking interoperability with devices already in the field. The road, meanwhile, still carries human-driven cars, pedestrians and micromobility that broadcast nothing at all, so a vehicle reasoning from connected data alone never sees the whole intersection.",
+        "This study proposes the mobility operating system (mOS): a plug-and-play, edge-intelligent framework in which the intersection interprets traffic and issues speed advice, validated on a mixed-reality testbed where a physical connected autonomous vehicle interacts with virtual agents in real time. Published in Communications in Transportation Research, with Prof. Inhi Kim as a corresponding author."
+      ],
+      "sections": [
+        {
+          "heading": "Infrastructure in the control loop",
+          "body": "Rather than making each vehicle smarter in isolation, mOS gives the intersection edge the deciding role. A reservation-based autonomous intersection management scheme (after Dresner and Stone) is extended so that the requesting vehicle's maximum speed is updated dynamically: the edge finds the space–time cell each approaching vehicle would occupy and returns a recommended speed for every timestamp. The vehicle's Apollo stack accepts the suggestion through ROS and CAN/BUS only when it poses no collision risk, so infrastructure guidance never overrides on-board safety."
+        },
+        {
+          "heading": "Messages that can grow",
+          "body": "The message set is deliberately minimal — a mandatory timestamp plus application-specific fields, serialized as JSON or Protobuf — so new services can be added without renegotiating a binary schema. Transport is hybrid: gRPC carries compressed, field-name-free messages for time-critical commands that need acknowledgement, while RabbitMQ handles periodic best-effort data such as GPS updates. A Kubernetes-based system orchestrator monitors network and resource metrics, scales services horizontally when traffic surges, and lets neighbouring intersections hand over or offload computation instead of routing everything through a central cloud."
+        },
+        {
+          "heading": "A testbed that is half virtual",
+          "body": "Experiments ran at a four-leg unsignalized intersection on the KAIST Munji campus in Daejeon, with 3.5 m lanes meeting the Euro NCAP recommendation and a controllable signal box switched off. The connected vehicle was a Hyundai Tucson Hybrid NX4 carrying a Novatel PwrPak7 GNSS receiver and an Epson G320 IMU (RTK-corrected, 100 Hz, 0.05 m deviation) plus a commercial 5G router. A metaverse server synchronizes virtual vehicles, a driving simulator and a pedestrian simulator into the same scene, so a person can step into the path of a real moving car with no physical risk."
+        },
+        {
+          "heading": "Guided crossings are smoother",
+          "body": "Two scenarios were compared with and without speed suggestions. Mean post-encroachment time (PET) fell from 5.99 s (SD 0.77) to 4.62 s (SD 1.10) for vehicle-to-vehicle interaction, and from 2.94 s (SD 0.93) to 1.76 s (SD 1.20) for vehicle-to-pedestrian interaction — shorter but also less variable gaps, indicating more predictable negotiation. Without guidance the vehicle read a jaywalking pedestrian as a hazard, braked abruptly and stopped mid-path; with guidance it crossed without stopping, while every guided PET stayed above the 1.0 s safety threshold."
+        },
+        {
+          "heading": "Real-time, with caveats",
+          "body": "Mean end-to-end latency was 48.46 ms (SD 63.62 ms, max 479.39 ms) and mean jitter 60.17 ms, with packet loss between 0.106% and 0.285% across approach speeds of 20–50 km/h — low enough for real-time speed advice, but with occasional spikes that would threaten safety-critical exchanges. The trials used a commercial 5G router rather than dedicated C-V2X infrastructure, so dedicated PC5 links should tighten these numbers; a head-to-head comparison against existing V2X systems and scaling across multiple intersections remain future work."
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/mos-c-v2x-framework.jpg",
+          "caption": "Framework of mOS: the physical intersection, the system orchestrator (runtime observation → edge intelligence → re-configuration), the infrastructure intelligent system and the metaverse server that mirrors real vehicles into the virtual world (Fig. 1, Oh et al. 2026, CC BY 4.0)"
+        },
+        {
+          "src": "/projects/mos-c-v2x-components.jpg",
+          "caption": "Components of the testbed: the CAV and its on-board modules, the Apollo autonomy stack, driving and pedestrian simulators, and the physical intersection paired with its mixed-reality counterpart where virtual vehicles are injected (Fig. 4, Oh et al. 2026, CC BY 4.0)"
+        },
+        {
+          "src": "/projects/mos-c-v2x-speed-profiles.jpg",
+          "caption": "Speed profiles of the physical vehicle with (left, blue) and without (right, red) infrastructure speed suggestions, for V2V (top) and V2P (bottom) interactions — guidance removes the hard braking and full stop (Fig. 5, Oh et al. 2026, CC BY 4.0)"
+        }
+      ],
+      "links": [
+        {
+          "label": "Read the paper (Communications in Transportation Research)",
+          "url": "https://doi.org/10.26599/COMMTR.2026.9640001"
+        }
+      ],
+      "media": {
+        "audio": {
+          "src": "/research-media/mos-c-v2x/audio-summary.mp3",
+          "durationLabel": "3:53"
+        },
+        "videos": [
+          {
+            "src": "/research-media/mos-c-v2x/video-short.mp4",
+            "poster": "/research-media/mos-c-v2x/video-short-poster.jpg",
+            "label": "1-min short",
+            "durationLabel": "1:00",
+            "portrait": true
+          },
+          {
+            "src": "/research-media/mos-c-v2x/video-abstract.mp4",
+            "poster": "/research-media/mos-c-v2x/video-abstract-poster.jpg",
+            "label": "Video abstract",
+            "durationLabel": "3:27"
+          }
+        ],
+        "infographic": {
+          "src": "/research-media/mos-c-v2x/infographic.jpg",
+          "pdfSrc": "/research-media/mos-c-v2x/infographic.pdf",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    }
+  },
+  {
     "id": "audio-visual-synergy-bikeshare-active-travel",
     "title": "Audio-Visual Synergistic Role in Promoting Active Travel",
     "date": "2026-07-20",

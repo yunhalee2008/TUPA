@@ -140,6 +140,34 @@ export interface ResearchTopicImage {
   height?: number;
 }
 
+export interface ResearchTopicVideo {
+  src: string;
+  /** Still frame shown before playback starts. */
+  poster?: string;
+  /** Short tab label, e.g. "1-min short". */
+  label: string;
+  durationLabel?: string;
+  /** Portrait clips are height-capped so they don't dominate the dialog. */
+  portrait?: boolean;
+}
+
+/**
+ * Companion media for a research topic — the narrated summary, video abstracts
+ * and one-page infographic that a paper is published with. Surfaced as the
+ * Listen / Watch / Explore row on the research page.
+ */
+export interface ResearchTopicMedia {
+  audio?: { src: string; durationLabel?: string };
+  videos?: ResearchTopicVideo[];
+  infographic?: {
+    src: string;
+    /** Print-ready version offered next to the preview. */
+    pdfSrc?: string;
+    width?: number;
+    height?: number;
+  };
+}
+
 /** Rich content shown in the click-to-open detail dialog of a research topic. */
 export interface ResearchTopicDetail {
   /** Lead paragraphs shown at the top of the dialog. */
@@ -148,6 +176,7 @@ export interface ResearchTopicDetail {
   images?: ResearchTopicImage[];
   /** External references (source page, demo videos). */
   links?: { label: string; url: string }[];
+  media?: ResearchTopicMedia;
 }
 
 /** A research topic/project showcase (legacy "Research Projects" page). */

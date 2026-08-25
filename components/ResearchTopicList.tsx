@@ -106,6 +106,14 @@ function MediaPanel({
   const [tab, setTab] = useState<MediaTab>(initialTab);
   const [clip, setClip] = useState(0);
   const video = media.videos?.[Math.min(clip, (media.videos?.length ?? 1) - 1)];
+  // Only the machine-generated companions carry the caveat — clips the authors
+  // made themselves are shown without it.
+  const aiGenerated =
+    tab === "audio"
+      ? media.audio?.aiGenerated
+      : tab === "video"
+        ? video?.aiGenerated
+        : media.infographic?.aiGenerated;
 
   return (
     <section className="mt-6 rounded-xl border border-mapline bg-paper p-4 sm:p-5">
@@ -228,15 +236,17 @@ function MediaPanel({
         </div>
       ) : null}
 
-      <p className="mt-4 border-t border-mapline pt-3 text-xs leading-relaxed text-body/60">
-        <span className="ko-only">
-          논문을 요약한 AI 생성 자료입니다. 정확한 내용은 원문을 확인해 주세요.
-        </span>
-        <span className="en-only">
-          AI-generated companion media summarising the paper — see the
-          publication itself for the authoritative account.
-        </span>
-      </p>
+      {aiGenerated ? (
+        <p className="mt-4 border-t border-mapline pt-3 text-xs leading-relaxed text-body/60">
+          <span className="ko-only">
+            논문을 요약한 AI 생성 자료입니다. 정확한 내용은 원문을 확인해 주세요.
+          </span>
+          <span className="en-only">
+            AI-generated companion media summarising the paper — see the
+            publication itself for the authoritative account.
+          </span>
+        </p>
+      ) : null}
     </section>
   );
 }

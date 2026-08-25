@@ -149,6 +149,8 @@ export interface ResearchTopicVideo {
   durationLabel?: string;
   /** Portrait clips are height-capped so they don't dominate the dialog. */
   portrait?: boolean;
+  /** Machine-generated companion clip rather than one the authors made. */
+  aiGenerated?: boolean;
 }
 
 /**
@@ -157,7 +159,7 @@ export interface ResearchTopicVideo {
  * Listen / Watch / Explore row on the research page.
  */
 export interface ResearchTopicMedia {
-  audio?: { src: string; durationLabel?: string };
+  audio?: { src: string; durationLabel?: string; aiGenerated?: boolean };
   videos?: ResearchTopicVideo[];
   infographic?: {
     src: string;
@@ -165,6 +167,7 @@ export interface ResearchTopicMedia {
     pdfSrc?: string;
     width?: number;
     height?: number;
+    aiGenerated?: boolean;
   };
 }
 

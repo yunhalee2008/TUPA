@@ -56,28 +56,38 @@
       "media": {
         "audio": {
           "src": "/research-media/mos-c-v2x/audio-summary.mp3",
-          "durationLabel": "3:53"
+          "durationLabel": "3:53",
+          "aiGenerated": true
         },
         "videos": [
+          {
+            "src": "/research-media/mos-c-v2x/video-summary.mp4",
+            "poster": "/research-media/mos-c-v2x/video-summary-poster.jpg",
+            "label": "Summary video",
+            "durationLabel": "1:15"
+          },
           {
             "src": "/research-media/mos-c-v2x/video-short.mp4",
             "poster": "/research-media/mos-c-v2x/video-short-poster.jpg",
             "label": "1-min short",
             "durationLabel": "1:00",
-            "portrait": true
+            "portrait": true,
+            "aiGenerated": true
           },
           {
             "src": "/research-media/mos-c-v2x/video-abstract.mp4",
             "poster": "/research-media/mos-c-v2x/video-abstract-poster.jpg",
             "label": "Video abstract",
-            "durationLabel": "3:27"
+            "durationLabel": "3:27",
+            "aiGenerated": true
           }
         ],
         "infographic": {
           "src": "/research-media/mos-c-v2x/infographic.jpg",
           "pdfSrc": "/research-media/mos-c-v2x/infographic.pdf",
           "width": 1024,
-          "height": 1536
+          "height": 1536,
+          "aiGenerated": true
         }
       }
     }
@@ -314,7 +324,7 @@
   },
   {
     "id": "remote-autonomous-driving-daejeon-jeju",
-    "title": "Remote Autonomous Driving: Tele-driving Between Daejeon and Jeju",
+    "title": "Remote Autonomous Driving: Tele-driving from Daejeon to Jeju and Naepo",
     "date": "2026-07-27",
     "imageUrl": "/projects/remote-autonomous-driving-daejeon-jeju.webp",
     "areaSlug": "physical-ai-av-control",
@@ -349,7 +359,23 @@
           "label": "Demo video: Remote Autonomous Driving with KAIST",
           "url": "https://www.youtube.com/watch?v=uTBSurLXXqk"
         }
-      ]
+      ],
+      "media": {
+        "videos": [
+          {
+            "src": "/research-media/tele-driving/daejeon-jeju.mp4",
+            "poster": "/research-media/tele-driving/daejeon-jeju-poster.jpg",
+            "label": "Daejeon → Jeju",
+            "durationLabel": "2:00"
+          },
+          {
+            "src": "/research-media/tele-driving/daejeon-naepo.mp4",
+            "poster": "/research-media/tele-driving/daejeon-naepo-poster.jpg",
+            "label": "Daejeon → Naepo",
+            "durationLabel": "2:53"
+          }
+        ]
+      }
     }
   },
   {

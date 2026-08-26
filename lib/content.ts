@@ -2968,7 +2968,12 @@ const RESEARCH_AREAS: ResearchArea[] = [
       "차량 단독 지능만으로는 풀리지 않는 상황을 인프라가 함께 판단합니다. C-V2X와 엣지 연산으로 교차로가 직접 속도를 제안하고, 노변 센서와 원격주행까지 제어 루프 안으로 들여오는 프레임워크를 연구합니다.",
     descriptionEn:
       "Where a vehicle’s own sensors and judgement run out, the infrastructure joins in. We build frameworks in which the intersection itself advises speed over C-V2X and edge computing, bringing roadside sensing and remote driving into the control loop.",
-    keywords: ["Physical AI", "mixed-autonomy traffic", "reinforcement learning", "AV control"],
+    keywords: [
+      "C-V2X",
+      "infrastructure-guided AV",
+      "tele-driving",
+      "mixed-autonomy traffic",
+    ],
   },
   {
     slug: "crowd-dynamics",
@@ -2978,7 +2983,12 @@ const RESEARCH_AREAS: ResearchArea[] = [
       "보행자와 군중이 몰릴 때 쌓이는 압사·혼잡 위험을 예측하고, 사고로 번지기 전의 상충을 실시간으로 평가합니다. VR 보행 시뮬레이터와 시뮬레이션 기반 분석으로 안전한 공간 설계를 뒷받침합니다.",
     descriptionEn:
       "We predict the crush and congestion risk that builds up as pedestrians and crowds concentrate, and evaluate conflicts in real time before they turn into collisions — supporting safer space design with VR walking simulators and simulation-based analysis.",
-    keywords: ["crowd dynamics", "pedestrian simulation", "crowd safety", "VR"],
+    keywords: [
+      "crowd safety",
+      "pedestrian conflict",
+      "evacuation",
+      "VR experiments",
+    ],
   },
   {
     slug: "llm-activity-based-model",
@@ -2988,7 +2998,12 @@ const RESEARCH_AREAS: ResearchArea[] = [
       "대규모 언어모형(LLM)과 심층 생성모형으로 합성 인구와 개인별 활동 일정을 만들고, 이를 실제 도로망 시뮬레이션까지 연결합니다. 인구 합성과 자율주행 데이터 라벨링에도 LLM을 활용합니다.",
     descriptionEn:
       "We generate synthetic populations and individual activity schedules with LLMs and deep generative models, then carry them through to network-level traffic simulation — with LLMs also serving population synthesis and AV data labelling.",
-    keywords: ["LLM", "activity-based model", "population synthesis", "generative models"],
+    keywords: [
+      "LLM",
+      "population synthesis",
+      "activity-based model",
+      "MATSim",
+    ],
   },
   {
     slug: "digital-twin-simulation",
@@ -2998,7 +3013,12 @@ const RESEARCH_AREAS: ResearchArea[] = [
       "물리 세계에서 움직여야 하는 AI를 가상 환경에서 먼저 검증합니다. 미시교통 시뮬레이션과 디지털 트윈을 결합하고, 사람이 직접 운전대를 잡는 드라이빙 시뮬레이터 실험을 KAIST 스핀아웃 dochak과 함께 수행합니다.",
     descriptionEn:
       "AI that has to act in the physical world is tested in a virtual one first. We couple microscopic traffic simulation with digital twins and run driver-in-the-loop experiments on VR driving simulators, together with the KAIST spinout dochak.",
-    keywords: ["digital twin", "microsimulation", "driving simulator", "teledriving"],
+    keywords: [
+      "digital twin",
+      "microsimulation",
+      "driving simulator",
+      "Sim-to-Real",
+    ],
   },
   {
     slug: "urban-science",
@@ -3008,7 +3028,12 @@ const RESEARCH_AREAS: ResearchArea[] = [
       "20분 도시, 접근성·형평성, 공유 모빌리티-대중교통 연계 등 도시 스케일의 이동 현상을 데이터로 분석하고 설계합니다.",
     descriptionEn:
       "We study city-scale mobility with data — the 20-minute city, accessibility and equity, and shared-mobility–transit integration.",
-    keywords: ["urban science", "accessibility", "equity", "20-minute city"],
+    keywords: [
+      "accessibility",
+      "equity",
+      "active travel",
+      "20-minute city",
+    ],
   },
 ];
 

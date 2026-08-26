@@ -603,6 +603,12 @@
             "Module B — VLM/Vision: worker action observation, intent inference and collision avoidance",
             "Module C — Sim-to-Real: simulation policy learning, VR teleoperation and real-robot transfer (Prof. Inhi Kim)",
             "Module D — Integrated control: terrain-adaptive whole-body locomotion–manipulation and VLA-based control"
+          ],
+          "images": [
+            {
+              "src": "/projects/iitp-genai-humanoid-overview.jpg",
+              "caption": "KAIST의 개요도 — the four modules developed in parallel (세부 1–4: navigation and route planning, whole-body control and locomotion, work understanding and intent inference, simulation and Sim-to-Real verification) converging on a Physical AI logistics humanoid"
+            }
           ]
         },
         {

@@ -25,8 +25,15 @@ export default async function PeoplePage() {
   );
   const admin = members.filter((m) => m.role === "admin");
   const alumni = members.filter((m) => m.role === "alumni");
+  // Degree alumni are titled "Ph.D. <year>" / "M.S. <year>"; anything else is a
+  // former researcher (post-doc, research professor) and gets its own group
+  // rather than falling into the master's list.
   const alumniPhd = alumni.filter((m) => m.titleEn.startsWith("Ph.D."));
-  const alumniMs = alumni.filter((m) => !m.titleEn.startsWith("Ph.D."));
+  const alumniMs = alumni.filter((m) => m.titleEn.startsWith("M.S."));
+  const alumniResearchers = alumni.filter(
+    (m) =>
+      !m.titleEn.startsWith("Ph.D.") && !m.titleEn.startsWith("M.S."),
+  );
 
   return (
     <main className="site-container py-14 lg:py-20">
@@ -158,6 +165,18 @@ export default async function PeoplePage() {
             titleKo={copy["구성원 · 졸업생 섹션 제목"].ko}
           />
           <div className="mt-8 space-y-10 lg:col-span-9 lg:mt-0">
+            {alumniResearchers.length > 0 ? (
+              <div>
+                <p className="mono-label">
+                  <Copy t={copy["구성원 · 인원 라벨(박사)"]} />
+                </p>
+                <div className="mt-4 grid gap-5 sm:grid-cols-2">
+                  {alumniResearchers.map((member) => (
+                    <MemberCard key={member.id} member={member} />
+                  ))}
+                </div>
+              </div>
+            ) : null}
             {alumniPhd.length > 0 ? (
               <div>
                 <p className="mono-label">

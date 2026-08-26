@@ -317,20 +317,6 @@ const MEMBERS: Member[] = [
   },
   // --- Post-docs & researchers ----------------------------------------------
   {
-    id: "reuben-tamakloe",
-    nameKo: "루벤 타마클로",
-    nameEn: "Reuben Tamakloe",
-    role: "research-fellow",
-    titleKo: "연구조교수 · 장영실 펠로우",
-    titleEn: "Research Assistant Professor · Jang Young Sil Fellow",
-    photoUrl: "/people/reuben-tamakloe.jpg",
-    researchInterests: [
-      "Traffic safety analytics",
-      "Econometric & machine learning models",
-      "Vulnerable road users",
-    ],
-  },
-  {
     id: "gyounghoon-chun",
     nameKo: "",
     nameEn: "Gyounghoon Chun",
@@ -622,6 +608,21 @@ const MEMBERS: Member[] = [
     researchInterests: [],
   },
   // --- Alumni ------------------------------------------------------------------
+  {
+    id: "reuben-tamakloe-alumni",
+    nameKo: "루벤 타마클로",
+    nameEn: "Reuben Tamakloe",
+    role: "alumni",
+    titleKo: "연구조교수 · 장영실 펠로우",
+    titleEn: "Research Assistant Professor · Jang Young Sil Fellow",
+    photoUrl: "/people/reuben-tamakloe.jpg",
+    researchInterests: [
+      "Traffic safety analytics",
+      "Econometric & machine learning models",
+      "Vulnerable road users",
+    ],
+    placement: "Professor, Kookmin University",
+  },
   {
     id: "songmi-paek-alumni",
     nameKo: "",

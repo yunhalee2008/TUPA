@@ -3,7 +3,11 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { ResearchProject, ResearchTopicMedia } from "@/lib/content";
+import type {
+  ResearchProject,
+  ResearchTopicImage,
+  ResearchTopicMedia,
+} from "@/lib/content";
 
 /** The three companion-media formats a paper can ship with. */
 type MediaTab = "audio" | "video" | "infographic";
@@ -251,6 +255,35 @@ function MediaPanel({
   );
 }
 
+/**
+ * One captioned figure in the detail dialog. Figures live either on the topic
+ * (lead figures, under the paragraphs) or on the section they illustrate, so
+ * the reader meets each diagram next to the text that explains it.
+ */
+function Figure({
+  image,
+  className = "mt-6",
+}: {
+  image: ResearchTopicImage;
+  className?: string;
+}) {
+  return (
+    <figure className={className}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={image.src}
+        alt={image.caption ?? ""}
+        className="w-full rounded-lg border border-mapline bg-skytint"
+      />
+      {image.caption ? (
+        <figcaption className="mt-1.5 text-xs text-body/60">
+          {image.caption}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
 /** Research topic rows that open an in-page detail dialog when clicked. */
 export default function ResearchTopicList({
   projects,
@@ -436,19 +469,7 @@ export default function ResearchTopicList({
             ))}
 
             {open.detail?.images?.map((image) => (
-              <figure key={image.src} className="mt-6">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={image.src}
-                  alt={image.caption ?? ""}
-                  className="w-full rounded-lg border border-mapline"
-                />
-                {image.caption ? (
-                  <figcaption className="mt-1.5 text-xs text-body/60">
-                    {image.caption}
-                  </figcaption>
-                ) : null}
-              </figure>
+              <Figure key={image.src} image={image} />
             ))}
 
             {open.detail?.sections?.map((section) => (
@@ -468,6 +489,9 @@ export default function ResearchTopicList({
                     ))}
                   </ul>
                 ) : null}
+                {section.images?.map((image) => (
+                  <Figure key={image.src} image={image} className="mt-4" />
+                ))}
               </section>
             ))}
 

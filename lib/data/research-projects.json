@@ -22,11 +22,23 @@
         },
         {
           "heading": "A testbed that is half virtual",
-          "body": "Experiments ran at a four-leg unsignalized intersection on the KAIST Munji campus in Daejeon, with 3.5 m lanes meeting the Euro NCAP recommendation and a controllable signal box switched off. The connected vehicle was a Hyundai Tucson Hybrid NX4 carrying a Novatel PwrPak7 GNSS receiver and an Epson G320 IMU (RTK-corrected, 100 Hz, 0.05 m deviation) plus a commercial 5G router. A metaverse server synchronizes virtual vehicles, a driving simulator and a pedestrian simulator into the same scene, so a person can step into the path of a real moving car with no physical risk."
+          "body": "Experiments ran at a four-leg unsignalized intersection on the KAIST Munji campus in Daejeon, with 3.5 m lanes meeting the Euro NCAP recommendation and a controllable signal box switched off. The connected vehicle was a Hyundai Tucson Hybrid NX4 carrying a Novatel PwrPak7 GNSS receiver and an Epson G320 IMU (RTK-corrected, 100 Hz, 0.05 m deviation) plus a commercial 5G router. A metaverse server synchronizes virtual vehicles, a driving simulator and a pedestrian simulator into the same scene, so a person can step into the path of a real moving car with no physical risk.",
+          "images": [
+            {
+              "src": "/projects/mos-c-v2x-components.jpg",
+              "caption": "Components of the testbed: the CAV and its on-board modules, the Apollo autonomy stack, driving and pedestrian simulators, and the physical intersection paired with its mixed-reality counterpart where virtual vehicles are injected (Fig. 4, Oh et al. 2026, CC BY 4.0)"
+            }
+          ]
         },
         {
           "heading": "Guided crossings are smoother",
-          "body": "Two scenarios were compared with and without speed suggestions. Mean post-encroachment time (PET) fell from 5.99 s (SD 0.77) to 4.62 s (SD 1.10) for vehicle-to-vehicle interaction, and from 2.94 s (SD 0.93) to 1.76 s (SD 1.20) for vehicle-to-pedestrian interaction — shorter but also less variable gaps, indicating more predictable negotiation. Without guidance the vehicle read a jaywalking pedestrian as a hazard, braked abruptly and stopped mid-path; with guidance it crossed without stopping, while every guided PET stayed above the 1.0 s safety threshold."
+          "body": "Two scenarios were compared with and without speed suggestions. Mean post-encroachment time (PET) fell from 5.99 s (SD 0.77) to 4.62 s (SD 1.10) for vehicle-to-vehicle interaction, and from 2.94 s (SD 0.93) to 1.76 s (SD 1.20) for vehicle-to-pedestrian interaction — shorter but also less variable gaps, indicating more predictable negotiation. Without guidance the vehicle read a jaywalking pedestrian as a hazard, braked abruptly and stopped mid-path; with guidance it crossed without stopping, while every guided PET stayed above the 1.0 s safety threshold.",
+          "images": [
+            {
+              "src": "/projects/mos-c-v2x-speed-profiles.jpg",
+              "caption": "Speed profiles of the physical vehicle with (left, blue) and without (right, red) infrastructure speed suggestions, for V2V (top) and V2P (bottom) interactions — guidance removes the hard braking and full stop (Fig. 5, Oh et al. 2026, CC BY 4.0)"
+            }
+          ]
         },
         {
           "heading": "Real-time, with caveats",
@@ -37,14 +49,6 @@
         {
           "src": "/projects/mos-c-v2x-framework.jpg",
           "caption": "Framework of mOS: the physical intersection, the system orchestrator (runtime observation → edge intelligence → re-configuration), the infrastructure intelligent system and the metaverse server that mirrors real vehicles into the virtual world (Fig. 1, Oh et al. 2026, CC BY 4.0)"
-        },
-        {
-          "src": "/projects/mos-c-v2x-components.jpg",
-          "caption": "Components of the testbed: the CAV and its on-board modules, the Apollo autonomy stack, driving and pedestrian simulators, and the physical intersection paired with its mixed-reality counterpart where virtual vehicles are injected (Fig. 4, Oh et al. 2026, CC BY 4.0)"
-        },
-        {
-          "src": "/projects/mos-c-v2x-speed-profiles.jpg",
-          "caption": "Speed profiles of the physical vehicle with (left, blue) and without (right, red) infrastructure speed suggestions, for V2V (top) and V2P (bottom) interactions — guidance removes the hard braking and full stop (Fig. 5, Oh et al. 2026, CC BY 4.0)"
         }
       ],
       "links": [
@@ -185,11 +189,23 @@
       "sections": [
         {
           "heading": "Hearing the street, not just seeing it",
-          "body": "Earlier street-view studies quantified how a place looks — greenery, sky, perceived beauty — but ignored how it sounds. Eight soundscape indicators (intensity, quality, traffic/natural/mechanical sources, and pleasant-chaotic-eventful emotions) are derived alongside six streetscape indicators, then validated against on-site sound-level-meter readings at 72 points, reaching a moderately strong agreement (r = 0.60)."
+          "body": "Earlier street-view studies quantified how a place looks — greenery, sky, perceived beauty — but ignored how it sounds. Eight soundscape indicators (intensity, quality, traffic/natural/mechanical sources, and pleasant-chaotic-eventful emotions) are derived alongside six streetscape indicators, then validated against on-site sound-level-meter readings at 72 points, reaching a moderately strong agreement (r = 0.60).",
+          "images": [
+            {
+              "src": "/projects/audio-visual-bikeshare-validation.jpg",
+              "caption": "Field validation of the soundscape: predicted sound intensity vs. on-site sound-level-meter readings at 72 sample points (r = 0.60), with the mobile audit setup — phone video plus a UT353 meter — shown at right"
+            }
+          ]
         },
         {
           "heading": "Sound outweighs sight",
-          "body": "Adding audio-visual perception lifts explained variance from R² = 0.40 (built environment only) to 0.60. The built environment still dominates (55.5%), but among the micro-scale cues the soundscape (24.7%) carries more weight than the visual streetscape (19.8%) — the first evidence that what riders hear can matter more than what they see. Natural sound, pleasantness, and sound quality are the strongest auditory drivers."
+          "body": "Adding audio-visual perception lifts explained variance from R² = 0.40 (built environment only) to 0.60. The built environment still dominates (55.5%), but among the micro-scale cues the soundscape (24.7%) carries more weight than the visual streetscape (19.8%) — the first evidence that what riders hear can matter more than what they see. Natural sound, pleasantness, and sound quality are the strongest auditory drivers.",
+          "images": [
+            {
+              "src": "/projects/audio-visual-bikeshare-importance.jpg",
+              "caption": "Relative importance by group: distance to subway, population, and road-network centrality lead overall, while soundscape cues collectively outrank the visual streetscape"
+            }
+          ]
         },
         {
           "heading": "Effects that bend, not rise forever",
@@ -197,7 +213,13 @@
         },
         {
           "heading": "When sound and sight work together",
-          "body": "The dimensions interact. High sound quality boosts cycling only where a street is not boring and also looks beautiful — quality alone is not enough. Natural sound and perceived safety reinforce each other strongly, creating calm, low-stress riding environments, though natural sound paired with visible affluence produces no such lift, since wealthier areas simply cycle less."
+          "body": "The dimensions interact. High sound quality boosts cycling only where a street is not boring and also looks beautiful — quality alone is not enough. Natural sound and perceived safety reinforce each other strongly, creating calm, low-stress riding environments, though natural sound paired with visible affluence produces no such lift, since wealthier areas simply cycle less.",
+          "images": [
+            {
+              "src": "/projects/audio-visual-bikeshare-mismatch.jpg",
+              "caption": "Bivariate map of generalized soundscape vs. streetscape quality across Shenzhen (Spearman's ρ = 0.44): dashed pockets in southern Nanshan and Luohu score high on both dimensions, while most districts show an audio-visual mismatch"
+            }
+          ]
         },
         {
           "heading": "Design for the ear, not only the eye",
@@ -208,18 +230,6 @@
         {
           "src": "/projects/audio-visual-bikeshare-usage.jpg",
           "caption": "Bike-share usage across central Shenzhen: spatial density concentrated in Nanshan–Futian–Luohu (a), a twin-peaked daily rhythm around the AM and PM commutes (b), and an example origin–destination flow network (c)"
-        },
-        {
-          "src": "/projects/audio-visual-bikeshare-validation.jpg",
-          "caption": "Field validation of the soundscape: predicted sound intensity vs. on-site sound-level-meter readings at 72 sample points (r = 0.60), with the mobile audit setup — phone video plus a UT353 meter — shown at right"
-        },
-        {
-          "src": "/projects/audio-visual-bikeshare-importance.jpg",
-          "caption": "Relative importance by group: distance to subway, population, and road-network centrality lead overall, while soundscape cues collectively outrank the visual streetscape"
-        },
-        {
-          "src": "/projects/audio-visual-bikeshare-mismatch.jpg",
-          "caption": "Bivariate map of generalized soundscape vs. streetscape quality across Shenzhen (Spearman's ρ = 0.44): dashed pockets in southern Nanshan and Luohu score high on both dimensions, while most districts show an audio-visual mismatch"
         }
       ],
       "links": [
@@ -245,7 +255,13 @@
       "sections": [
         {
           "heading": "Why go below the zone",
-          "body": "Traditional four-step models describe demand mainly at an aggregate or zonal level, which limits how well they can express complex, interacting decisions made by individuals. Data-driven approaches let higher-resolution mobility and contextual data carry the model, opening up how individual characteristics, activities, locations and transport conditions relate to the travel choices people actually make."
+          "body": "Traditional four-step models describe demand mainly at an aggregate or zonal level, which limits how well they can express complex, interacting decisions made by individuals. Data-driven approaches let higher-resolution mobility and contextual data carry the model, opening up how individual characteristics, activities, locations and transport conditions relate to the travel choices people actually make.",
+          "images": [
+            {
+              "src": "/projects/demand-fig3.png",
+              "caption": "The data-driven demand pipeline: population synthesis and activity scheduling from census, survey and spatial data, feeding MATSim"
+            }
+          ]
         },
         {
           "heading": "Generating the population, then its day",
@@ -254,23 +270,57 @@
             "A statistically representative synthetic population is generated by learning the joint distribution of observed population attributes from census and survey data",
             "Conditional on that population, activity participation, timing, destination and travel mode are modelled jointly to produce each individual's activity schedule and the trips it implies",
             "Generated individuals and activities are then assigned to real locations using available spatial information before their demand reaches the network"
+          ],
+          "images": [
+            {
+              "src": "/projects/demand-fig4.png",
+              "caption": "The two generative stages — population synthesis, then activity scheduling — producing per-person daily schedules that become trip assignments"
+            }
           ]
         },
         {
           "heading": "Checking the generated demand",
-          "body": "Activity schedules describe the sequence of activities and trips for every individual in the synthetic population. Those trips are converted into origin–destination demand at the location level and aggregated back up to MAZ level, where the generated pattern is compared with observed travel demand. The test is whether aggregate spatial and temporal travel patterns are reproduced while the individual activity plans underneath them are retained; only demand that passes is carried forward to network simulation."
+          "body": "Activity schedules describe the sequence of activities and trips for every individual in the synthetic population. Those trips are converted into origin–destination demand at the location level and aggregated back up to MAZ level, where the generated pattern is compared with observed travel demand. The test is whether aggregate spatial and temporal travel patterns are reproduced while the individual activity plans underneath them are retained; only demand that passes is carried forward to network simulation.",
+          "images": [
+            {
+              "src": "/projects/demand-fig5.png",
+              "caption": "Generated versus observed origin–destination demand aggregated to MAZ level, compared by period"
+            }
+          ]
         },
         {
           "heading": "Simulating the network with MATSim",
-          "body": "The validated activity plans are simulated on the real road network in MATSim, an open-source agent-based framework where each individual plan is scored and revised through configured replanning strategies. Every agent starts from an activity plan and travels the routes connecting its scheduled activities; the collective movement produces network conditions, including congestion, that feed back into subsequent route and plan choices. Repeated simulation and replanning progressively stabilises both the plans and the network, yielding link-level and route-level volumes that can be compared with observation."
+          "body": "The validated activity plans are simulated on the real road network in MATSim, an open-source agent-based framework where each individual plan is scored and revised through configured replanning strategies. Every agent starts from an activity plan and travels the routes connecting its scheduled activities; the collective movement produces network conditions, including congestion, that feed back into subsequent route and plan choices. Repeated simulation and replanning progressively stabilises both the plans and the network, yielding link-level and route-level volumes that can be compared with observation.",
+          "images": [
+            {
+              "src": "/projects/demand-fig6.png",
+              "caption": "The study network and the sections used for detailed comparison"
+            }
+          ]
         },
         {
           "heading": "Do the patterns look like a real day",
-          "body": "Outputs are visualised by time of day and trip purpose to see whether plausible temporal and behavioural patterns emerge. Classifying vehicle movements by activity purpose shows how the composition of demand shifts across the day: during the morning peak, volumes rise sharply and work trips make up a large share of travel, while in the off-peak afternoon work travel is increasingly mixed with other purposes. Quantitatively, simulated link-level volumes are compared against detector counts using the GEH statistic, which measures the discrepancy while accounting for the magnitude of flow."
+          "body": "Outputs are visualised by time of day and trip purpose to see whether plausible temporal and behavioural patterns emerge. Classifying vehicle movements by activity purpose shows how the composition of demand shifts across the day: during the morning peak, volumes rise sharply and work trips make up a large share of travel, while in the off-peak afternoon work travel is increasingly mixed with other purposes. Quantitatively, simulated link-level volumes are compared against detector counts using the GEH statistic, which measures the discrepancy while accounting for the magnitude of flow.",
+          "images": [
+            {
+              "src": "/projects/demand-fig7.png",
+              "caption": "Simulated network flows by period — AM peak, non-peak and PM peak"
+            },
+            {
+              "src": "/projects/demand-fig8.png",
+              "caption": "Simulated link volumes compared with detector counts using the GEH statistic"
+            }
+          ]
         },
         {
           "heading": "Where it goes next",
-          "body": "Future scenarios can vary AV penetration rate, passenger-car-unit assumptions, multimodal interaction and supporting communication infrastructure, and can add dedicated AV facilities or AV-priority zones to alternative networks. The resulting route- and link-level demand can also feed downstream microscopic simulation when detailed vehicle interactions need evaluating — giving a controlled, reproducible way to compare transport policies and infrastructure strategies."
+          "body": "Future scenarios can vary AV penetration rate, passenger-car-unit assumptions, multimodal interaction and supporting communication infrastructure, and can add dedicated AV facilities or AV-priority zones to alternative networks. The resulting route- and link-level demand can also feed downstream microscopic simulation when detailed vehicle interactions need evaluating — giving a controlled, reproducible way to compare transport policies and infrastructure strategies.",
+          "images": [
+            {
+              "src": "/projects/demand-fig9.png",
+              "caption": "The AV analysis module: penetration rate, passenger-car-unit, multimodal and infrastructure scenarios, and the handover to microscopic simulation"
+            }
+          ]
         }
       ],
       "images": [
@@ -281,34 +331,6 @@
         {
           "src": "/projects/demand-fig2.png",
           "caption": "From the four-step model at zone level to an activity-based model at the individual level, and the traffic-demand scenario each produces"
-        },
-        {
-          "src": "/projects/demand-fig3.png",
-          "caption": "The data-driven demand pipeline: population synthesis and activity scheduling from census, survey and spatial data, feeding MATSim"
-        },
-        {
-          "src": "/projects/demand-fig4.png",
-          "caption": "The two generative stages — population synthesis, then activity scheduling — producing per-person daily schedules that become trip assignments"
-        },
-        {
-          "src": "/projects/demand-fig5.png",
-          "caption": "Generated versus observed origin–destination demand aggregated to MAZ level, compared by period"
-        },
-        {
-          "src": "/projects/demand-fig6.png",
-          "caption": "The study network and the sections used for detailed comparison"
-        },
-        {
-          "src": "/projects/demand-fig7.png",
-          "caption": "Simulated network flows by period — AM peak, non-peak and PM peak"
-        },
-        {
-          "src": "/projects/demand-fig8.png",
-          "caption": "Simulated link volumes compared with detector counts using the GEH statistic"
-        },
-        {
-          "src": "/projects/demand-fig9.png",
-          "caption": "The AV analysis module: penetration rate, passenger-car-unit, multimodal and infrastructure scenarios, and the handover to microscopic simulation"
         }
       ],
       "links": [
@@ -341,7 +363,13 @@
         },
         {
           "heading": "Real-time crash risk at signalized intersections",
-          "body": "Deep learning-derived conflict information (Predicted Lane-based Gap Time) is integrated into Extreme Value Theory crash-risk estimation, comparing four EVT formulations against conventional conflict measures. In revision at Analytic Methods in Accident Research."
+          "body": "Deep learning-derived conflict information (Predicted Lane-based Gap Time) is integrated into Extreme Value Theory crash-risk estimation, comparing four EVT formulations against conventional conflict measures. In revision at Analytic Methods in Accident Research.",
+          "images": [
+            {
+              "src": "/projects/pedestrian-crossing-conflict-cameras.jpg",
+              "caption": "Multi-camera trajectory data collection at a signalized intersection: camera positions, coverage, and views"
+            }
+          ]
         },
         {
           "heading": "Crowd crossing risk evaluation",
@@ -350,12 +378,6 @@
         {
           "heading": "Behavioral validation with VR and EEG",
           "body": "Virtual reality experiments with electroencephalography responses test whether prediction-based conflict measures reflect human-perceived crossing risk and can guide threshold calibration. Ongoing."
-        }
-      ],
-      "images": [
-        {
-          "src": "/projects/pedestrian-crossing-conflict-cameras.jpg",
-          "caption": "Multi-camera trajectory data collection at a signalized intersection: camera positions, coverage, and views"
         }
       ],
       "links": []
@@ -414,11 +436,23 @@
       "sections": [
         {
           "heading": "Extended G2SFCA methodology",
-          "body": "Diverse services are integrated into a single supply metric using gross floor area, and door-to-door accessibility combines walking and in-vehicle travel times with a Gaussian decay function — moving beyond binary catchment measurements toward a more realistic accessibility index."
+          "body": "Diverse services are integrated into a single supply metric using gross floor area, and door-to-door accessibility combines walking and in-vehicle travel times with a Gaussian decay function — moving beyond binary catchment measurements toward a more realistic accessibility index.",
+          "images": [
+            {
+              "src": "/projects/public-transport-accessibility-method.png",
+              "caption": "Analysis pipeline: data sources, preprocessing, accessibility calculation, and spatial analysis in ArcGIS Pro"
+            }
+          ]
         },
         {
           "heading": "Realization rate analysis",
-          "body": "GTFS supply and smart-card usage are matched at the stop level, and a regression-based realization rate quantifies how far the plan is implemented in reality: alignment is high during peak hours but efficiency drops significantly at midday."
+          "body": "GTFS supply and smart-card usage are matched at the stop level, and a regression-based realization rate quantifies how far the plan is implemented in reality: alignment is high during peak hours but efficiency drops significantly at midday.",
+          "images": [
+            {
+              "src": "/projects/public-transport-accessibility-gwr.jpg",
+              "caption": "GWR local coefficients for planned supply vs. realized usage in Daejeon (AM / midday / PM)"
+            }
+          ]
         },
         {
           "heading": "Spatio-temporal mismatch",
@@ -427,16 +461,6 @@
         {
           "heading": "Policy implication",
           "body": "Transit policy should align the destinations of supply and demand rather than simply increase supply volume, spatially reallocating surplus capacity from low-realization routes to active residential and commercial areas."
-        }
-      ],
-      "images": [
-        {
-          "src": "/projects/public-transport-accessibility-gwr.jpg",
-          "caption": "GWR local coefficients for planned supply vs. realized usage in Daejeon (AM / midday / PM)"
-        },
-        {
-          "src": "/projects/public-transport-accessibility-method.png",
-          "caption": "Analysis pipeline: data sources, preprocessing, accessibility calculation, and spatial analysis in ArcGIS Pro"
         }
       ],
       "links": []
@@ -583,11 +607,27 @@
       "sections": [
         {
           "heading": "Real-time bidirectional exchange",
-          "body": "Positions, speeds and signal indications computed in VISSIM are transmitted to Unity and rendered in the 3D scene. In the same loop, the participant's steering, acceleration and braking inputs are returned to VISSIM, where they change how surrounding traffic follows and changes lanes. The closed loop makes the human driver an active agent inside the traffic stream rather than a passive observer of a fixed visualisation."
+          "body": "Positions, speeds and signal indications computed in VISSIM are transmitted to Unity and rendered in the 3D scene. In the same loop, the participant's steering, acceleration and braking inputs are returned to VISSIM, where they change how surrounding traffic follows and changes lanes. The closed loop makes the human driver an active agent inside the traffic stream rather than a passive observer of a fixed visualisation.",
+          "images": [
+            {
+              "src": "/projects/unity-vissim-environments.png",
+              "caption": "The same site in both engines — Unity's 3D road environment and the VISSIM network that drives the traffic in it"
+            }
+          ]
         },
         {
           "heading": "VR multi-agent driving simulator",
-          "body": "In the networked configuration several participants join the same virtual road network, each driving their own vehicle. Unity synchronises every participant's position and motion state in real time while VISSIM generates background traffic that reacts to all of them. That makes it possible to reproduce car-following, lane changes, overtaking, merging and unsignalised intersections — situations where one driver's decision changes the conditions everyone else faces — with synchronised trajectories and control inputs available for analysing interaction, conflict development and collision risk."
+          "body": "In the networked configuration several participants join the same virtual road network, each driving their own vehicle. Unity synchronises every participant's position and motion state in real time while VISSIM generates background traffic that reacts to all of them. That makes it possible to reproduce car-following, lane changes, overtaking, merging and unsignalised intersections — situations where one driver's decision changes the conditions everyone else faces — with synchronised trajectories and control inputs available for analysing interaction, conflict development and collision risk.",
+          "images": [
+            {
+              "src": "/projects/unity-vissim-multiagent-lab.png",
+              "caption": "The multi-agent laboratory in operation: Unity environment, VISSIM network, the physical rigs, and the driver's VR view"
+            },
+            {
+              "src": "/projects/metaverse-unity-vissim-devices.png",
+              "caption": "VR headset, force-feedback wheel and pedal set used for the driver-in-the-loop configuration"
+            }
+          ]
         },
         {
           "heading": "Where the platform is used",
@@ -597,6 +637,12 @@
             "Automated–human vehicle interaction in merging, lane-changing, gap-acceptance and conflict-response scenarios",
             "Traffic operations and safety studies comparing signal plans, bottleneck treatments and interventions with consistent measures such as time-to-collision, post-encroachment time, speed variation and delay",
             "Digital-twin and AI evaluation, replaying field-derived scenarios to validate model fidelity and test policies against identical baselines"
+          ],
+          "images": [
+            {
+              "src": "/projects/unity-vissim-applications.png",
+              "caption": "Application areas and the synchronised outputs each produces"
+            }
           ]
         },
         {
@@ -608,22 +654,6 @@
         {
           "src": "/projects/unity-vissim-cosimulation-architecture.png",
           "caption": "Co-simulation architecture: VISSIM sends vehicle positions, speeds and signal states to Unity; Unity returns the user vehicle's state and control inputs"
-        },
-        {
-          "src": "/projects/unity-vissim-environments.png",
-          "caption": "The same site in both engines — Unity's 3D road environment and the VISSIM network that drives the traffic in it"
-        },
-        {
-          "src": "/projects/unity-vissim-multiagent-lab.png",
-          "caption": "The multi-agent laboratory in operation: Unity environment, VISSIM network, the physical rigs, and the driver's VR view"
-        },
-        {
-          "src": "/projects/unity-vissim-applications.png",
-          "caption": "Application areas and the synchronised outputs each produces"
-        },
-        {
-          "src": "/projects/metaverse-unity-vissim-devices.png",
-          "caption": "VR headset, force-feedback wheel and pedal set used for the driver-in-the-loop configuration"
         }
       ],
       "links": [
@@ -649,45 +679,49 @@
       "sections": [
         {
           "heading": "Two models for learning human judgment",
-          "body": "For the overtaking vehicle the task was posed as classification — distinguishing overtaking initiation, abortion, continuation and completion — while the oncoming vehicle was modelled as a regression on acceleration. The initiation dataset was severely imbalanced, with only 96 overtaking-initiation cases against 8,121 of normal driving, so SMOTE combined with Tomek links generated 7,909 synthetic samples. Training on the original data gave the higher raw accuracy (0.9859) but an F1-score of just 0.4941; the balanced set reached 0.9544 accuracy with an F1-score of 0.9548, a substantially better class-balanced result without overfitting. Among seven machine-learning algorithms Extra Trees ranked first on both tasks — about 0.95 accuracy and F1 for the overtaking model, R² of 0.77 and RMSE of 0.07 for the braking model — with XGBoost and Random Forest close behind at roughly 0.94."
+          "body": "For the overtaking vehicle the task was posed as classification — distinguishing overtaking initiation, abortion, continuation and completion — while the oncoming vehicle was modelled as a regression on acceleration. The initiation dataset was severely imbalanced, with only 96 overtaking-initiation cases against 8,121 of normal driving, so SMOTE combined with Tomek links generated 7,909 synthetic samples. Training on the original data gave the higher raw accuracy (0.9859) but an F1-score of just 0.4941; the balanced set reached 0.9544 accuracy with an F1-score of 0.9548, a substantially better class-balanced result without overfitting. Among seven machine-learning algorithms Extra Trees ranked first on both tasks — about 0.95 accuracy and F1 for the overtaking model, R² of 0.77 and RMSE of 0.07 for the braking model — with XGBoost and Random Forest close behind at roughly 0.94.",
+          "images": [
+            {
+              "src": "/projects/overtaking-scenario-variables.png",
+              "caption": "The overtaking scenario as modelled: relative distances and speeds between the subject vehicle, the slower lead vehicle and oncoming traffic, with time-to-collision"
+            },
+            {
+              "src": "/projects/overtaking-multi-agent-simulator.png",
+              "caption": "Two participants drive the same scenario from opposite roles — subject vehicle and oncoming vehicle — each with their own view"
+            }
+          ]
         },
         {
           "heading": "Perception of safety depends on what you are driving",
-          "body": "This study puts a participant on an e-scooter and has them overtaken by a vehicle they themselves drove earlier, without telling them. A Unity-based sequential simulation replays the overtaking manoeuvre each participant produced in the vehicle simulator while the same person now rides the e-scooter simulator. Ninety-three percent of respondents said they overtake safely, leaving sufficient distance — but only half of those felt safe while being overtaken on an e-scooter, and 64% reported feeling less safe from the e-scooter's perspective than from the driver's. Risk perception, in other words, depends on which road user you are."
+          "body": "This study puts a participant on an e-scooter and has them overtaken by a vehicle they themselves drove earlier, without telling them. A Unity-based sequential simulation replays the overtaking manoeuvre each participant produced in the vehicle simulator while the same person now rides the e-scooter simulator. Ninety-three percent of respondents said they overtake safely, leaving sufficient distance — but only half of those felt safe while being overtaken on an e-scooter, and 64% reported feeling less safe from the e-scooter's perspective than from the driver's. Risk perception, in other words, depends on which road user you are.",
+          "images": [
+            {
+              "src": "/projects/overtaking-escooter-replay-process.png",
+              "caption": "The sequential simulation process: a participant's own overtaking manoeuvre is recorded in the vehicle simulator, then replayed around them while they ride the e-scooter simulator, without their knowing it is their own driving"
+            },
+            {
+              "src": "/projects/overtaking-motion-escooter-simulators.png",
+              "caption": "The 6-axis motion simulator and the e-scooter simulator used for the paired experiment"
+            }
+          ]
         },
         {
           "heading": "Driving safety according to road condition",
-          "body": "Micromobility fills the first and last mile, but infrastructure and regulation have not kept pace with how fast it spread, and being overtaken by a vehicle remains one of its sharpest safety problems. This study examines how cross-modal experience — a driver's own first-hand experience of riding micromobility — and road condition together shape overtaking behaviour towards e-scooters and bicycles. Drivers with cross-modal experience keep wider lateral clearances when overtaking both, and poor road surfaces make drivers widen clearance and fixate longer. The findings argue for educational programmes that build cross-modal experience and for targeted infrastructure such as dedicated e-scooter lanes."
-        }
-      ],
-      "images": [
-        {
-          "src": "/projects/overtaking-scenario-variables.png",
-          "caption": "The overtaking scenario as modelled: relative distances and speeds between the subject vehicle, the slower lead vehicle and oncoming traffic, with time-to-collision"
-        },
-        {
-          "src": "/projects/overtaking-multi-agent-simulator.png",
-          "caption": "Two participants drive the same scenario from opposite roles — subject vehicle and oncoming vehicle — each with their own view"
-        },
-        {
-          "src": "/projects/overtaking-escooter-replay-process.png",
-          "caption": "The sequential simulation process: a participant's own overtaking manoeuvre is recorded in the vehicle simulator, then replayed around them while they ride the e-scooter simulator, without their knowing it is their own driving"
-        },
-        {
-          "src": "/projects/overtaking-motion-escooter-simulators.png",
-          "caption": "The 6-axis motion simulator and the e-scooter simulator used for the paired experiment"
-        },
-        {
-          "src": "/projects/overtaking-hmd-gaze-tracking.png",
-          "caption": "The 6-DOF driving simulator with an eye-tracking head-mounted display, and the participant's gaze point recorded inside the VR scene"
-        },
-        {
-          "src": "/projects/overtaking-road-conditions.png",
-          "caption": "The normal and poor road surfaces compared in the experiment"
-        },
-        {
-          "src": "/projects/overtaking-results-boxplots.png",
-          "caption": "Mean lateral clearance, overtaking speed and gaze fixation counts when overtaking e-scooters and bicycles, on normal versus poor road"
+          "body": "Micromobility fills the first and last mile, but infrastructure and regulation have not kept pace with how fast it spread, and being overtaken by a vehicle remains one of its sharpest safety problems. This study examines how cross-modal experience — a driver's own first-hand experience of riding micromobility — and road condition together shape overtaking behaviour towards e-scooters and bicycles. Drivers with cross-modal experience keep wider lateral clearances when overtaking both, and poor road surfaces make drivers widen clearance and fixate longer. The findings argue for educational programmes that build cross-modal experience and for targeted infrastructure such as dedicated e-scooter lanes.",
+          "images": [
+            {
+              "src": "/projects/overtaking-hmd-gaze-tracking.png",
+              "caption": "The 6-DOF driving simulator with an eye-tracking head-mounted display, and the participant's gaze point recorded inside the VR scene"
+            },
+            {
+              "src": "/projects/overtaking-road-conditions.png",
+              "caption": "The normal and poor road surfaces compared in the experiment"
+            },
+            {
+              "src": "/projects/overtaking-results-boxplots.png",
+              "caption": "Mean lateral clearance, overtaking speed and gaze fixation counts when overtaking e-scooters and bicycles, on normal versus poor road"
+            }
+          ]
         }
       ],
       "links": [
@@ -721,33 +755,37 @@
       "sections": [
         {
           "heading": "Why a graph, and why two sources",
-          "body": "Representing the network as a graph lets information from observed locations support recovery where measurements are missing, and lets the model exploit recurring temporal patterns at daily, weekly and monthly scales at the same time. The central difficulty is heterogeneity: the sensing systems differ in spatial coverage, in the variables they measure, and in how they fail."
+          "body": "Representing the network as a graph lets information from observed locations support recovery where measurements are missing, and lets the model exploit recurring temporal patterns at daily, weekly and monthly scales at the same time. The central difficulty is heterogeneity: the sensing systems differ in spatial coverage, in the variables they measure, and in how they fail.",
+          "images": [
+            {
+              "src": "/projects/rse-vds-traffic-data-collection.png",
+              "caption": "The two data sources over the Daejeon network — RSE units reporting speed, travel time and sample counts along segments, VDS loop detectors reporting volume, speed and occupancy at points — and the daily, weekly and monthly periods the model reads them over"
+            }
+          ]
         },
         {
           "heading": "Attention-based spatio-temporal graph network",
-          "body": "Rather than treating detectors independently, the model learns dynamic spatial and temporal dependencies across the network. Stacked spatio-temporal blocks combine a self-attention sub-block with a graph convolution sub-block, giving a data-driven way to integrate heterogeneous observations and estimate traffic states where measurements are sparse or unavailable."
+          "body": "Rather than treating detectors independently, the model learns dynamic spatial and temporal dependencies across the network. Stacked spatio-temporal blocks combine a self-attention sub-block with a graph convolution sub-block, giving a data-driven way to integrate heterogeneous observations and estimate traffic states where measurements are sparse or unavailable.",
+          "images": [
+            {
+              "src": "/projects/traffic-volume-stgnn-architecture.png",
+              "caption": "Stacked spatio-temporal blocks, each pairing a self-attention sub-block with a graph convolution sub-block over the road network graph"
+            }
+          ]
         },
         {
           "heading": "Daejeon case study",
-          "body": "Applied to the city-wide traffic monitoring network in Daejeon, the framework recovered traffic volume with a mean absolute error below 12 vehicles per 5 minutes — evidence that multi-source sensing and graph-based learning can keep traffic information reliable even when a substantial share of the monitoring network is missing observations."
+          "body": "Applied to the city-wide traffic monitoring network in Daejeon, the framework recovered traffic volume with a mean absolute error below 12 vehicles per 5 minutes — evidence that multi-source sensing and graph-based learning can keep traffic information reliable even when a substantial share of the monitoring network is missing observations.",
+          "images": [
+            {
+              "src": "/projects/traffic-volume-imputation-results.png",
+              "caption": "Recovered versus observed flow at three detectors across several days, compared against baseline imputation methods"
+            }
+          ]
         },
         {
           "heading": "Reference",
           "body": "Kwon, Donghyun, et al. Large-scale network imputation and prediction of traffic volume based on multi-source data collection system. Transportation Research Record 2677(9) (2023): 30–42."
-        }
-      ],
-      "images": [
-        {
-          "src": "/projects/rse-vds-traffic-data-collection.png",
-          "caption": "The two data sources over the Daejeon network — RSE units reporting speed, travel time and sample counts along segments, VDS loop detectors reporting volume, speed and occupancy at points — and the daily, weekly and monthly periods the model reads them over"
-        },
-        {
-          "src": "/projects/traffic-volume-stgnn-architecture.png",
-          "caption": "Stacked spatio-temporal blocks, each pairing a self-attention sub-block with a graph convolution sub-block over the road network graph"
-        },
-        {
-          "src": "/projects/traffic-volume-imputation-results.png",
-          "caption": "Recovered versus observed flow at three detectors across several days, compared against baseline imputation methods"
         }
       ]
     }

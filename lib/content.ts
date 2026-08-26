@@ -130,6 +130,8 @@ export interface ResearchTopicSection {
   heading: string;
   body?: string;
   bullets?: string[];
+  /** Figures belonging to this section, shown directly under its text. */
+  images?: ResearchTopicImage[];
 }
 
 export interface ResearchTopicImage {
@@ -176,6 +178,8 @@ export interface ResearchTopicDetail {
   /** Lead paragraphs shown at the top of the dialog. */
   paragraphs: string[];
   sections?: ResearchTopicSection[];
+  /** Lead figures for the topic as a whole, shown under the paragraphs. A
+   *  figure that illustrates one section belongs on that section instead. */
   images?: ResearchTopicImage[];
   /** External references (source page, demo videos). */
   links?: { label: string; url: string }[];

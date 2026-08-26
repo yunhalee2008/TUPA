@@ -168,7 +168,7 @@ export default async function PeoplePage() {
             {alumniResearchers.length > 0 ? (
               <div>
                 <p className="mono-label">
-                  <Copy t={copy["구성원 · 인원 라벨(박사)"]} />
+                  <Copy t={copy["구성원 · 졸업생 라벨(연구진)"]} />
                 </p>
                 <div className="mt-4 grid gap-5 sm:grid-cols-2">
                   {alumniResearchers.map((member) => (

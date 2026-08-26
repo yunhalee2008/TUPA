@@ -2962,8 +2962,8 @@ const NEWS: NewsItem[] = [
 const RESEARCH_AREAS: ResearchArea[] = [
   {
     slug: "physical-ai-av-control",
-    nameKo: "Physical AI·인프라 중심 자율주행 제어",
-    nameEn: "Physical AI and Infrastructure-Centric AV Control",
+    nameKo: "인프라 기반 자율주행",
+    nameEn: "Infra-AV",
     descriptionKo:
       "자율주행차와 일반 차량이 섞인 혼재교통에서 차량 단독 지능을 넘어 인프라가 제어에 함께 참여하는 Physical AI 프레임워크를 연구합니다. 강화학습 기반 교차로·회전교차로 운영이 대표 주제입니다.",
     descriptionEn:
@@ -2972,8 +2972,8 @@ const RESEARCH_AREAS: ResearchArea[] = [
   },
   {
     slug: "crowd-dynamics",
-    nameKo: "군중 동역학",
-    nameEn: "Crowd Dynamics",
+    nameKo: "재난 AI",
+    nameEn: "Disaster AI",
     descriptionKo:
       "보행자와 군중의 이동을 계측·모형화해 혼잡과 압사 위험을 예측하고 안전한 공간 설계를 지원합니다. VR 보행 시뮬레이터와 시뮬레이션 기반 군중 안전 분석을 수행합니다.",
     descriptionEn:
@@ -2982,8 +2982,8 @@ const RESEARCH_AREAS: ResearchArea[] = [
   },
   {
     slug: "llm-activity-based-model",
-    nameKo: "LLM 기반 활동기반모형",
-    nameEn: "LLM based Activity Based Model",
+    nameKo: "LLM 기반 교통 시뮬레이션",
+    nameEn: "LLM based Traffic Simulation",
     descriptionKo:
       "대규모 언어모형(LLM)과 심층 생성모형으로 개인의 활동-통행 패턴을 합성하는 차세대 활동기반 수요모형을 연구합니다. 인구 합성과 자율주행 데이터 라벨링에도 LLM을 활용합니다.",
     descriptionEn:
@@ -2992,8 +2992,8 @@ const RESEARCH_AREAS: ResearchArea[] = [
   },
   {
     slug: "digital-twin-simulation",
-    nameKo: "디지털 트윈 교통 시뮬레이션",
-    nameEn: "Digital Twin Traffic Simulation",
+    nameKo: "Physical AI",
+    nameEn: "Physical AI",
     descriptionKo:
       "미시교통 시뮬레이션과 디지털 트윈을 결합해 가상 환경에서 교통 운영과 자율주행을 검증합니다. KAIST 스핀아웃 dochak과 함께 드라이빙 시뮬레이터, 텔레드라이빙을 연구합니다.",
     descriptionEn:

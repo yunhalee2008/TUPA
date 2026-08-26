@@ -514,27 +514,9 @@
     },
     {
       "year": 2024,
-      "authors": "H Chen, F Wu, TZ Qiu",
-      "title": "Urban Arterial Route Travel Time Prediction Using Connected Vehicle Trajectories by Integrating Cloud and Edge Resources",
-      "venue": "IEEE International Conference on Intelligent Transportation Systems (ITSC)"
-    },
-    {
-      "year": 2024,
-      "authors": "F Wu, H Chen, TZ Qiu",
-      "title": "Spatiotemporal Decomposition and Analysis of Vehicular Arrival on Green in A Signalized Arterial using Trajectories",
-      "venue": "IEEE International Conference on Intelligent Transportation Systems (ITSC)"
-    },
-    {
-      "year": 2024,
       "authors": "F Wu",
       "title": "Traffic Management in Mixed Autonomy with CAVs: Sensing, Signal Optimization, and Trajectory Control",
       "venue": "Ph.D. Dissertation / Presentation"
-    },
-    {
-      "year": 2021,
-      "authors": "F Wu, TJ Kwon, TZ Qiu",
-      "title": "How Connected Are Major Canadian Cities? A Large-Scale Empirical Investigation",
-      "venue": "Transportation Research Board (TRB) Annual Meeting"
     }
   ],
   "Hyunchul Park": [
@@ -546,18 +528,6 @@
     },
     {
       "year": 2026,
-      "authors": "J Lim, H Park, T Oh, I Kim",
-      "title": "The impact of information delivery systems in tunnels depending on lighting intensity and speed limit",
-      "venue": "Tunnelling and Underground Space Technology"
-    },
-    {
-      "year": 2025,
-      "authors": "H Park, T Oh, J Lim, I Kim",
-      "title": "Micro Mobility Safety Challenges: A Study on Drivers Overtaking Bicycles and E-Scooters in Relation to Road Conditions and Prior Riding Experience",
-      "venue": "Transportation Research Part F: Traffic Psychology and Behaviour"
-    },
-    {
-      "year": 2025,
       "authors": "J Lim, H Park, T Oh, I Kim",
       "title": "The impact of information delivery systems in tunnels depending on lighting intensity and speed limit",
       "venue": "Tunnelling and Underground Space Technology"
@@ -598,12 +568,6 @@
     },
     {
       "year": 2025,
-      "authors": "T Lin, Z Jin, H Yeo, I Kim, K Zhang",
-      "title": "A Surrogate Safety Measure at Non-Signalized Intersections Based on Probability Trajectory Prediction",
-      "venue": "Transportation Research Board (TRB) 104th Annual Meeting"
-    },
-    {
-      "year": 2025,
       "authors": "BNT Alabi, S Cha, T Lin, D Jeong, A Suchshenko, H Yeo, K Choi",
       "title": "Breaking the Sound Barrier: Investigating Noise Challenges in the Development of Advanced Air Mobility",
       "venue": "Transportation Research Record"
@@ -625,12 +589,6 @@
       "authors": "T Lin, H Yeo, I Kim",
       "title": "Variational Autoencoder Spatial Temporal Graph Convolutional Network: 결측 데이터 기반 속도 예측을 위한 딥러닝 프레임워크 (A Deep Learning Framework for Missing Data-Based Speed Prediction)",
       "venue": "한국 ITS 학회 춘계학술대회"
-    },
-    {
-      "year": 2024,
-      "authors": "T Lin, Z Jin, H Yeo, I Kim",
-      "title": "Predicted Relative Time-to-Collision: Evaluating Pedestrian Potential Risk at Non-Signalized Intersections",
-      "venue": "ICTCT Conference 2024"
     },
     {
       "year": 2023,
@@ -665,12 +623,6 @@
       "authors": "H Park, T Oh, J Lim, I Kim",
       "title": "Micro mobility safety challenges: a study on drivers overtaking bicycles and E-scooters in relation to road conditions and prior riding experience",
       "venue": "Transportation Research Part F: Traffic Psychology and Behaviour"
-    },
-    {
-      "year": 2025,
-      "authors": "HZ Ng, J Lim, T Oh, I Kim",
-      "title": "E-Scooter Alarm Warning System for Pothole Detection: A Simulation Study",
-      "venue": "IEEE International Conference on Intelligent Transportation Systems (ITSC)"
     },
     {
       "year": 2025,
@@ -778,12 +730,6 @@
     },
     {
       "year": 2025,
-      "authors": "T Lin, Z Jin, H Yeo, I Kim, K Zhang",
-      "title": "A Surrogate Safety Measure at Non-Signalized Intersections Based on Probability Trajectory Prediction",
-      "venue": "Transportation Research Board (TRB) 104th Annual Meeting"
-    },
-    {
-      "year": 2025,
       "authors": "T Gu, K Zhang, W Xu, C Zhuang, Z Jiang, I Kim, H Chung",
       "title": "Free interchange for better transit? Assessing the multi-dimensional impacts on metro to bus interchange behavior− insights from an explainable machine learning method",
       "venue": "Travel Behaviour and Society"
@@ -796,24 +742,6 @@
     },
     {
       "year": 2025,
-      "authors": "Cui, Q., Zhang, Y., Ma, H., Zhang, K.",
-      "title": "How about electric vehicle? Sensing owners’ experiences and attitudes through online short video.",
-      "venue": "Transport Policy"
-    },
-    {
-      "year": 2025,
-      "authors": "Cui, Q., Huang, C., Zhang, K.",
-      "title": "Weather effects on highway travel volume: Electric vs. Fuel vehicles",
-      "venue": "Transportation Research Part D: Transport and Environment"
-    },
-    {
-      "year": 2025,
-      "authors": "Gu, T., Zhang, K., Xu, W., Zhuang, C., Jiang, Z., Kim, I.",
-      "title": "Free interchange for better transit? Assessing the multi-dimensional impacts on metro to bus interchange behavior− insights from an explainable machine learning method",
-      "venue": "Travel Behaviour and Society"
-    },
-    {
-      "year": 2025,
       "authors": "Tamakloe, R., Zhang, K., *Kim, I.",
       "title": "Temporal instability of the determinants of fatal/severe elderly pedestrian injury outcomes in intersections and non-intersections before, during, and after the COVID-19 pandemic",
       "venue": "Accident Analysis & Prevention"
@@ -823,18 +751,6 @@
       "authors": "Tamakloe, R., Zhang, K., Hossain, A., Kim, I.",
       "title": "Critical risk factors associated with fatal/severe crash outcomes in personal mobility device rider at-fault crashes: A two-step inter-cluster rule mining technique",
       "venue": "Accident Analysis & Prevention"
-    },
-    {
-      "year": 2025,
-      "authors": "Zhang, K., Shang, W. L., De Vos, J., Zhang, Y., & Cao, M.",
-      "title": "Illuminating the path to more equitable access to urban parks",
-      "venue": "Scientific Reports"
-    },
-    {
-      "year": 2025,
-      "authors": "Zhang, K., Song, Q., Ma, H., Qiu, W., Li, M., & *Kim, I.",
-      "title": "Synergistic role of audio-visual perceptions in promoting bikeshare for active travel",
-      "venue": "Transportation Research Part D: Transport and Environment"
     },
     {
       "year": 2024,

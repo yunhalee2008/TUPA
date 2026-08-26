@@ -63,11 +63,69 @@
   },
   {
     "id": "iitp-genai-2026",
+    "titleEn": "Development of Industry-Specific Physical AI Foundation Models",
+    "sourceNote": "Notion — \"2026 Generative AI Leading Talent Development Program\" project summary (internal, login required): https://www.notion.so/2026-Generative-AI-Leading-Talent-Development-Program-3a3cd26708a0802b9847f124bce483b2",
+    "detail": {
+      "paragraphs": [
+        "Formally titled Development of Industry-Specific Physical AI Foundation Models and Cultivation of Next-Generation Convergence Talent, and run as the 2026 Generative AI Leading Talent Cultivation Program, this IITP programme runs from April 2026 to December 2029. Lotte Innovate leads the consortium, with KAIST, Yonsei University and Inha University as joint research organisations, and Lotte affiliates — Korea Seven, Lotte E&C, Lotte Global Logistics, Lotte World and others — serving as the field-demonstration and validation ground.",
+        "The core idea is to extend generative AI beyond the language and vision digital domain into the physical world — perception, reasoning, planning, action, operation. The goal is to build an industry-specialised Physical AI foundation model while simultaneously training convergence-type talent, then dispatching and hiring top students into the affiliates so that research and industry feed each other."
+      ],
+      "sections": [
+        {
+          "heading": "Three universities, three layers",
+          "bullets": [
+            "KAIST — core humanoid technology for next-generation logistics automation (generative AI + robotics)",
+            "Yonsei University — security- and policy-aware adaptive on-device–cloud optimisation for large-scale industrial edge computing (generative AI + infrastructure)",
+            "Inha University — MoE-robotics on-device vision-language navigation for facility management (generative AI + industrial AI)"
+          ]
+        },
+        {
+          "heading": "KAIST's task: a logistics humanoid",
+          "body": "Four professors of the Cho Chun Shik Graduate School of Mobility take part, with Prof. Inhi Kim as the KAIST task lead. Four technology modules are developed in parallel and then integrated into a humanoid deployable in a real logistics environment.",
+          "bullets": [
+            "Module A — VLN: logistics navigation, task-aware network modelling and route optimisation (Prof. Inkwon Jang)",
+            "Module B — VLM/Vision: worker action observation, intent inference and collision avoidance (Prof. Kitae Jang)",
+            "Module C — Sim-to-Real: simulation policy learning, VR-teleoperation and real-robot transfer (Prof. Inhi Kim)",
+            "Module D — Integrated control: terrain-adaptive whole-body locomotion–manipulation and VLA-based control (Prof. Kyunghwan Choi)"
+          ]
+        },
+        {
+          "heading": "Four-year roadmap",
+          "bullets": [
+            "Year 1 — foundation building: simulation platform, vision-language datasets and logistics network graphs, whole-body dynamics modelling, a Sim-to-Real prior study",
+            "Year 2 — core model development: domain-randomisation RL policy learning, VR-teleoperation, VLM intent inference, VLA-based terrain-adaptive locomotion",
+            "Year 3 — robot integration and verification: Sim-to-Real transfer experiments and gap analysis, teleoperation extended to real robots, integrated locomotion–manipulation control, worker–robot collision avoidance",
+            "Year 4 — integrated demonstration: hardware-constraint integration, field demonstration at Lotte logistics sites, generalisation on unseen terrain"
+          ]
+        },
+        {
+          "heading": "The talent track",
+          "body": "Alongside the technical work the programme runs an LSM (Lotte Student Member) three-tier certification, LSM Fellowship dispatches (six short-term and three long-term placements per year), generative-AI competitions, intensive courses and inter-university credit exchange."
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/iitp-genai-consortium.png",
+          "caption": "Consortium structure: three collaborating universities supply core technology and talent, Lotte Innovate leads, and the Lotte affiliates across food, distribution, chemical/construction/manufacturing and tourism/service/finance provide the field-validation ground",
+          "width": 1600,
+          "height": 938
+        },
+        {
+          "src": "/projects/iitp-genai-phase-roadmap.jpg",
+          "caption": "Phase 1 and Phase 2 of KAIST's task: foundation building and core model development, then real-robot integration and an integrated demonstration measured against task success, unseen-terrain adaptability, continuous operation and worker-collaboration safety",
+          "width": 1600,
+          "height": 984
+        }
+      ]
+    }
+  },
+  {
+    "id": "iitp-genai-2026-legacy-title",
     "titleEn": "2026 Generative AI Leading Talent Cultivation Program",
     "sourceNote": "Notion — \"2026 Generative AI Leading Talent Development Program\" project summary (internal, login required): https://www.notion.so/2026-Generative-AI-Leading-Talent-Development-Program-3a3cd26708a0802b9847f124bce483b2",
     "detail": {
       "paragraphs": [
-        "Formally titled Development of Industry-Specific Physical AI Foundation Models and Cultivation of Next-Generation Convergence Talent, this IITP programme runs from April 2026 to December 2029. Lotte Innovate leads the consortium, with KAIST, Yonsei University and Inha University as joint research organisations, and Lotte affiliates — Korea Seven, Lotte E&C, Lotte Global Logistics, Lotte World and others — serving as the field-demonstration and validation ground.",
+        "Formally titled Development of Industry-Specific Physical AI Foundation Models and Cultivation of Next-Generation Convergence Talent, and run as the 2026 Generative AI Leading Talent Cultivation Program, this IITP programme runs from April 2026 to December 2029. Lotte Innovate leads the consortium, with KAIST, Yonsei University and Inha University as joint research organisations, and Lotte affiliates — Korea Seven, Lotte E&C, Lotte Global Logistics, Lotte World and others — serving as the field-demonstration and validation ground.",
         "The core idea is to extend generative AI beyond the language and vision digital domain into the physical world — perception, reasoning, planning, action, operation. The goal is to build an industry-specialised Physical AI foundation model while simultaneously training convergence-type talent, then dispatching and hiring top students into the affiliates so that research and industry feed each other."
       ],
       "sections": [

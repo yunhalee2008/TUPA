@@ -3016,13 +3016,14 @@ const RESEARCH_AREAS: ResearchArea[] = [
 const PROJECTS: Project[] = [
   {
     id: "iitp-genai-2026",
-    titleKo: "2026 생성형 AI 선도인재 양성 프로그램",
-    titleEn: "2026 Generative AI Leading Talent Cultivation Program",
+    titleKo: "산업 특화 Physical AI 파운데이션 모델 개발",
+    titleEn: "Development of Industry-Specific Physical AI Foundation Models",
     sponsor: "IITP",
     role: "PI",
     startYear: 2026,
     endYear: 2029,
     ongoing: true,
+    order: 1,
   },
   {
     id: "nrf-physical-ai-2026",

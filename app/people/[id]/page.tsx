@@ -36,8 +36,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export const revalidate = 3600;
 
 /** Title key for deduping the same paper across sources. */
+/**
+ * Dedup key for a paper title. Punctuation, spacing and a leading article all
+ * vary between the lab record and the personal record for the same paper, so
+ * none of them may decide whether two entries are the same work.
+ */
 function titleKey(title: string): string {
-  return title.toLowerCase().replace(/[^a-z0-9가-힣]/g, "");
+  return title
+    .toLowerCase()
+    .replace(/^(a|an|the)\s+/, "")
+    .replace(/[^a-z0-9가-힣]/g, "");
 }
 
 export default async function MemberDetailPage({ params }: Props) {
@@ -49,13 +57,17 @@ export default async function MemberDetailPage({ params }: Props) {
   const member = members.find((m) => m.id === params.id);
   if (!member || member.role === "admin") notFound();
 
-  // Publication record = lab publications listing this member as an author,
+  // Publication record = lab journal papers listing this member as an author,
   // plus the personal SCI-journal record carried over from the legacy
   // inhi.kim/team modal (covers papers without lab co-authorship and entries
   // whose author strings use initials). Deduped by title; the lab entry wins
   // because it has full author names and a link.
-  const matched = publications.filter((pub) =>
-    pub.authors.includes(member.nameEn),
+  //
+  // Journals only: conference entries carry venue and author details that do
+  // not survive being attributed to an individual, so they stay on the
+  // publications page rather than on a personal record.
+  const matched = publications.filter(
+    (pub) => pub.type === "journal" && pub.authors.includes(member.nameEn),
   );
   const legacy = await getMemberPublicationRecord(member.nameEn);
   const matchedKeys = new Set(matched.map((p) => titleKey(p.title)));

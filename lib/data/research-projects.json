@@ -574,6 +574,69 @@
     }
   },
   {
+    "id": "industry-specific-physical-ai-foundation-models",
+    "title": "Development of Industry-Specific Physical AI Foundation Models",
+    "date": "2026-08-26",
+    "imageUrl": "/projects/iitp-genai-consortium.png",
+    "areaSlug": "digital-twin-simulation",
+    "summary": "Generative AI has to leave the screen: an industry-specialised foundation model must perceive, reason, plan and act in a physical workplace. In this IITP programme led by Lotte Innovate, KAIST builds the humanoid side — simulation policy learning, VR teleoperation and Sim-to-Real transfer for a robot that has to hold up in a working logistics site.",
+    "detail": {
+      "paragraphs": [
+        "Formally titled Development of Industry-Specific Physical AI Foundation Models and Cultivation of Next-Generation Convergence Talent, and run as the 2026 Generative AI Leading Talent Cultivation Program, this IITP programme runs from April 2026 to December 2029. Lotte Innovate leads the consortium; KAIST, Yonsei University and Inha University are the joint research organisations, and Lotte affiliates — Korea Seven, Lotte E&C, Lotte Global Logistics, Lotte World and others — provide the sites where the work is demonstrated and validated.",
+        "The premise is to carry generative AI past the digital domain of language and vision into the physical one: perception, reasoning, planning, action, operation. The technical goal of an industry-specialised Physical AI foundation model is deliberately paired with a talent track, which places students inside the affiliates so that the research and the industry feed each other."
+      ],
+      "sections": [
+        {
+          "heading": "Three universities, three layers",
+          "body": "Each partner owns one layer of the stack:",
+          "bullets": [
+            "KAIST — core humanoid technology for next-generation logistics automation (generative AI + robotics)",
+            "Yonsei University — security- and policy-aware adaptive on-device–cloud optimisation for large-scale industrial edge computing",
+            "Inha University — MoE-robotics on-device vision-language navigation for facility management"
+          ]
+        },
+        {
+          "heading": "KAIST's task: a logistics humanoid",
+          "body": "Four professors of the Cho Chun Shik Graduate School of Mobility take part, with Prof. Inhi Kim as the KAIST task lead. Four modules are developed in parallel and then integrated into a humanoid that can be deployed in a real logistics environment:",
+          "bullets": [
+            "Module A — VLN: logistics navigation, task-aware network modelling and route optimisation",
+            "Module B — VLM/Vision: worker action observation, intent inference and collision avoidance",
+            "Module C — Sim-to-Real: simulation policy learning, VR teleoperation and real-robot transfer (Prof. Inhi Kim)",
+            "Module D — Integrated control: terrain-adaptive whole-body locomotion–manipulation and VLA-based control"
+          ]
+        },
+        {
+          "heading": "Four-year roadmap",
+          "body": "The work moves from simulation to a working site in stages:",
+          "bullets": [
+            "Year 1 — foundation building: simulation platform, vision-language datasets and logistics network graphs, whole-body dynamics modelling",
+            "Year 2 — core models: domain-randomisation RL policy learning, VR teleoperation, VLM intent inference, VLA-based terrain-adaptive locomotion",
+            "Year 3 — robot integration: Sim-to-Real transfer experiments and gap analysis, teleoperation extended to real robots, integrated locomotion",
+            "Year 4 — integrated demonstration: field demonstration at Lotte logistics sites and generalisation on unseen terrain"
+          ],
+          "images": [
+            {
+              "src": "/projects/iitp-genai-phase-roadmap.jpg",
+              "caption": "Phase 1 and Phase 2 of KAIST's task — foundation building and core model development, then real-robot integration and field demonstration"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "/projects/iitp-genai-consortium.png",
+          "caption": "Consortium structure: three universities supply core technology and talent while Lotte Innovate leads and the affiliates host the demonstrations"
+        }
+      ],
+      "links": [
+        {
+          "label": "Funded project page",
+          "url": "/projects/b925f228-be90-830b-a23c-81e64e72921b"
+        }
+      ]
+    }
+  },
+  {
     "id": "vr-driving-simulator-platform",
     "title": "VR Driving Simulator Platform",
     "date": "2026-07-22",

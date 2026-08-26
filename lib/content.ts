@@ -2965,9 +2965,9 @@ const RESEARCH_AREAS: ResearchArea[] = [
     nameKo: "인프라 기반 자율주행",
     nameEn: "Infra-AV",
     descriptionKo:
-      "자율주행차와 일반 차량이 섞인 혼재교통에서 차량 단독 지능을 넘어 인프라가 제어에 함께 참여하는 Physical AI 프레임워크를 연구합니다. 강화학습 기반 교차로·회전교차로 운영이 대표 주제입니다.",
+      "차량 단독 지능만으로는 풀리지 않는 상황을 인프라가 함께 판단합니다. C-V2X와 엣지 연산으로 교차로가 직접 속도를 제안하고, 노변 센서와 원격주행까지 제어 루프 안으로 들여오는 프레임워크를 연구합니다.",
     descriptionEn:
-      "We develop Physical AI frameworks in which infrastructure joins the control loop for mixed-autonomy traffic, including reinforcement-learning-based intersection and roundabout operations.",
+      "Where a vehicle’s own sensors and judgement run out, the infrastructure joins in. We build frameworks in which the intersection itself advises speed over C-V2X and edge computing, bringing roadside sensing and remote driving into the control loop.",
     keywords: ["Physical AI", "mixed-autonomy traffic", "reinforcement learning", "AV control"],
   },
   {
@@ -2975,9 +2975,9 @@ const RESEARCH_AREAS: ResearchArea[] = [
     nameKo: "재난 AI",
     nameEn: "Disaster AI",
     descriptionKo:
-      "보행자와 군중의 이동을 계측·모형화해 혼잡과 압사 위험을 예측하고 안전한 공간 설계를 지원합니다. VR 보행 시뮬레이터와 시뮬레이션 기반 군중 안전 분석을 수행합니다.",
+      "보행자와 군중이 몰릴 때 쌓이는 압사·혼잡 위험을 예측하고, 사고로 번지기 전의 상충을 실시간으로 평가합니다. VR 보행 시뮬레이터와 시뮬레이션 기반 분석으로 안전한 공간 설계를 뒷받침합니다.",
     descriptionEn:
-      "We measure and model pedestrian and crowd movement to predict congestion and crush risk, supporting safer space design with VR walking simulators and simulation-based crowd safety analysis.",
+      "We predict the crush and congestion risk that builds up as pedestrians and crowds concentrate, and evaluate conflicts in real time before they turn into collisions — supporting safer space design with VR walking simulators and simulation-based analysis.",
     keywords: ["crowd dynamics", "pedestrian simulation", "crowd safety", "VR"],
   },
   {
@@ -2985,9 +2985,9 @@ const RESEARCH_AREAS: ResearchArea[] = [
     nameKo: "LLM 기반 교통 시뮬레이션",
     nameEn: "LLM based Traffic Simulation",
     descriptionKo:
-      "대규모 언어모형(LLM)과 심층 생성모형으로 개인의 활동-통행 패턴을 합성하는 차세대 활동기반 수요모형을 연구합니다. 인구 합성과 자율주행 데이터 라벨링에도 LLM을 활용합니다.",
+      "대규모 언어모형(LLM)과 심층 생성모형으로 합성 인구와 개인별 활동 일정을 만들고, 이를 실제 도로망 시뮬레이션까지 연결합니다. 인구 합성과 자율주행 데이터 라벨링에도 LLM을 활용합니다.",
     descriptionEn:
-      "We build next-generation activity-based demand models that synthesize individual activity-travel patterns with LLMs and deep generative models, including population synthesis and AV data labeling.",
+      "We generate synthetic populations and individual activity schedules with LLMs and deep generative models, then carry them through to network-level traffic simulation — with LLMs also serving population synthesis and AV data labelling.",
     keywords: ["LLM", "activity-based model", "population synthesis", "generative models"],
   },
   {
@@ -2995,9 +2995,9 @@ const RESEARCH_AREAS: ResearchArea[] = [
     nameKo: "Physical AI",
     nameEn: "Physical AI",
     descriptionKo:
-      "미시교통 시뮬레이션과 디지털 트윈을 결합해 가상 환경에서 교통 운영과 자율주행을 검증합니다. KAIST 스핀아웃 dochak과 함께 드라이빙 시뮬레이터, 텔레드라이빙을 연구합니다.",
+      "물리 세계에서 움직여야 하는 AI를 가상 환경에서 먼저 검증합니다. 미시교통 시뮬레이션과 디지털 트윈을 결합하고, 사람이 직접 운전대를 잡는 드라이빙 시뮬레이터 실험을 KAIST 스핀아웃 dochak과 함께 수행합니다.",
     descriptionEn:
-      "We integrate microscopic traffic simulation with digital twin technology to test operations and automated driving in virtual environments, together with the KAIST spinout dochak.",
+      "AI that has to act in the physical world is tested in a virtual one first. We couple microscopic traffic simulation with digital twins and run driver-in-the-loop experiments on VR driving simulators, together with the KAIST spinout dochak.",
     keywords: ["digital twin", "microsimulation", "driving simulator", "teledriving"],
   },
   {

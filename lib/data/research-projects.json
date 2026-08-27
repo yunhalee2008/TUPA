@@ -572,7 +572,23 @@
           "src": "/projects/carla-ros2-pipeline.jpg",
           "caption": "End-to-end autonomous driving demonstration using the CARLA–ROS2 integration, visualised in RViz alongside the CARLA scene"
         }
-      ]
+      ],
+      "media": {
+        "videos": [
+          {
+            "youtubeId": "qotK23sSn9k",
+            "label": "Lane keeping"
+          },
+          {
+            "youtubeId": "ZtHfB9tMEFc",
+            "label": "Through intersections"
+          },
+          {
+            "youtubeId": "luoqjL8DCxg",
+            "label": "End-to-end demo"
+          }
+        ]
+      }
     }
   },
   {

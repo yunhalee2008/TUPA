@@ -168,7 +168,7 @@ function MediaPanel({
             <div className="mb-3 flex flex-wrap gap-1.5">
               {media.videos?.map((v, i) => (
                 <button
-                  key={v.src}
+                  key={v.src ?? v.youtubeId}
                   type="button"
                   onClick={() => setClip(i)}
                   aria-pressed={i === clip}
@@ -188,20 +188,34 @@ function MediaPanel({
               ))}
             </div>
           ) : null}
-          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-          <video
-            key={video.src}
-            controls
-            preload="metadata"
-            poster={video.poster}
-            src={video.src}
-            aria-label={`${video.label} — ${title}`}
-            className={
-              video.portrait
-                ? "mx-auto max-h-[64vh] w-auto rounded-lg border border-mapline bg-black"
-                : "w-full rounded-lg border border-mapline bg-black"
-            }
-          />
+          {video.youtubeId ? (
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-mapline bg-black">
+              <iframe
+                key={video.youtubeId}
+                src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}`}
+                title={`${video.label} — ${title}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="h-full w-full"
+              />
+            </div>
+          ) : (
+            /* eslint-disable-next-line jsx-a11y/media-has-caption */
+            <video
+              key={video.src}
+              controls
+              preload="metadata"
+              poster={video.poster}
+              src={video.src}
+              aria-label={`${video.label} — ${title}`}
+              className={
+                video.portrait
+                  ? "mx-auto max-h-[64vh] w-auto rounded-lg border border-mapline bg-black"
+                  : "w-full rounded-lg border border-mapline bg-black"
+              }
+            />
+          )}
         </div>
       ) : null}
 

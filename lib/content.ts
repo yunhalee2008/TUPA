@@ -143,7 +143,10 @@ export interface ResearchTopicImage {
 }
 
 export interface ResearchTopicVideo {
-  src: string;
+  /** Self-hosted file. Omitted when the clip lives on YouTube. */
+  src?: string;
+  /** YouTube video id, embedded in place of a self-hosted file. */
+  youtubeId?: string;
   /** Still frame shown before playback starts. */
   poster?: string;
   /** Short tab label, e.g. "1-min short". */

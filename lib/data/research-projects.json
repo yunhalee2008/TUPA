@@ -533,42 +533,44 @@
     "date": "2026-07-12",
     "imageUrl": "/projects/carla-ros2-pipeline.jpg",
     "areaSlug": "physical-ai-av-control",
-    "summary": "A CARLA-ROS2 experimental pipeline for goal-driven autonomous driving on Lanelet2 maps, composing multi-vehicle scenarios that mix custom driving policies with rule-based autopilot vehicles to study interaction-aware driving behaviors.",
+    "summary": "Autonomous driving research increasingly turns on how vehicles interact rather than on one car driving alone — but staging that interaction under controlled conditions is hard. This CARLA–ROS2 pipeline drives vehicles to explicit goals over Lanelet2 maps, and lets a single scenario mix custom driving policies with CARLA's rule-based autopilot in any ratio.",
     "detail": {
       "paragraphs": [
-        "Autonomous driving research increasingly emphasizes interaction among multiple vehicles rather than isolated ego-centric driving, yet controlled experiments mixing heterogeneous vehicle behaviors remain difficult without a unified, goal-driven experimental pipeline.",
-        "This research constructs a CARLA-ROS2 pipeline that enables goal-driven autonomous driving using Lanelet2 lane-level maps. Vehicles can be controlled either by custom driving policies or by CARLA's built-in autopilot, supporting flexible composition of multi-vehicle scenarios with varying ratios of autonomous and autopilot-driven vehicles — a foundation for studying interaction-aware driving behaviors, priority decision policies, and future V2X-based coordination."
+        "Interaction between vehicles is where the hard problems in autonomous driving now sit — who yields, who goes, how a policy behaves when the car beside it is following different rules. Running that as a controlled experiment is the difficulty: heterogeneous behaviour, such as a rule-based autopilot sharing a road with a learned policy, has no unified, goal-driven pipeline to stage it in.",
+        "This work builds one on CARLA and ROS2. Vehicles are given explicit goals and routed over Lanelet2 lane-level maps, and each vehicle in a scenario can be handed either a custom driving policy or CARLA's built-in autopilot — so the mix of the two becomes an experimental variable rather than a fixed property of the simulator.",
+        "Lane-level map information, explicit goal specification and closed-loop vehicle control together give a structured setting for multi-vehicle experiments, intended as a foundation for studying interaction-aware driving behaviour, priority decision policies, and V2X-based coordination between autonomous vehicles."
       ],
       "sections": [
         {
-          "heading": "Core capabilities",
+          "heading": "Goals defined on the lane, not on the map",
+          "body": "Experiments are goal-driven and read the road at lane level through Lanelet2, so a destination is expressed against the lane topology a vehicle actually has to follow rather than as a coordinate on a map. That is what makes a scenario reproducible: the same goal produces the same routing problem every run."
+        },
+        {
+          "heading": "Mixing driving policies in one scenario",
+          "body": "The pipeline deploys several vehicles at once under heterogeneous driving policies. A scenario can be composed with any ratio of policy-driven to autopilot-driven vehicles, which is what allows a single custom policy to be observed inside traffic that behaves by different rules — or several policies to be put in each other's way deliberately."
+        },
+        {
+          "heading": "Controlled evaluation of interaction",
+          "body": "Because the map conditions and the goals are fixed, interaction-aware driving behaviour can be evaluated as a controlled comparison rather than an anecdote: change one policy, hold the scenario, and the difference in behaviour is attributable."
+        },
+        {
+          "heading": "Modular ROS2, with sim-to-real in mind",
+          "body": "The architecture is built as ROS2 modules rather than as simulator scripting, so the same nodes can be pointed at real robotic platforms. Sim-to-real transfer is a design constraint from the start rather than a later port."
+        },
+        {
+          "heading": "Built to extend",
+          "body": "The pipeline is deliberately open at three points:",
           "bullets": [
-            "Lanelet2-based goal-driven driving experiments using lane-level map information",
-            "Multi-vehicle scenario composition with heterogeneous driving policies",
-            "Controlled evaluation of interaction-aware driving behavior under structured map and goal conditions",
-            "Modular ROS2 architecture enabling sim-to-real extension",
-            "Extensible toward V2X information sharing and priority-based decision policies, including learning-based policies (end-to-end, RL)"
+            "Learning-based driving policies — end-to-end and reinforcement-learning — can be dropped into the same scenario machinery",
+            "V2X-based vehicle-to-vehicle information sharing and cooperative driving can be studied in it, with priority decision policies as the natural next question",
+            "The ROS2 architecture keeps sim-to-real application feasible as the work moves off the simulator"
           ]
         }
       ],
       "images": [
         {
           "src": "/projects/carla-ros2-pipeline.jpg",
-          "caption": "End-to-end autonomous driving demonstration using CARLA-ROS2 integration, visualized in RViz alongside CARLA"
-        }
-      ],
-      "links": [
-        {
-          "label": "Demo: End-to-end CARLA-ROS2 driving",
-          "url": "https://youtu.be/luoqjL8DCxg"
-        },
-        {
-          "label": "Demo: Camera-based lane keeping",
-          "url": "https://youtu.be/qotK23sSn9k"
-        },
-        {
-          "label": "Demo: Lane keeping through intersections",
-          "url": "https://youtu.be/ZtHfB9tMEFc"
+          "caption": "End-to-end autonomous driving demonstration using the CARLA–ROS2 integration, visualised in RViz alongside the CARLA scene"
         }
       ]
     }

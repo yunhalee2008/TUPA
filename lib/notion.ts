@@ -199,6 +199,9 @@ export async function fetchMembers(): Promise<Member[] | null> {
       // Stable proxy path — raw Notion file URLs expire (see /api/photo).
       photoUrl: fileUrl(p["사진"]) ? `/api/photo/${page.id}` : undefined,
       researchInterests: multiSelect(p["연구 관심사"]),
+      researchInterestsKo: multiSelect(p["연구 관심사(한글)"]).length
+        ? multiSelect(p["연구 관심사(한글)"])
+        : undefined,
       links: links.length ? links : undefined,
       placement: text(p["진로"]) || undefined,
       career: text(p["약력"])

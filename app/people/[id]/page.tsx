@@ -144,7 +144,16 @@ export default async function MemberDetailPage({ params }: Props) {
 
         {member.researchInterests.length > 0 ? (
           <p className="mt-6 text-sm text-body/80">
-            {member.researchInterests.join(" · ")}
+            {/* KO list is optional — fall back to the English one when absent. */}
+            <span className="ko-only">
+              {(member.researchInterestsKo?.length
+                ? member.researchInterestsKo
+                : member.researchInterests
+              ).join(" · ")}
+            </span>
+            <span className="en-only">
+              {member.researchInterests.join(" · ")}
+            </span>
           </p>
         ) : null}
 

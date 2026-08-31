@@ -42,6 +42,11 @@ export interface Member {
   email?: string;
   photoUrl?: string;
   researchInterests: string[];
+  /**
+   * Korean rendering of `researchInterests`, shown when the site language is KO.
+   * Falls back to the English list when absent, so it stays optional.
+   */
+  researchInterestsKo?: string[];
   /** Personal site, Google Scholar, LinkedIn, etc. */
   links?: { label: string; url: string }[];
   /** For alumni: where they went after TUPA. */
@@ -306,6 +311,12 @@ const MEMBERS: Member[] = [
       "Digital twin",
       "Sustainable transport systems",
     ],
+    researchInterestsKo: [
+      "교통 모델링 및 시뮬레이션",
+      "모빌리티 AI",
+      "디지털 트윈",
+      "지속가능 교통체계",
+    ],
     links: [
       // "Official homepage" (inhi.kim) removed — that domain now serves this site.
       {
@@ -328,6 +339,7 @@ const MEMBERS: Member[] = [
     titleEn: "Postdoctoral Researcher",
     photoUrl: "/people/gyounghoon-chun.jpg",
     researchInterests: ["Intersection operations", "Reinforcement learning"],
+    researchInterestsKo: ["교차로 운영", "강화학습"],
   },
   {
     id: "taeho-oh",
@@ -338,9 +350,23 @@ const MEMBERS: Member[] = [
     titleEn: "Postdoctoral Researcher",
     photoUrl: "/people/taeho-oh.jpg",
     researchInterests: [
-      "Micromobility safety",
-      "Driver behaviour",
-      "Driving simulator",
+      "AI-infra traffic operation",
+      "Digital twin and metaverse-based traffic simulation",
+      "World models",
+      "Teleoperation",
+    ],
+    researchInterestsKo: [
+      "AI 인프라 교통 운영",
+      "디지털 트윈·메타버스 기반 교통 시뮬레이션",
+      "월드 모델",
+      "원격 조종",
+    ],
+    links: [
+      { label: "Homepage", url: "https://otaeho.github.io/" },
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.co.kr/citations?user=GMN93hkAAAAJ&hl=en",
+      },
     ],
   },
   {
@@ -352,6 +378,7 @@ const MEMBERS: Member[] = [
     titleEn: "Postdoctoral Researcher",
     photoUrl: "/people/fan-wu.jpg",
     researchInterests: ["Traffic state estimation", "Machine learning"],
+    researchInterestsKo: ["교통 상태 추정", "기계학습"],
   },
   {
     id: "meng-li",
@@ -361,7 +388,24 @@ const MEMBERS: Member[] = [
     titleKo: "박사후연구원",
     titleEn: "Postdoctoral Researcher",
     photoUrl: "/people/meng-li.jpg",
-    researchInterests: ["Mixed traffic control", "Proactive safety"],
+    researchInterests: [
+      "Vision-language models",
+      "Autonomous vehicles",
+      "Traffic simulation",
+      "World models",
+    ],
+    researchInterestsKo: [
+      "비전-언어 모델",
+      "자율주행차",
+      "교통 시뮬레이션",
+      "월드 모델",
+    ],
+    links: [
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=R1ZRWvEAAAAJ&hl=zh-CN",
+      },
+    ],
   },
   // --- Ph.D. students --------------------------------------------------------
   {
@@ -373,9 +417,24 @@ const MEMBERS: Member[] = [
     titleEn: "Ph.D. Student · since 2022",
     photoUrl: "/people/tengfeng-lin.jpg",
     researchInterests: [
-      "Crowd simulation",
+      "Pedestrian safety",
+      "Conflict measures",
       "Trajectory prediction",
-      "Traffic conflict measures",
+      "Crowd simulation",
+    ],
+    researchInterestsKo: [
+      "보행자 안전",
+      "상충 지표",
+      "궤적 예측",
+      "군중 시뮬레이션",
+    ],
+    links: [
+      { label: "Homepage", url: "https://cifang-kasit.github.io/Website/" },
+      { label: "GitHub", url: "https://github.com/cifang-Kasit" },
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=EX_VmX8AAAAJ",
+      },
     ],
   },
   {
@@ -390,6 +449,11 @@ const MEMBERS: Member[] = [
       "Deep generative models",
       "Population synthesis",
       "Travel demand modelling",
+    ],
+    researchInterestsKo: [
+      "심층 생성 모델",
+      "인구 합성",
+      "통행수요 모델링",
     ],
   },
   {
@@ -415,6 +479,11 @@ const MEMBERS: Member[] = [
       "Explainable AI",
       "Streetscape perception",
     ],
+    researchInterestsKo: [
+      "보행자 안전",
+      "설명가능 AI",
+      "가로경관 인지",
+    ],
   },
   {
     id: "ng-hui-zhi",
@@ -424,7 +493,26 @@ const MEMBERS: Member[] = [
     titleKo: "박사과정 · 2024 입학",
     titleEn: "Ph.D. Student · since 2024",
     photoUrl: "/people/ng-hui-zhi.jpg",
-    researchInterests: [],
+    researchInterests: [
+      "Robotaxi",
+      "Fleet management",
+      "E-scooter",
+      "Safety",
+      "Reinforcement learning",
+    ],
+    researchInterestsKo: [
+      "로보택시",
+      "차량 운영 관리",
+      "전동킥보드",
+      "안전",
+      "강화학습",
+    ],
+    links: [
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=uM3tsAQAAAAJ&hl=en",
+      },
+    ],
   },
   {
     id: "kervin-lucas",
@@ -434,7 +522,23 @@ const MEMBERS: Member[] = [
     titleKo: "박사과정 · 2024 입학",
     titleEn: "Ph.D. Student · since 2024",
     photoUrl: "/people/kervin-lucas.jpg",
-    researchInterests: [],
+    researchInterests: [
+      "Trustworthy AI",
+      "LLMs in activity-based models",
+      "Activity scheduler",
+    ],
+    researchInterestsKo: [
+      "신뢰할 수 있는 AI",
+      "활동기반모형 내 LLM 활용",
+      "활동 스케줄러",
+    ],
+    links: [
+      { label: "Homepage", url: "https://curve108.github.io/" },
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=8FfIVzIAAAAJ&hl=en",
+      },
+    ],
   },
   {
     id: "hyunchul-park",
@@ -444,7 +548,23 @@ const MEMBERS: Member[] = [
     titleKo: "박사과정 · 2025 입학",
     titleEn: "Ph.D. Student · since 2025",
     photoUrl: "/people/hyunchul-park.jpg",
-    researchInterests: ["Micromobility safety", "Driver behaviour"],
+    researchInterests: [
+      "V2X-aware humanoid drivers",
+      "Autonomous vehicle safety evaluation",
+      "Human-centric traffic safety",
+    ],
+    researchInterestsKo: [
+      "V2X 기반 휴머노이드 드라이버",
+      "자율주행차 안전성 평가",
+      "인간 중심 교통안전",
+    ],
+    links: [
+      { label: "Homepage", url: "https://hyunchul176.github.io/" },
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=NpwHgkEAAAAJ&hl=ko",
+      },
+    ],
   },
   {
     id: "jaehyuck-lim",
@@ -454,7 +574,23 @@ const MEMBERS: Member[] = [
     titleKo: "박사과정 · 2026 입학",
     titleEn: "Ph.D. Student · since 2026",
     photoUrl: "/people/jaehyuck-lim.jpg",
-    researchInterests: [],
+    researchInterests: [
+      "Humanoid",
+      "Sim-to-real transfer",
+      "Simulator-based traffic safety",
+    ],
+    researchInterestsKo: [
+      "휴머노이드",
+      "Sim-to-Real 전이",
+      "시뮬레이터 기반 교통안전",
+    ],
+    links: [
+      { label: "Homepage", url: "https://jaehyucklim.github.io/" },
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=zfSBUAIAAAAJ&hl=ko",
+      },
+    ],
   },
   {
     id: "eric-min-kim",
@@ -466,6 +602,25 @@ const MEMBERS: Member[] = [
     photoUrl: "/people/eric-min-kim.jpg",
     researchInterests: [],
   },
+  {
+    id: "linkun-liu",
+    nameKo: "",
+    nameEn: "Linkun Liu",
+    role: "phd",
+    titleKo: "박사과정 · 2026 입학",
+    titleEn: "Ph.D. Student · since 2026",
+    // No photo on file yet — the card falls back to initials until one is added.
+    researchInterests: [],
+  },
+  {
+    id: "yu-deng",
+    nameKo: "",
+    nameEn: "Yu Deng",
+    role: "phd",
+    titleKo: "박사과정 · 2026 입학",
+    titleEn: "Ph.D. Student · since 2026",
+    researchInterests: [],
+  },
   // --- M.S. students ---------------------------------------------------------
   {
     id: "jungyoon-kim",
@@ -475,7 +630,23 @@ const MEMBERS: Member[] = [
     titleKo: "석사과정 · 2025 입학",
     titleEn: "M.S. Student · since 2025",
     photoUrl: "/people/jungyoon-kim.jpg",
-    researchInterests: [],
+    researchInterests: [
+      "Human-computer interaction (HCI)",
+      "World models for autonomous driving and mobility systems",
+      "VR/AR/XR",
+    ],
+    researchInterestsKo: [
+      "인간-컴퓨터 상호작용(HCI)",
+      "자율주행·모빌리티 시스템 월드 모델",
+      "VR/AR/XR",
+    ],
+    links: [
+      { label: "Homepage", url: "https://kjy090720.github.io/my-portfolio/" },
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=kQXb3EYAAAAJ&hl=ko",
+      },
+    ],
   },
   {
     id: "junyoung-kim",
@@ -495,7 +666,25 @@ const MEMBERS: Member[] = [
     titleKo: "석사과정 · 2025 입학",
     titleEn: "M.S. Student · since 2025",
     photoUrl: "/people/myeonghyeon-kim.jpg",
-    researchInterests: [],
+    researchInterests: [
+      "AMR navigation",
+      "SPaT/R2X",
+      "ROS 2/Nav2",
+      "Intersection intelligence",
+    ],
+    researchInterestsKo: [
+      "자율주행로봇(AMR) 내비게이션",
+      "SPaT/R2X",
+      "ROS 2/Nav2",
+      "교차로 지능화",
+    ],
+    links: [
+      { label: "Homepage", url: "https://tkmh0727-rgb.github.io" },
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=brpatBsAAAAJ&hl=ko",
+      },
+    ],
   },
   {
     id: "truyen-le-minh",
@@ -515,7 +704,22 @@ const MEMBERS: Member[] = [
     titleKo: "석사과정 · 2025 입학",
     titleEn: "M.S. Student · since 2025",
     photoUrl: "/people/yeji-yoo.jpg",
-    researchInterests: [],
+    researchInterests: [
+      "Simulation",
+      "Crowd dynamics",
+      "Pedestrian safety",
+    ],
+    researchInterestsKo: [
+      "시뮬레이션",
+      "군중 동역학",
+      "보행자 안전",
+    ],
+    links: [
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=ZQn1OrUAAAAJ&hl=ko",
+      },
+    ],
   },
   {
     id: "chanwoo-moon",
@@ -528,6 +732,34 @@ const MEMBERS: Member[] = [
     researchInterests: [],
   },
   {
+    id: "daeyong-kim",
+    nameKo: "",
+    nameEn: "Daeyong Kim",
+    role: "ms",
+    titleKo: "석사과정 · 2026 입학",
+    titleEn: "M.S. Student · since 2026",
+    // No photo on file yet — the card falls back to initials until one is added.
+    researchInterests: [
+      "Vision-language models (VLM)",
+      "Vision-language-action models (VLA)",
+      "Deep learning architectures & multimodal learning",
+      "End-to-end autonomous driving",
+    ],
+    researchInterestsKo: [
+      "비전-언어 모델(VLM)",
+      "비전-언어-행동 모델(VLA)",
+      "딥러닝 아키텍처 및 멀티모달 학습",
+      "종단간(End-to-End) 자율주행",
+    ],
+    links: [
+      { label: "GitHub", url: "https://github.com/a94568576" },
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=57DEl8MAAAAJ&hl=ko",
+      },
+    ],
+  },
+  {
     id: "jihye-eum",
     nameKo: "",
     nameEn: "Jihye Eum",
@@ -538,13 +770,22 @@ const MEMBERS: Member[] = [
     researchInterests: [],
   },
   {
-    id: "jongmyeung",
+    id: "jongmyeung-ahn",
     nameKo: "",
-    nameEn: "Jongmyeung",
+    nameEn: "Jongmyeung Ahn",
     role: "ms",
     titleKo: "석사과정 · 2026 입학",
     titleEn: "M.S. Student · since 2026",
     photoUrl: "/people/jongmyeung.jpg",
+    researchInterests: [],
+  },
+  {
+    id: "sara-abbasvand",
+    nameKo: "",
+    nameEn: "Sara Abbasvand",
+    role: "ms",
+    titleKo: "석사과정 · 2026 입학",
+    titleEn: "M.S. Student · since 2026",
     researchInterests: [],
   },
   // --- Visiting students -----------------------------------------------------
@@ -574,8 +815,8 @@ const MEMBERS: Member[] = [
     nameKo: "",
     nameEn: "Yunha Lee",
     role: "intern",
-    titleKo: "인턴 · TCIS (2025)",
-    titleEn: "Intern · TCIS (2025)",
+    titleKo: "인턴 · Stanford University (2025-2026)",
+    titleEn: "Intern · Stanford University (2025-2026)",
     photoUrl: "/people/yoonha-lee.jpg",
     researchInterests: [],
   },
@@ -601,12 +842,12 @@ const MEMBERS: Member[] = [
   },
   // --- Admin Staff ---------------------------------------------------------------
   {
-    id: "youngmi-choi",
+    id: "yeungmi-choi",
     nameKo: "",
-    nameEn: "Youngmi Choi",
+    nameEn: "Yeungmi Choi",
     role: "admin",
-    titleKo: "행정팀",
-    titleEn: "Administrative Staff",
+    titleKo: "행정 선생님",
+    titleEn: "Admin Staff",
     photoUrl: "/people/Youngmi.png",
     researchInterests: [],
   },
@@ -623,6 +864,11 @@ const MEMBERS: Member[] = [
       "Traffic safety analytics",
       "Econometric & machine learning models",
       "Vulnerable road users",
+    ],
+    researchInterestsKo: [
+      "교통안전 분석",
+      "계량경제·기계학습 모형",
+      "교통약자",
     ],
     placement: "Professor, Kookmin University",
   },
@@ -3361,11 +3607,24 @@ export async function getMembers(role?: MemberRole): Promise<Member[]> {
       );
       members = remote.map((m) => {
         const fallback = staticByKey.get(`${m.nameEn}|${m.role}`);
+        // Keyword lists travel as a KO/EN pair. A Notion row with an empty
+        // 연구 관심사 inherits *both* built-in lists; a row that has its own
+        // English keywords keeps its own Korean ones (possibly none). Mixing
+        // the two sources would show different keywords per language.
+        const useBuiltInInterests =
+          m.researchInterests.length === 0 &&
+          (fallback?.researchInterests.length ?? 0) > 0;
         return {
           ...m,
           photoUrl: m.photoUrl ?? fallback?.photoUrl,
           career: m.career ?? fallback?.career,
           links: m.links ?? fallback?.links,
+          researchInterests: useBuiltInInterests
+            ? fallback!.researchInterests
+            : m.researchInterests,
+          researchInterestsKo: useBuiltInInterests
+            ? fallback!.researchInterestsKo
+            : m.researchInterestsKo,
         };
       });
     }

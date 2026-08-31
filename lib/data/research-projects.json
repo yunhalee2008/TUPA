@@ -661,26 +661,6 @@
     }
   },
   {
-    "id": "vr-driving-simulator-platform",
-    "title": "VR Driving Simulator Platform",
-    "date": "2026-07-22",
-    "imageUrl": "/projects/vr-driving-simulator-platform.png",
-    "areaSlug": "digital-twin-simulation",
-    "summary": "An integrated platform combining VISSIM traffic microsimulation, a driving simulator, virtual reality, and Python to study connected and automated vehicles in mixed traffic — the shared hardware and software base behind TUPA's human-in-the-loop driving studies.",
-    "detail": {
-      "paragraphs": [
-        "TUPA develops an architecture that ties together VISSIM microsimulation, a physical driving simulator rig, virtual reality, and Python-based control and analysis code, so that vehicle dynamics, driver behavior, and surrounding traffic can all be represented within one framework.",
-        "The platform is the common foundation behind the lab's overtaking-behavior and metaverse co-simulation studies, and is intended to help develop and validate techniques for improving traffic congestion, safety, and network performance under connected and automated driving."
-      ],
-      "images": [
-        {
-          "src": "/projects/vr-driving-simulator-platform.png",
-          "caption": "PTV VISSIM traffic microsimulation linked to Unity, driven through a VR headset and a force-feedback wheel and pedal set"
-        }
-      ]
-    }
-  },
-  {
     "id": "metaverse-unity-vissim-cosimulation",
     "title": "Metaverse-Based Emerging Technology: Unity–VISSIM Co-simulation",
     "date": "2026-07-22",
@@ -823,56 +803,6 @@
         {
           "label": "Overtaking experience and road condition (Transportation Research Part F, 2026)",
           "url": "https://www.sciencedirect.com/science/article/pii/S1369847825004371"
-        }
-      ]
-    }
-  },
-  {
-    "id": "multi-source-traffic-volume-imputation",
-    "title": "Data-Driven Traffic Volume Imputation from Multi-Source Data Collection",
-    "date": "2026-07-22",
-    "imageUrl": "/projects/rse-vds-traffic-data-collection.png",
-    "areaSlug": "physical-ai-av-control",
-    "summary": "Combining Roadside Equipment (RSE) probe data with Vehicle Detection System (VDS) loop-detector counts, this research imputes and predicts traffic volume across a road network using graph-based deep learning — a practical, data-driven approach to real-world transportation operation.",
-    "detail": {
-      "paragraphs": [
-        "Traffic detectors collect volume data so a city can see how its network is flowing — the basis for traffic management and for the information road users act on. In practice the record is full of holes: gaps open up hourly in the short term and, once a feed fails quietly, stretch out over months.",
-        "This work recovers the missing volume across a large urban network rather than at isolated detectors, using graph-based deep learning that reads the spatial and temporal dependencies between sensors. No single source covers the whole network on its own — roadside equipment (RSE) reports real-time speed, travel time and sample counts along road segments, while VDS loop detectors report volume, speed and occupancy at fixed points — so the two are fused on a graph representation of the road network."
-      ],
-      "sections": [
-        {
-          "heading": "Why a graph, and why two sources",
-          "body": "Representing the network as a graph lets information from observed locations support recovery where measurements are missing, and lets the model exploit recurring temporal patterns at daily, weekly and monthly scales at the same time. The central difficulty is heterogeneity: the sensing systems differ in spatial coverage, in the variables they measure, and in how they fail.",
-          "images": [
-            {
-              "src": "/projects/rse-vds-traffic-data-collection.png",
-              "caption": "The two data sources over the Daejeon network — RSE units reporting speed, travel time and sample counts along segments, VDS loop detectors reporting volume, speed and occupancy at points — and the daily, weekly and monthly periods the model reads them over"
-            }
-          ]
-        },
-        {
-          "heading": "Attention-based spatio-temporal graph network",
-          "body": "Rather than treating detectors independently, the model learns dynamic spatial and temporal dependencies across the network. Stacked spatio-temporal blocks combine a self-attention sub-block with a graph convolution sub-block, giving a data-driven way to integrate heterogeneous observations and estimate traffic states where measurements are sparse or unavailable.",
-          "images": [
-            {
-              "src": "/projects/traffic-volume-stgnn-architecture.png",
-              "caption": "Stacked spatio-temporal blocks, each pairing a self-attention sub-block with a graph convolution sub-block over the road network graph"
-            }
-          ]
-        },
-        {
-          "heading": "Daejeon case study",
-          "body": "Applied to the city-wide traffic monitoring network in Daejeon, the framework recovered traffic volume with a mean absolute error below 12 vehicles per 5 minutes — evidence that multi-source sensing and graph-based learning can keep traffic information reliable even when a substantial share of the monitoring network is missing observations.",
-          "images": [
-            {
-              "src": "/projects/traffic-volume-imputation-results.png",
-              "caption": "Recovered versus observed flow at three detectors across several days, compared against baseline imputation methods"
-            }
-          ]
-        },
-        {
-          "heading": "Reference",
-          "body": "Kwon, Donghyun, et al. Large-scale network imputation and prediction of traffic volume based on multi-source data collection system. Transportation Research Record 2677(9) (2023): 30–42."
         }
       ]
     }

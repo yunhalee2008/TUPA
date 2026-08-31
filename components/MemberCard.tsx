@@ -54,7 +54,14 @@ export default function MemberCard({ member }: { member: Member }) {
       )}
       {member.researchInterests.length > 0 ? (
         <p className="mt-4 text-sm text-body/80">
-          {member.researchInterests.join(" · ")}
+          {/* KO list is optional — fall back to the English one when absent. */}
+          <span className="ko-only">
+            {(member.researchInterestsKo?.length
+              ? member.researchInterestsKo
+              : member.researchInterests
+            ).join(" · ")}
+          </span>
+          <span className="en-only">{member.researchInterests.join(" · ")}</span>
         </p>
       ) : null}
       {member.career && member.career.length > 0 ? (

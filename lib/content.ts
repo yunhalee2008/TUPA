@@ -446,14 +446,21 @@ const MEMBERS: Member[] = [
     titleEn: "Ph.D. Student · since 2023",
     photoUrl: "/people/donghyun-kwon.jpg",
     researchInterests: [
-      "Deep generative models",
-      "Population synthesis",
-      "Travel demand modelling",
+      "LLM-based activity-based modeling",
+      "Travel demand simulation",
+      "Traffic data imputation and prediction",
     ],
     researchInterestsKo: [
-      "심층 생성 모델",
-      "인구 합성",
-      "통행수요 모델링",
+      "LLM 기반 활동기반모형",
+      "통행수요 시뮬레이션",
+      "교통 데이터 결측 보정 및 예측",
+    ],
+    links: [
+      { label: "Homepage", url: "https://seankwon469.github.io/" },
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=mMZLFtIAAAAJ&hl=ko",
+      },
     ],
   },
   {
@@ -610,7 +617,18 @@ const MEMBERS: Member[] = [
     titleKo: "박사과정 · 2026 입학",
     titleEn: "Ph.D. Student · since 2026",
     // No photo on file yet — the card falls back to initials until one is added.
-    researchInterests: [],
+    researchInterests: [
+      "Intelligent transportation systems",
+      "Autonomous vehicles",
+      "AI safety",
+    ],
+    researchInterestsKo: ["지능형 교통체계(ITS)", "자율주행차", "AI 안전"],
+    links: [
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=rUaBTE0AAAAJ&hl=zh-CN",
+      },
+    ],
   },
   {
     id: "yu-deng",
@@ -619,7 +637,22 @@ const MEMBERS: Member[] = [
     role: "phd",
     titleKo: "박사과정 · 2026 입학",
     titleEn: "Ph.D. Student · since 2026",
-    researchInterests: [],
+    researchInterests: [
+      "Multimodal data analysis",
+      "Safety evaluation for autonomous driving",
+      "Vision-language models (VLM)",
+    ],
+    researchInterestsKo: [
+      "멀티모달 데이터 분석",
+      "자율주행 안전성 평가",
+      "비전-언어 모델(VLM)",
+    ],
+    links: [
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=qnC3KCgAAAAJ&hl=zh-CN",
+      },
+    ],
   },
   // --- M.S. students ---------------------------------------------------------
   {
@@ -694,7 +727,18 @@ const MEMBERS: Member[] = [
     titleKo: "석사과정 · 2025 입학",
     titleEn: "M.S. Student · since 2025",
     photoUrl: "/people/truyen-le-minh.jpg",
-    researchInterests: [],
+    researchInterests: [
+      "Traffic safety",
+      "Learning-based autonomous vehicle control",
+      "Traffic simulation",
+    ],
+    researchInterestsKo: ["교통안전", "학습 기반 자율주행 제어", "교통 시뮬레이션"],
+    links: [
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=eUo0V-cAAAAJ&hl=en",
+      },
+    ],
   },
   {
     id: "yeji-yoo",
@@ -729,7 +773,24 @@ const MEMBERS: Member[] = [
     titleKo: "석사과정 · 2026 입학",
     titleEn: "M.S. Student · since 2026",
     photoUrl: "/people/chanwoo-moon.jpg",
-    researchInterests: [],
+    researchInterests: [
+      "AI-based travel behavior modeling",
+      "Behavioral validation",
+      "LLM coding agent-based transportation simulation",
+      "Agentic AI for transportation",
+      "Large language models",
+    ],
+    researchInterestsKo: [
+      "AI 기반 통행행태 모델링",
+      "행태 검증",
+      "LLM 코딩 에이전트 기반 교통 시뮬레이션",
+      "교통 분야 에이전틱 AI",
+      "대규모 언어모델",
+    ],
+    links: [
+      { label: "Homepage", url: "https://urbanking.github.io/" },
+      { label: "GitHub", url: "https://github.com/urbanking" },
+    ],
   },
   {
     id: "daeyong-kim",
@@ -786,7 +847,12 @@ const MEMBERS: Member[] = [
     role: "ms",
     titleKo: "석사과정 · 2026 입학",
     titleEn: "M.S. Student · since 2026",
-    researchInterests: [],
+    researchInterests: [
+      "Transportation planning",
+      "Transit network design",
+      "Transportation data analysis",
+    ],
+    researchInterestsKo: ["교통계획", "대중교통 노선망 설계", "교통 데이터 분석"],
   },
   // --- Visiting students -----------------------------------------------------
   {

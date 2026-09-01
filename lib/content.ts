@@ -624,6 +624,7 @@ const MEMBERS: Member[] = [
     ],
     researchInterestsKo: ["지능형 교통체계(ITS)", "자율주행차", "AI 안전"],
     links: [
+      { label: "Homepage", url: "https://liulinkun6677.github.io/" },
       {
         label: "Google Scholar",
         url: "https://scholar.google.com/citations?user=rUaBTE0AAAAJ&hl=zh-CN",
@@ -689,7 +690,28 @@ const MEMBERS: Member[] = [
     titleKo: "석사과정 · 2025 입학",
     titleEn: "M.S. Student · since 2025",
     photoUrl: "/people/junyoung-kim.jpg",
-    researchInterests: [],
+    researchInterests: [
+      "Human-robot safety",
+      "Human-robot interaction",
+      "Crowd dynamics",
+      "Robotics",
+      "Digital twin",
+      "Human factors",
+    ],
+    researchInterestsKo: [
+      "인간-로봇 안전",
+      "인간-로봇 상호작용",
+      "군중 동역학",
+      "로보틱스",
+      "디지털 트윈",
+      "인간공학",
+    ],
+    links: [
+      {
+        label: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=-wfyPpsAAAAJ&hl=ko",
+      },
+    ],
   },
   {
     id: "myeonghyeon-kim",
